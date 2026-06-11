@@ -25,9 +25,10 @@ No contiene lógica de negocio ni proyectos concretos.
 
 ## Precedencia
 
-1. README.md
+1. Project Brief
 2. `.github/instructions/sdd.instructions.md`
-3. AGENTS.md
-4. Templates
-5. Skills
-6. Docs auxiliares
+3. README.md
+4. AGENTS.md
+5. Templates
+6. Skills
+7. Docs auxiliares

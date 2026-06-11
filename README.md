@@ -247,11 +247,11 @@ Cada proyecto se desarrolla en su propio repositorio independiente.
 JQF SDD Foundation
         ↓ utilizada como base
 
-Repositorio de Agentes 1
+Repositorio derivado 1
 
-Repositorio de Agentes 2
+Repositorio derivado 2
 
-Repositorio de Agentes N
+Repositorio derivado N
 ```
 
 La Foundation proporciona:

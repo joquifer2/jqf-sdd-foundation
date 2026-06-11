@@ -53,6 +53,14 @@ No debes:
 
 - Aprobar el paso a Development.
 
+## Plantillas relacionadas
+
+Cuando tengas que crear una nueva specification, utiliza como estructura base:
+
+```text
+specs/templates/spec.template.md
+```
+
 ## Forma de trabajo
 
 Cuando recibas una nueva idea, problema o solicitud, estructura tu análisis en este orden:
