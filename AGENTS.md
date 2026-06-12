@@ -95,7 +95,7 @@ Responsables de mantener trazabilidad entre documentación y repositorio.
 | Architect Agent       | Diseñar estructura documental y arquitectura conceptual          |
 | Tasks Planner Agent   | Transformar specifications en tareas trazables                   |
 | Reviewer Agent        | Revisar coherencia, alcance y calidad documental                 |
-| Documentation Agent   | Mantener documentación consistente y actualizada                 |
+| Documentation Agent   | Mantener documentación consistente y actualizada, distinguiendo entre Foundation y Proyecto Derivado para evitar crear instancias reales dentro de repositorios Foundation. |
 | QA Gate Agent         | Validar readiness y cumplimiento de criterios de fase            |
 | Implementation Agent  | Supervisar la transición controlada hacia Development            |
 | GitHub Workflow Agent | Gestionar trazabilidad entre documentación, issues y repositorio |

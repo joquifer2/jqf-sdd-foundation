@@ -147,6 +147,26 @@ Documentos o sistemas que contienen la lógica funcional principal.
 
 ---
 
+### Context References
+
+Documento de referencias de contexto utilizado:
+
+docs/context_refs.md
+
+Fuentes principales consultadas:
+
+- CCD
+- Decisiones relacionadas
+- Proyectos relacionados
+- Reuniones relacionadas
+- Conocimiento reutilizable
+- Fuentes técnicas
+
+Notas relevantes sobre el contexto utilizado:
+
+{{CONTEXT_NOTES}}
+
+
 ## 12. Success Criteria
 
 Criterios que determinarán si el proyecto ha alcanzado su objetivo.

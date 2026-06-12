@@ -32,3 +32,15 @@ No contiene lógica de negocio ni proyectos concretos.
 5. Templates
 6. Skills
 7. Docs auxiliares
+
+## Contexto
+
+Antes de generar o modificar artefactos relevantes del proyecto:
+
+- comprobar si existe `docs/context_refs.md`;
+- utilizarlo como mapa oficial de contexto;
+- consultar las fuentes obligatorias indicadas en él;
+- respetar las versiones y estados documentados;
+- no inventar contexto de cliente, negocio, restricciones, arquitectura o decisiones si existe una fuente documentada.
+
+Mantener esta sección breve y operativa.

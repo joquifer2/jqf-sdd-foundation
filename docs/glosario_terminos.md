@@ -27,6 +27,28 @@ Ejemplos:
 
 ---
 
+### Context Governance
+
+Sistema de reglas que determina cómo se identifican, referencian, cargan y utilizan las fuentes oficiales de contexto dentro de un proyecto.
+
+Su objetivo es evitar dependencia de memoria informal, reducir inconsistencias y garantizar trazabilidad de las fuentes de contexto utilizadas.
+
+### Context References
+
+Documento que actúa como índice oficial de las fuentes de contexto de un proyecto. No almacena el conocimiento completo; referencia las fuentes que deben consultarse antes de generar o modificar artefactos relevantes.
+
+Ubicación recomendada:
+
+docs/context_refs.md
+
+### Client Context Document (CCD)
+
+Documento maestro que concentra el conocimiento relevante de un cliente. Puede incluir negocio, objetivos, restricciones, ecosistema tecnológico, definiciones oficiales, KPIs, decisiones relevantes y lecciones aprendidas.
+
+Cuando exista, el CCD debe considerarse la fuente principal de contexto del cliente.
+
+---
+
 ### Human-in-the-loop
 
 Principio según el cual las decisiones relevantes requieren validación humana.

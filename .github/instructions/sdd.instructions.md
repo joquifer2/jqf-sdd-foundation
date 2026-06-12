@@ -129,6 +129,32 @@ Antes de marcar una tarea como completada, verificar que el criterio de cierre s
 
 Si una tarea pierde relevancia o deja de aplicar, debe marcarse como descartada en lugar de eliminarse silenciosamente.
 
+## Context Governance
+
+`docs/context_refs.md` actúa como el mapa oficial de referencias de contexto del proyecto.
+
+- Antes de crear o modificar cualquiera de los siguientes artefactos, revisar `docs/context_refs.md`:
+	- Project Brief
+	- Specifications
+	- Architecture
+	- Tasks
+	- Código
+	- Documentación técnica
+
+- Si `docs/context_refs.md` existe:
+	- utilizarlo como fuente oficial de referencias;
+	- consultar las "fuentes obligatorias" indicadas en él;
+	- respetar las versiones y estados documentados;
+	- no inferir ni sustituir contexto cuando exista una fuente oficial publicada.
+
+- Si `docs/context_refs.md` NO existe:
+	- crearlo a partir de `docs/templates/context_refs.template.md`;
+	- marcar las referencias faltantes como `PENDING` hasta su verificación.
+
+- `context_refs.md` no debe duplicar contenido completo de CCDs, decisiones, actas de reuniones o documentación externa. Su función es actuar como índice, trazabilidad y mecanismo de carga de contexto, no como repositorio de copias completas.
+
+- Regla explícita: Antes de generar cualquier Project Brief, Specification, Architecture o Tasks, comprobar la existencia de `docs/context_refs.md` y actuar conforme a su contenido.
+
 ## 9. SDD Harness
 
 ### 9.1 Rol del SDD Harness

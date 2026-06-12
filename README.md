@@ -60,6 +60,9 @@ JQF SDD Foundation proporciona una estructura común para evitar estos problemas
 * Reglas de precedencia documental
 * Criterios de readiness
 * Gates de validación
+* Context Governance
+* Context References
+* Trazabilidad de fuentes de contexto
 
 ### Agentes metodológicos
 
