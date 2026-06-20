@@ -53,50 +53,57 @@ JQF SDD Foundation proporciona una estructura común para evitar estos problemas
 
 ## ¿Qué incluye?
 
-### Gobierno SDD
+### Gobierno SDD (Estado actual)
 
-* Instructions SDD
-* Control de fases
-* Reglas de precedencia documental
-* Criterios de readiness
-* Gates de validación
-* Context Governance
-* Context References
-* Trazabilidad de fuentes de contexto
+* Instructions SDD ✓
+* Reglas de precedencia documental ✓
+* Criterios de readiness ✓
+* Context Governance (framework definido, en evolución)
+* Context References (framework definido, en evolución)
+* Trazabilidad de fuentes de contexto ✓
 
-### Agentes metodológicos
+### Agentes metodológicos (Actuales)
 
-* Legacy to SDD Agent
-* Specification Agent
-* Architect Agent
-* Tasks Planner Agent
-* Reviewer Agent
-* Documentation Agent
-* QA Gate Agent
-* Implementation Agent
-* GitHub Workflow Agent
+* Legacy to SDD Agent ✓
+* Specification Agent ✓
+* Architect Agent ✓
+* Tasks Planner Agent ✓
+* Reviewer Agent ✓
+* Documentation Agent ✓
+* QA Gate Agent ✓
+* Implementation Agent ✓
 
-### Skills reutilizables
+### Skills reutilizables (Actuales)
 
-* Skills metodológicas
-* Skills de soporte operativo
-* Skills de discovery metodológico para proyectos existentes
-* Procedimientos reutilizables
+* git-sync-seguro (sync controlado con GitHub) ✓
+* legacy-to-sdd (descubrimiento de proyectos existentes) ✓
+* cloud-runtime-discovery (discovery metodológico) ✓
+* data-platform-discovery (discovery metodológico) ✓
+* integration-discovery (discovery metodológico) ✓
+* marketing-apis-discovery (discovery metodológico) ✓
 
-### Plantillas
+### Plantillas (Actuales)
 
-* Project Brief Template
-* Specification Template
-* Eval Template
-* Gate Template
-* Workflow Template
+* Project Brief Template ✓
+* Specification Template ✓
+* Architecture As-Is Template ✓
+* Context References Template ✓
+* SDD Readiness Assessment Template ✓
+* System Overview Template ✓
+* Client Context Document (CCD) Template ✓
+* Contracts Template ✓
+* Copilot Instructions Template ✓
+* Data Lineage Template ✓
+* Legacy Procedure Template ✓
+* Retrospective Spec Template ✓
+* AGENTS Template ✓
 
-### Documentación
+### Documentación (Actual)
 
-* Glosario SDD
-* Definiciones de artefactos
-* Convenciones de gobierno
-* Reglas de trazabilidad
+* Glosario SDD (glosario_terminos.md) ✓
+* Definiciones de artefactos (incluidas en glosario) ✓
+* Convenciones de gobierno (sdd.instructions.md) ✓
+* Reglas de trazabilidad (incluidas en instrucciones) ✓
 
 ---
 
@@ -174,27 +181,35 @@ Active
 
 ---
 
-## Estructura general del repositorio
+## Estructura actual del repositorio
 
 ```text
+AGENTS.md
+README.md
+
 .github/
-├── agents/
-├── instructions/
-└── skills/
+├── agents/                    # Agentes metodológicos definidos
+├── instructions/              # Instrucciones SDD y gobierno
+├── prompts/                   # Prompts reutilizables
+├── copilot-instructions.md    # Instrucciones de Copilot
+└── skills/                    # Skills metodológicas y de discovery
 
 docs/
-├── templates/
-└── glossary/
+├── glosario_terminos.md       # Glosario SDD
+└── templates/                 # Plantillas reutilizables
 
 specs/
-└── templates/
+├── templates/                 # Plantillas de specifications
+└── .gitkeep
 
 tests/
-├── evals/
-└── gates/
+├── evals/                     # Evaluaciones
+└── .gitkeep
 
+tools/
 workflows/
-└── templates/
+memory/
+gates/
 ```
 
 ---
@@ -284,35 +299,56 @@ Cada repositorio derivado define posteriormente:
 
 ## Alcance actual
 
-El alcance actual de esta foundation está centrado en:
+El estado vigente del repositorio está en fase **Specification / Structure**. No estamos en Development.
 
-* Specification
-* Structure
-* Governance
-* Documentación
+**En scope ahora:**
 
-La ejecución operativa de agentes queda fuera del alcance de la foundation y pertenece a cada proyecto concreto.
+* Specification de metodología SDD
+* Structure de artefactos y gobierno
+* Governance documental y procedural
+* Documentación y plantillas reutilizables
+* Agentes metodológicos (governance, no ejecución)
+* Skills de descubrimiento y soporte documental
+
+**Fuera de scope (Roadmap futuro):**
+
+* Ejecución operativa de agentes (pertenece a proyectos derivados)
+* Operational Harness (implementación en proyectos derivados)
+* GitHub Workflow Agent (planeado, no implementado aún)
+* Gates totalmente automatizados (están como estructura documental)
+* Workflows ejecutables en producción
 
 ---
 
 ## Relación con Harness Engineering
 
-JQF SDD Foundation implementa un SDD Harness.
+JQF SDD Foundation implementa un **SDD Harness** (eje actual).
 
 Un SDD Harness es un sistema de gobierno diseñado para controlar cómo se diseñan, documentan, validan y evolucionan capacidades, componentes y sistemas dentro de un proyecto.
 
+### SDD Harness (Implementado hoy)
+
 Esta foundation proporciona:
 
-* estados;
-* reglas;
-* agentes metodológicos;
-* gates;
-* evaluaciones;
-* artefactos;
-* precedencia documental;
-* criterios de readiness.
+* Estados y fases definidas (Specification, Structure, Development)
+* Reglas de precedencia documental
+* Agentes metodológicos (8 agentes operativos)
+* Estructura de gates (framework definido)
+* Framework de evaluaciones
+* Artefactos base y plantillas
+* Criterios de readiness
+* Context Governance
 
-No implementa todavía un Operational Harness.
+### Operational Harness (Roadmap futuro)
 
-Los Operational Harness pertenecen a los repositorios derivados y son responsables de la ejecución real de agentes, herramientas, observabilidad y evaluaciones automáticas.
+No implementado aún en esta foundation.
+
+El Operational Harness pertenecerá a los repositorios derivados y será responsable de:
+
+* Ejecución de agentes funcionales
+* Herramientas operativas reales
+* Observabilidad y monitoreo
+* Evaluaciones automáticas en producción
+* Workflows ejecutables
+* Integraciones productivas
 

@@ -1,130 +1,129 @@
-# Skill - Git Sync Seguro
+# Skill - Git Sync Main
 
-## Proposito
+## Propósito
 
-Guiar el proceso seguro de sincronizacion de cambios locales con GitHub mediante `git status`, `git add`, `git commit` y `git push`.
+Ejecutar una sincronización directa de los cambios locales con GitHub haciendo commit y push a la rama `main`.
 
-Esta skill se usa para subir cambios ya realizados en artefactos, documentacion, agentes, specs, gates, workflows, tests o codigo.
+Esta skill se usa cuando el usuario quiere guardar y publicar cambios ya realizados en el repositorio sin abrir una rama ni preparar una PR.
 
-## Cuando usar esta skill
+## Cuándo usar esta skill
 
 Usar esta skill cuando la solicitud sea similar a:
 
-- "Sube los cambios a GitHub"
 - "Haz commit y push"
-- "Actualiza el repo"
+- "Sube los cambios a GitHub"
+- "Publica los cambios en main"
 - "Guarda los cambios en GitHub"
-- "Publica estos artefactos"
 - "Sincroniza el repositorio"
-- "Prepara el commit"
+- "Haz commit y push a main"
 
-## Principio general
+## Reglas
 
-No asumir que todos los cambios locales deben subirse.
+- El destino por defecto es `main`.
+- No crear ramas.
+- No abrir PR.
+- No hacer rebase.
+- No modificar archivos.
+- No incluir archivos sensibles o temporales.
+- No hacer push si no hay cambios.
+- No hacer push si la rama actual no es `main`, salvo que el usuario lo autorice explícitamente.
 
-Antes de commit o push, revisar:
+## Flujo operativo
 
-- que archivos cambiaron;
-- si los cambios son intencionales;
-- si hay archivos sensibles o temporales;
-- si los cambios pertenecen al mismo objetivo;
-- si el commit debe ir a `main` o a una rama.
+1. Verificar rama actual:
 
-## Flujo operativo obligatorio
+   ```bash
+   git branch --show-current
+   ```
 
-1. Revisar estado:
-   - `git status --short`
-   - opcional: `git status`
-2. Revisar diffs:
-   - `git diff`
-   - `git diff --staged`
-   - `git diff -- ruta/del/archivo`
-3. Bloquear sensibles/no deseados y pedir decision explicita:
-   - `.env`, `.env.*`, `*.key`, `*.pem`, `credentials.*`, `secrets.*`
-   - `__pycache__/`, `.ipynb_checkpoints/`, `.DS_Store`, `node_modules/`, `.venv/`, `dist/`, `build/`, `*.log`
-4. Agrupar cambios por intencion:
-   - documentacion, agentes, specs, contracts transversales, skills, prompts, gates, evals, workflows, codigo, configuracion, mantenimiento.
-5. Proponer archivos exactos a incluir:
-   - preferir `git add ruta/archivo_1 ruta/archivo_2`
-   - usar `git add .` solo si todo fue revisado y confirmado.
-6. Proponer mensaje de commit:
-   - formato: `type(scope): descripcion breve`
-   - tipos recomendados: `docs`, `agent`, `spec`, `sdd`, `test`, `workflow`, `refactor`, `fix`, `chore`, `skill`
-7. Confirmacion humana antes de commit (obligatoria).
-8. Crear commit:
-   - `git commit -m "type(scope): descripcion breve"`
-9. Verificar rama/remoto y confirmar antes de push (obligatorio):
-   - `git branch --show-current`
-   - `git remote -v`
-10. Subir cambios:
-   - `git push`
-   - o `git push -u origin nombre-rama` si la rama es nueva.
-11. Verificar estado final:
-   - `git status --short`
+2. Si la rama actual no es `main`, detenerse e informar.
 
-## Reglas para `main`
+3. Revisar cambios pendientes:
 
-Commit/push directo a `main` solo si:
+   ```bash
+   git status --short
+   ```
 
-- repositorio personal o experimental;
-- cambio pequeno;
-- cambio principalmente documental;
-- bajo riesgo operativo;
-- confirmacion explicita del usuario.
+4. Si no hay cambios, detenerse e informar.
 
-Si el cambio es amplio o estructural, recomendar rama + PR.
+5. Comprobar que no hay archivos sensibles o temporales evidentes.
 
-## Cuando recomendar rama
+   Bloquear si aparecen patrones como:
 
-Recomendar rama si:
+   - `.env`
+   - `.env.*`
+   - `*.key`
+   - `*.pem`
+   - `credentials.*`
+   - `secrets.*`
+   - `__pycache__/`
+   - `.ipynb_checkpoints/`
+   - `.DS_Store`
+   - `node_modules/`
+   - `.venv/`
+   - `dist/`
+   - `build/`
+   - `*.log`
 
-- se modifican varios artefactos importantes;
-- se anade una nueva capacidad;
-- se modifica `.github/`;
-- se cambia estructura del repo;
-- se actualizan gates o workflows;
-- hay riesgo de contradiccion documental;
-- conviene revision por PR.
+6. Añadir cambios:
 
-Formato sugerido:
+   ```bash
+   git add .
+   ```
 
-- `tipo/descripcion-corta`
+7. Crear commit.
+
+   Mensaje por defecto:
+
+   ```text
+   chore(sync): update repository
+   ```
+
+   Si el usuario proporciona un mensaje, usar el mensaje del usuario.
+
+8. Subir cambios a GitHub:
+
+   ```bash
+   git push origin main
+   ```
+
+9. Verificar estado final:
+
+   ```bash
+   git status --short
+   ```
+
+## Comandos base
+
+```bash
+git branch --show-current
+git status --short
+git add .
+git commit -m "chore(sync): update repository"
+git push origin main
+git status --short
+```
 
 ## Criterios de bloqueo
 
 Detener el flujo si:
 
-- aparecen secretos o credenciales;
-- hay archivos temporales no deseados;
-- hay eliminaciones inesperadas;
-- hay demasiados archivos modificados sin explicacion;
-- se mezclan cambios no relacionados;
-- rama local/remota desincronizada con conflictos;
-- no hay confirmacion explicita para commit o push;
-- el cambio contradice la fase SDD actual.
-
-## Regla SDD y gobernanza
-
-Esta skill es operativa y transversal.
-
-No sustituye specs ni contracts transversales.
-
-No habilita Development por defecto.
-
-Debe respetar que el repositorio sigue en `Specification / Structure` salvo autorizacion explicita.
+- la rama actual no es `main`;
+- no hay cambios pendientes;
+- aparecen archivos sensibles;
+- aparecen archivos temporales evidentes;
+- el commit falla;
+- el push falla.
 
 ## Definition of Done
 
-La sincronizacion se considera completa cuando:
+La sincronización se considera completa cuando:
 
-- los cambios fueron revisados;
-- los archivos incluidos son intencionales;
-- no se incluyeron secretos ni temporales;
-- el commit tiene mensaje claro;
-- commit y push se ejecutaron con confirmacion humana;
-- el remoto contiene los cambios esperados;
-- el estado final queda limpio o explicado.
+- los cambios locales fueron añadidos;
+- se creó un commit;
+- el commit fue enviado a `origin/main`;
+- `git status --short` queda limpio o explicado.
 
 ## Complementos
 
-- Esta skill no tiene complementos definidos actualmente.
+Esta skill no tiene complementos definidos actualmente.
