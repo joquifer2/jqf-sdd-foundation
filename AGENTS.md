@@ -46,6 +46,14 @@ Responsables de transformar contexto y necesidades en artefactos estructurados.
 
 ---
 
+### Agentes de descubrimiento
+
+Responsables de recuperar contexto minimo en proyectos existentes para habilitar evolucion controlada bajo SDD.
+
+* Legacy to SDD Agent
+
+---
+
 ### Agentes de planificación
 
 Responsables de transformar definiciones en trabajo estructurado.
@@ -91,6 +99,7 @@ Responsables de mantener trazabilidad entre documentación y repositorio.
 
 | Agente                | Responsabilidad principal                                        |
 | --------------------- | ---------------------------------------------------------------- |
+| Legacy to SDD Agent   | Recuperar contexto minimo As-Is para incorporar proyectos existentes al ciclo SDD |
 | Specification Agent   | Crear y revisar specifications                                   |
 | Architect Agent       | Diseñar estructura documental y arquitectura conceptual          |
 | Tasks Planner Agent   | Transformar specifications en tareas trazables                   |
@@ -125,6 +134,24 @@ Implementation Agent
 La secuencia puede variar según el proyecto.
 
 El objetivo es garantizar que la implementación nunca preceda a la definición.
+
+### Flujo para proyectos existentes
+
+```text
+Proyecto existente
+        ↓
+Legacy to SDD Agent
+        ↓
+Reviewer Agent
+        ↓
+Specification Agent
+        ↓
+Architect Agent
+        ↓
+Tasks Planner Agent
+```
+
+Este flujo se aplica cuando el proyecto ya existe y requiere reconstruccion minima de contexto antes de continuar bajo SDD.
 
 ---
 

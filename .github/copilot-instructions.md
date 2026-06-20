@@ -9,12 +9,18 @@ No contiene lógica de negocio ni proyectos concretos.
 ## Reglas obligatorias
 
 - No añadir referencias a clientes o proyectos específicos.
-- No introducir runtime, frameworks o tools reales.
+- No introducir runtime, frameworks o tools reales como implementacion ejecutable dentro de la Foundation.
 - No crear agentes operativos concretos.
 - Mantener los artefactos reutilizables.
 - Respetar `sdd.instructions.md`.
 - Respetar la precedencia documental.
 - Priorizar plantillas, agentes metodológicos y governance.
+
+Excepcion metodologica controlada:
+
+- Se permite mencionar tecnologias, servicios cloud o herramientas reales exclusivamente en artefactos de discovery metodologico (agentes, skills, complementos o plantillas) cuando sea necesario para reconstruir contexto As-Is de proyectos existentes.
+- Estas referencias deben mantenerse documentales, no ejecutables y orientadas a trazabilidad.
+- No deben incluir despliegues, implementacion tecnica, automatizaciones productivas ni configuraciones operativas con secretos.
 
 ## Cuando trabajes en este repo
 

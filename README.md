@@ -66,6 +66,7 @@ JQF SDD Foundation proporciona una estructura común para evitar estos problemas
 
 ### Agentes metodológicos
 
+* Legacy to SDD Agent
 * Specification Agent
 * Architect Agent
 * Tasks Planner Agent
@@ -79,6 +80,7 @@ JQF SDD Foundation proporciona una estructura común para evitar estos problemas
 
 * Skills metodológicas
 * Skills de soporte operativo
+* Skills de discovery metodológico para proyectos existentes
 * Procedimientos reutilizables
 
 ### Plantillas

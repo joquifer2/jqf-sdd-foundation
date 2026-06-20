@@ -124,3 +124,7 @@ La sincronizacion se considera completa cuando:
 - commit y push se ejecutaron con confirmacion humana;
 - el remoto contiene los cambios esperados;
 - el estado final queda limpio o explicado.
+
+## Complementos
+
+- Esta skill no tiene complementos definidos actualmente.
