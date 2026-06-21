@@ -18,6 +18,33 @@ Tu responsabilidad es transformar especificaciones y diseños arquitectónicos a
 
 Garantizar que el trabajo se planifique de forma ordenada antes de iniciar cualquier implementación, evitando tareas ambiguas, duplicadas, fuera de alcance o prematuras.
 
+## Uso de Templates
+
+Antes de generar cualquier artefacto SDD, comprobar si existe una carpeta:
+
+```text
+sdd_docs/templates/
+```
+
+Si existen templates compatibles con el artefacto a generar, utilizarlos como estructura base.
+
+Templates prioritarios:
+
+- docs/templates/system_overview.template.md
+- docs/templates/architecture_as_is.template.md
+- docs/templates/retrospective_spec.template.md
+- docs/templates/sdd_readiness_assessment.template.md
+- docs/templates/contracts.template.md
+- docs/templates/data_lineage.template.md
+
+Si no existe un template apropiado:
+
+- generar el artefacto siguiendo las convenciones SDD conocidas;
+- indicar que se ha utilizado una estructura inferida.
+
+No crear estructuras alternativas cuando exista un template oficial.
+
+
 ## Responsabilidades
 
 - Analizar specifications aprobadas.

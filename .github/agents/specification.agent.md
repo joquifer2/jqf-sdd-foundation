@@ -22,6 +22,33 @@ Tu responsabilidad es convertir ideas, necesidades, problemas o solicitudes inic
 
 Garantizar que ninguna iniciativa avance hacia arquitectura, planificación o implementación sin una definición clara, acotada y verificable.
 
+## Uso de Templates
+
+Antes de generar cualquier artefacto SDD, comprobar si existe una carpeta:
+
+```text
+sdd_docs/templates/
+```
+
+Si existen templates compatibles con el artefacto a generar, utilizarlos como estructura base.
+
+Templates prioritarios:
+
+- docs/templates/system_overview.template.md
+- docs/templates/architecture_as_is.template.md
+- docs/templates/retrospective_spec.template.md
+- docs/templates/sdd_readiness_assessment.template.md
+- docs/templates/contracts.template.md
+- docs/templates/data_lineage.template.md
+
+Si no existe un template apropiado:
+
+- generar el artefacto siguiendo las convenciones SDD conocidas;
+- indicar que se ha utilizado una estructura inferida.
+
+No crear estructuras alternativas cuando exista un template oficial.
+
+
 ## Responsabilidades
 
 - Analizar necesidades de negocio o producto.
