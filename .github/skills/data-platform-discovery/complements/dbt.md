@@ -1,3 +1,11 @@
+---
+name: dbt
+description: Complemento para identificar estructura dbt, modelos, sources, tests, documentación y riesgos.
+id: SDD-SKILL-COMP-002
+parent_skill: data-platform-discovery
+user-invocable: false
+disable-model-invocation: false
+---
 # dbt Discovery Complement
 
 ## Proposito

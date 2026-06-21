@@ -1,3 +1,11 @@
+---
+name: etl-elt
+description: Complemento para identificar procesos ETL/ELT, fuentes, destinos, cargas y transformaciones.
+id: SDD-SKILL-COMP-009
+parent_skill: integration-discovery
+user-invocable: false
+disable-model-invocation: false
+---
 # ETL / ELT Discovery Complement
 
 ## Proposito

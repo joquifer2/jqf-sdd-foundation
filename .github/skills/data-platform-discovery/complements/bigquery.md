@@ -1,3 +1,11 @@
+---
+name: bigquery
+description: Complemento para identificar proyectos, datasets, tablas, vistas, consultas y riesgos relacionados con BigQuery.
+id: SDD-SKILL-COMP-001
+parent_skill: data-platform-discovery
+user-invocable: false
+disable-model-invocation: false
+---
 # BigQuery Discovery Complement
 
 ## Proposito

@@ -1,3 +1,11 @@
+---
+name: integration-discovery
+description: Esta skill ayuda a identificar integraciones externas, APIs, webhooks, contratos y dependencias de intercambio.
+id: SDD-SKILL-004
+user-invocable: true
+disable-model-invocation: false
+---
+
 # Integration Discovery Skill
 
 ## Proposito
@@ -210,9 +218,9 @@ Los complementos deben usarse solo cuando exista evidencia suficiente o cuando e
 
 Esta skill puede apoyarse en:
 
-- `complements/marketing-apis.md`
-- `complements/webhooks.md`
-- `complements/etl-elt.md`
+- `complements/marketing-apis.md` -> identifica integraciones con APIs de marketing, publicidad y activacion.
+- `complements/webhooks.md` -> identifica emisores, receptores, eventos, payloads y validaciones de webhooks.
+- `complements/etl-elt.md` -> identifica pipelines ETL/ELT, fuentes, destinos, cargas y transformaciones.
 
 ## Output recomendado
 

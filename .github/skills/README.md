@@ -1,52 +1,69 @@
 # Skills Index
 
-## Proposito
+## Propósito
 
-Este indice documenta las skills disponibles en el repositorio y la convencion para complementar una skill con modulos especializados.
+Este directorio contiene skills metodológicas reutilizables de `jqf-sdd-foundation`.
 
-## Convencion de estructura
+Una skill define un procedimiento reutilizable. No representa un agente, no implementa runtime y no contiene lógica productiva.
 
-Cada skill debe vivir en su propia carpeta:
+## Convención
 
-` .github/skills/<skill-id>/SKILL.md `
+Cada skill debe incluir:
 
-Si una skill requiere modulos adicionales, usar:
+- frontmatter YAML;
+- propósito;
+- cuándo usarla;
+- flujo operativo;
+- output esperado;
+- Definition of Done;
+- sección `## Complementos` cuando aplique.
 
-` .github/skills/<skill-id>/complements/<complement-name>.md `
+## Skills principales
 
-Dentro de `SKILL.md`, incluir una seccion `## Complementos` con la lista de complementos disponibles.
+| Skill | Tipo | Propósito |
+|---|---|---|
+| `legacy-to-sdd` | Orquestadora | Incorpora proyectos existentes al ciclo SDD reconstruyendo el conocimiento mínimo necesario para continuar su evolución. |
+| `data-platform-discovery` | Discovery | Identifica plataformas de datos, fuentes, transformaciones, lineage, consumidores y riesgos asociados. |
+| `cloud-runtime-discovery` | Discovery | Identifica runtimes cloud, triggers, entradas, salidas, dependencias operativas y riesgos. |
+| `integration-discovery` | Discovery | Identifica integraciones externas, APIs, webhooks, ETL/ELT, contratos y riesgos. |
+| `git-sync-main` | Operativa | Ejecuta commit y push directo a `main` con revisión previa de cambios y confirmación humana. |
 
-Si no hay complementos, declarar explicitamente:
+## Complementos
 
-- Esta skill no tiene complementos definidos actualmente.
+### Data Platform Discovery
 
-## Skills actuales
+| Complemento | Propósito |
+|---|---|
+| `bigquery.md` | Identifica proyectos, datasets, tablas, vistas, queries, scheduled queries, consumers y riesgos BigQuery. |
+| `dbt.md` | Identifica estructura dbt, modelos, sources, tests, documentación, lineage y riesgos. |
+| `lineage.md` | Reconstruye el flujo mínimo del dato desde origen hasta consumo final. |
 
-- git-sync-seguro
-  - skill: .github/skills/git-sync-seguro/SKILL.md
-  - complementos: ninguno
+### Cloud Runtime Discovery
 
-- legacy-to-sdd
-  - skill: .github/skills/legacy-to-sdd/SKILL.md
-  - complementos: ninguno
+| Complemento | Propósito |
+|---|---|
+| `cloud-functions.md` | Identifica Cloud Functions, triggers, entradas, salidas, dependencias y riesgos. |
+| `cloud-run.md` | Identifica servicios/jobs Cloud Run, contenedores, invocaciones, contratos y riesgos. |
+| `scheduler-pubsub.md` | Identifica Scheduler, Pub/Sub, topics, subscriptions, payloads y flujos de activación. |
 
-- data-platform-discovery
-  - skill: .github/skills/data-platform-discovery/SKILL.md
-  - complementos:
-    - .github/skills/data-platform-discovery/complements/bigquery.md
-    - .github/skills/data-platform-discovery/complements/dbt.md
-    - .github/skills/data-platform-discovery/complements/lineage.md
+### Integration Discovery
 
-- cloud-runtime-discovery
-  - skill: .github/skills/cloud-runtime-discovery/SKILL.md
-  - complementos:
-    - .github/skills/cloud-runtime-discovery/complements/cloud-functions.md
-    - .github/skills/cloud-runtime-discovery/complements/cloud-run.md
-    - .github/skills/cloud-runtime-discovery/complements/scheduler-pubsub.md
+| Complemento | Propósito |
+|---|---|
+| `marketing-apis.md` | Identifica integraciones con Meta CAPI, Google Ads API, GA4 MP y otras APIs de marketing. |
+| `webhooks.md` | Identifica webhooks, emisores, receptores, eventos, payloads, validaciones e idempotencia. |
+| `etl-elt.md` | Identifica procesos ETL/ELT, fuentes, destinos, cargas, transformaciones, controles y riesgos. |
 
-- integration-discovery
-  - skill: .github/skills/integration-discovery/SKILL.md
-  - complementos:
-    - .github/skills/integration-discovery/complements/marketing-apis.md
-    - .github/skills/integration-discovery/complements/webhooks.md
-    - .github/skills/integration-discovery/complements/etl-elt.md
+## Regla de reutilización
+
+Las skills orquestadoras pueden utilizar otras skills cuando sea necesario.
+
+Los complementos pertenecen a la skill que los agrupa, pero pueden ser referenciados por otras skills si el caso lo justifica.
+
+## Regla de mantenimiento
+
+Evitar duplicar una skill como complemento y como skill autónoma.
+
+Si una capacidad crece y merece independencia, debe decidirse explícitamente qué versión queda como fuente canónica.
+
+

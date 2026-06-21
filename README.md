@@ -75,12 +75,11 @@ JQF SDD Foundation proporciona una estructura común para evitar estos problemas
 
 ### Skills reutilizables (Actuales)
 
-* git-sync-seguro (sync controlado con GitHub) ✓
+* git-sync-main (sync controlado con GitHub) ✓
 * legacy-to-sdd (descubrimiento de proyectos existentes) ✓
 * cloud-runtime-discovery (discovery metodológico) ✓
 * data-platform-discovery (discovery metodológico) ✓
 * integration-discovery (discovery metodológico) ✓
-* marketing-apis-discovery (discovery metodológico) ✓
 
 ### Plantillas (Actuales)
 

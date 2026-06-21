@@ -1,3 +1,11 @@
+---
+name: lineage
+description: Complemento para reconstruir el flujo mínimo del dato desde origen hasta consumo final.
+id: SDD-SKILL-COMP-003
+parent_skill: data-platform-discovery
+user-invocable: false
+disable-model-invocation: false
+---
 # Lineage Discovery Complement
 
 ## Proposito

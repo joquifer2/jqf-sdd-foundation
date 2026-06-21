@@ -1,3 +1,11 @@
+---
+name: webhooks
+description: Complemento para identificar emisores, receptores, eventos, payloads y validaciones de webhooks.
+id: SDD-SKILL-COMP-008
+parent_skill: integration-discovery
+user-invocable: false
+disable-model-invocation: false
+---
 # Webhooks Discovery Complement
 
 ## Proposito

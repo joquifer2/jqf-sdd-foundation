@@ -1,3 +1,11 @@
+---
+name: cloud-functions
+description: Complemento para identificar Cloud Functions, entrypoints, triggers, entradas, salidas y dependencias.
+id: SDD-SKILL-COMP-004
+parent_skill: cloud-runtime-discovery
+user-invocable: false
+disable-model-invocation: false
+---
 # Cloud Functions Discovery Complement
 
 ## Proposito

@@ -1,3 +1,11 @@
+---
+name: marketing-apis
+description: Complemento para identificar integraciones con APIs de marketing, publicidad y analítica.
+id: SDD-SKILL-COMP-007
+parent_skill: integration-discovery
+user-invocable: false
+disable-model-invocation: false
+---
 # Marketing APIs Discovery Complement
 
 ## Proposito

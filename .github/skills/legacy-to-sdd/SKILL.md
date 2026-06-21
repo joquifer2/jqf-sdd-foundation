@@ -1,123 +1,193 @@
-# Skill - Legacy to SDD Agent
+---
+name: legacy-to-sdd
+description: Esta skill ayuda a transformar proyectos Brownfield o Legacy en proyectos preparados para trabajar bajo metodología SDD.
+id: SDD-SKILL-001
+user-invocable: true
+disable-model-invocation: false
+---
 
-## type: sdd
+# Legacy to SDD
 
-category: methodological
+## Propósito
 
-id: SDD-AGENT-008
+Incorporar proyectos existentes al ciclo SDD mediante la reconstrucción del conocimiento mínimo necesario para permitir su evolución controlada.
 
-name: Legacy to SDD Agent
+Esta skill ayuda a transformar proyectos Brownfield o Legacy en proyectos preparados para trabajar bajo metodología SDD.
 
-## Descripcion
+No implementa cambios.
 
-Incorpora proyectos existentes al ciclo SDD mediante la reconstruccion del conocimiento minimo necesario para permitir su evolucion controlada.
+No diseña arquitectura futura.
+
+No crea tareas de desarrollo.
+
+No aprueba el paso a Development.
+
+## Cuándo usar esta skill
+
+Usar cuando:
+
+- existe un proyecto ya desarrollado;
+- no se siguió SDD desde el inicio;
+- la documentación es incompleta o inexistente;
+- se necesita evolucionar el sistema de forma segura;
+- se requiere reconstruir conocimiento antes de crear nuevas specifications.
 
 ## Objetivo
 
-Analizar un proyecto existente y determinar que informacion debe recuperarse para que pueda continuar evolucionando bajo la metodologia SDD.
+Determinar qué información debe recuperarse para permitir que el proyecto continúe evolucionando bajo SDD.
 
-## Responsabilidades
+## Clasificación inicial
 
-- Clasificar el proyecto como Greenfield, Brownfield o Legacy.
+Clasificar el proyecto como:
 
-- Analizar el estado actual del proyecto.
+### Greenfield
 
-- Identificar artefactos SDD existentes.
+Proyecto nuevo.
 
-- Identificar artefactos SDD faltantes.
+No requiere esta skill.
 
-- Reconstruir el contexto minimo necesario.
+### Brownfield
 
-- Generar documentacion As-Is minima cuando sea necesaria.
+Proyecto parcialmente documentado.
 
-- Detectar riesgos de evolucion.
+Requiere recuperación parcial de conocimiento.
 
-- Recomendar el siguiente agente del flujo SDD.
+### Legacy
 
-## Artefactos que puede generar
+Proyecto existente con conocimiento insuficiente o no estructurado.
+
+Requiere discovery más amplio.
+
+## Flujo operativo
+
+### Paso 1 - Evaluar estado actual
+
+Identificar:
+
+- documentación existente;
+- artefactos SDD existentes;
+- arquitectura visible;
+- componentes principales;
+- dependencias relevantes;
+- riesgos conocidos.
+
+### Paso 2 - Seleccionar skills necesarias
+
+Aplicar únicamente las skills relevantes según la evidencia encontrada.
+
+### Skills disponibles
+
+- data-platform-discovery -> identifica plataformas de datos, datasets, tablas, modelos y lineage.
+- cloud-runtime-discovery -> identifica runtimes cloud, triggers, entradas, salidas y dependencias operativas.
+- integration-discovery -> identifica integraciones externas, APIs, webhooks, contratos y dependencias de intercambio.
+
+No ejecutar skills innecesarias.
+
+## Paso 3 - Reconstruir artefactos As-Is
+
+Generar o actualizar cuando sea necesario:
 
 - system_overview.md
-
 - architecture_as_is.md
-
 - retrospective_spec.md
+
+Generar además cuando aporten valor:
+
+- data_lineage.md
+- contracts.md
+
+## Paso 4 - Identificar riesgos
+
+Documentar:
+
+- huecos de conocimiento;
+- dependencias críticas;
+- riesgos de evolución;
+- información no verificable.
+
+Marcar como UNKNOWN cualquier información no demostrable.
+
+## Paso 5 - Evaluar readiness
+
+Generar o actualizar:
 
 - sdd_readiness_assessment.md
 
-Opcionalmente:
+Clasificar el proyecto como:
 
-- contracts.md
+- Ready
+- Partially Ready
+- Not Ready
+
+## Paso 6 - Recomendar siguiente agente
+
+Según el resultado del readiness assessment, recomendar el siguiente agente del flujo SDD.
+
+Ejemplos:
+
+- Reviewer Agent
+- Documentation Agent
+- QA Gate Agent
+- Specification Agent
+- Architect Agent
+- Tasks Planner Agent
+
+## Artefactos generados
+
+Obligatorios cuando sean necesarios para comprender el sistema:
+
+- system_overview.md
+- architecture_as_is.md
+- retrospective_spec.md
+- sdd_readiness_assessment.md
+
+Condicionales:
 
 - data_lineage.md
+- contracts.md
 
-Solo cuando aporten valor real para continuar la evolucion del proyecto.
+## Uso de templates
 
-## No es responsable de
+Usar los templates canónicos cuando existan:
 
-- implementar codigo;
+- docs/templates/system_overview.template.md
+- docs/templates/architecture_as_is.template.md
+- docs/templates/retrospective_spec.template.md
+- docs/templates/sdd_readiness_assessment.template.md
+- docs/templates/data_lineage.template.md
+- docs/templates/contracts.template.md
 
-- disenar arquitectura To-Be;
+## Output esperado
 
-- crear nuevas specifications funcionales;
+El resultado final debe permitir responder:
 
-- crear tareas de desarrollo;
-
-- modificar infraestructura;
-
-- realizar migraciones;
-
-- aprobar el paso a Development.
-
-## Flujo esperado
-
-Proyecto existente
-
-↓
-
-Legacy to SDD Agent
-
-↓
-
-Reviewer Agent
-
-↓
-
-Specification Agent
-
-↓
-
-Architect Agent
-
-↓
-
-Tasks Planner Agent
+- qué existe actualmente;
+- qué artefactos SDD existen;
+- qué artefactos SDD faltan;
+- qué riesgos condicionan la evolución;
+- qué documentación mínima debe completarse;
+- si el proyecto está Ready, Partially Ready o Not Ready;
+- qué agente debe intervenir después.
 
 ## Definition of Done
 
-El proyecto esta preparado para continuar bajo SDD cuando:
+La skill se considera completada cuando:
 
-- existe una descripcion clara del sistema actual;
-
+- existe una descripción clara del sistema actual;
 - existe una arquitectura As-Is suficiente;
-
-- existe una retrospective spec minima;
-
+- existe una retrospective specification mínima;
 - existen riesgos identificados;
-
 - existen huecos documentales identificados;
-
+- existe un sdd_readiness_assessment.md;
+- el proyecto ha sido clasificado como Ready, Partially Ready o Not Ready;
 - se conoce el siguiente paso dentro del flujo SDD.
-
-## Comportamiento esperado
-
-Se conservador.
-
-Prioriza evidencia sobre suposiciones.
-
-Recupera unicamente el conocimiento necesario para permitir la evolucion controlada del proyecto.
-
-Evita documentacion innecesaria y evita convertir el agente en un auditor tecnico generico.
 
 ## Complementos
 
-- Esta skill no tiene complementos definidos actualmente.
+Esta skill no tiene complementos propios.
+
+Puede utilizar las siguientes skills auxiliares según la evidencia encontrada:
+
+- data-platform-discovery
+- cloud-runtime-discovery
+- integration-discovery

@@ -1,3 +1,11 @@
+---
+name: git-sync-main
+description: Esta skill ejecuta commit y push directo a main con revisión previa de cambios y confirmación humana.
+id: SDD-SKILL-005
+user-invocable: true
+disable-model-invocation: false
+---
+
 # Skill - Git Sync Main
 
 ## Propósito

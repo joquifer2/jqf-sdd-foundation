@@ -1,3 +1,11 @@
+---
+name: scheduler-pubsub
+description: Complemento para identificar schedulers, topics, subscriptions, mensajes y flujos de activación.
+id: SDD-SKILL-COMP-006
+parent_skill: cloud-runtime-discovery
+user-invocable: false
+disable-model-invocation: false
+---
 # Scheduler and PubSub Discovery Complement
 
 ## Proposito

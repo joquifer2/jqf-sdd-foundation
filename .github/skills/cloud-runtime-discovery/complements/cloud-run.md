@@ -1,3 +1,11 @@
+---
+name: cloud-run
+description: Complemento para identificar servicios y jobs Cloud Run, contenedores, triggers y configuración operativa.
+id: SDD-SKILL-COMP-005
+parent_skill: cloud-runtime-discovery
+user-invocable: false
+disable-model-invocation: false
+---
 # Cloud Run Discovery Complement
 
 ## Proposito

@@ -1,3 +1,10 @@
+---
+name: cloud-runtime-discovery
+description: Esta skill ayuda a identificar runtimes cloud, triggers, entradas, salidas y dependencias operativas.
+id: SDD-SKILL-003
+user-invocable: true
+disable-model-invocation: false
+---
 # Cloud Runtime Discovery Skill
 
 ## Proposito
@@ -260,9 +267,9 @@ Recomendar `sdd_readiness_assessment.md` cuando:
 
 Esta skill puede apoyarse en complementos especificos:
 
-- .github/skills/cloud-runtime-discovery/complements/cloud-functions.md
-- .github/skills/cloud-runtime-discovery/complements/cloud-run.md
-- .github/skills/cloud-runtime-discovery/complements/scheduler-pubsub.md
+- .github/skills/cloud-runtime-discovery/complements/cloud-functions.md -> identifica funciones Cloud Functions, entrypoints, triggers, entradas, salidas y dependencias.
+- .github/skills/cloud-runtime-discovery/complements/cloud-run.md -> identifica servicios y jobs Cloud Run, contenedores, triggers, entradas, salidas y configuracion operativa.
+- .github/skills/cloud-runtime-discovery/complements/scheduler-pubsub.md -> identifica schedulers, topics, subscriptions, mensajes y el flujo de activacion asociado.
 
 Los complementos deben usarse solo cuando exista evidencia de esas tecnologias o cuando el usuario lo solicite explicitamente.
 

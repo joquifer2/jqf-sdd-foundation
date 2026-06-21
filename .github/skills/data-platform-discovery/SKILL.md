@@ -1,3 +1,10 @@
+---
+name: data-platform-discovery
+description: Esta skill ayuda a identificar plataformas de datos, fuentes, transformaciones, lineage y consumidores.
+id: SDD-SKILL-002
+user-invocable: true
+disable-model-invocation: false
+---
 # Data Platform Discovery Skill
 
 ## Proposito
@@ -223,9 +230,9 @@ Recomendar solo si aportan valor real:
 
 Esta skill puede apoyarse en complementos especificos:
 
-- .github/skills/data-platform-discovery/complements/bigquery.md
-- .github/skills/data-platform-discovery/complements/dbt.md
-- .github/skills/data-platform-discovery/complements/lineage.md
+- .github/skills/data-platform-discovery/complements/bigquery.md -> identifica proyectos, datasets, tablas, vistas, queries, scheduled queries, consumidores y riesgos BigQuery.
+- .github/skills/data-platform-discovery/complements/dbt.md -> identifica estructura dbt, modelos, sources, tests, documentacion, lineage y riesgos.
+- .github/skills/data-platform-discovery/complements/lineage.md -> reconstruye el flujo minimo del dato desde origen hasta consumo final.
 
 Los complementos deben usarse solo cuando el proyecto contenga evidencia de esas tecnologias o cuando el usuario lo solicite explicitamente.
 
