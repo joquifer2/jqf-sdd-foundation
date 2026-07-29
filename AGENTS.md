@@ -35,6 +35,28 @@ Todas las decisiones relevantes permanecen bajo responsabilidad humana.
 
 ---
 
+## Adaptadores para Codex
+
+Los adaptadores que permiten seleccionar estos agentes en Codex se encuentran en:
+
+```text
+.codex/agents/
+```
+
+Las definiciones canónicas permanecen en:
+
+```text
+.github/agents/
+```
+
+Los archivos TOML de Codex no constituyen una segunda fuente de verdad.
+
+Su función es adaptar cada definición canónica para que Codex pueda seleccionarla y aplicar sus instrucciones dentro del SDD Harness.
+
+Si existe conflicto entre un adaptador TOML y la definición canónica del agente, prevalece la definición ubicada en `.github/agents/`.
+
+---
+
 ## Clasificación de agentes
 
 ### Agentes de definición

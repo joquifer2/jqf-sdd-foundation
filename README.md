@@ -186,6 +186,9 @@ Active
 AGENTS.md
 README.md
 
+.codex/
+└── agents/                    # Adaptadores TOML para seleccionar agentes en Codex
+
 .github/
 ├── agents/                    # Agentes metodológicos definidos
 ├── instructions/              # Instrucciones SDD y gobierno

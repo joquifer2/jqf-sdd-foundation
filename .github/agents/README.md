@@ -18,7 +18,7 @@ Los agentes metodológicos gobiernan el proceso SDD. No son agentes operativos d
 | `SDD-AGENT-006` | QA Gate Agent | Evalúa gates SDD y determina si una fase puede avanzar según criterios y evidencias. |
 | `SDD-AGENT-007` | Implementation Agent | Ejecuta cambios únicamente cuando existen specification, arquitectura, tareas y gates suficientes. |
 | `SDD-AGENT-008` | Legacy to SDD Agent | Incorpora proyectos existentes al ciclo SDD mediante discovery mínimo, artefactos As-Is y readiness assessment. |
-| `SDD-AGENT-009` | GitHub Workflow Agent | Gestiona trazabilidad entre documentación, issues, ramas, commits y repositorio. |
+| `SDD-AGENT-009` | GitHub Workflow Agent | Planeado; gestionará trazabilidad entre documentación, issues, ramas, commits y repositorio cuando exista su definición canónica. |
 
 ## Flujo recomendado para proyectos nuevos
 
@@ -63,6 +63,18 @@ Architect Agent
 Tasks Planner Agent
 ↓
 Implementation Agent
+
+## Adaptadores Codex
+
+Los adaptadores TOML para seleccionar agentes en Codex se encuentran en:
+
+```text
+.codex/agents/
+```
+
+Estos adaptadores apuntan a las definiciones canónicas de este directorio y no constituyen una segunda fuente de verdad.
+
+No debe crearse un adaptador para un agente planeado hasta que exista su archivo `.agent.md` canónico.
 
 ## Regla de uso
 
