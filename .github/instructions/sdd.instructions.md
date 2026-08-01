@@ -10,7 +10,7 @@ Estas instrucciones aplican a todo trabajo en repositorios basados en jqf-sdd-fo
 
 Estado vigente:
 
-- SDD -> Specification / Structure.
+- SDD -> Specification / Structure / Documentation Governance.
 
 No estamos en Development.
 
@@ -57,6 +57,29 @@ Solo permitido cuando exista aprobacion explicita y checklist de salida completa
 
 Hasta ese momento, cualquier implementacion queda fuera de alcance.
 
+### 3.4 Consolidation
+
+Permitido:
+
+- clasificar baseline canonico, expediente historico, evidencia, deuda residual y puntos de reentrada;
+- preparar handover formal de cierre;
+- actualizar indices documentales y referencias cuando este autorizado;
+- registrar condiciones, gates y aprobaciones finales.
+
+No permitido:
+
+- autorizar Development;
+- crear runtime, scripts, tools o workflows ejecutables;
+- eliminar evidencia;
+- ocultar deuda residual;
+- modificar artefactos cerrados sin decision humana explicita.
+
+### 3.5 Closed
+
+Estado final de una capacidad cerrada. Debe conservar baseline vigente, expediente historico, deuda residual y puntos de reentrada cuando existan.
+
+`Closed` no significa ausencia de deuda; significa que la deuda aceptada queda documentada y gobernada.
+
 ## 4. Comportamiento esperado durante Specification
 
 - priorizar claridad de spec sobre soluciones tecnicas;
@@ -96,7 +119,7 @@ Estas instrucciones se consideran cumplidas cuando:
 
 - el trabajo producido es documental;
 - respeta el plan aprobado;
-- mantiene estado Specification / Structure;
+- mantiene estado Specification / Structure / Documentation Governance, o una fase posterior autorizada;
 - no introduce implementacion prematura.
 
 ## 8. SDD Modes
@@ -132,6 +155,7 @@ El modo declarado afecta a:
 - intensidad de checks;
 - necesidad y cadencia de gates;
 - consolidacion de evidencia;
+- handover de cierre, cuando aplique;
 - criterios de escalado o reevaluacion;
 - contexto que deben cargar los agentes metodologicos.
 
@@ -308,6 +332,23 @@ Los artefactos creados en esta fase deben permanecer documentales y no ejecutabl
 
 Solo puede iniciarse cuando exista aprobación explícita y se hayan cumplido los criterios de salida de las fases anteriores.
 
+#### Consolidation
+
+Artefactos permitidos:
+
+- Closure Handover
+- Evidence Index
+- Residual Debt Register
+- Re-entry Index o seccion equivalente
+- indices documentales de capacidades
+- decisiones finales de baseline y cierre
+
+Estos artefactos son documentales. No ejecutan cambios tecnicos ni sustituyen aprobacion humana.
+
+#### Closed
+
+Estado de una capacidad cerrada tras consolidacion y aprobacion. El contexto futuro debe cargarse desde el handover y los indices antes de abrir el expediente historico completo.
+
 ---
 
 ### 11.4 Gates
@@ -332,6 +373,13 @@ Un gate debe revisar, como mínimo:
 - ausencia de implementación prematura.
 
 Los gates nunca sustituyen la validación humana.
+
+Gates documentales reservados para cierre de capacidades:
+
+- `Consolidation Readiness Gate`: evalua si una capacidad puede entrar en Consolidation.
+- `Closure Gate`: evalua si una capacidad puede pasar de Consolidation a Closed.
+
+Ambos gates son conceptuales/documentales salvo que una fase futura autorice automatizacion explicita.
 
 ---
 

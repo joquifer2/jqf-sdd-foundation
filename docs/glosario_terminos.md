@@ -119,6 +119,71 @@ Unidad trazable de avance bajo SDD que agrupa alcance, decisiones, tareas, check
 
 Es la unidad normativa general para SDD Modes. `Implementation Wave` queda reservado como etiqueta opcional para incrementos de ejecucion dentro de Development.
 
+
+---
+
+### Baseline canonico
+
+Conjunto minimo de artefactos vigentes que representan el estado aprobado de la Foundation o de una capacidad despues de una consolidacion.
+
+Debe ser suficiente para orientar trabajo futuro sin obligar a cargar todo el expediente historico.
+
+---
+
+### Expediente metodologico cerrado
+
+Conjunto historico de artefactos que conserva como se definio, reviso, valido y cerro una capacidad SDD.
+
+Permanece disponible para auditoria o reentrada, pero no debe confundirse con el baseline canonico vigente.
+
+---
+
+### Evidencia historica
+
+Material trazable que explica por que una decision fue tomada o aceptada sin convertirse necesariamente en baseline vigente.
+
+Puede incluir gates, revisiones, validaciones, tareas, decisiones, commits o fuentes discovery-only claramente etiquetadas.
+
+---
+
+### Artefacto sustituido
+
+Artefacto reemplazado por una fuente posterior o por un baseline consolidado.
+
+Debe conservar referencia a la fuente vigente que lo sustituye y no debe usarse como baseline salvo decision posterior explicita.
+
+---
+
+### Deuda residual
+
+Pendiente tecnico, metodologico, empirico, documental o de gobernanza aceptado explicitamente al cierre.
+
+Debe mantener estado, impacto, owner, evidencia requerida y punto de reentrada.
+
+---
+
+### Punto de reentrada
+
+Condicion o ruta formal para reabrir una deuda, decision diferida o capacidad cerrada sin mezclar contextos ni invalidar el cierre anterior.
+
+Debe indicar agente recomendado, evidencia minima y fase SDD esperada.
+
+---
+
+### Handover formal de cierre
+
+Resumen documental que permite comprender el estado final de una capacidad cerrada sin cargar todo el expediente historico por defecto.
+
+Debe incluir estado final, baseline vigente, expediente historico, decisiones, gates, deuda residual, puntos de reentrada y autorizaciones no concedidas.
+
+---
+
+### Producto operativo
+
+Resultado ejecutable, productivo o funcional que pertenece a Development, Validation operativa, Active, Operational Harness o a un repositorio derivado.
+
+No forma parte de la consolidacion documental por si mismo.
+
 ---
 
 ### Definition of Done
@@ -449,6 +514,54 @@ Solo puede iniciarse tras aprobación explícita.
 ### Validation
 
 Fase destinada a comprobar que la implementación cumple los requisitos definidos.
+
+---
+
+### Consolidation
+
+Fase documental posterior a Validation y anterior a Closed.
+
+Clasifica baseline canonico, expediente metodologico cerrado, evidencia historica, artefactos sustituidos, deuda residual y puntos de reentrada.
+
+No autoriza implementacion ni Development por si misma.
+
+---
+
+### Closed
+
+Estado final de una capacidad cerrada.
+
+Indica que el alcance actual esta formalmente cerrado, con baseline, evidencia, deuda residual y reentradas documentadas cuando existan.
+
+---
+
+### On Hold
+
+Estado lateral de una capacidad pausada temporalmente.
+
+Debe conservar motivo, fecha, owner y condicion de reactivacion.
+
+---
+
+### Archived
+
+Estado de una capacidad conservada principalmente como historico, sin intencion activa de reentrada.
+
+---
+
+### Superseded
+
+Estado de una capacidad o artefacto sustituido por una decision o capacidad posterior.
+
+Debe apuntar a la fuente vigente que lo reemplaza.
+
+---
+
+### Cancelled
+
+Estado de una capacidad detenida sin cierre positivo.
+
+Debe conservar razon, impacto y artefactos que no deben utilizarse como baseline.
 
 ---
 

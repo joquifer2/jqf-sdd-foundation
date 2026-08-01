@@ -62,6 +62,8 @@ JQF SDD Foundation proporciona una estructura común para evitar estos problemas
 * Context References (framework definido, en evolución)
 * Trazabilidad de fuentes de contexto ✓
 * SDD Modes (gobierno proporcional Minimal / Lite / Full) ✓
+* Capability dossiers e indices de capacidades ✓
+* Consolidation / Closed como estados documentales definidos ✓
 
 ### Agentes metodológicos (Actuales)
 
@@ -73,6 +75,7 @@ JQF SDD Foundation proporciona una estructura común para evitar estos problemas
 * Documentation Agent ✓
 * QA Gate Agent ✓
 * Implementation Agent ✓
+* GitHub Workflow Agent ✓
 
 ### Skills reutilizables (Actuales)
 
@@ -97,6 +100,9 @@ JQF SDD Foundation proporciona una estructura común para evitar estos problemas
 * Legacy Procedure Template ✓
 * Retrospective Spec Template ✓
 * AGENTS Template ✓
+* Closure Handover Template ✓
+* Evidence Index Template ✓
+* Residual Debt Register Template ✓
 
 ### Documentación (Actual)
 
@@ -134,6 +140,22 @@ Capacidad metodologica que permite declarar una intensidad de gobierno SDD propo
 Los modos oficiales son `SDD Minimal`, `SDD Lite` y `SDD Full`.
 
 La declaracion canonica inicial del modo vive en el Project Brief. Las reglas completas se mantienen en la specification e instrucciones SDD vigentes, no en este README.
+
+### Capability Dossier
+
+Expediente documental de una capacidad SDD. Agrupa Project Brief, Context References, Specification, Architecture, Tasks, readiness, gates y documentacion auxiliar de una capacidad concreta.
+
+Los indices `docs/capabilities/index.md` y `specs/capabilities/index.md` ayudan a localizar capacidades y artefactos, pero no sustituyen las specifications, gates ni dossiers.
+
+### Consolidation
+
+Fase documental posterior a Validation que clasifica baseline canonico, expediente historico, evidencia, deuda residual y puntos de reentrada antes del cierre.
+
+No autoriza Development, runtime, scripts, workflows ejecutables ni reorganizacion fisica por si misma.
+
+### Closed
+
+Estado final de una capacidad cerrada. Una capacidad cerrada puede conservar deuda residual si esta documentada con impacto, owner y punto de reentrada.
 
 ### Project Brief
 
@@ -176,7 +198,7 @@ Project Brief
 ↓
 Specification
 ↓
-Structure
+Architecture / Structure
 ↓
 Tasks
 ↓
@@ -184,7 +206,9 @@ Development
 ↓
 Validation
 ↓
-Active
+Consolidation
+↓
+Closed / Active, segun aplique
 ```
 
 ---
@@ -206,10 +230,12 @@ README.md
 └── skills/                    # Skills metodológicas y de discovery
 
 docs/
+├── capabilities/              # Expedientes documentales por capacidad
 ├── glosario_terminos.md       # Glosario SDD
 └── templates/                 # Plantillas reutilizables
 
 specs/
+├── capabilities/              # Specs y architectures por capacidad
 ├── templates/                 # Plantillas de specifications
 └── .gitkeep
 
@@ -221,6 +247,8 @@ tools/
 workflows/
 memory/
 gates/
+├── consolidation_readiness_gate.md
+└── closure_gate.md
 ```
 
 ---
@@ -325,7 +353,6 @@ El estado vigente del repositorio está en fase **Specification / Structure**. N
 
 * Ejecución operativa de agentes (pertenece a proyectos derivados)
 * Operational Harness (implementación en proyectos derivados)
-* GitHub Workflow Agent (planeado, no implementado aún)
 * Gates totalmente automatizados (están como estructura documental)
 * Workflows ejecutables en producción
 
@@ -342,8 +369,9 @@ Un SDD Harness es un sistema de gobierno diseñado para controlar cómo se dise�
 Esta foundation proporciona:
 
 * Estados y fases definidas (Specification, Structure, Development)
+* Estados documentales de cierre (Consolidation, Closed)
 * Reglas de precedencia documental
-* Agentes metodológicos (8 agentes operativos)
+* Agentes metodológicos (9 agentes metodologicos)
 * Estructura de gates (framework definido)
 * Framework de evaluaciones
 * Artefactos base y plantillas
