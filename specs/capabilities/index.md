@@ -18,6 +18,8 @@ Es solo un catalogo. No redefine alcance, requisitos, arquitectura, readiness ni
 | SDD Project Consolidation and Closure | `specs/capabilities/project-consolidation-and-closure/arch-001-sdd-project-consolidation-and-closure.md` | Architecture | Closed baseline | Arquitectura documental para expedientes de capacidad, handover, evidencia, deuda, reentrada e interfaz futura de agente. |
 | Foundation Derivation and Project Initialization | `specs/capabilities/foundation-derivation-and-project-initialization/spec-001-foundation-derivation-and-project-initialization.md` | Specification | Closed baseline | Define el proceso oficial conceptual para derivar repositorios desde la Foundation e inicializar proyectos SDD limpios. |
 | Foundation Derivation and Project Initialization | `specs/capabilities/foundation-derivation-and-project-initialization/arch-001-foundation-derivation-and-project-initialization.md` | Architecture | Closed baseline | Define arquitectura documental conceptual, componentes, interfaces, alternativas y decisiones de derivacion. |
+| Consolidation Agent | `specs/capabilities/consolidation-agent/spec-001-consolidation-agent.md` | Specification | Specification | Define el comportamiento metodologico esperado del futuro Consolidation Agent sin implementarlo. |
+| Consolidation Agent | `specs/capabilities/consolidation-agent/arch-001-consolidation-agent.md` | Architecture | Architecture gate passed | Define arquitectura documental conceptual del futuro Consolidation Agent sin crearlo. |
 
 ---
 
