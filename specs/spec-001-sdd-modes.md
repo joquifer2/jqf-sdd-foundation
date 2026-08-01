@@ -716,15 +716,15 @@ La specification declara que la validacion empirica no puede considerarse comple
 | Artifact | Status | Notes |
 |------------|------------|------------|
 | Project Brief | Consistente | La specification deriva del alcance y restricciones ya definidos. |
-| README | Requiere actualizacion futura | Debera explicar los modos a alto nivel cuando la capacidad sea aprobada. |
+| README | Current | Explicacion de alto nivel vigente; no es fuente normativa completa. |
 | Context References | Consistente | Professional OS esta verificado como discovery-only; el documento conceptual permanece PENDING y VAL-001 queda como deuda empirica futura no bloqueante. |
 | Specifications relacionadas | No aplica | No existen otras specifications activas en `specs/`. |
-| Contracts | No aplica | No se ha determinado aun si se requiere contract transversal. |
-| Gates | Requiere evaluacion futura | SDD Modes afectara criterios de gates/checks, pero no se crean gates en esta fase. |
-| Templates | Requiere evaluacion futura | Puede requerir adaptar templates existentes; no se crean templates en esta fase. |
-| Agentes metodologicos | Requiere actualizacion futura | Los agentes deberan adaptar su intervencion al modo declarado sin duplicarse. |
-| Skills | Requiere evaluacion futura | Puede requerir instrucciones o skills metodologicas, sin decision aun. |
-| Glosario | Requiere actualizacion futura | Debera incorporar terminologia aprobada cuando se resuelvan nombres normativos. |
+| Contracts | No aplica | No se requiere contract transversal para el cierre metodologico de esta capacidad. |
+| Gates | Cerrado con condiciones | Los criterios de checks/gates quedan definidos normativamente; no se crean gates adicionales en esta fase. |
+| Templates | Current | Las plantillas vigentes forman parte del baseline final y no requieren cambios adicionales para este cierre. |
+| Agentes metodologicos | Current | Los agentes y adaptadores vigentes consumen el modo declarado sin duplicarse por modo. |
+| Skills | Fuera de alcance | No se requieren skills nuevas para cerrar SDD Modes como capacidad metodologica. |
+| Glosario | Current | Terminologia aprobada incorporada al baseline final. |
 
 ---
 
