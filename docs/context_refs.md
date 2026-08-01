@@ -17,7 +17,7 @@ proyecto:
   nombre: JQF SDD Foundation - SDD Modes
   id_proyecto: sdd-modes
   tipo_proyecto: foundation-methodology-improvement
-  estado: Specification / Structure
+  estado: Completed with conditions - no Development
   fecha_creacion: 2026-07-29
   responsable: Jordi Quiroga
 
@@ -86,7 +86,7 @@ Si durante fases posteriores se usan proyectos derivados como casos de validacio
 
 | Proyecto | Relación con este proyecto | Estado | Fuente |
 | --- | --- | --- | --- |
-| VAL-001 - SDD Minimal | Experimento o utilidad interna de bajo riesgo | PENDING | No se ha identificado un repositorio concreto verificable que cumpla claramente bajo riesgo, ausencia de datos sensibles, ausencia de produccion y alta reversibilidad. |
+| VAL-001 - SDD Minimal | Experimento o utilidad interna de bajo riesgo | PENDING - non-blocking empirical debt | No se ha identificado un repositorio concreto verificable que cumpla claramente bajo riesgo, ausencia de datos sensibles, ausencia de produccion y alta reversibilidad. Por decision humana posterior a T-027, no bloquea el cierre metodologico de SDD Modes ni debilita controles de Minimal. |
 | VAL-002 - SDD Lite | Candidato retrospectivo para contrastar si un MVP o primera version con exposicion limitada habria encajado en `SDD Lite` | Formal status: `Undeclared`; validation candidate: verified-local-git | `joquifer_system_agents`; remoto `https://github.com/joquifer2/joquifer_system_agents.git`; rama local `main`; README lo describe como MVP Python manual para analisis modular BigQuery con controles; no declara `SDD Mode` por ser anterior a SDD Modes. |
 | VAL-003 - SDD Full | Candidato retrospectivo para contrastar si un producto con integraciones criticas habria requerido `SDD Full` | Formal status: `Undeclared`; validation candidate: verified-local-git-and-notion | `bigquery_mcp_server`; remoto `https://github.com/joquifer2/bigquery-mcp-server.git`; rama local `main`; Professional OS `https://app.notion.com/39c2fcf6211d8098a726e663dace976b`; README declara producto estable, MCP, BigQuery, allowlist, dry run, cuotas, auditoria y validacion real; no declara `SDD Mode` por ser anterior a SDD Modes. |
 | VAL-003 - SDD Full | Candidato retrospectivo para contrastar si un producto derivado con cliente, fuentes externas, gates y Development limitado habria requerido `SDD Full` | Formal status: `Undeclared`; validation candidate: verified-notion-github | `neovaultech-system`; repositorio canonico `https://github.com/joquifer2/neovaultech-system`; Professional OS `https://app.notion.com/p/3a82fcf6211d81bc9704fa9c233ef2b2`; ficha verificada indica origen en `jqf-sdd-foundation`, SPEC-001, baseline, plan y Development Readiness Gate publicados; no se verifica declaracion `SDD Mode` porque el proyecto es anterior a SDD Modes. |
@@ -119,8 +119,48 @@ Si durante fases posteriores se usan proyectos derivados como casos de validacio
 | `docs/templates/project_brief.template.md` | Template | Estructura obligatoria utilizada para `docs/project_brief.md` | Verificado en repositorio |
 | `docs/templates/context_refs.template.md` | Template | Estructura obligatoria utilizada para este documento | Verificado en repositorio |
 | `docs/glosario_terminos.md` | Glosario | Fuente de terminologia SDD y definiciones comunes | Verificado en repositorio |
-| `docs/sdd_readiness_assessment.md` | Readiness package | Paquete documental de readiness para T-021; no autoriza Development | Verificado en repositorio |
+| `docs/sdd_readiness_assessment.md` | Readiness and closure evidence | Evidencia de readiness, QA y cierre metodologico; no autoriza Development | Verificado en repositorio |
 
+---
+
+
+## 6.1 Baseline Canonico Vigente
+
+| Artefacto | Estado | Funcion |
+| --- | --- | --- |
+| `docs/project_brief.md` | Completed | Contexto inicial canonico y declaracion del modo `SDD Full` usado para esta mejora. |
+| `specs/spec-001-sdd-modes.md` | Final | Fuente normativa principal de SDD Modes. |
+| `specs/spec-001-sdd-modes.architecture.md` | Final | Arquitectura conceptual y documental aprobada. |
+| `.github/instructions/sdd.instructions.md` | Current | Reglas operativas vigentes del SDD Harness para modos. |
+| `.github/agents/*.agent.md` | Current | Definiciones canonicas de agentes metodologicos. |
+| `.codex/agents/` | Current | Adaptadores Codex; no son segunda fuente de verdad. |
+| `docs/templates/` y `specs/templates/` | Current | Plantillas vigentes afectadas por SDD Modes. |
+| `README.md` | Current | Resumen de alto nivel, no fuente normativa completa. |
+| `docs/glosario_terminos.md` | Current | Terminologia aprobada. |
+| `docs/tasks.md` | Final | Registro cerrado de tareas y decisiones. |
+| `docs/sdd_readiness_assessment.md` | Completed with conditions | Evidencia de cierre metodologico sin Development. |
+
+## 6.2 Fuentes Discovery-Only
+
+| Fuente | Estado | Uso permitido |
+| --- | --- | --- |
+| Nota de Professional OS `[SDD] - SDD Modes` | VERIFIED - discovery-only | Contexto de origen no normativo; remite los artefactos oficiales al repositorio. |
+| Documento conceptual consensuado sobre SDD Modes | PENDING - discovery-only | No normativo hasta verificar URI y version canonica. |
+
+## 6.3 Evidencia Historica
+
+| Evidencia | Estado | Nota |
+| --- | --- | --- |
+| T-001 a T-027 en `docs/tasks.md` | Closed | Historial de ejecucion y decisiones de la iniciativa. |
+| QA Gate Decision T-021 en `docs/sdd_readiness_assessment.md` | Historical gate evidence | Conservada como evidencia de readiness previa al cierre final. |
+| Validacion empirica VAL-002/003/004 | Closed with conditions | Candidatos retrospectivos verificados, formalmente `Undeclared`. |
+
+## 6.4 Pendientes Futuros y Punto de Reentrada
+
+| Pendiente | Estado | Reentrada valida |
+| --- | --- | --- |
+| VAL-001 - repositorio Minimal verificable | PENDING - non-blocking empirical debt | Documentation Agent registra fuente verificable en `docs/context_refs.md`; QA Gate Agent valida si cierra la deuda empirica de Minimal; Specification Agent solo interviene si la evidencia exige cambio normativo. |
+| Documento conceptual consensuado | PENDING - discovery-only | Documentation Agent verifica URI/version antes de usarlo como fuente distinta de descubrimiento. |
 ---
 
 # 7. Fuentes Técnicas Relacionadas
@@ -288,7 +328,7 @@ Cuando exista conflicto entre fuentes, aplicar este orden:
 | --- | --- | --- | --- | --- |
 | Nota de Professional OS `[SDD] - SDD Modes` | URI y estado verificados en Notion/Professional OS; creada el 2026-07-05T18:14:52.857Z y estado `Procesado` | Fuente de descubrimiento no normativa; confirma origen y delega artefactos oficiales al repositorio GitHub | Jordi Quiroga | VERIFIED - discovery-only |
 | Documento conceptual consensuado sobre SDD Modes | No hay URI, version ni fecha canonica verificable desde el repositorio tras busqueda local | Puede aportar contexto de descubrimiento no normativo para Specification; no condiciona normativamente hasta verificarse | Jordi Quiroga | PENDING - discovery-only |
-| Repositorio concreto para VAL-001 - SDD Minimal | No se ha identificado un repositorio verificable que cumpla claramente el perfil bajo riesgo/interno/sin datos sensibles/sin produccion | Bloquea cerrar validacion empirica completa de Minimal sobre repositorio real; T-025 puede revisar candidatos registrados para VAL-002, VAL-003 y VAL-004 dejando este gap explicito | Jordi Quiroga | PENDING |
+| Repositorio concreto para VAL-001 - SDD Minimal | No se ha identificado un repositorio verificable que cumpla claramente el perfil bajo riesgo/interno/sin datos sensibles/sin produccion | Bloquea cerrar validacion empirica completa de Minimal sobre repositorio real; no bloquea el cierre metodologico de SDD Modes por decision humana posterior a T-027; debe conservarse como deuda empirica futura | Jordi Quiroga | PENDING - non-blocking empirical debt |
 
 ---
 
@@ -298,11 +338,11 @@ Cuando exista conflicto entre fuentes, aplicar este orden:
 trazabilidad:
   creado_por: Documentation Agent
   fecha_creacion: 2026-07-29
-  ultima_actualizacion: 2026-07-31
+  ultima_actualizacion: 2026-08-01
   actualizado_por: Documentation Agent
-  contexto_validado_por: PENDING
-  fecha_validacion: PENDING
-  version_contexto: t-025-undeclared-retrospective-candidates-2026-07-31
+  contexto_validado_por: QA Gate Agent
+  fecha_validacion: 2026-08-01
+  version_contexto: sdd-modes-final-closure-2026-08-01
 ```
 
 ---

@@ -12,7 +12,7 @@ SDD Modes
 
 ### Status
 
-Draft
+Final
 
 ### Owner
 
@@ -20,7 +20,7 @@ Jordi Quiroga
 
 ### Last Updated
 
-2026-07-31
+2026-08-01
 
 ---
 
@@ -73,7 +73,7 @@ Fuentes externas y empiricas verificadas o pendientes:
 
 - Nota de Professional OS `[SDD] - SDD Modes`: `VERIFIED - discovery-only`; URI verificada en Professional OS / Notion; sin valor normativo porque remite los artefactos oficiales al repositorio GitHub.
 - Documento conceptual consensuado sobre SDD Modes: `PENDING - discovery-only`, sin valor normativo mientras no se verifiquen URI y version.
-- Repositorios concretos para escenarios de validacion: candidatos retrospectivos verificados para VAL-002, VAL-003 y VAL-004; todos mantienen estado formal `Undeclared` por ser anteriores a SDD Modes y no declarar `SDD Mode`. VAL-001 permanece `PENDING` por ausencia de repositorio concreto verificable para SDD Minimal.
+- Repositorios concretos para escenarios de validacion: candidatos retrospectivos verificados para VAL-002, VAL-003 y VAL-004; todos mantienen estado formal `Undeclared` por ser anteriores a SDD Modes y no declarar `SDD Mode`. VAL-001 permanece `PENDING` como deuda de validacion empirica futura no bloqueante para el cierre metodologico de SDD Modes, por decision humana posterior a T-027.
 
 ---
 
@@ -155,7 +155,7 @@ Los escenarios iniciales de validacion son:
 - VAL-003: proyecto productivo, sensible, regulado o con integraciones criticas, candidato a `SDD Full`.
 - VAL-004: repositorio derivado existente sin `SDD Mode` declarado, para validar `Undeclared` y compatibilidad hacia atras.
 
-Los repositorios concretos se tratan como casos empiricos cuando existan fuentes verificables desde el repositorio o una fuente externa registrada. Los repositorios anteriores a SDD Modes que no declaran `SDD Mode` mantienen estado formal `Undeclared`; pueden usarse como candidatos retrospectivos para contrastar criterios de Lite, Full o compatibilidad, pero no se consideran declarados en esos modos. VAL-001 permanece `PENDING` hasta identificar un repositorio verificable de bajo riesgo para SDD Minimal.
+Los repositorios concretos se tratan como casos empiricos cuando existan fuentes verificables desde el repositorio o una fuente externa registrada. Los repositorios anteriores a SDD Modes que no declaran `SDD Mode` mantienen estado formal `Undeclared`; pueden usarse como candidatos retrospectivos para contrastar criterios de Lite, Full o compatibilidad, pero no se consideran declarados en esos modos. VAL-001 permanece `PENDING` hasta identificar un repositorio verificable de bajo riesgo para SDD Minimal. Por decision humana confirmada despues de T-027, esta deuda no bloquea el cierre metodologico de SDD Modes y no autoriza debilitar requisitos normativos, controles criticos ni evidencia minima de SDD Minimal.
 
 #### Medicion de reduccion documental
 
@@ -275,7 +275,7 @@ Cualquier omision, reduccion o sustitucion de controles Full debe quedar registr
 | Reglas de intervencion de agentes | Criterios para adaptar la actuacion de agentes metodologicos sin duplicarlos. |
 | Politica de checks y gates | Distincion entre controles ligeros y gates formales. |
 | Reglas de evidencia y trazabilidad | Criterios para conservar trazabilidad suficiente sin convertir documentos canonicos en historiales exhaustivos. |
-| Open Questions | Decisiones pendientes que deben resolverse antes de cerrar la specification o avanzar a arquitectura. |
+| Open Questions | Decisiones pendientes o de reentrada futura que no bloquean el cierre metodologico aprobado mientras conserven su estado y tratamiento explicitos. |
 
 ---
 
@@ -646,7 +646,7 @@ La specification define la evidencia minima necesaria para demostrar que `SDD Fu
 
 ### AC-027
 
-La specification declara que la validacion empirica no puede considerarse completa para un escenario sin repositorio concreto verificable. T-025 valida retrospectivamente VAL-002, VAL-003 y VAL-004 con repositorios formalmente `Undeclared`, pero VAL-001 permanece pendiente y bloquea cerrar la validacion empirica completa de SDD Minimal.
+La specification declara que la validacion empirica no puede considerarse completa para un escenario sin repositorio concreto verificable. T-025 valida retrospectivamente VAL-002, VAL-003 y VAL-004 con repositorios formalmente `Undeclared`, pero VAL-001 permanece pendiente y bloquea cerrar la validacion empirica completa de SDD Minimal. Por decision humana confirmada tras T-027, esta deuda empirica no bloquea el cierre metodologico de la capacidad SDD Modes, siempre que se conserve como pendiente futuro y no se debiliten los requisitos normativos, controles criticos ni evidencia minima de SDD Minimal.
 
 ---
 
@@ -663,9 +663,9 @@ La specification declara que la validacion empirica no puede considerarse comple
 - `docs/templates/context_refs.template.md`
 - Nota de Professional OS `[SDD] - SDD Modes`: `VERIFIED - discovery-only`; URI: `https://app.notion.com/p/3942fcf6211d80e9a9c8cab594ea0a67`; creada el 2026-07-05T18:14:52.857Z; estado Notion `Procesado`.
 - Documento conceptual consensuado sobre SDD Modes: `PENDING - discovery-only`.
-- Escenarios de validacion VAL-001 a VAL-004 seleccionados; candidatos retrospectivos verificados para VAL-002, VAL-003 y VAL-004 en `docs/context_refs.md`; VAL-001 permanece `PENDING`.
-- Revision posterior por Reviewer Agent.
-- Analisis posterior por Architect Agent cuando esta specification este suficientemente madura.
+- Escenarios de validacion VAL-001 a VAL-004 seleccionados; candidatos retrospectivos verificados para VAL-002, VAL-003 y VAL-004 en `docs/context_refs.md`; VAL-001 permanece `PENDING` como deuda de validacion empirica futura no bloqueante para el cierre metodologico.
+- Revisiones Reviewer y QA Gate completadas con condiciones cerradas o aceptadas.
+- Architecture finalizada en `specs/spec-001-sdd-modes.architecture.md`.
 
 ---
 
@@ -688,7 +688,7 @@ La specification declara que la validacion empirica no puede considerarse comple
 ## 16. Future Considerations
 
 - Definir una estrategia de adopcion para proyectos derivados existentes.
-- Registrar un repositorio concreto verificable para VAL-001 antes de cerrar la validacion empirica completa de SDD Minimal.
+- Registrar un repositorio concreto verificable para VAL-001 antes de cerrar la validacion empirica completa de SDD Minimal; esta deuda no bloquea el cierre metodologico de SDD Modes.
 - Resolver la ubicacion y version canonica del documento conceptual consensuado que permanece `PENDING - discovery-only`.
 - Evaluar si conviene exponer el `SDD Mode` como metadata informativa subordinada en artefactos visibles, sin sustituir la declaracion canonica inicial del `Project Brief`.
 
@@ -717,7 +717,7 @@ La specification declara que la validacion empirica no puede considerarse comple
 |------------|------------|------------|
 | Project Brief | Consistente | La specification deriva del alcance y restricciones ya definidos. |
 | README | Requiere actualizacion futura | Debera explicar los modos a alto nivel cuando la capacidad sea aprobada. |
-| Context References | Consistente | Professional OS esta verificado como discovery-only; el documento conceptual y VAL-001 permanecen PENDING. |
+| Context References | Consistente | Professional OS esta verificado como discovery-only; el documento conceptual permanece PENDING y VAL-001 queda como deuda empirica futura no bloqueante. |
 | Specifications relacionadas | No aplica | No existen otras specifications activas en `specs/`. |
 | Contracts | No aplica | No se ha determinado aun si se requiere contract transversal. |
 | Gates | Requiere evaluacion futura | SDD Modes afectara criterios de gates/checks, pero no se crean gates en esta fase. |

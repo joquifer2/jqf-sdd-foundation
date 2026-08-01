@@ -16,7 +16,7 @@ SDD Modes Conceptual and Documentary Architecture
 
 ### Status
 
-Draft
+Final
 
 ### Owner
 
@@ -24,7 +24,7 @@ Jordi Quiroga
 
 ### Last Updated
 
-2026-07-31
+2026-08-01
 
 ### Template
 
@@ -76,7 +76,7 @@ Esta arquitectura refleja decisiones humanas cerradas en `SPEC-001` y `docs/task
 | Checks ligeros consolidados | Checks and Gates Policy evita archivo por microtarea y separa checks de gates. |
 | Evidencia consolidada | Evidence Policy ubica evidencia en artefacto de trabajo, decision, hito o gate. |
 | Unidad normativa: `incremento gobernado` | Lifecycle, tasks, checks, gates y evidencia se articulan alrededor de incrementos gobernados. |
-| Escenarios VAL-001 a VAL-004 | Validation Scenarios queda estructurado por escenarios; repos concretos siguen `PENDING`. |
+| Escenarios VAL-001 a VAL-004 | Validation Scenarios queda estructurado por escenarios; VAL-002, VAL-003 y VAL-004 tienen candidatos retrospectivos verificados y VAL-001 queda como deuda empirica futura no bloqueante. |
 
 ---
 
@@ -93,7 +93,7 @@ Esta arquitectura refleja decisiones humanas cerradas en `SPEC-001` y `docs/task
 | Checks and Gates Policy | Separa checks ligeros de gates formales y define condiciones de elevacion. | Definido conceptualmente por `SPEC-001`. |
 | Evidence Policy | Define consolidacion de evidencia por modo e incremento gobernado. | Definido conceptualmente por `SPEC-001`. |
 | Compatibility Policy | Define comportamiento de repositorios existentes sin modo declarado. | `Undeclared` definido por `SPEC-001`. |
-| Validation Scenarios | Define casos VAL-001 a VAL-004 para validar la capacidad. | Escenarios definidos; repos concretos `PENDING`. |
+| Validation Scenarios | Define casos VAL-001 a VAL-004 para validar la capacidad. | Escenarios definidos; candidatos VAL-002, VAL-003 y VAL-004 verificados retrospectivamente; VAL-001 `PENDING` como deuda empirica no bloqueante. |
 
 ---
 
@@ -241,7 +241,7 @@ Validation Scenarios se organiza en cuatro escenarios iniciales:
 - VAL-003: proyecto productivo, sensible, regulado o con integraciones criticas, candidato a `SDD Full`;
 - VAL-004: repositorio derivado existente sin `SDD Mode` declarado, para validar `Undeclared` y compatibilidad hacia atras.
 
-Los repositorios concretos permanecen `PENDING` hasta que existan fuentes verificables antes de T-018.
+Tras T-024 y T-025, VAL-002, VAL-003 y VAL-004 cuentan con candidatos retrospectivos verificables registrados en `docs/context_refs.md` y mantienen estado formal `Undeclared`. VAL-001 permanece `PENDING` como deuda de validacion empirica futura no bloqueante para el cierre metodologico, por decision humana posterior a T-027.
 
 ---
 
@@ -304,11 +304,12 @@ No se introducen plantillas nuevas por defecto.
 - future Reviewer Agent review of this architecture
 - future Documentation Agent work after review
 
-Pending external dependencies:
+External and empirical dependency status:
 
-- URI and version of Professional OS note `[SDD] - SDD Modes`: `PENDING - discovery-only`
-- URI and version of the conceptual consensus document about SDD Modes: `PENDING - discovery-only`
-- concrete derived repositories for VAL-001 to VAL-004: `PENDING`
+- Professional OS note `[SDD] - SDD Modes`: `VERIFIED - discovery-only`; non-normative source that points official artifacts back to the repository.
+- Conceptual consensus document about SDD Modes: `PENDING - discovery-only` until URI and version are verified.
+- VAL-002, VAL-003 and VAL-004: retrospective candidates verified in `docs/context_refs.md` with formal status `Undeclared`.
+- VAL-001: `PENDING` as future empirical validation debt; non-blocking for methodological closure by human decision after T-027.
 
 ---
 
@@ -374,9 +375,9 @@ Rationale: `SPEC-001` excludes duplicated agents for Minimal, Lite, and Full.
 
 ### AD-003 - Treat external pending sources as discovery-only
 
-Decision: Professional OS and the conceptual consensus document remain non-normative discovery sources until URI and version are verified.
+Decision: Professional OS remains a verified non-normative discovery source; the conceptual consensus document remains `PENDING - discovery-only` until URI and version are verified.
 
-Rationale: `docs/context_refs.md` marks those sources as `PENDING - discovery-only`.
+Rationale: `docs/context_refs.md` differentiates verified discovery sources from pending discovery-only sources and keeps repository artifacts as normative sources.
 
 ### AD-004 - Use matrix-based documentary structure
 
@@ -415,7 +416,7 @@ Rationale: The concept works before Development and avoids implementation-premat
 | Lite weakens critical controls | High | Critical controls remain mode-independent and can trigger gates. |
 | Existing projects are silently downgraded | High | `Undeclared` applies conservative Full-equivalent baseline until declaration. |
 | New templates proliferate | Medium | Prefer adapting existing templates unless a distinct purpose is proven. |
-| Validation lacks real repositories | Medium | Keep concrete repos `PENDING` until T-018 has verifiable sources. |
+| VAL-001 lacks a real Minimal repository | Medium | Keep VAL-001 as future empirical validation debt; do not weaken Minimal requirements or critical controls. |
 
 ---
 
@@ -446,17 +447,17 @@ This architecture does not modify those artifacts.
 - Should adaptation rules live primarily in common SDD instructions or in each agent instruction?
 - Should mode appear as subordinate metadata in README, specification frontmatter, or both?
 - Which existing templates can absorb mode fields without creating new templates?
-- Which concrete repositories will instantiate VAL-001 to VAL-004?
+- Which concrete repository will instantiate VAL-001 as a future low-risk Minimal validation case?
 
 ---
 
 ## 13. Next Recommended Step
 
 ```text
-QA Gate Agent execute T-018.
+Close SDD Modes as a completed methodological improvement without transition to Development.
 ```
 
-T-013 to T-016 have been completed and T-017 produced `PASS WITH CONDITIONS`. The documented conditions must remain corrected before validation or any readiness gate.
+T-027 has been propagated. SPEC-001 and ARCH-001 are final; VAL-001 remains future empirical validation debt and Development remains not authorized.
 
 ---
 

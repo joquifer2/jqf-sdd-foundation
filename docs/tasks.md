@@ -10,11 +10,11 @@
 | Context References relacionado | `docs/context_refs.md` |
 | Specification relacionada | `specs/spec-001-sdd-modes.md` |
 | Architecture relacionada | `specs/spec-001-sdd-modes.architecture.md` |
-| Estado | Draft |
+| Estado | Final |
 | Fase SDD actual | Specification / Structure |
 | Owner | Jordi Quiroga |
 | Creado por | Tasks Planner Agent |
-| Ultima actualizacion | 2026-07-29 |
+| Ultima actualizacion | 2026-08-01 |
 
 ---
 
@@ -207,11 +207,11 @@ Este plan esta listo para Reviewer Agent y QA Gate Agent cuando:
 
 ## 12. Siguiente paso recomendado
 
-El siguiente paso recomendado es que QA Gate Agent revise la propagacion T-027 si se requiere confirmacion final del bloque empirico.
+La iniciativa queda cerrada documentalmente como mejora metodologica completada, sin transicion a Development.
 
-T-027 propaga el resultado empirico a `docs/sdd_readiness_assessment.md`: Professional OS verificado como discovery-only, VAL-002/003/004 como candidatos retrospectivos formalmente `Undeclared`, VAL-001 `PENDING`, sin cambios normativos adicionales.
+T-027 propaga el resultado empirico a `docs/sdd_readiness_assessment.md`: Professional OS verificado como discovery-only, VAL-002/003/004 como candidatos retrospectivos formalmente `Undeclared`, VAL-001 `PENDING` como deuda empirica futura no bloqueante para cierre metodologico, sin cambios normativos adicionales.
 
-Development sigue `NOT AUTHORIZED` sin aprobacion humana explicita.
+Development sigue `NOT AUTHORIZED` sin aprobacion humana explicita. El punto de reentrada futuro es resolver VAL-001 mediante Documentation Agent y QA Gate Agent, registrando un repositorio Minimal verificable en `docs/context_refs.md`.
 
 ---
 
@@ -238,3 +238,28 @@ Development sigue `NOT AUTHORIZED` sin aprobacion humana explicita.
 | T-025 | QA Gate emite `PASS WITH CONDITIONS` sobre la validacion empirica retrospectiva. Todos los repositorios candidatos son formalmente `Undeclared` por ser anteriores a SDD Modes; `joquifer_system_agents` sirve para contrastar criterios de Lite, `bigquery_mcp_server` y `neovaultech-system` sirven para contrastar criterios de Full, y `aif-foundation` sirve para validar compatibilidad conservadora de repositorios existentes sin modo declarado. VAL-001 sigue sin repositorio concreto verificable. | Decision QA. La capacidad es empiricamente plausible para clasificacion retrospectiva de Lite, Full y Undeclared, pero no queda completa para Minimal. No autoriza Development. Siguiente paso: T-026 para decidir si hay ajuste normativo en SPEC-001 o solo condicion documental pendiente. | Completed |
 | T-026 | Specification Agent determina que T-025 no exige cambiar la semantica normativa de Minimal, Lite, Full ni Undeclared. Se actualiza `SPEC-001` solo para reflejar el nuevo estado empirico: Professional OS verificado como discovery-only, candidatos retrospectivos VAL-002/003/004 formalmente `Undeclared`, y VAL-001 pendiente. | Decision specification. No introduce arquitectura ni implementacion; no autoriza Development. Habilita T-027 para propagacion documental auxiliar y readiness si procede. | Completed |
 | T-027 | Documentation Agent propaga T-026 a artefactos auxiliares: `docs/sdd_readiness_assessment.md` refleja Professional OS verificado, candidatos retrospectivos VAL-002/003/004 formalmente `Undeclared`, VAL-001 pendiente y Development `NOT AUTHORIZED`. README, glosario e instrucciones no cambian porque no hubo decision normativa nueva. | Propagacion documental. Cierra el bloque empirico a nivel documental auxiliar; queda pendiente revision/QA si se requiere confirmacion final. | Completed |
+| CIERRE | Decision humana posterior a T-027: se acepta que VAL-001 permanezca PENDING; la ausencia de repositorio real verificable para SDD Minimal no bloquea el cierre metodologico de SDD Modes; VAL-001 queda como deuda de validacion empirica futura. Esta aceptacion no permite debilitar requisitos normativos, controles criticos ni evidencia minima de SDD Minimal. SPEC-001 y ARCH-001 pasan a estado Final. | Decision de cierre metodologico. Cierra SDD Modes sin transicion a Development; Development permanece NOT AUTHORIZED. | Completed |
+---
+
+## 14. Baseline final canonico
+
+| Artefacto | Estado final | Funcion |
+| --- | --- | --- |
+| `docs/project_brief.md` | Completed | Declaracion inicial canonica de la iniciativa y del modo `SDD Full` usado para desarrollarla. |
+| `specs/spec-001-sdd-modes.md` | Final | Fuente normativa principal de SDD Modes. |
+| `specs/spec-001-sdd-modes.architecture.md` | Final | Arquitectura conceptual y documental aprobada. |
+| `.github/instructions/sdd.instructions.md` | Current | Reglas operativas vigentes para aplicar SDD Modes dentro del SDD Harness. |
+| `.github/agents/*.agent.md` y `.codex/agents/` | Current | Agentes metodologicos y adaptadores que consumen el modo declarado sin duplicarse por modo. |
+| `docs/templates/` y `specs/templates/` | Current | Plantillas actualizadas para registrar o referenciar modo cuando aplica. |
+| `README.md` y `docs/glosario_terminos.md` | Current | Documentacion de alto nivel y terminologia aprobada. |
+| `docs/context_refs.md` | Current | Indice de contexto, fuentes y pendientes futuros. |
+| `docs/sdd_readiness_assessment.md` | Completed with conditions | Evidencia de readiness y cierre metodologico sin Development. |
+
+## 15. Punto de reentrada futuro
+
+Si se identifica un repositorio verificable de bajo riesgo para `VAL-001`, la reentrada valida es:
+
+1. Documentation Agent registra la fuente en `docs/context_refs.md`.
+2. QA Gate Agent valida si el repositorio cierra la deuda empirica de SDD Minimal.
+3. Specification Agent solo interviene si la evidencia exige cambiar la semantica normativa aprobada.
+4. Development permanece fuera de alcance salvo decision humana explicita posterior.

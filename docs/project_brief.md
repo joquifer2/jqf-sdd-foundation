@@ -12,7 +12,7 @@ Adaptive SDD Governance
 
 ### Status
 
-Proposed
+Completed
 
 ### Owner
 
@@ -20,7 +20,7 @@ Jordi Quiroga
 
 ### Last Updated
 
-2026-07-28
+2026-08-01
 
 ---
 
@@ -406,7 +406,7 @@ La specification inicial deberá definir:
 * criterios de aceptación;
 * escenarios de validación.
 
-Antes de cerrar la specification deberá realizarse un análisis de impacto sobre la estructura actual del repositorio.
+El analisis de impacto sobre la estructura del repositorio queda realizado y consolidado en `SPEC-001`, `ARCH-001`, `docs/tasks.md`, `docs/context_refs.md` y `docs/sdd_readiness_assessment.md`.
 
 ---
 
