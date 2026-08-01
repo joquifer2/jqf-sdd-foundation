@@ -16,6 +16,8 @@ Es solo un catalogo. No redefine alcance, requisitos, arquitectura, readiness ni
 | SDD Modes | `specs/spec-001-sdd-modes.architecture.md` | Architecture | Final | Contexto de arquitectura cerrada para SDD Modes. |
 | SDD Project Consolidation and Closure | `specs/capabilities/project-consolidation-and-closure/spec-001-sdd-project-consolidation-and-closure.md` | Specification | Closed baseline | Definicion normativa de la capacidad de consolidacion y cierre. |
 | SDD Project Consolidation and Closure | `specs/capabilities/project-consolidation-and-closure/arch-001-sdd-project-consolidation-and-closure.md` | Architecture | Closed baseline | Arquitectura documental para expedientes de capacidad, handover, evidencia, deuda, reentrada e interfaz futura de agente. |
+| Foundation Derivation and Project Initialization | `specs/capabilities/foundation-derivation-and-project-initialization/spec-001-foundation-derivation-and-project-initialization.md` | Specification | Closed baseline | Define el proceso oficial conceptual para derivar repositorios desde la Foundation e inicializar proyectos SDD limpios. |
+| Foundation Derivation and Project Initialization | `specs/capabilities/foundation-derivation-and-project-initialization/arch-001-foundation-derivation-and-project-initialization.md` | Architecture | Closed baseline | Define arquitectura documental conceptual, componentes, interfaces, alternativas y decisiones de derivacion. |
 
 ---
 
