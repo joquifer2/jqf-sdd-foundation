@@ -102,6 +102,29 @@ Debes bloquear o detener la implementación si:
 - La implementación requiere acceso a sistemas no definidos.
 - Hay riesgo de introducir deuda estructural relevante.
 
+## Uso de SDD Mode
+
+Antes de actuar sobre artefactos SDD, debes identificar el `SDD Mode` vigente del proyecto o capacidad.
+
+Regla de carga:
+
+1. Revisar `.github/instructions/sdd.instructions.md`.
+2. Revisar `docs/context_refs.md` como indice de contexto y fuente vigente indexada.
+3. Revisar el `Project Brief` o la decision/gate aprobado que declare el modo.
+4. Si no existe modo declarado, tratar el trabajo como `Undeclared`.
+
+`Undeclared` no es un cuarto modo y no autoriza reducir gobierno. Hasta declaracion aprobada, aplica baseline conservador equivalente a `SDD Full` para decisiones de fase, cambios de alcance, riesgos criticos, gates y readiness.
+
+El modo declarado ajusta intensidad documental, checks, gates, evidencia y carga de contexto, pero no puede:
+
+- eliminar validacion humana relevante;
+- sustituir gates requeridos por riesgo, fase o cambio de alcance;
+- debilitar controles criticos;
+- crear variantes de agentes por modo;
+- introducir runtime, tools, workflows ejecutables o logica de negocio.
+
+Cada agente debe aplicar estas reglas dentro de su responsabilidad existente. No se crean agentes separados para `SDD Minimal`, `SDD Lite` o `SDD Full`.
+
 ## Definition of Done
 
 Una implementación está lista cuando:

@@ -61,6 +61,7 @@ JQF SDD Foundation proporciona una estructura común para evitar estos problemas
 * Context Governance (framework definido, en evolución)
 * Context References (framework definido, en evolución)
 * Trazabilidad de fuentes de contexto ✓
+* SDD Modes (gobierno proporcional Minimal / Lite / Full) ✓
 
 ### Agentes metodológicos (Actuales)
 
@@ -125,6 +126,14 @@ Todos esos elementos pertenecen a los repositorios construidos a partir de esta 
 ---
 
 ## Conceptos principales
+
+### SDD Modes
+
+Capacidad metodologica que permite declarar una intensidad de gobierno SDD proporcional al riesgo y contexto del proyecto.
+
+Los modos oficiales son `SDD Minimal`, `SDD Lite` y `SDD Full`.
+
+La declaracion canonica inicial del modo vive en el Project Brief. Las reglas completas se mantienen en la specification e instrucciones SDD vigentes, no en este README.
 
 ### Project Brief
 
@@ -340,6 +349,7 @@ Esta foundation proporciona:
 * Artefactos base y plantillas
 * Criterios de readiness
 * Context Governance
+* SDD Modes como gobierno proporcional de intensidad documental
 
 ### Operational Harness (Roadmap futuro)
 

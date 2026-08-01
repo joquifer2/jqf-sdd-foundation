@@ -99,7 +99,67 @@ Estas instrucciones se consideran cumplidas cuando:
 - mantiene estado Specification / Structure;
 - no introduce implementacion prematura.
 
-## 8. Backlog Governance
+## 8. SDD Modes
+
+`SDD Mode` es la declaracion de intensidad metodologica proporcional definida por `SPEC-001 - SDD Modes`.
+
+La capacidad se denomina `SDD Modes` y los modos oficiales iniciales son:
+
+- `SDD Minimal`;
+- `SDD Lite`;
+- `SDD Full`.
+
+La fuente canonica inicial para declarar y justificar el `SDD Mode` de un proyecto es el `Project Brief`.
+
+La declaracion debe incluir, como minimo:
+
+- modo seleccionado;
+- justificacion humana;
+- owner;
+- fecha;
+- condiciones relevantes de riesgo;
+- disparadores de reevaluacion.
+
+`docs/context_refs.md` puede indexar fuentes y referencias relacionadas con SDD Modes, pero no es fuente normativa del modo declarado.
+
+Los proyectos sin `SDD Mode` declarado quedan temporalmente en estado `Undeclared`.
+
+`Undeclared` no es un cuarto modo y no autoriza reducir gobierno. Hasta declaracion aprobada, aplica un baseline conservador equivalente a `SDD Full` para decisiones de fase, cambios de alcance, riesgos criticos, gates y readiness.
+
+El modo declarado afecta a:
+
+- carga documental esperada;
+- intensidad de checks;
+- necesidad y cadencia de gates;
+- consolidacion de evidencia;
+- criterios de escalado o reevaluacion;
+- contexto que deben cargar los agentes metodologicos.
+
+El modo declarado no puede:
+
+- eliminar validacion humana relevante;
+- sustituir gates requeridos por riesgo, fase o cambio de alcance;
+- debilitar controles criticos de seguridad, privacidad, cumplimiento, produccion, integraciones o impacto operacional;
+- crear variantes duplicadas de agentes por modo;
+- introducir runtime, herramientas, workflows ejecutables o logica de negocio.
+
+`SDD Minimal` solo puede usarse para exploracion, pruebas internas o cambios documentales/acotados de bajo riesgo. No puede usarse cuando existan datos sensibles, exposicion a produccion, obligaciones de cumplimiento, integraciones criticas, impacto operacional alto, riesgos relevantes de seguridad o privacidad, multiples stakeholders criticos o baja reversibilidad.
+
+`SDD Lite` puede reducir artefactos, revisiones y gates por microtarea, pero debe mantener trazabilidad suficiente, checks ligeros, hitos de revision, gates cuando existan transiciones o riesgos relevantes, y validacion humana.
+
+`SDD Full` equivale al baseline vigente completo de `jqf-sdd-foundation` y conserva profundidad documental, revisiones y gates formales.
+
+La reduccion documental solo es valida si elimina baja senal o duplicacion. No puede eliminar decisiones canonicas, justificacion humana del modo, riesgos criticos, gates requeridos, criterios de aceptacion, evidencia de checks ni trazabilidad minima.
+
+La validacion de `SDD Full` debe demostrar que no se debilita el baseline vigente de gobierno: artefactos requeridos por fase, revisiones formales, gates aplicables, evidencia de decisiones/riesgos/criterios/validacion, precedencia documental y aprobacion humana.
+
+La seleccion del modo debe basarse en juicio humano documentado, no en scoring automatico.
+
+La unidad normativa general para alcance, tareas, checks, evidencia y gates es `incremento gobernado`.
+
+`Implementation Wave` queda reservado como etiqueta opcional para incrementos de ejecucion dentro de Development; no es el concepto normativo principal de SDD Modes.
+
+## 9. Backlog Governance
 
 `docs/tasks.md` es un artefacto auxiliar de gobernanza.
 
@@ -129,7 +189,7 @@ Antes de marcar una tarea como completada, verificar que el criterio de cierre s
 
 Si una tarea pierde relevancia o deja de aplicar, debe marcarse como descartada en lugar de eliminarse silenciosamente.
 
-## Context Governance
+## 10. Context Governance
 
 `docs/context_refs.md` actúa como el mapa oficial de referencias de contexto del proyecto.
 
@@ -155,9 +215,9 @@ Si una tarea pierde relevancia o deja de aplicar, debe marcarse como descartada 
 
 - Regla explícita: Antes de generar cualquier Project Brief, Specification, Architecture o Tasks, comprobar la existencia de `docs/context_refs.md` y actuar conforme a su contenido.
 
-## 9. SDD Harness
+## 11. SDD Harness
 
-### 9.1 Rol del SDD Harness
+### 11.1 Rol del SDD Harness
 
 El SDD Harness es el sistema de gobierno que define cómo se diseñan, documentan, revisan, validan y evolucionan las capacidades en repositorios basados en jqf-sdd-foundation.
 
@@ -178,7 +238,7 @@ Principios fundamentales:
 
 ---
 
-### 9.2 Agentes metodológicos
+### 11.2 Agentes metodológicos
 
 El SDD Harness utiliza agentes metodológicos especializados para gobernar la evolución del repositorio.
 
@@ -205,7 +265,7 @@ La definición completa de cada agente se encuentra en:
 
 ---
 
-### 9.3 Artefactos por fase
+### 11.3 Artefactos por fase
 
 #### Specification
 
@@ -250,7 +310,7 @@ Solo puede iniciarse cuando exista aprobación explícita y se hayan cumplido lo
 
 ---
 
-### 9.4 Gates
+### 11.4 Gates
 
 Los gates son puntos de control utilizados para determinar si una capacidad puede avanzar a la siguiente fase.
 
@@ -275,7 +335,7 @@ Los gates nunca sustituyen la validación humana.
 
 ---
 
-### 9.5 Precedencia documental
+### 11.5 Precedencia documental
 
 Cuando existan conflictos entre documentos, prevalece el artefacto de mayor nivel.
 
@@ -303,7 +363,7 @@ Si se detecta una contradicción, debe resolverse actualizando el artefacto de m
 
 ---
 
-### 9.6 Definition of Done del SDD Harness
+### 11.6 Definition of Done del SDD Harness
 
 Una capacidad puede considerarse suficientemente madura dentro del SDD Harness cuando:
 
@@ -320,7 +380,7 @@ Hasta que estos criterios se cumplan, la capacidad no debe considerarse lista pa
 
 ---
 
-### 9.7 Relación con Harness Engineering
+### 11.7 Relación con Harness Engineering
 
 El ecosistema "Harness" describe un conjunto de capacidades y responsabilidades relacionadas con la gobernanza, la ingeniería de procesos y la operación de políticas.
 

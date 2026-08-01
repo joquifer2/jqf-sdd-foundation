@@ -27,7 +27,29 @@ cliente:
   id_cliente:
   nombre_cliente:
   estado_relacion:
+
+sdd_mode:
+  modo_declarado:
+  fuente_canonica:
+  estado:
+  ultima_revision:
 ```
+
+---
+
+## SDD Mode
+
+> Esta seccion indexa la fuente vigente del `SDD Mode`; no declara ni redefine el modo.
+> 
+> La declaracion canonica inicial debe estar en el `Project Brief`. Los cambios posteriores deben referenciar la decision o gate aprobado que autoriza el cambio.
+
+| Campo | Valor |
+| --- | --- |
+| Modo indexado | `SDD Minimal` / `SDD Lite` / `SDD Full` / `Undeclared` |
+| Fuente canonica |  |
+| Estado de verificacion | Verified / PENDING |
+| Ultima revision |  |
+| Notas |  |
 
 ---
 

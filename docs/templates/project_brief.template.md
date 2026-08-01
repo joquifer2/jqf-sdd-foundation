@@ -24,6 +24,47 @@ Proposed
 
 ---
 
+### SDD Mode
+
+Modo declarado para el proyecto:
+
+- `SDD Minimal`
+- `SDD Lite`
+- `SDD Full`
+- `Undeclared`
+
+Justificacion humana del modo seleccionado:
+
+<explicar brevemente por que aplica este modo>
+
+Owner de la decision:
+
+<persona o equipo responsable>
+
+Fecha de declaracion:
+
+<yyyy-mm-dd>
+
+Condiciones relevantes de riesgo:
+
+- ...
+- ...
+- ...
+
+Disparadores de reevaluacion:
+
+- cambio de alcance relevante;
+- aparicion de datos sensibles, produccion, cumplimiento, integraciones criticas, seguridad/privacy, impacto operacional alto o baja reversibilidad;
+- preparacion de gate o cambio de fase;
+- decision humana de escalado o reduccion de gobierno.
+
+Notas:
+
+- El Project Brief es la fuente canonica inicial de declaracion del `SDD Mode`.
+- `Undeclared` no es un cuarto modo y no autoriza reducir gobierno; hasta declaracion aprobada aplica baseline conservador equivalente a `SDD Full`.
+
+---
+
 ## 2. Purpose
 
 Describe por qué existe este proyecto.

@@ -24,6 +24,23 @@ Draft
 
 ---
 
+### SDD Mode Reference
+
+Modo declarado para el proyecto o capacidad, segun `Project Brief` o decision/gate aprobado:
+
+<SDD Minimal / SDD Lite / SDD Full / Undeclared>
+
+Justificacion o referencia canonica:
+
+<ruta o decision aplicable>
+
+Notas:
+
+- Esta seccion referencia el modo declarado; no sustituye la declaracion canonica inicial del `Project Brief`.
+- Si existe conflicto, resolverlo antes de aprobar la specification o marcarlo como pregunta abierta.
+
+---
+
 ## 1. Purpose
 
 Describir qué capacidad define esta specification.

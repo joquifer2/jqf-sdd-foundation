@@ -65,6 +65,62 @@ La readiness se evalúa mediante criterios explícitos y gates.
 
 ---
 
+### SDD Modes
+
+Capacidad metodologica que permite ajustar la intensidad de gobierno SDD al riesgo, complejidad, criticidad y contexto de un proyecto o incremento gobernado.
+
+SDD Modes gobierna documentacion, checks, gates, evidencia, trazabilidad y carga de contexto. No gobierna logica de negocio, runtime, infraestructura ni herramientas productivas.
+
+---
+
+### SDD Mode
+
+Declaracion de intensidad metodologica proporcional aplicada a un proyecto o capacidad.
+
+El termino normativo es `SDD Mode`. La declaracion canonica inicial debe estar en el Project Brief. Los cambios posteriores deben registrarse en una decision o gate aprobado.
+
+---
+
+### SDD Minimal
+
+Modo SDD para exploracion, pruebas internas o cambios documentales/acotados de bajo riesgo.
+
+No debe utilizarse cuando existan datos sensibles, exposicion a produccion, obligaciones de cumplimiento, integraciones criticas, impacto operacional alto, riesgos relevantes de seguridad o privacidad, multiples stakeholders criticos o baja reversibilidad.
+
+---
+
+### SDD Lite
+
+Modo SDD proporcional para MVPs, herramientas internas o primeras versiones de riesgo controlado.
+
+Puede reducir artefactos, revisiones y gates por microtarea, pero conserva justificacion humana, trazabilidad suficiente, checks ligeros, hitos de revision, gates cuando existan transiciones o riesgos relevantes, y validacion humana.
+
+---
+
+### SDD Full
+
+Modo SDD completo equivalente al baseline vigente de gobierno de `jqf-sdd-foundation`.
+
+Mantiene profundidad documental, revisiones y gates formales para proyectos criticos, productivos, sensibles, regulados, multiintegracion o de alto impacto.
+
+---
+
+### Undeclared
+
+Estado temporal de un proyecto o capacidad sin `SDD Mode` declarado.
+
+No es un cuarto modo y no autoriza reducir gobierno. Hasta declaracion aprobada, aplica baseline conservador equivalente a `SDD Full` para decisiones de fase, cambios de alcance, riesgos criticos, gates y readiness.
+
+---
+
+### Incremento gobernado
+
+Unidad trazable de avance bajo SDD que agrupa alcance, decisiones, tareas, checks, evidencia y, cuando aplique, gates.
+
+Es la unidad normativa general para SDD Modes. `Implementation Wave` queda reservado como etiqueta opcional para incrementos de ejecucion dentro de Development.
+
+---
+
 ### Definition of Done
 
 Conjunto de condiciones que deben cumplirse para considerar un artefacto, capacidad o fase como completada.

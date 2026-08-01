@@ -26,6 +26,8 @@ Este documento debe ser revisado por el Reviewer Agent o QA Gate Agent antes de 
 | Last Updated | |
 | Assessor | |
 | Reviewer | |
+| SDD Mode | SDD Minimal / SDD Lite / SDD Full / Undeclared |
+| SDD Mode Source | Project Brief / Decision / Gate / PENDING |
 
 ---
 
@@ -97,6 +99,18 @@ Criterios orientativos:
 | Existe contexto suficiente del proyecto | Pass / Partial / Fail | | |
 | Existe mapa de fuentes de contexto | Pass / Partial / Fail | | |
 | Las fuentes principales están identificadas | Pass / Partial / Fail | | |
+
+---
+
+## Gobierno SDD
+
+| Criterio | Estado | Evidencia | Observaciones |
+|---|---|---|---|
+| El `SDD Mode` esta declarado o marcado explicitamente como `Undeclared` | Pass / Partial / Fail | | |
+| La fuente canonica del modo esta identificada | Pass / Partial / Fail | | |
+| La justificacion humana del modo esta documentada | Pass / Partial / Fail | | |
+| Los riesgos criticos no quedan debilitados por el modo declarado | Pass / Partial / Fail | | |
+| Los checks, gates y evidencia esperados son coherentes con el modo y el riesgo | Pass / Partial / Fail | | |
 
 ---
 
@@ -272,3 +286,5 @@ Este assessment está completo cuando permite responder:
 Este documento evalúa preparación, no implementación.
 
 La decisión final debe ser revisada por una persona responsable o por el QA Gate Agent.
+
+La evaluacion de readiness no autoriza Development ni reduce controles criticos por si misma. Si el `SDD Mode` esta `Undeclared`, aplicar baseline conservador equivalente a `SDD Full` hasta declaracion aprobada.

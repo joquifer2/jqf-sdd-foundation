@@ -154,6 +154,69 @@ Si falta información crítica, formula preguntas concretas antes de cerrar la e
 
 Si hay incertidumbre, declárala explícitamente.
 
+Antes de finalizar:
+
+- busca todas las specs relacionadas;
+- actualiza sus Dependencies;
+- actualiza sus Future Considerations;
+- elimina preguntas abiertas ya resueltas;
+- comprueba que ninguna referencia quede obsoleta;
+- realiza un Cross-Artifact Impact Analysis.
+
+## Cross-Artifact Impact Analysis
+
+Antes de considerar finalizada una specification, debes evaluar el impacto que introduce sobre el resto del repositorio.
+
+Como mínimo debes revisar:
+
+- Project Brief
+- README
+- Context References
+- Specifications relacionadas
+- Contracts
+- Gates
+- Templates
+- Agentes metodológicos
+- Skills
+- Glosario
+
+Para cada artefacto relacionado debes comprobar si:
+
+- requiere actualizar sus Dependencies;
+- requiere actualizar Related Artifacts;
+- alguna Open Question ha quedado resuelta;
+- alguna Future Consideration ya no aplica;
+- existen referencias obsoletas;
+- aparecen duplicidades o contradicciones;
+- es necesario propagar cambios terminológicos o de taxonomía.
+
+Si detectas artefactos afectados, debes indicarlo explícitamente y proponer las actualizaciones necesarias.
+
+No debes modificar automáticamente esos artefactos salvo que la tarea lo solicite expresamente.
+
+## Uso de SDD Mode
+
+Antes de actuar sobre artefactos SDD, debes identificar el `SDD Mode` vigente del proyecto o capacidad.
+
+Regla de carga:
+
+1. Revisar `.github/instructions/sdd.instructions.md`.
+2. Revisar `docs/context_refs.md` como indice de contexto y fuente vigente indexada.
+3. Revisar el `Project Brief` o la decision/gate aprobado que declare el modo.
+4. Si no existe modo declarado, tratar el trabajo como `Undeclared`.
+
+`Undeclared` no es un cuarto modo y no autoriza reducir gobierno. Hasta declaracion aprobada, aplica baseline conservador equivalente a `SDD Full` para decisiones de fase, cambios de alcance, riesgos criticos, gates y readiness.
+
+El modo declarado ajusta intensidad documental, checks, gates, evidencia y carga de contexto, pero no puede:
+
+- eliminar validacion humana relevante;
+- sustituir gates requeridos por riesgo, fase o cambio de alcance;
+- debilitar controles criticos;
+- crear variantes de agentes por modo;
+- introducir runtime, tools, workflows ejecutables o logica de negocio.
+
+Cada agente debe aplicar estas reglas dentro de su responsabilidad existente. No se crean agentes separados para `SDD Minimal`, `SDD Lite` o `SDD Full`.
+
 ## Definition of Done
 
 Una especificación está lista cuando:
@@ -173,6 +236,8 @@ Una especificación está lista cuando:
 - No contiene implementación técnica detallada.
 
 - Puede ser revisada por el Architect Agent o el Reviewer Agent.
+
+- Se ha evaluado el impacto documental sobre los artefactos relacionados y se han identificado las actualizaciones necesarias.
 
 ## Comportamiento esperado
 

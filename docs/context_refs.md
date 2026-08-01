@@ -69,14 +69,14 @@ Si durante fases posteriores se usan proyectos derivados como casos de validacio
 
 | Fecha | Decisión | Impacto en este proyecto | Fuente |
 | --- | --- | --- | --- |
-| PENDING | Documento conceptual consensuado sobre SDD Modes | Base metodologica previa para iniciar el Project Brief y orientar la futura Specification | PENDING - ubicacion y version canonica no verificables desde el repositorio |
+| 2026-07-05 | Nota de Professional OS `[SDD] - SDD Modes` | Fuente de descubrimiento verificada; confirma origen de la iniciativa y remite los artefactos oficiales al repositorio GitHub | Professional OS / Notion: https://app.notion.com/p/3942fcf6211d80e9a9c8cab594ea0a67 |
+| PENDING | Documento conceptual consensuado sobre SDD Modes | Fuente de descubrimiento metodologico previa; sin valor normativo hasta verificar ubicacion y version canonica | PENDING - discovery-only; ubicacion y version canonica no verificables desde el repositorio |
 
 ## Decisiones pendientes de validar
 
 | Tema | Motivo de la duda | Responsable | Estado |
 | --- | --- | --- | --- |
-| Ubicacion canonica del documento conceptual consensuado | La referencia existe en el Project Brief, pero el repositorio no contiene URI, version ni fecha verificable | Jordi Quiroga | PENDING |
-| Ubicacion canonica de la nota `[SDD] - SDD Modes` en Professional OS | La referencia existe en el Project Brief, pero el repositorio no contiene URI, version ni fecha verificable | Jordi Quiroga | PENDING |
+| Ubicacion canonica del documento conceptual consensuado | La referencia existe en el Project Brief, pero el repositorio no contiene URI, version ni fecha verificable tras busqueda local | Jordi Quiroga | PENDING - discovery-only |
 
 ---
 
@@ -86,7 +86,11 @@ Si durante fases posteriores se usan proyectos derivados como casos de validacio
 
 | Proyecto | Relación con este proyecto | Estado | Fuente |
 | --- | --- | --- | --- |
-| Proyectos derivados seleccionados | Casos futuros de validacion y compatibilidad para los modos SDD | PENDING | Mencionados en `docs/project_brief.md`; seleccion pendiente |
+| VAL-001 - SDD Minimal | Experimento o utilidad interna de bajo riesgo | PENDING | No se ha identificado un repositorio concreto verificable que cumpla claramente bajo riesgo, ausencia de datos sensibles, ausencia de produccion y alta reversibilidad. |
+| VAL-002 - SDD Lite | Candidato retrospectivo para contrastar si un MVP o primera version con exposicion limitada habria encajado en `SDD Lite` | Formal status: `Undeclared`; validation candidate: verified-local-git | `joquifer_system_agents`; remoto `https://github.com/joquifer2/joquifer_system_agents.git`; rama local `main`; README lo describe como MVP Python manual para analisis modular BigQuery con controles; no declara `SDD Mode` por ser anterior a SDD Modes. |
+| VAL-003 - SDD Full | Candidato retrospectivo para contrastar si un producto con integraciones criticas habria requerido `SDD Full` | Formal status: `Undeclared`; validation candidate: verified-local-git-and-notion | `bigquery_mcp_server`; remoto `https://github.com/joquifer2/bigquery-mcp-server.git`; rama local `main`; Professional OS `https://app.notion.com/39c2fcf6211d8098a726e663dace976b`; README declara producto estable, MCP, BigQuery, allowlist, dry run, cuotas, auditoria y validacion real; no declara `SDD Mode` por ser anterior a SDD Modes. |
+| VAL-003 - SDD Full | Candidato retrospectivo para contrastar si un producto derivado con cliente, fuentes externas, gates y Development limitado habria requerido `SDD Full` | Formal status: `Undeclared`; validation candidate: verified-notion-github | `neovaultech-system`; repositorio canonico `https://github.com/joquifer2/neovaultech-system`; Professional OS `https://app.notion.com/p/3a82fcf6211d81bc9704fa9c233ef2b2`; ficha verificada indica origen en `jqf-sdd-foundation`, SPEC-001, baseline, plan y Development Readiness Gate publicados; no se verifica declaracion `SDD Mode` porque el proyecto es anterior a SDD Modes. |
+| VAL-004 - Undeclared | Candidato retrospectivo para validar compatibilidad de repositorios SDD existentes sin `SDD Mode` declarado | Formal status: `Undeclared`; validation candidate: verified-local-git | `aif-foundation`; remoto `https://github.com/joquifer2/analytical-intelligence-foundation.git`; rama local `main`; contiene artefactos SDD extensos y no se encontro declaracion `SDD Mode` en busqueda local; representa el tratamiento conservador de repositorios anteriores a SDD Modes. |
 
 ---
 
@@ -107,14 +111,15 @@ Si durante fases posteriores se usan proyectos derivados como casos de validacio
 | Recurso | Tipo | Motivo de uso | Fuente |
 | --- | --- | --- | --- |
 | `docs/project_brief.md` | Project Brief | Definicion canonica inicial de la iniciativa SDD Modes | Verificado en repositorio |
-| Nota de Professional OS `[SDD] - SDD Modes` | Fuente de descubrimiento | Contexto inicial externo para identificar problema, oportunidad y tensiones metodologicas | PENDING - ubicacion y version canonica no verificables desde el repositorio |
-| Documento conceptual consensuado sobre SDD Modes | Decision metodologica previa | Base de consenso previa al Project Brief | PENDING - ubicacion y version canonica no verificables desde el repositorio |
+| Nota de Professional OS `[SDD] - SDD Modes` | Fuente de descubrimiento no normativa | Contexto inicial externo verificado para identificar problema, oportunidad y tensiones metodologicas; remite los artefactos oficiales al repositorio GitHub | VERIFIED - discovery-only; URI: https://app.notion.com/p/3942fcf6211d80e9a9c8cab594ea0a67; creada: 2026-07-05T18:14:52.857Z; estado Notion: Procesado |
+| Documento conceptual consensuado sobre SDD Modes | Fuente de descubrimiento no normativa | Base de consenso previa al Project Brief; sin valor normativo mientras no se verifique URI y version | PENDING - discovery-only; URI y version canonica no verificables desde el repositorio |
 | `README.md` | Documentacion general | Describe proposito, estado vigente y limites de `jqf-sdd-foundation` | Verificado en repositorio |
 | `.github/instructions/sdd.instructions.md` | Instrucciones SDD | Define fase vigente, restricciones y reglas del SDD Harness | Verificado en repositorio |
 | `AGENTS.md` | Catalogo y routing de agentes | Define responsabilidades, limites y flujo de agentes metodologicos | Verificado en repositorio |
 | `docs/templates/project_brief.template.md` | Template | Estructura obligatoria utilizada para `docs/project_brief.md` | Verificado en repositorio |
 | `docs/templates/context_refs.template.md` | Template | Estructura obligatoria utilizada para este documento | Verificado en repositorio |
 | `docs/glosario_terminos.md` | Glosario | Fuente de terminologia SDD y definiciones comunes | Verificado en repositorio |
+| `docs/sdd_readiness_assessment.md` | Readiness package | Paquete documental de readiness para T-021; no autoriza Development | Verificado en repositorio |
 
 ---
 
@@ -128,6 +133,26 @@ repositorios:
     url: https://github.com/joquifer2/jqf-sdd-foundation.git
     rama: main
     descripcion: Repositorio local verificado en C:\Workspace\JOQUIFER\sdd-foundation con remoto origin y rama actual main.
+
+  - nombre: joquifer_system_agents
+    url: https://github.com/joquifer2/joquifer_system_agents.git
+    rama: main
+    descripcion: Repositorio local verificado en C:\Workspace\JOQUIFER\joquifer_system_agents; estado formal Undeclared por ausencia de SDD Mode declarado; candidato retrospectivo VAL-002 para contrastar SDD Lite por MVP Python manual con BigQuery y controles documentados.
+
+  - nombre: bigquery_mcp_server
+    url: https://github.com/joquifer2/bigquery-mcp-server.git
+    rama: main
+    descripcion: Repositorio local verificado en C:\Workspace\JOQUIFER\bigquery_mcp_server y proyecto Professional OS verificado; estado formal Undeclared por ausencia de SDD Mode declarado; candidato retrospectivo VAL-003 para contrastar SDD Full por producto estable con MCP, BigQuery, seguridad, costes, auditoria e integraciones.
+
+  - nombre: neovaultech-system
+    url: https://github.com/joquifer2/neovaultech-system
+    rama: main
+    descripcion: Repositorio canonico verificado en Professional OS, sin clon local en C:\Workspace\JOQUIFER; estado formal Undeclared por ausencia de SDD Mode declarado verificable; candidato retrospectivo adicional VAL-003 por producto derivado de jqf-sdd-foundation con cliente, decisiones, fuentes externas, gates y Development limitado.
+
+  - nombre: aif-foundation
+    url: https://github.com/joquifer2/analytical-intelligence-foundation.git
+    rama: main
+    descripcion: Repositorio local verificado en C:\Workspace\JOQUIFER\aif-foundation; estado formal Undeclared por ausencia de SDD Mode declarado; candidato retrospectivo VAL-004 para compatibilidad de repositorios SDD existentes anteriores a SDD Modes.
 ```
 
 ## Google Cloud
@@ -198,15 +223,21 @@ runtime_sources:
 
     - nombre: Nota de Professional OS [SDD] - SDD Modes
       tipo: external-note
-      uri: PENDING
-      version: PENDING
-      estado: pending-verification
+      uri: https://app.notion.com/p/3942fcf6211d80e9a9c8cab594ea0a67
+      version: created-2026-07-05T18:14:52.857Z_estado-Procesado
+      estado: verified-external-discovery-only
+
+    - nombre: SDD Modes Readiness Assessment
+      tipo: markdown
+      uri: docs/sdd_readiness_assessment.md
+      version: working-tree-2026-07-31
+      estado: verified-local
 
     - nombre: Documento conceptual consensuado sobre SDD Modes
       tipo: external-document
       uri: PENDING
       version: PENDING
-      estado: pending-verification
+      estado: pending-verification-discovery-only
 
   indices_vectoriales: []
 
@@ -237,13 +268,13 @@ Antes de crear o modificar cualquier artefacto del proyecto, se deben seguir est
 Cuando exista conflicto entre fuentes, aplicar este orden:
 
 1. `docs/project_brief.md` como definicion canonica inicial de SDD Modes.
-2. Documento conceptual consensuado sobre SDD Modes, cuando su ubicacion y version sean verificadas.
+2. Documento conceptual consensuado sobre SDD Modes, solo cuando su ubicacion y version sean verificadas; mientras tanto permanece como discovery-only no normativo.
 3. `.github/instructions/sdd.instructions.md`.
 4. `AGENTS.md`.
 5. `README.md`.
 6. `docs/glosario_terminos.md`.
 7. Templates oficiales aplicables.
-8. Nota de Professional OS `[SDD] - SDD Modes` como fuente de descubrimiento.
+8. Nota de Professional OS `[SDD] - SDD Modes` como fuente de descubrimiento no normativa verificada; no prevalece sobre los artefactos oficiales del repositorio.
 9. Proyectos derivados seleccionados como casos de validacion.
 10. Notas historicas o no verificadas.
 
@@ -255,9 +286,9 @@ Cuando exista conflicto entre fuentes, aplicar este orden:
 
 | Fuente pendiente | Motivo | Impacto | Responsable | Estado |
 | --- | --- | --- | --- | --- |
-| Nota de Professional OS `[SDD] - SDD Modes` | No hay URI, version ni fecha canonica verificable desde el repositorio | Puede aportar contexto de descubrimiento para Specification | Jordi Quiroga | PENDING |
-| Documento conceptual consensuado sobre SDD Modes | No hay URI, version ni fecha canonica verificable desde el repositorio | Puede contener decisiones metodologicas previas que condicionen la Specification | Jordi Quiroga | PENDING |
-| Proyectos derivados seleccionados para validacion | El Project Brief los menciona como evidencia futura, pero no los identifica | Afecta a validacion de compatibilidad y escenarios | Jordi Quiroga | PENDING |
+| Nota de Professional OS `[SDD] - SDD Modes` | URI y estado verificados en Notion/Professional OS; creada el 2026-07-05T18:14:52.857Z y estado `Procesado` | Fuente de descubrimiento no normativa; confirma origen y delega artefactos oficiales al repositorio GitHub | Jordi Quiroga | VERIFIED - discovery-only |
+| Documento conceptual consensuado sobre SDD Modes | No hay URI, version ni fecha canonica verificable desde el repositorio tras busqueda local | Puede aportar contexto de descubrimiento no normativo para Specification; no condiciona normativamente hasta verificarse | Jordi Quiroga | PENDING - discovery-only |
+| Repositorio concreto para VAL-001 - SDD Minimal | No se ha identificado un repositorio verificable que cumpla claramente el perfil bajo riesgo/interno/sin datos sensibles/sin produccion | Bloquea cerrar validacion empirica completa de Minimal sobre repositorio real; T-025 puede revisar candidatos registrados para VAL-002, VAL-003 y VAL-004 dejando este gap explicito | Jordi Quiroga | PENDING |
 
 ---
 
@@ -267,11 +298,11 @@ Cuando exista conflicto entre fuentes, aplicar este orden:
 trazabilidad:
   creado_por: Documentation Agent
   fecha_creacion: 2026-07-29
-  ultima_actualizacion: 2026-07-29
+  ultima_actualizacion: 2026-07-31
   actualizado_por: Documentation Agent
   contexto_validado_por: PENDING
   fecha_validacion: PENDING
-  version_contexto: initial-context-2026-07-29
+  version_contexto: t-025-undeclared-retrospective-candidates-2026-07-31
 ```
 
 ---

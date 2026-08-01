@@ -38,3 +38,11 @@ No debe crearse un adaptador TOML para ese agente hasta que exista su archivo `.
 - Los repositorios derivados pueden instanciar artefactos reales de proyecto cuando exista instrucción explícita.
 - GitHub es la ubicación canónica de los artefactos técnicos SDD de este repositorio.
 - Ningún agente puede introducir runtime, integraciones, workflows ejecutables o automatizaciones productivas antes de la fase y autorización correspondientes.
+
+## Uso de SDD Mode
+
+Los adaptadores TOML no declaran modos ni crean variantes por modo.
+
+Cada adaptador debe cargar `.github/instructions/sdd.instructions.md`, `docs/context_refs.md` y la definicion canonica del agente correspondiente para aplicar el `SDD Mode` vigente.
+
+Si el modo no esta declarado, el agente debe tratar el trabajo como `Undeclared` y aplicar baseline conservador equivalente a `SDD Full` hasta que exista declaracion aprobada.

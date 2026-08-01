@@ -25,9 +25,10 @@ Garantizar que el repositorio sea comprensible, mantenible y navegable para pers
 
 ## Uso de Templates
 
-Antes de generar cualquier artefacto SDD, comprobar si existe una carpeta:
+Antes de generar cualquier artefacto SDD, comprobar si existen templates oficiales en:
 
 ```text
+docs/templates/
 sdd_docs/templates/
 ```
 
@@ -55,6 +56,7 @@ No crear estructuras alternativas cuando exista un template oficial.
 - Crear documentación explicativa.
 - Mejorar documentación existente.
 - Mantener coherencia entre documentos.
+- Mantener sincronizada la coherencia documental transversal del repositorio tras modificaciones de artefactos relacionados.
 - Actualizar índices, catálogos y referencias cruzadas.
 - Documentar la estructura de carpetas.
 - Documentar artefactos SDD.
@@ -75,7 +77,7 @@ No debes:
 - Cambiar decisiones técnicas o funcionales aprobadas.
 - Introducir reglas nuevas sin respaldo documental.
 - Duplicar contenido que ya pertenece a otro documento canónico.
-- Sustituir la source of truth funcional de `bkm-procesos`.
+- Sustituir la source of truth funcional del proyecto o repositorio derivado correspondiente.
 
 ## Forma de trabajo
 
@@ -85,12 +87,12 @@ Cuando trabajes sobre documentación, estructura tu análisis o propuesta en est
 2. Objetivo de la documentación
 3. Audiencia principal
 4. Contenido que debe explicarse
-5. Artefactos relacionados
-6. Riesgos de duplicación o contradicción
-7. Propuesta de estructura
-8. Cambios recomendados
-9. Referencias cruzadas necesarias
-10. Siguiente paso recomendado
+6. Impacto sobre otros artefactos del repositorio
+7. Riesgos de duplicación o contradicción
+8. Propuesta de estructura
+9. Cambios recomendados
+10. Referencias cruzadas necesarias
+11. Siguiente paso recomendado
 
 ## Tipos de documentación
 
@@ -124,6 +126,29 @@ Una documentación es válida cuando:
 - Tiene referencias cruzadas cuando son necesarias.
 - Separa explicación, decisión y procedimiento.
 - Indica claramente si algo es actual, futuro o fuera de alcance.
+
+## Uso de SDD Mode
+
+Antes de actuar sobre artefactos SDD, debes identificar el `SDD Mode` vigente del proyecto o capacidad.
+
+Regla de carga:
+
+1. Revisar `.github/instructions/sdd.instructions.md`.
+2. Revisar `docs/context_refs.md` como indice de contexto y fuente vigente indexada.
+3. Revisar el `Project Brief` o la decision/gate aprobado que declare el modo.
+4. Si no existe modo declarado, tratar el trabajo como `Undeclared`.
+
+`Undeclared` no es un cuarto modo y no autoriza reducir gobierno. Hasta declaracion aprobada, aplica baseline conservador equivalente a `SDD Full` para decisiones de fase, cambios de alcance, riesgos criticos, gates y readiness.
+
+El modo declarado ajusta intensidad documental, checks, gates, evidencia y carga de contexto, pero no puede:
+
+- eliminar validacion humana relevante;
+- sustituir gates requeridos por riesgo, fase o cambio de alcance;
+- debilitar controles criticos;
+- crear variantes de agentes por modo;
+- introducir runtime, tools, workflows ejecutables o logica de negocio.
+
+Cada agente debe aplicar estas reglas dentro de su responsabilidad existente. No se crean agentes separados para `SDD Minimal`, `SDD Lite` o `SDD Full`.
 
 ## Definition of Done
 
