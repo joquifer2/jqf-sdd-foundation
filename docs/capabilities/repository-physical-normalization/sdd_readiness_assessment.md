@@ -23,7 +23,7 @@ No autoriza movimientos fisicos, renombres, copias, sustituciones, eliminaciones
 | Repository Type | Foundation |
 | Last Updated | 2026-08-02 |
 | Assessor | Specification Agent |
-| Reviewer | Reviewer Agent - T-006; Reviewer Agent - T-011; Reviewer Agent - T-021 |
+| Reviewer | Reviewer Agent - T-006; Reviewer Agent - T-011; Reviewer Agent - T-021; Reviewer Agent - T-027 |
 | SDD Mode | SDD Full |
 | SDD Mode Source | `docs/capabilities/repository-physical-normalization/project_brief.md` |
 
@@ -47,7 +47,7 @@ Architecture documental fue autorizada por decision humana T-008 y creada como A
 
 Estado seleccionado:
 
-`Development first wave executed - pending Reviewer Agent review`.
+`Development first wave validated - pending human closure decision`.
 
 Motivo:
 
@@ -217,7 +217,7 @@ Condiciones vigentes:
 
 Decision vigente:
 
-`Development first wave executed - pending Reviewer Agent review`.
+`Development first wave validated - pending human closure decision`.
 
 ---
 
@@ -233,7 +233,7 @@ Decision vigente:
 | Mantener sin cambios los baselines cerrados. | Governance | High | Todos |
 | Aplicar correcciones menores T-021. | Documentation | High | Documentation Agent - Completed |
 | Validar readiness del paquete GEP. | Validation | High | QA Gate Agent - Completed T-022 |
-| Decidir si se autoriza Development. | Governance | High | Jordi Quiroga - Pending / Development NOT AUTHORIZED |
+| Decidir si se autoriza Development. | Governance | High | Jordi Quiroga - Completed T-023 |
 
 ---
 
@@ -638,7 +638,7 @@ Cambios menores aplicados:
 
 Decision vigente:
 
-`Development first wave executed - pending Reviewer Agent review`.
+`Development first wave validated - pending human closure decision`.
 ---
 
 # Governed Execution Preparation QA Gate Decision - T-022
@@ -672,7 +672,7 @@ Condiciones menores:
 
 Decision vigente:
 
-`Development first wave executed - pending Reviewer Agent review`.
+`Development first wave validated - pending human closure decision`.
 
 Siguiente agente recomendado:
 
@@ -703,4 +703,55 @@ Resultado:
 
 Decision vigente:
 
-`Ready for Reviewer Agent review of Repository Physical Normalization Development first wave`.
+`Ready for Human decision on Repository Physical Normalization first wave closure or future wave authorization`.
+---
+
+# Development Reviewer Decision - T-027
+
+Decision: `Approved with minor changes`.
+
+Fecha: 2026-08-02.
+
+Evaluador: Reviewer Agent.
+
+Resultado:
+
+- la ejecucion Development first wave coincide con la autorizacion humana T-023;
+- no hay hallazgos criticos ni importantes;
+- las rutas canonicas y stubs legacy existen;
+- SDD Modes Architecture permanece en ruta legacy;
+- no se detecta cambio normativo de baseline cerrado;
+- no se crearon scripts, tools, workflows ni automatizaciones.
+
+Correccion menor aplicada:
+
+- actualizar estado vigente y next step a `validated / pending human closure decision`.
+
+Decision vigente:
+
+`Ready for Human decision on Repository Physical Normalization first wave closure or future wave authorization`.
+---
+
+# Development QA Gate Decision - T-028
+
+Decision: `Pass with minor conditions`.
+
+Fecha: 2026-08-02.
+
+Evaluador: QA Gate Agent.
+
+Resultado:
+
+- la primera ola Development queda validada;
+- no hay bloqueos para decision humana de cierre del lote o autorizacion futura;
+- se mantiene compatibilidad legacy;
+- no se detecta cambio normativo de baseline cerrado;
+- ejecucion adicional permanece fuera de alcance sin nueva decision/gate.
+
+Condicion menor aplicada:
+
+- criterio del checklist actualizado para reflejar validacion post-ejecucion.
+
+Decision vigente:
+
+`Ready for human decision on Repository Physical Normalization first wave closure or future wave authorization`.

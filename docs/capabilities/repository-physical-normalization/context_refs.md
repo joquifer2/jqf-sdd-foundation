@@ -13,7 +13,7 @@ proyecto:
   nombre: JQF SDD Foundation - Repository Physical Normalization
   id_proyecto: repository-physical-normalization
   tipo_proyecto: foundation-repository-governance-specification
-  estado: Development first wave executed / pending review
+  estado: Development first wave validated / pending human closure decision
   fecha_creacion: 2026-08-02
   responsable: Jordi Quiroga
 
@@ -265,7 +265,7 @@ Siguiente contexto a cargar:
 - `docs/capabilities/repository-physical-normalization/tasks.md`
 - `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
 
-Siguiente decision recomendada: Reviewer Agent review of Repository Physical Normalization Development first wave.
+Siguiente decision recomendada: Human decision on Repository Physical Normalization first wave closure or future wave authorization.
 
 Restricciones vigentes:
 
@@ -295,7 +295,7 @@ Siguiente contexto a cargar:
 - `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
 - `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md`
 
-Siguiente decision recomendada: Reviewer Agent review of Repository Physical Normalization Development first wave.
+Siguiente decision recomendada: Human decision on Repository Physical Normalization first wave closure or future wave authorization.
 
 Restricciones vigentes:
 
@@ -324,7 +324,7 @@ Siguiente contexto a cargar:
 - `docs/capabilities/repository-physical-normalization/tasks.md`
 - `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
 
-Siguiente decision recomendada: Reviewer Agent review of Repository Physical Normalization Development first wave.
+Siguiente decision recomendada: Human decision on Repository Physical Normalization first wave closure or future wave authorization.
 
 Restricciones vigentes:
 
@@ -364,4 +364,38 @@ Ruta legacy canonica temporal retenida:
 
 - `specs/spec-001-sdd-modes.architecture.md`
 
-Siguiente decision recomendada: Reviewer Agent review of Repository Physical Normalization Development first wave.
+Siguiente decision recomendada: Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+---
+
+## Development Reviewer References - T-027
+
+| Referencia | Funcion | Estado |
+| --- | --- | --- |
+| `docs/capabilities/repository-physical-normalization/tasks.md#24-development-reviewer-decision---t-027` | Decision de Reviewer Agent sobre la primera ola Development. | Approved with minor changes |
+| `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#development-reviewer-decision---t-027` | Readiness actualizado tras review T-027. | Ready for QA Gate |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#reviewer-result---t-027` | Checklist actualizado con VC-DEV-009. | Pass with minor changes |
+
+Siguiente decision recomendada: Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+
+Restricciones vigentes:
+
+- Development adicional fuera del primer lote ejecutado requiere decision humana y gate aplicable.
+- No se autoriza normalizacion fisica adicional, movimiento, copia, renombre, sustitucion ni eliminacion de archivos fuera del alcance T-023/T-024.
+- No se autorizan scripts, tools, workflows ni automatizaciones.
+---
+
+## Development QA Gate References - T-028
+
+| Referencia | Funcion | Estado |
+| --- | --- | --- |
+| `docs/capabilities/repository-physical-normalization/tasks.md#25-development-qa-gate-decision---t-028` | Decision de QA Gate sobre la primera ola Development. | Pass with minor conditions |
+| `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#development-qa-gate-decision---t-028` | Readiness actualizado tras QA T-028. | Ready for human decision |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#qa-gate-result---t-028` | Checklist actualizado con VC-DEV-010. | Pass with minor conditions |
+
+Siguiente decision recomendada: Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+
+Restricciones vigentes:
+
+- Development adicional fuera del primer lote ejecutado requiere decision humana y gate aplicable.
+- No se autoriza normalizacion fisica adicional, movimiento, copia, renombre, sustitucion ni eliminacion de archivos fuera del alcance T-023/T-024.
+- No se autorizan scripts, tools, workflows ni automatizaciones.

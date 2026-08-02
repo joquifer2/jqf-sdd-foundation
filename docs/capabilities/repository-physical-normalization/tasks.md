@@ -9,7 +9,7 @@
 | Brief de proyecto relacionado | `docs/capabilities/repository-physical-normalization/project_brief.md` |
 | Referencias de contexto relacionado | `docs/capabilities/repository-physical-normalization/context_refs.md` |
 | Specification relacionada | `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md` |
-| Estado | Development first wave executed / pending review |
+| Estado | Development first wave validated / pending human closure decision |
 | Fase SDD actual | Development |
 | Responsable | Jordi Quiroga |
 | Creado por | Specification Agent |
@@ -94,8 +94,8 @@ Este plan registra que Architecture documental fue autorizada por T-008 y que Go
 | T-024 | Ejecutar primera ola controlada sobre SDD Modes. | Development | Implementation / Documentation | T-023 | Cinco artefactos se mueven a rutas canonicas y rutas legacy quedan como stubs; Architecture legacy se mantiene. | Completed |
 | T-025 | Actualizar indices y artefactos activos de Repository Physical Normalization. | Documentation | Documentation Agent | T-024 | Indices y expediente RPN reflejan ejecucion Development; no se reescriben capacidades cerradas no activas. | Completed |
 | T-026 | Validar ejecucion local y preparar review post-Development. | Validation prep | Implementation / Documentation | T-024; T-025 | Verificaciones de rutas, stubs, diff y ausencia de automatizacion registradas. | Completed |
-| T-027 | Revisar ejecucion Development. | Review | Reviewer Agent | T-026 | Reviewer valida movimiento fisico, compatibilidad y ausencia de cambio normativo. | Pending |
-| T-028 | Validar QA post-Development. | Validation | QA Gate Agent | T-027 | QA valida cierre o condiciones de la primera ola ejecutada. | Pending |
+| T-027 | Revisar ejecucion Development. | Review | Reviewer Agent | T-026 | Reviewer valida movimiento fisico, compatibilidad y ausencia de cambio normativo. | Completed |
+| T-028 | Validar QA post-Development. | Validation | QA Gate Agent | T-027 | QA valida cierre o condiciones de la primera ola ejecutada. | Completed |
 
 ---
 
@@ -165,10 +165,11 @@ T-009 a T-012 solo aplican si T-008 autoriza Architecture. T-013 a T-020 aplican
 ## 10. Siguiente paso recomendado
 
 ```text
-Reviewer Agent review of Repository Physical Normalization Development first wave.
+Human decision on Repository Physical Normalization first wave closure or future wave authorization.
 ```
 
-Development permanece `NOT AUTHORIZED`. No se autoriza normalizacion fisica.
+
+Development adicional permanece `NOT AUTHORIZED` fuera del primer lote ejecutado. No se autoriza normalizacion fisica adicional sin decision/gate aplicable.
 
 ---
 
@@ -663,7 +664,7 @@ No autorizado por esta ejecucion:
 
 ## 22. Development First Wave Execution - T-024/T-026
 
-Estado: `Executed / pending Reviewer Agent`.
+Estado: `Executed / reviewed by Reviewer Agent T-027`.
 
 Fecha: 2026-08-02.
 
@@ -694,7 +695,7 @@ Decision sobre Architecture SDD Modes:
 Siguiente paso valido:
 
 ```text
-Reviewer Agent review of Repository Physical Normalization Development first wave.
+Human decision on Repository Physical Normalization first wave closure or future wave authorization.
 ```
 ---
 
@@ -714,5 +715,78 @@ Verificaciones realizadas:
 Siguiente paso valido:
 
 ```text
-Reviewer Agent review of Repository Physical Normalization Development first wave.
+Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+```
+---
+
+## 24. Development Reviewer Decision - T-027
+
+Decision: `Approved with minor changes`.
+
+Fecha: 2026-08-02.
+
+Evaluador: Reviewer Agent.
+
+Artefactos revisados:
+
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_execution_report.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md`
+- `docs/capabilities/index.md`
+- `specs/capabilities/index.md`
+- rutas canonicas y stubs legacy de SDD Modes.
+
+Resultado:
+
+- No hay hallazgos criticos.
+- No hay hallazgos importantes.
+- La primera ola ejecutada coincide con la autorizacion humana T-023.
+- Los cinco artefactos de SDD Modes existen en rutas canonicas.
+- Las cinco rutas legacy movidas existen como stubs no normativos.
+- `specs/spec-001-sdd-modes.architecture.md` permanece en ruta legacy, sin mover ni renombrar.
+- No se detectan scripts, tools, workflows ni automatizaciones.
+- No se detecta cambio normativo del baseline cerrado de SDD Modes.
+
+Hallazgo menor aplicado por Documentation Agent:
+
+- actualizar encabezados y next steps activos de `pending review` a `reviewed / pending QA Gate`.
+
+Siguiente paso valido:
+
+```text
+Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+```
+---
+
+## 25. Development QA Gate Decision - T-028
+
+Decision: `Pass with minor conditions`.
+
+Fecha: 2026-08-02.
+
+Evaluador: QA Gate Agent.
+
+Gate evaluado:
+
+Repository Physical Normalization Development first wave validation.
+
+Resultado:
+
+- La fase Development fue autorizada por decision humana T-023.
+- La ejecucion T-024/T-026 esta registrada en `movement_execution_report.md`.
+- Reviewer Agent T-027 emitio `Approved with minor changes`.
+- Las rutas canonicas de SDD Modes existen.
+- Las rutas legacy movidas existen como stubs no normativos.
+- `specs/spec-001-sdd-modes.architecture.md` permanece en ruta legacy.
+- No se crearon scripts, tools, workflows ni automatizaciones.
+- No se detecta cambio normativo del baseline cerrado de SDD Modes.
+
+Condicion menor aplicada por Documentation Agent:
+
+- actualizar el criterio del checklist para que describa validacion post-ejecucion, no readiness previa a Development.
+
+Siguiente paso valido:
+
+```text
+Human decision on Repository Physical Normalization first wave closure or future wave authorization.
 ```

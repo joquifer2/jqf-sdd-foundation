@@ -5,9 +5,9 @@
 | Campo | Valor |
 | --- | --- |
 | Fase | Development |
-| Estado | First controlled movement executed / pending review |
+| Estado | First controlled movement validated / pending human closure decision |
 | Development | AUTHORIZED for first SDD Modes wave |
-| Ejecucion validada | No aplica; no ejecutada |
+| Ejecucion validada | Local validation completed; Reviewer T-027 approved with minor changes; QA Gate T-028 pass with minor conditions |
 
 ## Checklist previo a autorizacion de Development
 
@@ -42,13 +42,13 @@ Este bloque solo aplica si Development se autoriza posteriormente.
 | VC-DEV-006 | Links reviewed | Referencias activas actualizadas o justificadas como historicas. | Pass for review |
 | VC-DEV-007 | Baseline integrity | No hay cambio normativo en SDD Modes. | Pass for review |
 | VC-DEV-008 | Rollback readiness | Es posible restaurar cada ola. | Pass for review |
-| VC-DEV-009 | Reviewer post-execution | Revision de cambios fisicos. | Pending |
-| VC-DEV-010 | QA Gate post-execution | Validacion final de normalizacion ejecutada. | Pending |
+| VC-DEV-009 | Reviewer post-execution | Revision de cambios fisicos. | Pass with minor changes - T-027 |
+| VC-DEV-010 | QA Gate post-execution | Validacion final de normalizacion ejecutada. | Pass with minor conditions - T-028 |
 
 
 ## Criterio para Reviewer y QA
 
-El paquete puede avanzar a decision humana de Development solo si Reviewer y QA confirman que los controles `VC-PRE-001` a `VC-PRE-011` son suficientes, que los pendientes `VC-PRE-012` y `VC-PRE-013` quedan asignados, y que `VC-PRE-014` permanece fuera del alcance actual.
+La primera ola Development puede pasar a decision humana de cierre o autorizacion futura solo si Reviewer y QA confirman que los controles `VC-DEV-001` a `VC-DEV-010` son suficientes y que cualquier ejecucion adicional permanece fuera del alcance actual hasta nueva decision/gate aplicable.
 ---
 
 ## Reviewer Result - T-021
@@ -81,7 +81,7 @@ Este resultado no autoriza Development ni normalizacion fisica.
 
 ## Development Execution Result - T-024/T-026
 
-Estado: `First controlled movement executed / pending review`.
+Estado: `First controlled movement validated / pending human closure decision`.
 
 Reporte:
 
@@ -94,3 +94,47 @@ Resultado:
 - SDD Modes Architecture mantenida en ruta legacy;
 - indices y expediente activo actualizados;
 - scripts, tools, workflows y automatizaciones no creados.
+---
+
+## Reviewer Result - T-027
+
+Decision: `Approved with minor changes`.
+
+Resultado:
+
+- no hay hallazgos criticos;
+- no hay hallazgos importantes;
+- la ejecucion coincide con la autorizacion T-023 y el alcance T-024;
+- las rutas canonicas existen y las rutas legacy movidas son stubs no normativos;
+- `specs/spec-001-sdd-modes.architecture.md` permanece disponible en ruta legacy;
+- no se crearon scripts, tools, workflows ni automatizaciones;
+- no se detecto cambio normativo sobre el baseline cerrado de SDD Modes.
+
+Correccion menor aplicada por Documentation Agent:
+
+- el encabezado del checklist y los artefactos activos pasan de `pending review` a `reviewed / pending QA Gate`.
+
+Siguiente paso:
+
+`Human decision on Repository Physical Normalization first wave closure or future wave authorization`.
+---
+
+## QA Gate Result - T-028
+
+Decision: `Pass with minor conditions`.
+
+Resultado:
+
+- ejecucion Development first wave validada;
+- compatibilidad legacy preservada mediante stubs;
+- Architecture SDD Modes retenida en ruta legacy;
+- ausencia de scripts, tools, workflows y automatizaciones confirmada;
+- ausencia de cambio normativo del baseline cerrado confirmada.
+
+Condicion menor aplicada:
+
+- el criterio de cierre del checklist fue actualizado de readiness pre-Development a validacion post-ejecucion.
+
+Siguiente paso:
+
+`Human decision on Repository Physical Normalization first wave closure or future wave authorization`.

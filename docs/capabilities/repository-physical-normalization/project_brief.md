@@ -12,7 +12,7 @@ Normalizacion fisica del repositorio
 
 ### Estado
 
-Development first wave executed / pending review
+Development first wave validated / pending human closure decision
 
 ### Responsable
 
@@ -241,10 +241,10 @@ Documento de referencias de contexto utilizado:
 ## 14. Siguiente paso recomendado
 
 ```text
-Reviewer Agent review of Repository Physical Normalization Development first wave.
+Human decision on Repository Physical Normalization first wave closure or future wave authorization.
 ```
 
-Development permanece `NOT AUTHORIZED`. No se autoriza normalizacion fisica.
+Development adicional permanece `NOT AUTHORIZED` fuera del primer lote ejecutado. No se autoriza normalizacion fisica adicional sin decision/gate aplicable.
 
 ---
 
@@ -318,7 +318,7 @@ Fuera de autorizacion:
 Siguiente paso recomendado:
 
 ```text
-Reviewer Agent review of Repository Physical Normalization Development first wave.
+Human decision on Repository Physical Normalization first wave closure or future wave authorization.
 ```
 ---
 
@@ -338,7 +338,7 @@ Resultado:
 Siguiente paso recomendado:
 
 ```text
-Reviewer Agent review of Repository Physical Normalization Development first wave.
+Human decision on Repository Physical Normalization first wave closure or future wave authorization.
 ```
 ---
 
@@ -366,7 +366,7 @@ Condiciones menores:
 Siguiente paso recomendado:
 
 ```text
-Reviewer Agent review of Repository Physical Normalization Development first wave.
+Human decision on Repository Physical Normalization first wave closure or future wave authorization.
 ```
 ---
 
@@ -389,5 +389,47 @@ Resultado ejecutado:
 Siguiente paso recomendado:
 
 ```text
-Reviewer Agent review of Repository Physical Normalization Development first wave.
+Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+```
+---
+
+## 20. Development Reviewer Addendum
+
+Fecha: 2026-08-02.
+
+Decision de Reviewer Agent: `Approved with minor changes`.
+
+Resultado:
+
+- primera ola Development revisada sin hallazgos criticos ni importantes;
+- rutas canonicas y stubs legacy verificados;
+- `specs/spec-001-sdd-modes.architecture.md` conservada en ruta legacy;
+- no se detecta cambio normativo de baseline ni automatizacion nueva;
+- correccion menor de estado documental aplicada.
+
+Siguiente paso recomendado:
+
+```text
+Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+```
+---
+
+## 21. Development QA Gate Addendum
+
+Fecha: 2026-08-02.
+
+Decision de QA Gate Agent: `Pass with minor conditions`.
+
+Resultado:
+
+- primera ola Development validada;
+- compatibilidad legacy y stubs confirmados;
+- ausencia de cambio normativo de baseline confirmada;
+- ausencia de scripts, tools, workflows y automatizaciones confirmada;
+- condicion menor documental aplicada en el checklist.
+
+Siguiente paso recomendado:
+
+```text
+Human decision on Repository Physical Normalization first wave closure or future wave authorization.
 ```
