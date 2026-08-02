@@ -19,6 +19,7 @@ Los agentes metodológicos gobiernan el proceso SDD. No son agentes operativos d
 | `SDD-AGENT-007` | Implementation Agent | Ejecuta cambios únicamente cuando existen specification, arquitectura, tareas y gates suficientes. |
 | `SDD-AGENT-008` | Legacy to SDD Agent | Incorpora proyectos existentes al ciclo SDD mediante discovery mínimo, artefactos As-Is y readiness assessment. |
 | `SDD-AGENT-009` | GitHub Workflow Agent | Planeado; gestionará trazabilidad entre documentación, issues, ramas, commits y repositorio cuando exista su definición canónica. |
+| `SDD-AGENT-010` | Consolidation Agent | Prepara y reporta consolidaciones documentales, baseline, evidencia, deuda residual y puntos de reentrada sin aprobar gates ni ejecutar cambios fisicos. |
 
 ## Flujo recomendado para proyectos nuevos
 

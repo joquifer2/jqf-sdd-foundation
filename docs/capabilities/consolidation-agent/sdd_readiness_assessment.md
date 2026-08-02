@@ -21,7 +21,7 @@ No sustituye revision humana ni QA Gate.
 | Assessment Type | Architecture Readiness Gate Result |
 | Project Type | Foundation methodological capability |
 | Repository Type | Foundation |
-| Last Updated | 2026-08-01 |
+| Last Updated | 2026-08-02 |
 | Assessor | Specification Agent |
 | Reviewer | Reviewer Agent - SPEC review approved with minor changes; ARCH review approved with minor corrections applied |
 | SDD Mode | SDD Full |
@@ -46,7 +46,7 @@ Architecture documental fue autorizada por decision humana posterior a QA Gate T
 
 # Estado General
 
-Estado seleccionado: `Architecture`
+Estado seleccionado: `Closed with conditions`
 
 Motivo:
 
@@ -54,7 +54,7 @@ Motivo:
 - el modo `SDD Full` esta declarado;
 - las restricciones criticas estan documentadas;
 - el review de Architecture fue completado y QA Gate T-011 emitio `Pass with minor conditions`;
-- Architecture documental fue autorizada, creada y validada; Development no esta autorizado.
+- Architecture documental fue autorizada, creada y validada. Development fue autorizado explicitamente el 2026-08-02 para el MVP acotado y queda pendiente de Reviewer, QA Gate, validacion retrospectiva y cierre formal.
 
 ---
 
@@ -65,9 +65,9 @@ Motivo:
 | Project Brief | Yes | `docs/capabilities/consolidation-agent/project_brief.md` | Architecture | Declara SDD Full, alcance y restricciones. |
 | Context References | Yes | `docs/capabilities/consolidation-agent/context_refs.md` | Architecture | Indexa baseline cerrado y fuentes obligatorias. |
 | Specification | Yes | `specs/capabilities/consolidation-agent/spec-001-consolidation-agent.md` | Specification | Define comportamiento del agente sin implementacion. |
-| Tasks | Yes | `docs/capabilities/consolidation-agent/tasks.md` | Architecture | Backlog actualizado con T-008 a T-011. |
+| Tasks | Yes | `docs/capabilities/consolidation-agent/tasks.md` | Development MVP implemented | Backlog actualizado con T-012 a T-035 y ejecucion MVP pendiente de review/QA final. |
 | Architecture | Yes | `specs/capabilities/consolidation-agent/arch-001-consolidation-agent.md` | Architecture | Creada, revisada y validada por QA Gate con condiciones menores. |
-| Consolidation Agent real | No | N/A | Not authorized | Fuera de alcance. |
+| Consolidation Agent canonical definition | Yes | `.github/agents/consolidation.agent.md` | MVP implemented | Definicion canonica documental creada sin runtime, scripts, workflows ni automatizacion. |
 
 ---
 
@@ -78,7 +78,7 @@ Motivo:
 | Reviewer decision | Yes | Reviewer Agent aprobo con cambios menores y las correcciones fueron aplicadas | Cumplido. |
 | QA Gate decision | Yes | QA Gate T-007 ejecutado con decision `Pass with minor conditions` | Cumplido; habilita decision humana sobre Architecture. |
 | Architecture | Yes | Autorizada en T-008, creada en T-009, revisada en T-010 y validada en T-011 | Requiere decision humana para siguiente fase. |
-| Agent canonical definition | Future | Solo tras capacidad/fase autorizada | Bloquea uso real del agente, no esta Specification. |
+| Agent canonical definition | Yes | Autorizada por decision humana de Development el 2026-08-02 y creada como MVP documental | Cumplido; pendiente de review/QA final. |
 
 ---
 
@@ -145,7 +145,7 @@ Motivo:
 
 Decision: `Architecture Gate passed with minor conditions`
 
-La capacidad avanzo a Architecture documental por autorizacion humana explicita. `ARCH-001` existe, fue revisado por Reviewer Agent con correcciones menores aplicadas y paso QA Gate T-011 con condiciones menores. Cualquier fase posterior requiere decision humana explicita. Development permanece `NOT AUTHORIZED`.
+La capacidad avanzo a Architecture documental por autorizacion humana explicita. `ARCH-001` existe, fue revisado por Reviewer Agent con correcciones menores aplicadas y paso QA Gate T-011 con condiciones menores. Cualquier fase posterior requiere decision humana explicita. Development fue autorizado para el MVP acotado el 2026-08-02; no se autorizan scripts, workflows, tools, runtime, normalizacion fisica ni cambios de baseline.
 
 ---
 
@@ -252,14 +252,14 @@ Criterios no cumplidos:
 
 Bloqueos:
 
-- Development permanece `NOT AUTHORIZED`.
+- Development fue autorizado para el MVP acotado el 2026-08-02; no se autorizan scripts, workflows, tools, runtime, normalizacion fisica ni cambios de baseline.
 - Crear el `Consolidation Agent` real permanece no autorizado.
 - Reorganizacion fisica permanece no autorizada.
 
 Condiciones:
 
 1. Architecture requiere decision humana explicita.
-2. Development permanece `NOT AUTHORIZED`.
+2. Development fue autorizado para el MVP acotado el 2026-08-02; no se autorizan scripts, workflows, tools, runtime, normalizacion fisica ni cambios de baseline.
 3. No crear `.github/agents/` ni `.codex/agents/` para `Consolidation Agent` en esta fase.
 4. No crear scripts, tools, workflows, automatizaciones, consolidaciones reales ni reorganizacion fisica.
 
@@ -291,7 +291,7 @@ Resultado:
 - no se crea el `Consolidation Agent` real;
 - no se crean adaptadores, scripts, tools, workflows ni automatizaciones;
 - no se ejecutan consolidaciones reales ni reorganizacion fisica;
-- Development permanece `NOT AUTHORIZED`.
+- Development fue autorizado para el MVP acotado el 2026-08-02; no se autorizan scripts, workflows, tools, runtime, normalizacion fisica ni cambios de baseline.
 
 Siguiente paso:
 
@@ -311,7 +311,7 @@ Resultado:
 - `ARCH-001` es coherente con `SPEC-001`.
 - No se detectan contradicciones criticas con el baseline cerrado de consolidacion y cierre.
 - Las correcciones menores de naming arquitectonico fueron aplicadas.
-- Development permanece `NOT AUTHORIZED`.
+- Development fue autorizado para el MVP acotado el 2026-08-02; no se autorizan scripts, workflows, tools, runtime, normalizacion fisica ni cambios de baseline.
 
 Siguiente paso:
 
@@ -343,10 +343,112 @@ Condiciones:
 
 1. Cualquier fase posterior requiere decision humana explicita.
 2. No crear agente real, definicion canonica, adaptador Codex, scripts, tools, workflows, automatizaciones ni runtime sin fase futura autorizada.
-3. Development permanece `NOT AUTHORIZED`.
+3. Development fue autorizado para el MVP acotado el 2026-08-02; no se autorizan scripts, workflows, tools, runtime, normalizacion fisica ni cambios de baseline.
 
 Siguiente paso:
 
 ```text
 Decision humana sobre la siguiente fase documental de Consolidation Agent.
 ```
+---
+
+## Development Authorization and MVP Readiness - T-012/T-035
+
+Decision humana recibida: `AUTHORIZED` para iniciar Development del MVP de `Consolidation Agent`.
+
+Fecha: 2026-08-02.
+
+Alcance autorizado:
+
+- implementar el MVP definido en `SPEC-001`, `ARCH-001` y Task Plan aprobado;
+- mantener trazabilidad con `SPEC-001` y `ARCH-001`;
+- finalizar con Reviewer, QA Gate, validacion retrospectiva usando SDD Modes y cierre formal.
+
+Fuera de autorizacion:
+
+- cambios normativos;
+- reorganizacion fisica del repositorio;
+- `Repository Physical Normalization`;
+- modificaciones de baselines cerrados;
+- funcionalidades no contempladas en la Specification aprobada.
+
+Evidencia de Development MVP:
+
+- `.github/agents/consolidation.agent.md` creado como definicion canonica documental.
+- `.codex/agents/consolidation.toml` creado como adaptador Codex subordinado a la definicion canonica.
+- `AGENTS.md`, `.github/instructions/sdd.instructions.md`, `.github/agents/README.md`, `.codex/agents/README.md`, `docs/capabilities/index.md` y `specs/capabilities/index.md` actualizados como catalogos/routing.
+- `docs/capabilities/consolidation-agent/evidence_index.md`, `residual_debt.md` y `closure_handover.md` preparados para cierre candidato.
+
+Validacion estatica:
+
+- No se crean scripts.
+- No se crean tools.
+- No se crean workflows ejecutables.
+- No se crea runtime.
+- No se ejecutan consolidaciones reales.
+- No se mueve, renombra ni elimina ningun archivo.
+- No se modifican baselines cerrados.
+- `Repository Physical Normalization` permanece fuera de alcance.
+
+Validacion retrospectiva sobre SDD Modes:
+
+Resultado: `Eligible with conditions`.
+
+Evidencia:
+
+- SDD Modes contiene Project Brief, Context References, Specification, Architecture, Tasks y Readiness.
+- `SDD Full` esta declarado y justificado.
+- Existe deuda residual `VAL-001` visible en el expediente cerrado.
+- El agente puede preparar reporte/propuesta retrospectiva sin modificar el baseline.
+
+Condicion:
+
+- No producir cierre nuevo, handover nuevo ni reclasificacion fisica de SDD Modes sin capacidad separada o decision explicita de reentrada.
+
+Decision de readiness actual:
+
+`Closed with conditions`.
+
+Siguiente paso obligatorio:
+
+```text
+Reviewer Agent reviso el paquete Development del MVP con decision `Approved`.
+```
+
+Despues:
+
+```text
+QA Gate Agent evaluo Development completion y Closure readiness con decision `Pass with conditions`.
+```
+---
+
+## Final Reviewer and QA Gate - T-034/T-035
+
+Reviewer Decision: `Approved`.
+
+QA Gate Decision: `Pass with conditions`.
+
+Fecha: 2026-08-02.
+
+Resultado:
+
+- Development MVP completado dentro del alcance autorizado.
+- Definicion canonica y adaptador Codex creados.
+- Catalogos/routing sincronizados.
+- Evidencia, deuda residual y handover preparados.
+- Validacion retrospectiva sobre SDD Modes ejecutada como no destructiva con resultado `Eligible with conditions`.
+- No se modificaron baselines cerrados.
+- No se crearon scripts, tools, workflows, runtime ni automatizaciones.
+- No se ejecuto reorganizacion fisica.
+
+Condiciones activas:
+
+1. Development adicional requiere nueva decision humana y gate aplicable.
+2. Template standalone de reporte queda como deuda futura.
+3. Automatizaciones quedan fuera del MVP.
+4. `Repository Physical Normalization` requiere capacidad separada.
+5. Cualquier consolidacion real sobre SDD Modes requiere reentrada separada.
+
+Estado final de readiness:
+
+`Closed with conditions`.

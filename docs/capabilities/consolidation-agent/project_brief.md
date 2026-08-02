@@ -74,7 +74,7 @@ La Foundation ya cuenta con baseline cerrado para:
 - `SDD Project Consolidation and Closure`;
 - `Foundation Derivation and Project Initialization`.
 
-La capacidad `SDD Project Consolidation and Closure` definio el modelo de cierre, clasificacion documental, handover, deuda residual y puntos de reentrada. Sin embargo, el agente que aplicara ese proceso todavia no existe.
+La capacidad `SDD Project Consolidation and Closure` definio el modelo de cierre, clasificacion documental, handover, deuda residual y puntos de reentrada. Al inicio de esta capacidad, el agente que aplicaria ese proceso todavia no existia. La decision humana del 2026-08-02 autorizo posteriormente el MVP documental del agente.
 
 ---
 
@@ -228,3 +228,28 @@ El Brief de proyecto esta completo cuando:
 - el modo SDD esta declarado;
 - existen riesgos y criterios de exito;
 - existe contexto suficiente para sostener la fase vigente y decidir el siguiente paso documental.
+---
+
+## 15. Development MVP Authorization and Closure Addendum
+
+Fecha: 2026-08-02.
+
+Decision humana posterior autorizo Development del MVP de `Consolidation Agent` dentro del alcance definido por `SPEC-001`, `ARCH-001` y el Task Plan aprobado.
+
+Resultado:
+
+- definicion canonica creada en `.github/agents/consolidation.agent.md`;
+- adaptador Codex creado en `.codex/agents/consolidation.toml`;
+- catalogos/routing sincronizados;
+- validacion retrospectiva sobre SDD Modes ejecutada sin modificar su baseline;
+- Reviewer final `Approved`;
+- QA final `Pass with conditions`;
+- capacidad cerrada como `Closed with conditions`.
+
+Restricciones que permanecen activas:
+
+- Development adicional no autorizado sin nueva decision y gate;
+- no scripts, tools, workflows, runtime ni automatizaciones;
+- no Repository Physical Normalization;
+- no reorganizacion fisica;
+- no modificacion de baselines cerrados.

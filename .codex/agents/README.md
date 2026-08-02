@@ -24,6 +24,7 @@ Los archivos TOML no deben convertirse en una segunda fuente de verdad.
 | `implementation.toml` | `.github/agents/implementation.agent.md` | Escritura en el workspace |
 | `qa-gate.toml` | `.github/agents/qa-gate.agent.md` | Solo lectura |
 | `tasks-planner.toml` | `.github/agents/tasks-planner.agent.md` | Según la solicitud autorizada |
+| `consolidation.toml` | `.github/agents/consolidation.agent.md` | Según la solicitud autorizada; sin aprobar gates ni ejecutar cambios fisicos |
 
 ## Agentes planeados
 

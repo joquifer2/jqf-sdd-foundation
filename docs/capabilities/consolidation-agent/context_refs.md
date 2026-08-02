@@ -13,7 +13,7 @@ proyecto:
   nombre: JQF SDD Foundation - Consolidation Agent
   id_proyecto: consolidation-agent
   tipo_proyecto: foundation-methodological-agent-specification
-  estado: Architecture
+  estado: Closed with conditions
   fecha_creacion: 2026-08-01
   responsable: Jordi Quiroga
 
@@ -76,9 +76,9 @@ Esta iniciativa pertenece a la Foundation y no a un cliente derivado.
 
 | Tema | Motivo de la duda | Responsable | Estado |
 | --- | --- | --- | --- |
-| Crear definicion canonica del agente | Requiere decision humana posterior y fase/capacidad autorizada | Jordi Quiroga / fase futura | PENDIENTE |
-| Crear adaptador Codex | Depende de definicion canonica aprobada | Jordi Quiroga / Documentation Agent | PENDIENTE |
-| Automatizar checks de consolidacion | Seria Development o tooling futuro | Jordi Quiroga / Implementation Agent | PENDIENTE |
+| Crear definicion canonica del agente | Autorizada por decision humana de Development del 2026-08-02 y creada como MVP documental | Jordi Quiroga / Documentation Agent | COMPLETADO - Closed with conditions |
+| Crear adaptador Codex | Creado tras definicion canonica como puente subordinado | Jordi Quiroga / Documentation Agent | COMPLETADO - Closed with conditions |
+| Automatizar checks de consolidacion | Fuera del MVP autorizado; seria Development/tooling futuro | Jordi Quiroga / Implementation Agent | DEUDA FUTURA |
 
 ---
 
@@ -97,7 +97,7 @@ Esta iniciativa pertenece a la Foundation y no a un cliente derivado.
 | Recurso | Tipo | Motivo de uso | Fuente |
 | --- | --- | --- | --- |
 | `.github/instructions/sdd.instructions.md` | Instrucciones SDD | Define fases, restricciones, Consolidation, Closed y agentes actuales | Verificado en repositorio |
-| `AGENTS.md` | Catalogo metodologico | Confirma agentes vigentes y que `Consolidation Agent` todavia no existe | Verificado en repositorio |
+| `AGENTS.md` | Catalogo metodologico | Registra `Consolidation Agent` como agente metodologico tras MVP Development autorizado | Verificado en repositorio |
 | `.github/agents/specification.agent.md` | Definicion canonica de agente | Rigio la creacion de SPEC-001 | Verificado en repositorio |
 | `.github/agents/architect.agent.md` | Definicion canonica de agente | Rige la creacion de ARCH-001 | Verificado en repositorio |
 | `docs/templates/project_brief.template.md` | Template | Base estructural del Brief de proyecto | Verificado en repositorio |
@@ -157,9 +157,9 @@ Antes de modificar artefactos de esta capacidad:
 
 | Fuente pendiente | Motivo | Impacto | Responsable | Estado |
 | --- | --- | --- | --- | --- |
-| Definicion canonica futura en `.github/agents/` | Solo podra crearse tras autorizacion posterior | Bloquea existencia real del agente, no Specification | Jordi Quiroga / fase futura | PENDIENTE |
-| Adaptador futuro en `.codex/agents/` | Depende de definicion canonica | Bloquea seleccion operativa en Codex, no Specification | Jordi Quiroga / fase futura | PENDIENTE |
-| Architecture de esta capacidad | Autorizada por decision humana posterior a QA Gate T-007, creada como `ARCH-001`, revisada en T-010 y validada en T-011 | Requiere decision humana sobre siguiente fase documental | Architect Agent / Reviewer Agent / QA Gate Agent / Jordi Quiroga | QA PASSED - pending human decision |
+| Definicion canonica en `.github/agents/` | Creada como `.github/agents/consolidation.agent.md` tras autorizacion humana de Development | Habilita MVP documental; Closed with conditions | Jordi Quiroga / Documentation Agent | COMPLETADO - Closed with conditions |
+| Adaptador en `.codex/agents/` | Creado como `.codex/agents/consolidation.toml` y subordinado a la definicion canonica | Habilita seleccion en Codex; Closed with conditions | Jordi Quiroga / Documentation Agent | COMPLETADO - Closed with conditions |
+| Architecture de esta capacidad | Autorizada por decision humana posterior a QA Gate T-007, creada como `ARCH-001`, revisada en T-010 y validada en T-011 | Development MVP completado y cerrado con condiciones | Architect Agent / Reviewer Agent / QA Gate Agent / Jordi Quiroga | Closed with conditions |
 
 ---
 
@@ -223,3 +223,23 @@ Siguiente contexto a cargar:
 - `specs/capabilities/consolidation-agent/arch-001-consolidation-agent.md`
 
 Siguiente decision recomendada: decision humana sobre la siguiente fase documental.
+---
+
+## Development MVP References - T-012/T-035
+
+| Referencia | Funcion | Estado |
+| --- | --- | --- |
+| `.github/agents/consolidation.agent.md` | Definicion canonica documental del `Consolidation Agent`. | Closed with conditions |
+| `.codex/agents/consolidation.toml` | Adaptador Codex subordinado a la definicion canonica. | Closed with conditions |
+| `docs/capabilities/consolidation-agent/evidence_index.md` | Evidencia de autorizacion, implementacion y validacion retrospectiva. | Closure candidate |
+| `docs/capabilities/consolidation-agent/residual_debt.md` | Deuda residual y puntos de reentrada. | Closure candidate |
+| `docs/capabilities/consolidation-agent/closure_handover.md` | Handover de cierre candidato. | Pending final Review/QA |
+
+Restricciones vigentes:
+
+- No crear scripts, tools, workflows, runtime ni automatizaciones.
+- No ejecutar consolidaciones reales.
+- No modificar baselines cerrados.
+- No mover, renombrar ni eliminar archivos.
+- `Repository Physical Normalization` permanece fuera de alcance.
+- Cierre formal completado por Reviewer Agent T-034 y QA Gate Agent T-035 con condiciones.

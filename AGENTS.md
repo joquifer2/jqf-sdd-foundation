@@ -93,6 +93,14 @@ Responsables de revisar calidad y coherencia.
 
 ---
 
+### Agentes de consolidacion
+
+Responsables de preparar cierre documental, baseline, deuda residual y puntos de reentrada.
+
+* Consolidation Agent
+
+---
+
 ### Agentes de validación
 
 Responsables de verificar readiness y criterios de avance.
@@ -128,6 +136,7 @@ Responsables de mantener trazabilidad entre documentación y repositorio.
 | Reviewer Agent        | Revisar coherencia, alcance y calidad documental                 |
 | Documentation Agent   | Mantener documentación consistente y actualizada, distinguiendo entre Foundation y Proyecto Derivado para evitar crear instancias reales dentro de repositorios Foundation. |
 | QA Gate Agent         | Validar readiness y cumplimiento de criterios de fase            |
+| Consolidation Agent   | Preparar y reportar consolidaciones documentales, baseline, deuda residual y puntos de reentrada sin aprobar gates ni ejecutar cambios fisicos |
 | Implementation Agent  | Supervisar la transición controlada hacia Development            |
 | GitHub Workflow Agent | Gestionar trazabilidad entre documentación, issues y repositorio |
 
@@ -175,6 +184,21 @@ Tasks Planner Agent
 
 Este flujo se aplica cuando el proyecto ya existe y requiere reconstruccion minima de contexto antes de continuar bajo SDD.
 
+### Flujo para cierre de capacidades
+
+```text
+Capacidad validada
+        ↓
+Consolidation Agent
+        ↓
+Reviewer Agent
+        ↓
+QA Gate Agent
+        ↓
+Aprobacion humana de cierre
+```
+
+Este flujo aplica para preparar Consolidation y Closed. No autoriza Development, no sustituye gates y no ejecuta reorganizacion fisica.
 ---
 
 ## Relación con proyectos derivados

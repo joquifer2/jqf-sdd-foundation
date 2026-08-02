@@ -274,6 +274,7 @@ Actualmente existen:
 - Reviewer Agent
 - Documentation Agent
 - QA Gate Agent
+- Consolidation Agent
 - Implementation Agent
 - GitHub Workflow Agent
 
