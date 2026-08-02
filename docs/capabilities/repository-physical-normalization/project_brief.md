@@ -12,7 +12,7 @@ Normalizacion fisica del repositorio
 
 ### Estado
 
-Closed - DEV-RPN-010
+Closed with minor conditions
 
 ### Responsable
 
@@ -241,7 +241,7 @@ Documento de referencias de contexto utilizado:
 ## 14. Siguiente paso recomendado
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+No active next step. Repository Physical Normalization is Closed with minor conditions.
 ```
 
 Development adicional permanece `NOT AUTHORIZED` fuera del primer lote ejecutado. No se autoriza normalizacion fisica adicional sin decision/gate aplicable.
@@ -318,7 +318,7 @@ Fuera de autorizacion:
 Siguiente paso recomendado:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+No active next step. Repository Physical Normalization is Closed with minor conditions.
 ```
 ---
 
@@ -338,7 +338,7 @@ Resultado:
 Siguiente paso recomendado:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+No active next step. Repository Physical Normalization is Closed with minor conditions.
 ```
 ---
 
@@ -366,7 +366,7 @@ Condiciones menores:
 Siguiente paso recomendado:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+No active next step. Repository Physical Normalization is Closed with minor conditions.
 ```
 ---
 
@@ -389,7 +389,7 @@ Resultado ejecutado:
 Siguiente paso recomendado:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+No active next step. Repository Physical Normalization is Closed with minor conditions.
 ```
 ---
 
@@ -410,7 +410,7 @@ Resultado:
 Siguiente paso recomendado:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+No active next step. Repository Physical Normalization is Closed with minor conditions.
 ```
 ---
 
@@ -431,7 +431,7 @@ Resultado:
 Siguiente paso recomendado:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+No active next step. Repository Physical Normalization is Closed with minor conditions.
 ```
 ---
 
@@ -447,7 +447,7 @@ Decision propuesta:
 
 Estado:
 
-`Proposed / pending Reviewer and QA`.
+`Closed - DEV-RPN-010` (estado historico superado: la propuesta fue revisada, validada, autorizada, ejecutada y cerrada).
 
 Evidencia:
 
@@ -464,7 +464,7 @@ No se ejecuta movimiento, renombre, stub ni actualizacion fisica hasta Reviewer,
 Siguiente paso recomendado:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+No active next step. Repository Physical Normalization is Closed with minor conditions.
 ```
 ---
 
@@ -478,15 +478,15 @@ Resultado:
 
 - decision `Option A` aprobada para pasar a QA Gate;
 - no hay hallazgos criticos ni importantes;
-- DEV-RPN-010 permanece no ejecutado;
-- no se crea stub ni se modifica baseline cerrado;
+- estado historico superado por T-036: DEV-RPN-010 fue ejecutado tras autorizacion humana;
+- estado historico superado por T-036: se creo stub legacy no normativo y no se modifico el baseline cerrado;
 - correcciones menores de estado documental aplicadas.
 
 Siguiente paso recomendado:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
-`
+No active next step. Repository Physical Normalization is Closed with minor conditions.
+```
 ---
 
 ## 24. SDD Modes Architecture Route QA Gate Addendum
@@ -499,7 +499,9 @@ La decision `Option A` queda lista para decision humana explicita: mover `specs/
 
 Este resultado no ejecuta el movimiento, no crea stub, no modifica baselines cerrados y no autoriza por si solo Development adicional.
 
-Siguiente decision requerida: T-035, autorizacion humana explicita o rechazo de DEV-RPN-010.---
+Siguiente decision requerida historica: T-035, autorizacion humana explicita o rechazo de DEV-RPN-010. Estado superado por T-035/T-036/T-039.
+
+---
 
 ## 25. DEV-RPN-010 Closure Addendum
 
@@ -508,3 +510,66 @@ Fecha: 2026-08-02.
 Decision humana: `Autorizo el cierre`.
 
 DEV-RPN-010 queda cerrado tras ejecucion, Reviewer T-037 y QA Gate T-038. No queda autorizacion abierta para movimientos adicionales.
+
+---
+
+## 26. Post-Development Reconciliation Addendum
+
+Fecha: 2026-08-02.
+
+Estado real reconciliado:
+
+- DEV-RPN-010: `Closed`.
+- T-001 a T-039: `Completed`.
+- SDD Modes Specification y Architecture viven en rutas capability-local.
+- Rutas raiz conservadas como `Temporary compatibility stubs` no normativos.
+- El contenido normativo de SDD Modes no fue modificado.
+- Development adicional permanece `NOT AUTHORIZED`.
+- No existe siguiente paso activo dentro de DEV-RPN-010.
+
+Artefactos de cierre creados:
+
+- `docs/capabilities/repository-physical-normalization/evidence_index.md`.
+- `docs/capabilities/repository-physical-normalization/residual_debt.md`.
+- `docs/capabilities/repository-physical-normalization/closure_handover.md`.
+
+Siguiente accion valida:
+
+```text
+No active next step. Repository Physical Normalization is Closed with minor conditions.
+```
+
+---
+
+## 27. Global Closure Gate Addendum
+
+Fecha: 2026-08-02.
+
+Decision de QA Gate Agent: `Pass with minor conditions`.
+
+Resultado:
+
+- el cierre global de `Repository Physical Normalization` queda validado para decision humana;
+- DEV-RPN-010 esta cerrado;
+- T-001 a T-041 estan completadas;
+- la deuda residual de stubs temporales queda aceptada y gobernada;
+- Development adicional permanece `NOT AUTHORIZED`.
+
+Decision humana T-041:
+
+```text
+No active next step. Repository Physical Normalization is Closed with minor conditions.
+```
+---
+
+## 28. Global Closure Human Decision Addendum
+
+Fecha: 2026-08-02.
+
+Decision humana: `Adelante con el cierre global`.
+
+Resultado:
+
+`Repository Physical Normalization` queda `Closed with minor conditions`.
+
+No queda siguiente paso activo dentro de la capacidad. Development adicional permanece `NOT AUTHORIZED`; cualquier reentrada futura requiere decision humana explicita y gates aplicables.

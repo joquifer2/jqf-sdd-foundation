@@ -1,452 +1,183 @@
 # Referencias de contexto - Repository Physical Normalization
 
-> Este documento indexa el contexto utilizado para la capacidad `Repository Physical Normalization`.
+> Este documento indexa el contexto vigente para la capacidad `Repository Physical Normalization` tras la ejecucion y cierre de `DEV-RPN-010`.
 >
-> No autoriza movimientos fisicos, cambios de baseline, scripts, workflows ni Development.
+> No autoriza Development adicional, movimientos nuevos, retirada de stubs, scripts, workflows ni automatizaciones.
 
 ---
 
-# 1. Identidad del Proyecto
+## 1. Identidad
 
 ```yaml
 proyecto:
   nombre: JQF SDD Foundation - Repository Physical Normalization
   id_proyecto: repository-physical-normalization
-  tipo_proyecto: foundation-repository-governance-specification
-  estado: Closed - DEV-RPN-010
+  tipo_proyecto: foundation-repository-governance
+  estado: Closed with minor conditions
   fecha_creacion: 2026-08-02
+  ultima_actualizacion: 2026-08-02
   responsable: Jordi Quiroga
-
-cliente:
-  id_cliente: N/A
-  nombre_cliente: N/A
-  estado_relacion: N/A
 
 sdd_mode:
   modo_declarado: SDD Full
   fuente_canonica: docs/capabilities/repository-physical-normalization/project_brief.md
   estado: Verificado
-  ultima_revision: 2026-08-02
 ```
 
 ---
 
-## SDD Mode
+## 2. Estado Real Post-Development
 
-| Campo | Valor |
+| Elemento | Estado vigente |
 | --- | --- |
-| Modo indexado | `SDD Full` |
-| Fuente canonica | `docs/capabilities/repository-physical-normalization/project_brief.md` |
-| Estado de verificacion | Verificado |
-| Ultima revision | 2026-08-02 |
-| Notas | La capacidad afecta rutas, baseline, expedientes cerrados, compatibilidad y trazabilidad. |
+| DEV-RPN-010 | Closed |
+| T-001 a T-039 | Completed |
+| Siguiente paso dentro de DEV-RPN-010 | None |
+| Siguiente accion valida | None; future reentry requires explicit human decision |
+| Gate global | PASS WITH MINOR CONDITIONS - T-040 |
+| Development adicional | NOT AUTHORIZED |
+| Movimientos adicionales | NOT AUTHORIZED |
+| Scripts, workflows o automatizaciones | NOT AUTHORIZED |
 
 ---
 
-# 2. Contexto de Cliente Requerido
+## 3. Baseline Fisico Vigente
 
-```yaml
-ccd:
-  requerido: false
-  fuente_humana:
-    sistema: N/A
-    ubicacion: N/A
-  fuente_runtime_ia:
-    sistema: N/A
-    uri: N/A
-  version: N/A
-  estado: N/A
-  ultima_revision: N/A
-  fecha_consulta: 2026-08-02
-```
-
-Esta iniciativa pertenece a la Foundation y no a un cliente derivado.
-
----
-
-# 3. Decisiones Relacionadas
-
-| Fecha | Decision | Impacto en este proyecto | Fuente |
+| Ambito | Ruta | Clasificacion | Estado |
 | --- | --- | --- | --- |
-| 2026-08-01 | `SDD Project Consolidation and Closure` queda `Closed` | Define baseline, expediente historico, evidencia, deuda y reentrada como categorias previas a cualquier organizacion fisica. | `docs/capabilities/project-consolidation-and-closure/closure_handover.md` |
-| 2026-08-01 | Arquitectura de consolidacion selecciona expedientes por capacidad para capacidades nuevas | Proporciona la estructura documental objetivo inicial. | `specs/capabilities/project-consolidation-and-closure/arch-001-sdd-project-consolidation-and-closure.md` |
-| 2026-08-02 | `Consolidation Agent` queda `Closed with conditions` | Confirma que el agente puede producir propuestas `proposal-only`, pero no ejecutar cambios fisicos. | `docs/capabilities/consolidation-agent/closure_handover.md`; `docs/capabilities/consolidation-agent/residual_debt.md` |
-| 2026-08-02 | Validacion retrospectiva sobre `SDD Modes` queda `Closed with conditions / PASS WITH CONDITIONS` | Proporciona el primer mapa de aplicacion real para normalizacion fisica futura. | `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/` |
+| SDD Modes Specification | `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` | Canonical capability-local baseline | Vigente |
+| SDD Modes Architecture | `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` | Canonical capability-local baseline | Vigente |
+| Expediente SDD Modes | `docs/capabilities/sdd-modes/` | Canonical capability-local dossier | Vigente |
+| Root SDD Modes Specification | `specs/spec-001-sdd-modes.md` | Temporary compatibility stub | No normativo |
+| Root SDD Modes Architecture | `specs/spec-001-sdd-modes.architecture.md` | Temporary compatibility stub | No normativo |
+| Root SDD Modes dossier docs | `docs/project_brief.md`; `docs/context_refs.md`; `docs/tasks.md`; `docs/sdd_readiness_assessment.md` | Temporary compatibility stubs | No normativos |
 
-## Decisiones pendientes de validar
-
-| Tema | Motivo de la duda | Responsable | Estado |
-| --- | --- | --- | --- |
-| Compatibilidad legacy exacta | Falta decidir si se usaran stubs, aliases, indices o coexistencia temporal. | Jordi Quiroga / Architect Agent futuro | PENDING |
-| Naming final de Architecture de SDD Modes | Reference Map confirma que Option A es viable con stub legacy y rollback. | Architect Agent / Tasks Planner Agent | PROPOSED - pending Reviewer/QA |
-| Ejecutor autorizado de movimientos | La Specification no debe decidir quien ejecuta fisicamente sin Architecture/Gate. | Jordi Quiroga | PENDING |
-| Evidencia Git minima por movimiento | Debe definirse antes de Development/Documentation ejecutiva. | Reviewer Agent / QA Gate Agent futuro | PENDING |
+El contenido normativo de SDD Modes no fue modificado por la normalizacion fisica. Las rutas raiz se conservan solo para compatibilidad y trazabilidad de referencias historicas o externas.
 
 ---
 
-# 4. Proyectos Relacionados
+## 4. Artefactos Principales de Repository Physical Normalization
 
-| Proyecto | Relacion con este proyecto | Estado | Fuente |
-| --- | --- | --- | --- |
-| `SDD Modes` | Primer caso real futuro; baseline cerrado con expediente historico en raiz. | Closed with conditions / baseline aprobado | `docs/capabilities/sdd-modes/project_brief.md`; `docs/capabilities/sdd-modes/context_refs.md`; `docs/capabilities/sdd-modes/tasks.md`; `docs/capabilities/sdd-modes/sdd_readiness_assessment.md`; `specs/capabilities/sdd-modes/spec-001-sdd-modes.md`; `specs/spec-001-sdd-modes.architecture.md` |
-| `SDD Project Consolidation and Closure` | Define categorias de consolidacion que la normalizacion fisica debe respetar. | Closed | `docs/capabilities/project-consolidation-and-closure/closure_handover.md` |
-| `Foundation Derivation and Project Initialization` | Define limites con proyectos derivados y baseline exportable. | Closed | `docs/capabilities/foundation-derivation-and-project-initialization/closure_handover.md` |
-| `Consolidation Agent` | Produce propuestas de clasificacion y movimiento, pero no ejecuta normalizacion fisica. | Closed with conditions | `docs/capabilities/consolidation-agent/closure_handover.md` |
-
----
-
-# 5. Conocimiento Reutilizable Relacionado
-
-| Recurso | Tipo | Motivo de uso | Fuente |
-| --- | --- | --- | --- |
-| `.github/instructions/sdd.instructions.md` | Instrucciones SDD | Define fases, restricciones, Consolidation, Closed, gates y precedencia documental. | Verificado en repositorio |
-| `AGENTS.md` | Catalogo metodologico | Define limites de agentes y confirma que el `Consolidation Agent` no ejecuta cambios fisicos. | Verificado en repositorio |
-| `.github/agents/specification.agent.md` | Definicion canonica de agente | Rige la creacion de esta specification. | Verificado en repositorio |
-| `docs/templates/project_brief.template.md` | Template | Base estructural del Brief de proyecto. | Verificado en repositorio |
-| `docs/templates/context_refs.template.md` | Template | Base estructural de referencias de contexto. | Verificado en repositorio |
-| `docs/templates/sdd_readiness_assessment.template.md` | Template | Base estructural del readiness inicial. | Verificado en repositorio |
-| `specs/templates/spec.template.md` | Template | Base estructural de `SPEC-001`. | Verificado en repositorio |
-| `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/consolidation_report.md` | Validacion / propuesta | Contiene propuesta no ejecutable de target structure para `SDD Modes`. | Verificado en repositorio |
-| `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/qa_gate_decision.md` | QA evidence | Confirma que la propuesta fisica no fue ejecutada. | Verificado en repositorio |
-
----
-
-# 6. Fuentes Tecnicas Relacionadas
-
-```yaml
-repositorios:
-  - nombre: jqf-sdd-foundation
-    url: https://github.com/joquifer2/jqf-sdd-foundation.git
-    rama: main
-    descripcion: Repositorio Foundation local en C:\Workspace\JOQUIFER\sdd-foundation. Esta capacidad permanece en Specification y no ejecuta movimientos fisicos.
-```
-
-No existen APIs, datos, dashboards, runtime ni integraciones tecnicas en alcance.
-
----
-
-# 7. Reglas de Carga de Contexto
-
-Antes de modificar artefactos de esta capacidad:
-
-1. Leer este archivo.
-2. Leer el Brief de proyecto de esta capacidad.
-3. Leer `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md` si existe.
-4. Leer el paquete retrospectivo `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/`.
-5. Tratar `SDD Modes` como baseline cerrado y read-only.
-6. No mover, copiar, renombrar, eliminar ni sustituir archivos.
-7. No ampliar Governed Execution Preparation fuera de T-013 ni crear scripts, workflows, automatizaciones, Development, stubs o normalizacion fisica desde esta fase.
-
----
-
-# 8. Jerarquia de Contexto en Caso de Conflicto
-
-1. Brief de proyecto de esta capacidad.
-2. `.github/instructions/sdd.instructions.md`.
-3. `SPEC-001 - Repository Physical Normalization`.
-4. Baseline cerrado de `SDD Project Consolidation and Closure`.
-5. Baseline cerrado de `Consolidation Agent`.
-6. Paquete retrospectivo de SDD Modes, solo como propuesta/evidencia `proposal-only`.
-7. Indices globales.
-8. README, AGENTS y glosario.
-9. Fuentes discovery-only o pendientes.
-
----
-
-# 9. Contexto Pendiente
-
-| Fuente pendiente | Motivo | Impacto | Responsable | Estado |
-| --- | --- | --- | --- | --- |
-| Architecture de esta capacidad | Autorizada por decision humana del 2026-08-02, creada como `ARCH-001`, revisada en T-011 y validada en T-012. | Define arquitectura documental no ejecutable; pendiente de decision humana futura. | Architect Agent / Reviewer Agent / QA Gate Agent | Pass with minor conditions T-012 |
-| Reference map completo | Definido conceptualmente en `ARCH-001`; no generado como inventario ejecutable. | Necesario antes de cualquier movimiento futuro. | Documentation Agent / Reviewer futuro | PENDING - future execution prep |
-| Estrategia de compatibilidad legacy | `ARCH-001` selecciona stubs documentales temporales como estrategia conceptual. | Requiere detalle futuro antes de ejecucion. | Architect Agent / Reviewer futuro | Reviewed conceptually / QA T-012 conditions |
-| Rollback plan | Definido conceptualmente en `ARCH-001`; no ejecutado. | Bloquea ejecucion reversible hasta plan detallado futuro. | Documentation / QA futuro | Defined conceptually / Pending detail |
-
----
-
-# 10. Trazabilidad
-
-```yaml
-trazabilidad:
-  creado_por: Specification Agent
-  fecha_creacion: 2026-08-02
-  ultima_actualizacion: 2026-08-02
-  actualizado_por: Specification Agent
-  contexto_validado_por: QA Gate Agent T-007
-  fecha_validacion: 2026-08-02
-  version_contexto: repository-physical-normalization-governed-execution-preparation
-```
-
----
-
-## QA Gate References - T-007
-
-| Referencia | Funcion | Estado |
+| Artefacto | Funcion | Estado |
 | --- | --- | --- |
-| `docs/capabilities/repository-physical-normalization/tasks.md#11-qa-gate-decision---t-007` | Decision de QA Gate de Specification. | Completed |
-| `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#qa-gate-decision---t-007` | Readiness actualizado tras gate de Specification. | Pass with minor conditions |
+| `docs/capabilities/repository-physical-normalization/project_brief.md` | Brief y decisiones humanas de la capacidad. | Closed with minor conditions |
+| `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md` | Specification normativa de la capacidad. | Baseline de capacidad |
+| `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md` | Architecture documental de la capacidad. | Completed |
+| `docs/capabilities/repository-physical-normalization/tasks.md` | Task Plan T-001 a T-041. | T-001..T-040 completed; T-041 pending human decision |
+| `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md` | Readiness reconciliado post-Development. | PASS WITH MINOR CONDITIONS - T-040 |
+| `docs/capabilities/repository-physical-normalization/evidence_index.md` | Indice de evidencias de ejecucion, gates y garantias negativas. | Created |
+| `docs/capabilities/repository-physical-normalization/residual_debt.md` | Deuda residual aceptada y punto de reentrada. | Created |
+| `docs/capabilities/repository-physical-normalization/closure_handover.md` | Handover para cierre global y reentrada futura. | Updated |
+| `docs/capabilities/repository-physical-normalization/global_closure_gate.md` | Decision QA Gate T-040. | PASS WITH MINOR CONDITIONS |
 
-Siguiente contexto a cargar:
-
-- `docs/capabilities/repository-physical-normalization/project_brief.md`
-- `docs/capabilities/repository-physical-normalization/context_refs.md`
-- `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md`
-- `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md`
-- `docs/capabilities/repository-physical-normalization/tasks.md`
-
-Siguiente decision recomendada: decision humana sobre posible fase futura de preparacion ejecutiva gobernada.
-
-Restricciones vigentes:
-
-- Architecture no quedo autorizada por QA Gate T-007; fue autorizada despues por decision humana T-008.
-- Development permanece `NOT AUTHORIZED`.
-- No se autoriza normalizacion fisica, movimiento, copia, renombre, sustitucion ni eliminacion de archivos.
 ---
 
-## Architecture References - T-008/T-010
+## 5. Paquete Governed Execution Preparation
 
-| Referencia | Funcion | Estado |
+| Artefacto | Funcion | Estado vigente |
 | --- | --- | --- |
-| `docs/capabilities/repository-physical-normalization/tasks.md#13-architecture-authorization---t-008` | Decision humana que autoriza Architecture documental. | Completed |
-| `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md` | Arquitectura documental conceptual de normalizacion fisica. | Pass with minor conditions T-012 |
-| `docs/capabilities/repository-physical-normalization/tasks.md#14-architecture-execution---t-009t-010` | Registro de ejecucion documental de Architecture. | Completed |
-
-Siguiente contexto a cargar:
-
-- `docs/capabilities/repository-physical-normalization/project_brief.md`
-- `docs/capabilities/repository-physical-normalization/context_refs.md`
-- `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md`
-- `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md`
-- `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md`
-- `docs/capabilities/repository-physical-normalization/tasks.md`
-
-Restricciones vigentes:
-
-- Development permanece `NOT AUTHORIZED`.
-- No se autoriza normalizacion fisica, movimiento, copia, renombre, sustitucion ni eliminacion de archivos.
-- Baselines cerrados permanecen read-only.
----
-
-## Architecture QA Gate References - T-012
-
-| Referencia | Funcion | Estado |
-| --- | --- | --- |
-| `docs/capabilities/repository-physical-normalization/tasks.md#16-architecture-qa-gate-decision---t-012` | Decision de QA Gate de Architecture. | Pass with minor conditions |
-| `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#architecture-qa-gate-decision---t-012` | Readiness actualizado tras gate de Architecture. | Completed |
-
-Restricciones vigentes:
-
-- Development permanece `NOT AUTHORIZED`.
-- No se autoriza normalizacion fisica, movimiento, copia, renombre, sustitucion ni eliminacion de archivos.
-- Baselines cerrados permanecen read-only.
----
-
-## Governed Execution Preparation References - T-013/T-020
-
-| Referencia | Funcion | Estado |
-| --- | --- | --- |
-| `docs/capabilities/repository-physical-normalization/tasks.md#17-governed-execution-preparation-authorization---t-013` | Decision humana que autoriza preparacion documental de ejecucion gobernada. | Completed |
 | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md` | Indice del paquete GEP. | Closed - DEV-RPN-010 |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/canonical_route_registry.md` | Registro canonico de rutas objetivo futuras. | Closed - DEV-RPN-010 |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md` | Mapa de referencias y superficies de compatibilidad. | Closed - DEV-RPN-010 |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md` | Plan de movimientos futuros por olas, no ejecutado. | Closed - DEV-RPN-010 |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md` | Plan de continuidad de enlaces, referencias, handovers y derivados. | Closed - DEV-RPN-010 |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md` | Plan de reversibilidad futura. | Closed - DEV-RPN-010 |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md` | Checklist de readiness y validacion. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/canonical_route_registry.md` | Registro de rutas canonicas y legacy. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md` | Mapa de referencias activas, historicas y compatibilidad. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md` | Plan y resultado de movimientos autorizados. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md` | Plan de stubs, referencias y derivados. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md` | Rollback viable de DEV-RPN-010. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md` | Evidencia de QA y validation checks. | Closed - DEV-RPN-010 |
 | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_pilot_package.md` | Aplicacion piloto sobre SDD Modes. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_execution_report.md` | Reporte de ejecucion fisica autorizada. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_architecture_route_decision.md` | Decision Option A aplicada en DEV-RPN-010. | Closed - DEV-RPN-010 |
 
-Siguiente contexto a cargar:
-
-- `docs/capabilities/repository-physical-normalization/project_brief.md`
-- `docs/capabilities/repository-physical-normalization/context_refs.md`
-- `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md`
-- `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md`
-- `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md`
-- `docs/capabilities/repository-physical-normalization/tasks.md`
-- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
-
-Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
-
-Restricciones vigentes:
-
-- Development permanece `NOT AUTHORIZED`.
-- No se autoriza normalizacion fisica, movimiento, copia, renombre, sustitucion ni eliminacion de archivos.
-- No se autoriza creacion de stubs.
-- No se autorizan scripts, tools, workflows ni automatizaciones.
-- Baselines cerrados permanecen read-only.
 ---
 
-## Governed Execution Preparation Reviewer References - T-021
+## 6. Gates y Decisiones
 
-| Referencia | Funcion | Estado |
+| Tarea | Decision | Resultado vigente |
 | --- | --- | --- |
-| `docs/capabilities/repository-physical-normalization/tasks.md#19-governed-execution-preparation-reviewer-decision---t-021` | Decision de Reviewer Agent sobre el paquete GEP. | Approved with minor changes |
-| `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#governed-execution-preparation-reviewer-decision---t-021` | Readiness actualizado tras review T-021. | Ready for QA Gate |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md` | Checklist actualizado con VC-PRE-012 tras review. | Draft for QA Gate |
+| T-006 | Reviewer Specification | Approved with minor changes |
+| T-007 | QA Gate Specification | Pass with minor conditions |
+| T-008 | Decision humana Architecture | Authorized |
+| T-011 | Reviewer Architecture | Approved with minor changes |
+| T-012 | QA Gate Architecture | Pass with minor conditions |
+| T-013 | Decision humana GEP | Authorized |
+| T-021 | Reviewer GEP | Approved with minor changes |
+| T-022 | QA Gate GEP | Pass with minor conditions |
+| T-023 | Decision humana Development | Authorized |
+| T-027 | Reviewer primera ola Development | Approved with minor changes |
+| T-028 | QA Gate primera ola Development | Pass with minor conditions |
+| T-033 | Reviewer DEV-RPN-010 package | Approved with minor changes |
+| T-034 | QA Gate DEV-RPN-010 package | Pass with minor conditions |
+| T-035 | Decision humana DEV-RPN-010 | Authorized |
+| T-037 | Reviewer DEV-RPN-010 execution | Approved with minor changes |
+| T-038 | QA Gate DEV-RPN-010 execution | Pass with minor conditions |
+| T-039 | Decision humana closure DEV-RPN-010 | Closed |
+| T-040 | Global Closure Gate | Pass with minor conditions |
+| T-041 | Human global closure decision | Closed |
 
-Siguiente contexto a cargar:
-
-- `docs/capabilities/repository-physical-normalization/project_brief.md`
-- `docs/capabilities/repository-physical-normalization/context_refs.md`
-- `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md`
-- `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md`
-- `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md`
-- `docs/capabilities/repository-physical-normalization/tasks.md`
-- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
-- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md`
-
-Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
-
-Restricciones vigentes:
-
-- Development permanece `NOT AUTHORIZED`.
-- No se autoriza normalizacion fisica, movimiento, copia, renombre, sustitucion ni eliminacion de archivos.
-- No se autoriza creacion de stubs.
-- No se autorizan scripts, tools, workflows ni automatizaciones.
-- Baselines cerrados permanecen read-only.
 ---
 
-## Governed Execution Preparation QA Gate References - T-022
+## 7. Proyectos y Capacidades Relacionadas
 
-| Referencia | Funcion | Estado |
-| --- | --- | --- |
-| `docs/capabilities/repository-physical-normalization/tasks.md#20-governed-execution-preparation-qa-gate-decision---t-022` | Decision de QA Gate sobre readiness del paquete GEP. | Pass with minor conditions |
-| `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#governed-execution-preparation-qa-gate-decision---t-022` | Readiness actualizado tras QA T-022. | Pending human Development decision |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#qa-gate-result---t-022` | Checklist actualizado con controles VC-PRE-009 a VC-PRE-013. | Pass with minor conditions |
+| Capacidad | Relacion | Estado | Fuentes canonicas vigentes |
+| --- | --- | --- | --- |
+| SDD Modes | Primer caso real aplicado por RPN. | Closed with conditions / physically normalized | `docs/capabilities/sdd-modes/`; `specs/capabilities/sdd-modes/spec-001-sdd-modes.md`; `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` |
+| SDD Project Consolidation and Closure | Define categorias de cierre, handover, evidencia, deuda y reentrada. | Closed | `docs/capabilities/project-consolidation-and-closure/closure_handover.md` |
+| Foundation Derivation and Project Initialization | Define limites con repositorios derivados. | Closed | `docs/capabilities/foundation-derivation-and-project-initialization/closure_handover.md` |
+| Consolidation Agent | Produce propuestas `proposal-only`; no ejecuta normalizacion fisica. | Closed with conditions | `docs/capabilities/consolidation-agent/closure_handover.md` |
 
-Siguiente contexto a cargar:
-
-- `docs/capabilities/repository-physical-normalization/project_brief.md`
-- `docs/capabilities/repository-physical-normalization/context_refs.md`
-- `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md`
-- `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md`
-- `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md`
-- `docs/capabilities/repository-physical-normalization/tasks.md`
-- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
-
-Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
-
-Restricciones vigentes:
-
-- Development permanece `NOT AUTHORIZED` hasta decision humana explicita posterior.
-- No se autoriza normalizacion fisica, movimiento, copia, renombre, sustitucion ni eliminacion de archivos.
-- No se autoriza creacion de stubs.
-- No se autorizan scripts, tools, workflows ni automatizaciones.
-- Baselines cerrados permanecen read-only.
 ---
 
-## Development Execution References - T-023/T-026
+## 8. Reglas de Carga de Contexto
 
-| Referencia | Funcion | Estado |
-| --- | --- | --- |
-| `docs/capabilities/repository-physical-normalization/tasks.md#21-development-authorization---t-023` | Decision humana que autoriza Development. | Completed |
-| `docs/capabilities/repository-physical-normalization/tasks.md#22-development-first-wave-execution---t-024t-026` | Registro de ejecucion de primera ola. | Executed / pending review |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_execution_report.md` | Reporte de movimientos, stubs y decision de Architecture legacy. | Executed / pending review |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#development-execution-result---t-024t-026` | Checklist Development actualizado. | Pending Reviewer/QA |
+Antes de revisar o validar el cierre global de esta capacidad, cargar:
 
-Rutas canonicas SDD Modes tras primera ola:
+1. `docs/capabilities/repository-physical-normalization/project_brief.md`.
+2. `docs/capabilities/repository-physical-normalization/context_refs.md`.
+3. `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md`.
+4. `docs/capabilities/repository-physical-normalization/tasks.md`.
+5. `docs/capabilities/repository-physical-normalization/evidence_index.md`.
+6. `docs/capabilities/repository-physical-normalization/residual_debt.md`.
+7. `docs/capabilities/repository-physical-normalization/closure_handover.md`.
+8. El paquete GEP cuando se necesite evidencia detallada de DEV-RPN-010.
 
-- `docs/capabilities/sdd-modes/project_brief.md`
-- `docs/capabilities/sdd-modes/context_refs.md`
-- `docs/capabilities/sdd-modes/tasks.md`
-- `docs/capabilities/sdd-modes/sdd_readiness_assessment.md`
-- `specs/capabilities/sdd-modes/spec-001-sdd-modes.md`
+No cargar rutas raiz de SDD Modes como normativas. Las rutas raiz son `Temporary compatibility stubs`.
 
-Rutas legacy preservadas como stubs:
-
-- `docs/project_brief.md`
-- `docs/context_refs.md`
-- `docs/tasks.md`
-- `docs/sdd_readiness_assessment.md`
-- `specs/spec-001-sdd-modes.md`
-
-Ruta legacy canonica temporal retenida:
-
-- `specs/spec-001-sdd-modes.architecture.md`
-
-Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
 ---
 
-## Development Reviewer References - T-027
+## 9. Deuda Residual y Reentrada
 
-| Referencia | Funcion | Estado |
-| --- | --- | --- |
-| `docs/capabilities/repository-physical-normalization/tasks.md#24-development-reviewer-decision---t-027` | Decision de Reviewer Agent sobre la primera ola Development. | Approved with minor changes |
-| `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#development-reviewer-decision---t-027` | Readiness actualizado tras review T-027. | Ready for QA Gate |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#reviewer-result---t-027` | Checklist actualizado con VC-DEV-009. | Pass with minor changes |
+La deuda residual aceptada para cierre es la permanencia temporal de stubs raiz y referencias historicas cubiertas por compatibilidad. Su retirada futura requiere una nueva reentrada con:
 
-Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
+- auditoria de referencias activas;
+- analisis de impacto en repositorios derivados;
+- plan de retirada o movimiento;
+- compatibility plan actualizado;
+- rollback plan actualizado;
+- Reviewer Agent;
+- QA Gate Agent;
+- autorizacion humana explicita.
 
-Restricciones vigentes:
-
-- Development adicional fuera del primer lote ejecutado requiere decision humana y gate aplicable.
-- No se autoriza normalizacion fisica adicional, movimiento, copia, renombre, sustitucion ni eliminacion de archivos fuera del alcance T-023/T-024.
-- No se autorizan scripts, tools, workflows ni automatizaciones.
 ---
 
-## Development QA Gate References - T-028
+## 10. Restricciones Vigentes
 
-| Referencia | Funcion | Estado |
-| --- | --- | --- |
-| `docs/capabilities/repository-physical-normalization/tasks.md#25-development-qa-gate-decision---t-028` | Decision de QA Gate sobre la primera ola Development. | Pass with minor conditions |
-| `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#development-qa-gate-decision---t-028` | Readiness actualizado tras QA T-028. | Ready for human decision |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#qa-gate-result---t-028` | Checklist actualizado con VC-DEV-010. | Pass with minor conditions |
+- No eliminar stubs.
+- No ejecutar movimientos nuevos.
+- No modificar contenido normativo de SDD Modes.
+- No autorizar Development adicional.
+- No iniciar Project Initializer.
+- No iniciar Derived Repository Upgrade and Migration.
+- No crear scripts, herramientas, workflows ni automatizaciones.
 
-Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
-
-Restricciones vigentes:
-
-- Development adicional fuera del primer lote ejecutado requiere decision humana y gate aplicable.
-- No se autoriza normalizacion fisica adicional, movimiento, copia, renombre, sustitucion ni eliminacion de archivos fuera del alcance T-023/T-024.
-- No se autorizan scripts, tools, workflows ni automatizaciones.
 ---
 
-## SDD Modes Architecture Route Decision References - T-029/T-032
+## 11. Siguiente Accion Valida
 
-| Referencia | Funcion | Estado |
-| --- | --- | --- |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_architecture_route_decision.md` | Decision arquitectonica propuesta sobre `specs/spec-001-sdd-modes.architecture.md`. | Proposed Option A / pending Reviewer |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md#full-reference-map---sdd-modes-architecture-route` | Reference Map completo para la ruta Architecture. | Completed for review |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md#executed-wave-dev-rpn-010---sdd-modes-architecture-route` | Movimiento DEV-RPN-010 ejecutado. | Closed - DEV-RPN-010 |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md#compatibility-addendum---sdd-modes-architecture-route` | Compatibilidad mediante stub legacy. | Closed - DEV-RPN-010 |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md#rollback-addendum---dev-rpn-010-sdd-modes-architecture-route` | Rollback futuro de DEV-RPN-010. | Viable / not executed |
-| `docs/capabilities/repository-physical-normalization/tasks.md#26-sdd-modes-architecture-route-decision-preparation---t-029t-032` | Tareas T-029/T-032. | Completed / pending Reviewer |
+```text
+No active next step. Repository Physical Normalization is Closed with minor conditions.
+```
 
-Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
+QA Gate T-040:
 
-Restricciones vigentes:
-
-- No se ejecuta DEV-RPN-010 sin Reviewer, QA Gate y autorizacion humana explicita.
-- No se mueve ni renombra `specs/spec-001-sdd-modes.architecture.md` en esta preparacion.
-- No se crea stub legacy en esta preparacion.
-- No se modifica contenido normativo de SDD Modes Architecture.
----
-
-## SDD Modes Architecture Route Reviewer References - T-033
-
-| Referencia | Funcion | Estado |
-| --- | --- | --- |
-| `docs/capabilities/repository-physical-normalization/tasks.md#27-sdd-modes-architecture-route-reviewer-decision---t-033` | Decision de Reviewer Agent sobre DEV-RPN-010. | Approved with minor changes |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#reviewer-result---t-033` | Checklist actualizado con VC-ARCH-006. | Pass with minor changes |
-
-Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
-
-Restricciones vigentes:
-
-- DEV-RPN-010 no esta autorizado para ejecucion.
-- No se mueve ni renombra `specs/spec-001-sdd-modes.architecture.md`.
-- No se crea stub legacy.
-- Estado superado por T-036: la ruta objetivo `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` existe y la ruta legacy es stub.`r`n---
-
-## SDD Modes Architecture Route QA Gate References - T-034
-
-| Artefacto | Relacion |
-| --- | --- |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_architecture_route_decision.md` | Decision `Option A` validada por QA Gate para pasar a decision humana. |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md` | Inventario de referencias activas e historicas usado por QA. |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md` | Define DEV-RPN-010 como futura ola no ejecutada. |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md` | Define stub legacy no normativo como compatibilidad futura. |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md` | Define rollback viable del movimiento unico. |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md` | Registra `Pass with minor conditions - T-034`. |
-
-Resultado: el siguiente paso indexado es decision humana explicita sobre DEV-RPN-010. No existe autorizacion automatica de ejecucion.
+```text
+PASS WITH MINOR CONDITIONS
+```

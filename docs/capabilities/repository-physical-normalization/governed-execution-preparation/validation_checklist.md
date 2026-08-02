@@ -207,7 +207,7 @@ Condiciones menores:
 
 Siguiente paso:
 
-`No active next step. DEV-RPN-010 closed by human decision.
+`No active next step. DEV-RPN-010 closed by human decision.`
 ---
 
 ## DEV-RPN-010 Execution Result - T-035/T-036
@@ -224,7 +224,7 @@ Resultado:
 
 Siguiente paso:
 
-`No active next step. DEV-RPN-010 closed by human decision.
+`No active next step. DEV-RPN-010 closed by human decision.`
 ---
 
 ## Reviewer Result - T-037
@@ -246,7 +246,7 @@ Condicion menor:
 
 Siguiente paso:
 
-`No active next step. DEV-RPN-010 closed by human decision.
+`No active next step. DEV-RPN-010 closed by human decision.`
 ---
 
 ## QA Gate Result - T-038
@@ -271,7 +271,7 @@ Condiciones menores:
 
 Siguiente paso:
 
-`No active next step. DEV-RPN-010 closed by human decision.
+`No active next step. DEV-RPN-010 closed by human decision.`
 ---
 
 ## Human Closure Result - T-039

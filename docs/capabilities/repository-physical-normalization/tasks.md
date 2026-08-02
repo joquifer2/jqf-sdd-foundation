@@ -9,8 +9,8 @@
 | Brief de proyecto relacionado | `docs/capabilities/repository-physical-normalization/project_brief.md` |
 | Referencias de contexto relacionado | `docs/capabilities/repository-physical-normalization/context_refs.md` |
 | Specification relacionada | `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md` |
-| Estado | Closed - DEV-RPN-010 |
-| Fase SDD actual | Development |
+| Estado | Closed with minor conditions |
+| Fase SDD actual | Closed |
 | Responsable | Jordi Quiroga |
 | Creado por | Specification Agent |
 | Ultima actualizacion | 2026-08-02 |
@@ -107,6 +107,8 @@ Este plan registra que Architecture documental fue autorizada por T-008 y que Go
 | T-037 | Revisar ejecucion DEV-RPN-010. | Review | Reviewer Agent | T-036 | Decision `Approved with minor changes` registrada; ejecucion, stub, referencias activas y ausencia de cambio normativo validadas. | Completed |
 | T-038 | Validar QA post-ejecucion DEV-RPN-010. | Validation | QA Gate Agent | T-037 | Decision `Pass with minor conditions` registrada; procede decision humana de cierre o trabajo adicional. | Completed |
 | T-039 | Cerrar DEV-RPN-010 por decision humana. | Governance | Jordi Quiroga | T-038 | Decision humana explicita `Autorizo el cierre` registrada; no queda siguiente paso activo para DEV-RPN-010. | Completed |
+| T-040 | Validar Closure Gate global de Repository Physical Normalization. | Validation | QA Gate Agent | T-039 | QA valida readiness global de cierre de la capacidad. | Completed |
+| T-041 | Cerrar globalmente Repository Physical Normalization por decision humana. | Governance | Jordi Quiroga | T-040 | Decision humana explicita de cierre global registrada. | Completed |
 
 ---
 
@@ -176,7 +178,7 @@ T-009 a T-012 solo aplican si T-008 autoriza Architecture. T-013 a T-020 aplican
 ## 10. Siguiente paso recomendado
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+None.
 ```
 
 
@@ -706,7 +708,7 @@ Decision sobre Architecture SDD Modes:
 Siguiente paso valido:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+None.
 ```
 ---
 
@@ -726,7 +728,7 @@ Verificaciones realizadas:
 Siguiente paso valido:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+None.
 ```
 ---
 
@@ -765,7 +767,7 @@ Hallazgo menor aplicado por Documentation Agent:
 Siguiente paso valido:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+None.
 ```
 ---
 
@@ -799,13 +801,13 @@ Condicion menor aplicada por Documentation Agent:
 Siguiente paso valido:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+None.
 ```
 ---
 
 ## 26. SDD Modes Architecture Route Decision Preparation - T-029/T-032
 
-Estado: `Completed / pending Reviewer Agent`.
+Estado: `Completed` (review T-033, QA T-034, autorizacion T-035, ejecucion T-036 y cierre T-039 completados).
 
 Fecha: 2026-08-02.
 
@@ -823,7 +825,7 @@ Resultado:
 Siguiente paso valido:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
+None.
 ```
 ---
 
@@ -862,8 +864,8 @@ Hallazgos menores aplicados por Documentation Agent:
 Siguiente paso valido:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
-`
+None.
+```
 ---
 
 ## 28. SDD Modes Architecture Route QA Gate Decision - T-034
@@ -935,8 +937,8 @@ Bloqueos:
 Siguiente paso valido:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
-`
+None.
+```
 ---
 
 ## 29. Human Authorization and Execution Result - T-035/T-036
@@ -963,8 +965,8 @@ Resultado:
 Siguiente paso valido:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
-`
+None.
+```
 ---
 
 ## 30. DEV-RPN-010 Reviewer Decision - T-037
@@ -996,8 +998,8 @@ Evidencias revisadas:
 Siguiente paso valido:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
-`
+None.
+```
 ---
 
 ## 31. DEV-RPN-010 QA Gate Decision - T-038
@@ -1040,8 +1042,8 @@ Condiciones menores:
 Siguiente paso valido:
 
 ```text
-No active next step. DEV-RPN-010 closed by human decision.
-`
+None.
+```
 ---
 
 ## 32. DEV-RPN-010 Human Closure Decision - T-039
@@ -1072,6 +1074,115 @@ Estado final:
 ```text
 Closed - DEV-RPN-010
 ```
+
+Siguiente paso activo:
+
+```text
+None.
+```
+---
+
+## 33. Post-Development Reconciliation - Closure Preparation
+
+Estado: `Completed / QA Gate passed with minor conditions`.
+
+Fecha: 2026-08-02.
+
+Agente: Documentation Agent.
+
+Resultado:
+
+- `sdd_readiness_assessment.md` reconciliado con el estado real post-Development.
+- `evidence_index.md` creado.
+- `residual_debt.md` creado.
+- `closure_handover.md` creado.
+- Baseline fisico vigente de SDD Modes registrado.
+- Stubs raiz registrados como `Temporary compatibility stubs`.
+- Reentrada futura para retirada de stubs definida.
+- Indices globales actualizados.
+
+Estado de DEV-RPN-010:
+
+```text
+Closed
+```
+
+Siguiente accion valida:
+
+```text
+None.
+```
+
+Gate global:
+
+```text
+PASS WITH MINOR CONDITIONS - T-040
+```
+
+---
+
+## 34. Global Closure Gate Decision - T-040
+
+Decision: `Pass with minor conditions`.
+
+Fecha: 2026-08-02.
+
+Evaluador: QA Gate Agent.
+
+Gate evaluado:
+
+Global Closure Gate de `Repository Physical Normalization`.
+
+Artefacto de decision:
+
+- `docs/capabilities/repository-physical-normalization/global_closure_gate.md`
+
+Resultado:
+
+- no hay bloqueos para decision humana de cierre global;
+- DEV-RPN-010 esta cerrado;
+- T-001 a T-040 quedan completadas;
+- baseline fisico vigente de SDD Modes esta registrado;
+- stubs raiz quedan como `Temporary compatibility stubs` no normativos;
+- deuda residual y reentrada futura estan documentadas;
+- Development adicional permanece `NOT AUTHORIZED`.
+
+Condiciones menores:
+
+- los stubs raiz permanecen como deuda residual aceptada;
+- referencias historicas siguen cubiertas por stubs legacy;
+- el cierre global requirio decision humana explicita posterior, cumplida por T-041.
+
+Siguiente accion valida:
+
+```text
+None.
+```
+---
+
+## 35. Human Global Closure Decision - T-041
+
+Decision humana: `Adelante con el cierre global`.
+
+Fecha: 2026-08-02.
+
+Resultado:
+
+- `Repository Physical Normalization` queda `Closed with minor conditions`.
+- T-001 a T-041 quedan `Completed`.
+- QA Gate T-040 queda aceptado con `Pass with minor conditions`.
+- DEV-RPN-010 permanece `Closed`.
+- SDD Modes Specification y Architecture permanecen en rutas capability-local canonicas.
+- Las rutas raiz permanecen como `Temporary compatibility stubs` no normativos.
+- La deuda residual de stubs temporales queda aceptada y gobernada.
+- Development adicional permanece `NOT AUTHORIZED`.
+- No queda siguiente paso activo dentro de la capacidad.
+
+Condiciones de cierre aceptadas:
+
+- permanencia temporal de stubs raiz;
+- referencias historicas cubiertas por stubs legacy;
+- retirada futura solo mediante auditoria, impacto en derivados, Reviewer, QA y autorizacion humana explicita.
 
 Siguiente paso activo:
 
