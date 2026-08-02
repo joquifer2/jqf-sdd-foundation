@@ -97,7 +97,8 @@ La capacidad no introduce runtime, scripts, tools, workflows ejecutables, automa
 | Autorizacion humana de Development | `AUTHORIZED` | 2026-08-02 | Solo MVP definido en SPEC/ARCH/Task Plan; sin cambios normativos, normalizacion fisica ni baselines cerrados. |
 | Validacion retrospectiva SDD Modes | `Closed with conditions / PASS WITH CONDITIONS` | 2026-08-02 | Expediente local cerrado en `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/`; no modifica SDD Modes ni autoriza normalizacion fisica. |
 | Reviewer final | `Approved` | 2026-08-02 | Sin hallazgos bloqueantes. |
-| QA final / Closure readiness | `Pass with conditions` | 2026-08-02 | Cierre aceptado con deuda residual y reentradas visibles. |
+| QA final / Closure readiness | Pass with conditions | 2026-08-02 | Cierre aceptado con deuda residual y reentradas visibles. |
+| Global Closure Coherence Gate | PASS WITH CONDITIONS | 2026-08-02 | Coherencia global validada; no queda siguiente agente activo dentro de esta capacidad. |
 
 ---
 
@@ -142,5 +143,5 @@ La deuda residual se mantiene en `docs/capabilities/consolidation-agent/residual
 ## Siguiente accion valida
 
 ```text
-Siguiente paso: QA Gate Agent valida unicamente la coherencia del cierre global actualizado. Si emite `PASS WITH CONDITIONS`, la capacidad queda formalmente cerrada. Development adicional permanece `NOT AUTHORIZED`.
+No queda siguiente agente activo dentro de esta capacidad. `Consolidation Agent` queda formalmente cerrado como `Closed with conditions`. Development adicional permanece `NOT AUTHORIZED`. Cualquier trabajo posterior requiere nueva decision humana explicita.
 ```

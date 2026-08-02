@@ -35,7 +35,8 @@ No es baseline canonico por si mismo y no autoriza Development adicional, runtim
 | CA-EV-007 | Catalogo | Indices de capacidad actualizados | `docs/capabilities/index.md`; `specs/capabilities/index.md` | Verificado | Indices no normativos; solo routing y trazabilidad. |
 | CA-EV-008 | Validacion | Validacion estatica | Workspace local | Verificado | Sin scripts, tools, workflows, runtime, consolidaciones reales, movimientos fisicos ni cambios a baselines cerrados. |
 | CA-EV-009 | Validacion | Validacion retrospectiva SDD Modes | `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/consolidation_report.md`; `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/validation_closure.md`; `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/qa_gate_decision.md` | Closed with conditions / PASS WITH CONDITIONS | Validacion funcional cerrada; no se modifico SDD Modes ni se inicio Repository Physical Normalization. |
-| CA-EV-010 | Expediente de validacion | Paquete completo SDD Modes retrospective | `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/validation_handover.md`; `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/evidence_index.md`; `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/residual_debt_and_reentry.md`; `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/validation_closure.md`; `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/qa_gate_decision.md` | Cerrado con condiciones | Paquete autocontenido para Reviewer/QA y reentrada futura; no es baseline de SDD Modes. |
+| CA-EV-010 | Expediente de validacion | Paquete completo SDD Modes retrospective | docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/validation_handover.md; docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/evidence_index.md; docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/residual_debt_and_reentry.md; docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/validation_closure.md; docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/qa_gate_decision.md | Cerrado con condiciones | Paquete autocontenido para Reviewer/QA y reentrada futura; no es baseline de SDD Modes. |
+| CA-EV-011 | Gate | Global Closure Coherence Gate | docs/capabilities/consolidation-agent/global_closure_coherence_gate.md | PASS WITH CONDITIONS | Cierra la coherencia global del expediente actualizado; no autoriza Development ni normalizacion fisica. |
 
 ---
 
@@ -65,6 +66,6 @@ Para revisar o cerrar esta capacidad, cargar por defecto:
 3. Este `evidence_index.md`.
 4. `SPEC-001` y `ARCH-001` de la capacidad.
 5. `.github/agents/consolidation.agent.md` y `.codex/agents/consolidation.toml`.
-6. `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/validation_closure.md` y `qa_gate_decision.md` si se revisa la validacion funcional.
+6. `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/validation_closure.md` y `qa_gate_decision.md` si se revisa la validacion funcional.`r`n7. `docs/capabilities/consolidation-agent/global_closure_coherence_gate.md` para el gate final de coherencia global.
 
 Cargar los expedientes cerrados relacionados solo para auditoria, reentrada o validacion especifica.

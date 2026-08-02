@@ -726,4 +726,15 @@ Limites vigentes:
 
 Development adicional: NOT AUTHORIZED.
 
-Siguiente paso: QA Gate Agent valida unicamente la coherencia del cierre global actualizado.
+Global Closure Coherence Gate: `PASS WITH CONDITIONS`. No queda siguiente agente activo dentro de esta capacidad.
+
+
+# 24. Global Closure Coherence Gate - QA Decision
+
+Decision: PASS WITH CONDITIONS.
+
+Consolidation Agent queda formalmente cerrado como Closed with conditions.
+
+Development adicional: NOT AUTHORIZED.
+
+No queda siguiente agente activo dentro de esta capacidad. Cualquier trabajo posterior requiere nueva decision humana explicita. La siguiente capacidad posible es Repository Physical Normalization, que no se inicia desde este gate.
