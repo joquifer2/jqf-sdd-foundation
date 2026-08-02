@@ -52,3 +52,32 @@ La ejecucion movio cinco artefactos, creo stubs de compatibilidad y mantuvo `spe
 ## Punto de parada obligatorio
 
 La primera ola se detiene tras DEV-P7 para review y QA post-ejecucion. Cualquier movimiento adicional requiere decision/gate aplicable.
+
+---
+
+## Proposed Future Wave DEV-RPN-010 - SDD Modes Architecture Route
+
+| Campo | Valor |
+| --- | --- |
+| Estado | Proposed / not executed |
+| Decision recomendada | Option A |
+| Origen | `specs/spec-001-sdd-modes.architecture.md` |
+| Destino | `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` |
+| Compatibilidad | Convertir origen en stub legacy no normativo |
+
+Secuencia futura requerida:
+
+1. Revalidar Reference Map inmediatamente antes de ejecutar.
+2. Confirmar Reviewer Agent sobre este paquete.
+3. Confirmar QA Gate Agent sobre readiness de DEV-RPN-010.
+4. Obtener autorizacion humana explicita.
+5. Mover/renombrar el archivo mediante mecanismo trazable.
+6. Crear stub legacy en `specs/spec-001-sdd-modes.architecture.md`.
+7. Actualizar referencias activas autorizadas.
+8. Mantener referencias historicas cerradas si describen estado previo.
+9. Registrar ejecucion y evidencia.
+10. Ejecutar validation checklist post-move.
+
+Criterio de parada:
+
+Si Reviewer, QA o la revalidacion de referencias detectan una referencia activa no compatibilizable, DEV-RPN-010 debe volver a decision arquitectonica antes de ejecucion.

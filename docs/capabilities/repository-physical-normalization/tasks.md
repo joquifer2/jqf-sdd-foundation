@@ -9,7 +9,7 @@
 | Brief de proyecto relacionado | `docs/capabilities/repository-physical-normalization/project_brief.md` |
 | Referencias de contexto relacionado | `docs/capabilities/repository-physical-normalization/context_refs.md` |
 | Specification relacionada | `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md` |
-| Estado | Development first wave validated / pending human closure decision |
+| Estado | Architecture route decision proposed / pending Reviewer |
 | Fase SDD actual | Development |
 | Responsable | Jordi Quiroga |
 | Creado por | Specification Agent |
@@ -96,6 +96,14 @@ Este plan registra que Architecture documental fue autorizada por T-008 y que Go
 | T-026 | Validar ejecucion local y preparar review post-Development. | Validation prep | Implementation / Documentation | T-024; T-025 | Verificaciones de rutas, stubs, diff y ausencia de automatizacion registradas. | Completed |
 | T-027 | Revisar ejecucion Development. | Review | Reviewer Agent | T-026 | Reviewer valida movimiento fisico, compatibilidad y ausencia de cambio normativo. | Completed |
 | T-028 | Validar QA post-Development. | Validation | QA Gate Agent | T-027 | QA valida cierre o condiciones de la primera ola ejecutada. | Completed |
+| T-029 | Evaluar referencias de `specs/spec-001-sdd-modes.architecture.md`. | Architecture | Architect Agent | T-028 | Reference Map identifica referencias activas, historicas y tratamiento propuesto. | Completed |
+| T-030 | Proponer decision final de ruta para Architecture SDD Modes. | Architecture | Architect Agent | T-029 | Decision documentada entre opcion A y B; recomendacion justificada. | Completed |
+| T-031 | Actualizar Movement, Compatibility y Rollback Plans para DEV-RPN-010. | Planning / Documentation | Architect Agent / Documentation Agent | T-030 | Planes definen movimiento futuro, stub, compatibilidad, rollback y precondiciones. | Completed |
+| T-032 | Actualizar Task Plan para la ola futura DEV-RPN-010. | Planning | Tasks Planner Agent | T-031 | Backlog registra Reviewer, QA, autorizacion humana y ejecucion futura como tareas separadas. | Completed |
+| T-033 | Revisar paquete de decision Architecture route. | Review | Reviewer Agent | T-029 a T-032 | Reviewer valida Reference Map, decision, planes y ausencia de ejecucion. | Pending |
+| T-034 | Validar QA Gate del paquete DEV-RPN-010. | Validation | QA Gate Agent | T-033 | QA valida readiness para posible autorizacion humana futura. | Pending |
+| T-035 | Decidir si se autoriza ejecucion DEV-RPN-010. | Governance | Jordi Quiroga | T-034 | Decision humana explicita requerida antes de mover/renombrar o crear stub. | Pending |
+| T-036 | Ejecutar DEV-RPN-010, solo si se autoriza. | Development | Implementation / Documentation | T-035 | Architecture movida a ruta objetivo, stub creado, referencias activas actualizadas y rollback listo. | Not authorized |
 
 ---
 
@@ -165,7 +173,7 @@ T-009 a T-012 solo aplican si T-008 autoriza Architecture. T-013 a T-020 aplican
 ## 10. Siguiente paso recomendado
 
 ```text
-Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```
 
 
@@ -695,7 +703,7 @@ Decision sobre Architecture SDD Modes:
 Siguiente paso valido:
 
 ```text
-Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```
 ---
 
@@ -715,7 +723,7 @@ Verificaciones realizadas:
 Siguiente paso valido:
 
 ```text
-Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```
 ---
 
@@ -754,7 +762,7 @@ Hallazgo menor aplicado por Documentation Agent:
 Siguiente paso valido:
 
 ```text
-Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```
 ---
 
@@ -788,5 +796,29 @@ Condicion menor aplicada por Documentation Agent:
 Siguiente paso valido:
 
 ```text
-Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Reviewer Agent review of SDD Modes Architecture route decision package.
+```
+---
+
+## 26. SDD Modes Architecture Route Decision Preparation - T-029/T-032
+
+Estado: `Completed / pending Reviewer Agent`.
+
+Fecha: 2026-08-02.
+
+Agentes: Architect Agent / Tasks Planner Agent.
+
+Resultado:
+
+- Reference Map completo para `specs/spec-001-sdd-modes.architecture.md` preparado.
+- Decision propuesta: `Option A`.
+- Ruta objetivo futura: `specs/capabilities/sdd-modes/arch-001-sdd-modes.md`.
+- Ruta legacy futura: stub no normativo en `specs/spec-001-sdd-modes.architecture.md`.
+- Movement Plan, Compatibility Plan y Rollback Plan actualizados para DEV-RPN-010.
+- No se ejecuta movimiento, renombre, stub ni modificacion del baseline cerrado.
+
+Siguiente paso valido:
+
+```text
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```

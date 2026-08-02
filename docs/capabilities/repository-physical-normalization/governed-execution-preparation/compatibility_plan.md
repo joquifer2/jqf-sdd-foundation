@@ -60,3 +60,31 @@ Reviewer y QA deben poder comprobar que:
 - los proyectos derivados tienen una ruta canonica clara;
 - las referencias historicas se distinguen de las referencias activas;
 - ningun cambio de compatibilidad se ejecuta antes de Development.
+
+---
+
+## Compatibility Addendum - SDD Modes Architecture Route
+
+Decision propuesta: `Option A`.
+
+La compatibilidad para `specs/spec-001-sdd-modes.architecture.md` se resuelve mediante stub legacy en la ruta raiz tras mover el contenido canonico a:
+
+```text
+specs/capabilities/sdd-modes/arch-001-sdd-modes.md
+```
+
+Reglas especificas:
+
+- El stub legacy no debe duplicar contenido normativo.
+- El stub debe apuntar a la ruta canonica nueva.
+- Las referencias activas se actualizan cuando el movimiento sea autorizado y ejecutado.
+- Las referencias historicas de capacidades cerradas pueden permanecer en ruta legacy porque el stub preserva navegacion.
+- Los agentes deben cargar la arquitectura desde el indice actualizado o desde el stub si encuentran la ruta historica.
+- Los proyectos derivados no deben depender de la ruta legacy como canonica tras la ejecucion.
+
+Compatibilidad minima aceptable:
+
+- Navegacion desde ruta legacy funciona.
+- Indices globales apuntan a ruta nueva.
+- SDD Modes dossier apunta a ruta nueva.
+- RPN route decision package registra origen, destino, decision y rollback.

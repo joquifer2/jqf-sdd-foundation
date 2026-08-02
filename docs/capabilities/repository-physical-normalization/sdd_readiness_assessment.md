@@ -47,7 +47,7 @@ Architecture documental fue autorizada por decision humana T-008 y creada como A
 
 Estado seleccionado:
 
-`Development first wave validated - pending human closure decision`.
+`Architecture route decision proposed - pending Reviewer`.
 
 Motivo:
 
@@ -217,7 +217,7 @@ Condiciones vigentes:
 
 Decision vigente:
 
-`Development first wave validated - pending human closure decision`.
+`Architecture route decision proposed - pending Reviewer`.
 
 ---
 
@@ -638,7 +638,7 @@ Cambios menores aplicados:
 
 Decision vigente:
 
-`Development first wave validated - pending human closure decision`.
+`Architecture route decision proposed - pending Reviewer`.
 ---
 
 # Governed Execution Preparation QA Gate Decision - T-022
@@ -672,7 +672,7 @@ Condiciones menores:
 
 Decision vigente:
 
-`Development first wave validated - pending human closure decision`.
+`Architecture route decision proposed - pending Reviewer`.
 
 Siguiente agente recomendado:
 
@@ -703,7 +703,7 @@ Resultado:
 
 Decision vigente:
 
-`Ready for Human decision on Repository Physical Normalization first wave closure or future wave authorization`.
+`Ready for Reviewer Agent review of SDD Modes Architecture route decision package`.
 ---
 
 # Development Reviewer Decision - T-027
@@ -729,7 +729,7 @@ Correccion menor aplicada:
 
 Decision vigente:
 
-`Ready for Human decision on Repository Physical Normalization first wave closure or future wave authorization`.
+`Ready for Reviewer Agent review of SDD Modes Architecture route decision package`.
 ---
 
 # Development QA Gate Decision - T-028
@@ -754,4 +754,33 @@ Condicion menor aplicada:
 
 Decision vigente:
 
-`Ready for human decision on Repository Physical Normalization first wave closure or future wave authorization`.
+`Ready for Reviewer Agent review of SDD Modes Architecture route decision package`.
+---
+
+# SDD Modes Architecture Route Decision Readiness - T-029/T-032
+
+Estado: `Ready for Reviewer Agent`.
+
+Decision propuesta:
+
+`Option A` - mover `specs/spec-001-sdd-modes.architecture.md` a `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` en una futura ola autorizada y conservar la ruta raiz como stub legacy.
+
+Evidencias:
+
+- Reference Map completo preparado.
+- Movement Plan actualizado para DEV-RPN-010.
+- Compatibility Plan actualizado con stub legacy.
+- Rollback Plan actualizado y viable.
+- Task Plan actualizado con T-029 a T-036.
+
+Criterios cumplidos:
+
+- La decision pendiente queda propuesta y justificada.
+- No se ejecuta movimiento fisico.
+- No se crea stub.
+- No se modifica baseline cerrado.
+- Reviewer, QA y autorizacion humana quedan pendientes antes de cualquier ejecucion.
+
+Decision vigente:
+
+`Ready for Reviewer Agent review of SDD Modes Architecture route decision package`.

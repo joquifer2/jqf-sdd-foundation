@@ -88,3 +88,32 @@ Una vez validado el piloto, cualquier capacidad cerrada futura debe preparar su 
 - plan de rollback;
 - checklist de validacion;
 - decision humana explicita antes de Development.
+
+---
+
+## Architecture Route Pilot Addendum
+
+Decision propuesta para el artefacto Architecture de SDD Modes:
+
+`Option A` - mover `specs/spec-001-sdd-modes.architecture.md` a `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` y conservar la ruta raiz como stub legacy.
+
+Estado:
+
+`Proposed / not executed`.
+
+Motivo:
+
+- El expediente documental y la Specification de SDD Modes ya estan normalizados.
+- La Architecture pertenece al mismo baseline de capacidad.
+- El patron `arch-001-sdd-modes.md` alinea SDD Modes con capacidades posteriores.
+- Las referencias activas son actualizables y las historicas quedan cubiertas por stub.
+
+Precondiciones:
+
+- Reference Map completo revisado.
+- Movement Plan actualizado.
+- Compatibility Plan actualizado.
+- Rollback Plan actualizado.
+- Reviewer Agent.
+- QA Gate Agent.
+- Autorizacion humana explicita.

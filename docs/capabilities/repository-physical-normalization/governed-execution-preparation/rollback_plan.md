@@ -58,3 +58,35 @@ Cualquier ejecucion futura debe producir evidencia suficiente para rollback:
 ## Limite de esta fase
 
 Este documento no ejecuta rollback porque no se ha ejecutado ningun movimiento. Su funcion es permitir que Reviewer y QA evalúen si el plan futuro seria reversible.
+
+---
+
+## Rollback Addendum - DEV-RPN-010 SDD Modes Architecture Route
+
+Rollback scope:
+
+```text
+specs/spec-001-sdd-modes.architecture.md
+specs/capabilities/sdd-modes/arch-001-sdd-modes.md
+```
+
+Rollback steps:
+
+1. Restaurar `specs/spec-001-sdd-modes.architecture.md` como archivo canonico completo.
+2. Retirar o revertir el stub legacy creado durante DEV-RPN-010.
+3. Retirar o revertir `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` si fue creado por movimiento.
+4. Revertir indices globales a ruta legacy.
+5. Revertir referencias activas actualizadas durante la ola.
+6. Registrar causa, decision y validacion posterior.
+
+Rollback triggers:
+
+- QA post-ejecucion falla.
+- Referencia activa critica no queda resuelta por actualizacion ni stub.
+- El stub se interpreta como segunda fuente normativa.
+- Se detecta cambio normativo accidental en el contenido de Architecture.
+- Un agente metodologico no puede localizar la arquitectura mediante indice, context refs o stub.
+
+Viabilidad:
+
+Rollback viable. DEV-RPN-010 afecta un artefacto principal, un stub legacy y referencias activas catalogables.

@@ -22,7 +22,7 @@ Es solo un catalogo. No redefine alcance, requisitos, arquitectura, readiness ni
 | Consolidation Agent | `specs/capabilities/consolidation-agent/arch-001-consolidation-agent.md` | Architecture | Architecture gate passed | Define arquitectura documental conceptual del futuro Consolidation Agent sin crearlo. |
 | Consolidation Agent | `.github/agents/consolidation.agent.md` | Agent definition | Closed with conditions | Definicion canonica documental del Consolidation Agent trazada a SPEC-001 y ARCH-001; validada para consolidaciones documentales `proposal-only`; cierre global coherente con QA `PASS WITH CONDITIONS`. |
 | Repository Physical Normalization | `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md` | Specification | Specification gate passed / Architecture authorized | Define el proceso oficial de normalizacion fisica futura del repositorio sin ejecutar movimientos, modificar rutas ni alterar baselines cerrados. |
-| Repository Physical Normalization | `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md` | Architecture | Development first wave executed / pending review | Define arquitectura documental conceptual y habilita paquete GEP documental posterior sin ejecutar normalizacion fisica. |
+| Repository Physical Normalization | `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md` | Architecture | Architecture route decision proposed / pending Reviewer | Define arquitectura documental conceptual, GEP y decision propuesta DEV-RPN-010 sin ejecutar movimiento fisico. |
 
 ---
 

@@ -37,3 +37,23 @@ Reviewer Agent y QA Gate Agent deben evaluar este paquete antes de cualquier dec
 ## Resultado Development
 
 La primera ola Development fue autorizada por decision humana y ejecutada de forma controlada. El siguiente paso es review post-Development.
+
+---
+
+## SDD Modes Architecture Route Decision Package
+
+Artefacto agregado:
+
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_architecture_route_decision.md`
+
+Estado:
+
+`Decision propuesta / pending Reviewer and QA`.
+
+Decision recomendada:
+
+Mover `specs/spec-001-sdd-modes.architecture.md` a `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` en una futura ola autorizada y conservar la ruta raiz como stub de compatibilidad.
+
+Restriccion:
+
+No se ejecuta movimiento, renombre, stub ni actualizacion fisica hasta completar Reference Map, Movement Plan, Compatibility Plan, Rollback Plan, Reviewer, QA Gate y autorizacion humana explicita.

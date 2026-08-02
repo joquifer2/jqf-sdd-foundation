@@ -5,7 +5,7 @@
 | Campo | Valor |
 | --- | --- |
 | Fase | Development |
-| Estado | First controlled movement validated / pending human closure decision |
+| Estado | Architecture route decision proposed / pending Reviewer |
 | Development | AUTHORIZED for first SDD Modes wave |
 | Ejecucion validada | Local validation completed; Reviewer T-027 approved with minor changes; QA Gate T-028 pass with minor conditions |
 
@@ -138,3 +138,22 @@ Condicion menor aplicada:
 Siguiente paso:
 
 `Human decision on Repository Physical Normalization first wave closure or future wave authorization`.
+---
+
+## Architecture Route Decision Checklist - DEV-RPN-010
+
+| ID | Control | Resultado esperado | Estado actual |
+| --- | --- | --- | --- |
+| VC-ARCH-001 | Reference Map | Referencias activas e historicas de `specs/spec-001-sdd-modes.architecture.md` evaluadas. | Pass for review |
+| VC-ARCH-002 | Decision propuesta | Opcion A/B evaluadas con recomendacion. | Pass - Option A proposed |
+| VC-ARCH-003 | Movement Plan | DEV-RPN-010 definido sin ejecutar. | Pass for review |
+| VC-ARCH-004 | Compatibility Plan | Stub legacy definido sin crear. | Pass for review |
+| VC-ARCH-005 | Rollback Plan | Rollback por movimiento unico viable. | Pass for review |
+| VC-ARCH-006 | Reviewer | Revision del paquete de decision. | Pending |
+| VC-ARCH-007 | QA Gate | Gate de readiness para DEV-RPN-010. | Pending |
+| VC-ARCH-008 | Human authorization | Autorizacion explicita antes de movimiento/stub. | Pending |
+| VC-ARCH-009 | No execution | No se movio, renombro ni creo stub. | Pass |
+
+Siguiente paso:
+
+`Reviewer Agent review of SDD Modes Architecture route decision package`.

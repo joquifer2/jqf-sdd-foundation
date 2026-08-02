@@ -615,10 +615,10 @@ Decision: This Architecture prepares a design and future plans only. Any executi
 ## 18. Next Recommended Step
 
 ```text
-Reviewer Agent review of Repository Physical Normalization Development first wave.
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```
 
-This supersedes the historical Architecture next step after T-013 and T-021.
+This supersedes the historical Architecture next step after T-013, T-021 and T-028 for the DEV-RPN-010 decision package.
 
 Development remains `NOT AUTHORIZED`.
 
@@ -651,3 +651,39 @@ Paquete documental preparado en:
 `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
 
 Esta nota no modifica las decisiones arquitectonicas de `ARCH-001`, no autoriza Development, no ejecuta movimientos fisicos, no crea stubs y no modifica baselines cerrados.
+---
+
+## 21. SDD Modes Architecture Route Decision
+
+Fecha: 2026-08-02.
+
+Decision arquitectonica propuesta:
+
+`Option A`.
+
+Mover en una futura ola autorizada:
+
+```text
+specs/spec-001-sdd-modes.architecture.md
+  -> specs/capabilities/sdd-modes/arch-001-sdd-modes.md
+```
+
+Compatibilidad:
+
+La ruta raiz `specs/spec-001-sdd-modes.architecture.md` debe convertirse en stub no normativo tras el movimiento.
+
+Rationale:
+
+- alinea SDD Modes con `specs/capabilities/<capability-id>/arch-001-<capability-id>.md`;
+- evita una excepcion canonica permanente;
+- las referencias activas son actualizables;
+- las referencias historicas quedan protegidas por stub legacy;
+- rollback es viable por tratarse de un movimiento acotado.
+
+Decision alternativa B:
+
+Rechazada como objetivo recomendado. Mantener la ruta raiz como excepcion canonica permanente preservaria compatibilidad inmediata, pero mantendria deuda fisica y una regla especial de carga sin necesidad demostrada.
+
+Estado:
+
+Proposed / not executed. Requiere Reviewer, QA Gate y autorizacion humana explicita antes de cualquier movimiento.

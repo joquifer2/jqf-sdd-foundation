@@ -13,7 +13,7 @@ proyecto:
   nombre: JQF SDD Foundation - Repository Physical Normalization
   id_proyecto: repository-physical-normalization
   tipo_proyecto: foundation-repository-governance-specification
-  estado: Development first wave validated / pending human closure decision
+  estado: Architecture route decision proposed / pending Reviewer
   fecha_creacion: 2026-08-02
   responsable: Jordi Quiroga
 
@@ -78,7 +78,7 @@ Esta iniciativa pertenece a la Foundation y no a un cliente derivado.
 | Tema | Motivo de la duda | Responsable | Estado |
 | --- | --- | --- | --- |
 | Compatibilidad legacy exacta | Falta decidir si se usaran stubs, aliases, indices o coexistencia temporal. | Jordi Quiroga / Architect Agent futuro | PENDING |
-| Naming final de Architecture de SDD Modes | El nombre actual `spec-001-sdd-modes.architecture.md` no sigue el patron `arch-001-*`. Renombrarlo tiene coste de compatibilidad. | Jordi Quiroga / Architect Agent futuro | PENDING |
+| Naming final de Architecture de SDD Modes | Reference Map confirma que Option A es viable con stub legacy y rollback. | Architect Agent / Tasks Planner Agent | PROPOSED - pending Reviewer/QA |
 | Ejecutor autorizado de movimientos | La Specification no debe decidir quien ejecuta fisicamente sin Architecture/Gate. | Jordi Quiroga | PENDING |
 | Evidencia Git minima por movimiento | Debe definirse antes de Development/Documentation ejecutiva. | Reviewer Agent / QA Gate Agent futuro | PENDING |
 
@@ -265,7 +265,7 @@ Siguiente contexto a cargar:
 - `docs/capabilities/repository-physical-normalization/tasks.md`
 - `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
 
-Siguiente decision recomendada: Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
 
 Restricciones vigentes:
 
@@ -295,7 +295,7 @@ Siguiente contexto a cargar:
 - `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
 - `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md`
 
-Siguiente decision recomendada: Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
 
 Restricciones vigentes:
 
@@ -324,7 +324,7 @@ Siguiente contexto a cargar:
 - `docs/capabilities/repository-physical-normalization/tasks.md`
 - `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
 
-Siguiente decision recomendada: Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
 
 Restricciones vigentes:
 
@@ -364,7 +364,7 @@ Ruta legacy canonica temporal retenida:
 
 - `specs/spec-001-sdd-modes.architecture.md`
 
-Siguiente decision recomendada: Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
 ---
 
 ## Development Reviewer References - T-027
@@ -375,7 +375,7 @@ Siguiente decision recomendada: Human decision on Repository Physical Normalizat
 | `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#development-reviewer-decision---t-027` | Readiness actualizado tras review T-027. | Ready for QA Gate |
 | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#reviewer-result---t-027` | Checklist actualizado con VC-DEV-009. | Pass with minor changes |
 
-Siguiente decision recomendada: Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
 
 Restricciones vigentes:
 
@@ -392,10 +392,31 @@ Restricciones vigentes:
 | `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#development-qa-gate-decision---t-028` | Readiness actualizado tras QA T-028. | Ready for human decision |
 | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#qa-gate-result---t-028` | Checklist actualizado con VC-DEV-010. | Pass with minor conditions |
 
-Siguiente decision recomendada: Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
 
 Restricciones vigentes:
 
 - Development adicional fuera del primer lote ejecutado requiere decision humana y gate aplicable.
 - No se autoriza normalizacion fisica adicional, movimiento, copia, renombre, sustitucion ni eliminacion de archivos fuera del alcance T-023/T-024.
 - No se autorizan scripts, tools, workflows ni automatizaciones.
+---
+
+## SDD Modes Architecture Route Decision References - T-029/T-032
+
+| Referencia | Funcion | Estado |
+| --- | --- | --- |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_architecture_route_decision.md` | Decision arquitectonica propuesta sobre `specs/spec-001-sdd-modes.architecture.md`. | Proposed Option A / pending Reviewer |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md#full-reference-map---sdd-modes-architecture-route` | Reference Map completo para la ruta Architecture. | Completed for review |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md#proposed-future-wave-dev-rpn-010---sdd-modes-architecture-route` | Movimiento futuro DEV-RPN-010. | Proposed / not executed |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md#compatibility-addendum---sdd-modes-architecture-route` | Compatibilidad mediante stub legacy. | Proposed / not executed |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md#rollback-addendum---dev-rpn-010-sdd-modes-architecture-route` | Rollback futuro de DEV-RPN-010. | Viable / not executed |
+| `docs/capabilities/repository-physical-normalization/tasks.md#26-sdd-modes-architecture-route-decision-preparation---t-029t-032` | Tareas T-029/T-032. | Completed / pending Reviewer |
+
+Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
+
+Restricciones vigentes:
+
+- No se ejecuta DEV-RPN-010 sin Reviewer, QA Gate y autorizacion humana explicita.
+- No se mueve ni renombra `specs/spec-001-sdd-modes.architecture.md` en esta preparacion.
+- No se crea stub legacy en esta preparacion.
+- No se modifica contenido normativo de SDD Modes Architecture.

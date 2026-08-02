@@ -12,7 +12,7 @@ Normalizacion fisica del repositorio
 
 ### Estado
 
-Development first wave validated / pending human closure decision
+Architecture route decision proposed / pending Reviewer
 
 ### Responsable
 
@@ -241,7 +241,7 @@ Documento de referencias de contexto utilizado:
 ## 14. Siguiente paso recomendado
 
 ```text
-Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```
 
 Development adicional permanece `NOT AUTHORIZED` fuera del primer lote ejecutado. No se autoriza normalizacion fisica adicional sin decision/gate aplicable.
@@ -318,7 +318,7 @@ Fuera de autorizacion:
 Siguiente paso recomendado:
 
 ```text
-Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```
 ---
 
@@ -338,7 +338,7 @@ Resultado:
 Siguiente paso recomendado:
 
 ```text
-Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```
 ---
 
@@ -366,7 +366,7 @@ Condiciones menores:
 Siguiente paso recomendado:
 
 ```text
-Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```
 ---
 
@@ -389,7 +389,7 @@ Resultado ejecutado:
 Siguiente paso recomendado:
 
 ```text
-Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```
 ---
 
@@ -410,7 +410,7 @@ Resultado:
 Siguiente paso recomendado:
 
 ```text
-Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```
 ---
 
@@ -431,5 +431,38 @@ Resultado:
 Siguiente paso recomendado:
 
 ```text
-Human decision on Repository Physical Normalization first wave closure or future wave authorization.
+Reviewer Agent review of SDD Modes Architecture route decision package.
+```
+---
+
+## 22. SDD Modes Architecture Route Decision Addendum
+
+Fecha: 2026-08-02.
+
+Agentes: Architect Agent / Tasks Planner Agent.
+
+Decision propuesta:
+
+`Option A` - mover en una futura ola autorizada `specs/spec-001-sdd-modes.architecture.md` a `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` y convertir la ruta raiz en stub de compatibilidad.
+
+Estado:
+
+`Proposed / pending Reviewer and QA`.
+
+Evidencia:
+
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_architecture_route_decision.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md`
+
+Restriccion:
+
+No se ejecuta movimiento, renombre, stub ni actualizacion fisica hasta Reviewer, QA Gate y autorizacion humana explicita.
+
+Siguiente paso recomendado:
+
+```text
+Reviewer Agent review of SDD Modes Architecture route decision package.
 ```

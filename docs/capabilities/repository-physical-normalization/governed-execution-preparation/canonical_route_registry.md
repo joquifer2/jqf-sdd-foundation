@@ -53,3 +53,18 @@ La ejecucion conserva stubs de compatibilidad en rutas legacy y no modifica cont
 ## Criterio de salida post-ejecucion
 
 Este registro queda listo para review post-Development cuando cada ruta afectada tenga ruta legacy, ruta canonica vigente, accion ejecutada o diferida, condicion aplicada y estado actual.
+
+---
+
+## Architecture Route Decision Candidate - CRR-SM-006
+
+| Campo | Valor |
+| --- | --- |
+| Artefacto | `specs/spec-001-sdd-modes.architecture.md` |
+| Decision propuesta | Option A |
+| Ruta objetivo futura | `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` |
+| Accion futura | Move + rename + legacy stub |
+| Estado | Proposed / not executed |
+| Evidencia | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_architecture_route_decision.md` |
+
+La ruta canonica vigente sigue siendo `specs/spec-001-sdd-modes.architecture.md` hasta que exista Reviewer, QA Gate y autorizacion humana explicita para ejecutar DEV-RPN-010.
