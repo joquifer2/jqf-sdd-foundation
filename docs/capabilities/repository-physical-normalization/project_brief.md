@@ -12,7 +12,7 @@ Normalizacion fisica del repositorio
 
 ### Estado
 
-Architecture route decision proposed / pending Reviewer
+Closed - DEV-RPN-010
 
 ### Responsable
 
@@ -241,7 +241,7 @@ Documento de referencias de contexto utilizado:
 ## 14. Siguiente paso recomendado
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
 
 Development adicional permanece `NOT AUTHORIZED` fuera del primer lote ejecutado. No se autoriza normalizacion fisica adicional sin decision/gate aplicable.
@@ -318,7 +318,7 @@ Fuera de autorizacion:
 Siguiente paso recomendado:
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
 ---
 
@@ -338,7 +338,7 @@ Resultado:
 Siguiente paso recomendado:
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
 ---
 
@@ -366,7 +366,7 @@ Condiciones menores:
 Siguiente paso recomendado:
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
 ---
 
@@ -389,7 +389,7 @@ Resultado ejecutado:
 Siguiente paso recomendado:
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
 ---
 
@@ -410,7 +410,7 @@ Resultado:
 Siguiente paso recomendado:
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
 ---
 
@@ -431,7 +431,7 @@ Resultado:
 Siguiente paso recomendado:
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
 ---
 
@@ -464,5 +464,47 @@ No se ejecuta movimiento, renombre, stub ni actualizacion fisica hasta Reviewer,
 Siguiente paso recomendado:
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
+---
+
+## 23. SDD Modes Architecture Route Reviewer Addendum
+
+Fecha: 2026-08-02.
+
+Decision de Reviewer Agent: `Approved with minor changes`.
+
+Resultado:
+
+- decision `Option A` aprobada para pasar a QA Gate;
+- no hay hallazgos criticos ni importantes;
+- DEV-RPN-010 permanece no ejecutado;
+- no se crea stub ni se modifica baseline cerrado;
+- correcciones menores de estado documental aplicadas.
+
+Siguiente paso recomendado:
+
+```text
+No active next step. DEV-RPN-010 closed by human decision.
+`
+---
+
+## 24. SDD Modes Architecture Route QA Gate Addendum
+
+Fecha: 2026-08-02.
+
+QA Gate Agent emitio `Pass with minor conditions` sobre el paquete DEV-RPN-010.
+
+La decision `Option A` queda lista para decision humana explicita: mover `specs/spec-001-sdd-modes.architecture.md` a `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` y convertir la ruta raiz en stub legacy no normativo.
+
+Este resultado no ejecuta el movimiento, no crea stub, no modifica baselines cerrados y no autoriza por si solo Development adicional.
+
+Siguiente decision requerida: T-035, autorizacion humana explicita o rechazo de DEV-RPN-010.---
+
+## 25. DEV-RPN-010 Closure Addendum
+
+Fecha: 2026-08-02.
+
+Decision humana: `Autorizo el cierre`.
+
+DEV-RPN-010 queda cerrado tras ejecucion, Reviewer T-037 y QA Gate T-038. No queda autorizacion abierta para movimientos adicionales.

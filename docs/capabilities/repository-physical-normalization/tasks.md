@@ -9,7 +9,7 @@
 | Brief de proyecto relacionado | `docs/capabilities/repository-physical-normalization/project_brief.md` |
 | Referencias de contexto relacionado | `docs/capabilities/repository-physical-normalization/context_refs.md` |
 | Specification relacionada | `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md` |
-| Estado | Architecture route decision proposed / pending Reviewer |
+| Estado | Closed - DEV-RPN-010 |
 | Fase SDD actual | Development |
 | Responsable | Jordi Quiroga |
 | Creado por | Specification Agent |
@@ -100,10 +100,13 @@ Este plan registra que Architecture documental fue autorizada por T-008 y que Go
 | T-030 | Proponer decision final de ruta para Architecture SDD Modes. | Architecture | Architect Agent | T-029 | Decision documentada entre opcion A y B; recomendacion justificada. | Completed |
 | T-031 | Actualizar Movement, Compatibility y Rollback Plans para DEV-RPN-010. | Planning / Documentation | Architect Agent / Documentation Agent | T-030 | Planes definen movimiento futuro, stub, compatibilidad, rollback y precondiciones. | Completed |
 | T-032 | Actualizar Task Plan para la ola futura DEV-RPN-010. | Planning | Tasks Planner Agent | T-031 | Backlog registra Reviewer, QA, autorizacion humana y ejecucion futura como tareas separadas. | Completed |
-| T-033 | Revisar paquete de decision Architecture route. | Review | Reviewer Agent | T-029 a T-032 | Reviewer valida Reference Map, decision, planes y ausencia de ejecucion. | Pending |
-| T-034 | Validar QA Gate del paquete DEV-RPN-010. | Validation | QA Gate Agent | T-033 | QA valida readiness para posible autorizacion humana futura. | Pending |
-| T-035 | Decidir si se autoriza ejecucion DEV-RPN-010. | Governance | Jordi Quiroga | T-034 | Decision humana explicita requerida antes de mover/renombrar o crear stub. | Pending |
-| T-036 | Ejecutar DEV-RPN-010, solo si se autoriza. | Development | Implementation / Documentation | T-035 | Architecture movida a ruta objetivo, stub creado, referencias activas actualizadas y rollback listo. | Not authorized |
+| T-033 | Revisar paquete de decision Architecture route. | Review | Reviewer Agent | T-029 a T-032 | Reviewer valida Reference Map, decision, planes y ausencia de ejecucion. | Completed |
+| T-034 | Validar QA Gate del paquete DEV-RPN-010. | Validation | QA Gate Agent | T-033 | Decision `Pass with minor conditions` registrada; procede decision humana posterior si se desea autorizar DEV-RPN-010. | Completed |
+| T-035 | Decidir si se autoriza ejecucion DEV-RPN-010. | Governance | Jordi Quiroga | T-034 | Decision humana explicita `Autorizo` registrada. | Completed |
+| T-036 | Ejecutar DEV-RPN-010, solo si se autoriza. | Development | Implementation / Documentation | T-035 | Architecture movida a ruta objetivo, stub creado, referencias activas actualizadas y rollback listo. | Completed |
+| T-037 | Revisar ejecucion DEV-RPN-010. | Review | Reviewer Agent | T-036 | Decision `Approved with minor changes` registrada; ejecucion, stub, referencias activas y ausencia de cambio normativo validadas. | Completed |
+| T-038 | Validar QA post-ejecucion DEV-RPN-010. | Validation | QA Gate Agent | T-037 | Decision `Pass with minor conditions` registrada; procede decision humana de cierre o trabajo adicional. | Completed |
+| T-039 | Cerrar DEV-RPN-010 por decision humana. | Governance | Jordi Quiroga | T-038 | Decision humana explicita `Autorizo el cierre` registrada; no queda siguiente paso activo para DEV-RPN-010. | Completed |
 
 ---
 
@@ -173,7 +176,7 @@ T-009 a T-012 solo aplican si T-008 autoriza Architecture. T-013 a T-020 aplican
 ## 10. Siguiente paso recomendado
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
 
 
@@ -703,7 +706,7 @@ Decision sobre Architecture SDD Modes:
 Siguiente paso valido:
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
 ---
 
@@ -723,7 +726,7 @@ Verificaciones realizadas:
 Siguiente paso valido:
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
 ---
 
@@ -762,7 +765,7 @@ Hallazgo menor aplicado por Documentation Agent:
 Siguiente paso valido:
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
 ---
 
@@ -796,7 +799,7 @@ Condicion menor aplicada por Documentation Agent:
 Siguiente paso valido:
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
 ```
 ---
 
@@ -820,5 +823,258 @@ Resultado:
 Siguiente paso valido:
 
 ```text
-Reviewer Agent review of SDD Modes Architecture route decision package.
+No active next step. DEV-RPN-010 closed by human decision.
+```
+---
+
+## 27. SDD Modes Architecture Route Reviewer Decision - T-033
+
+Decision: `Approved with minor changes`.
+
+Fecha: 2026-08-02.
+
+Evaluador: Reviewer Agent.
+
+Artefactos revisados:
+
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_architecture_route_decision.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md`
+
+Resultado:
+
+- No hay hallazgos criticos.
+- No hay hallazgos importantes.
+- `Option A` queda justificada como decision recomendada.
+- No se ejecuta movimiento, renombre ni stub.
+- Estado en T-033: la ruta legacy permanecia disponible y la ruta objetivo no existia todavia. Estado superado por T-036.
+- Las referencias activas son actualizables y las historicas quedan cubiertas por stub futuro.
+- Rollback DEV-RPN-010 es viable.
+
+Hallazgos menores aplicados por Documentation Agent:
+
+- alinear estados de encabezado en planes GEP;
+- actualizar checklist VC-ARCH-006.
+
+Siguiente paso valido:
+
+```text
+No active next step. DEV-RPN-010 closed by human decision.
+`
+---
+
+## 28. SDD Modes Architecture Route QA Gate Decision - T-034
+
+Decision: `Pass with minor conditions`.
+
+Fecha: 2026-08-02.
+
+Evaluador: QA Gate Agent.
+
+Gate evaluado:
+
+DEV-RPN-010 architecture route decision package readiness for possible explicit human authorization.
+
+Fase actual:
+
+`Development`, limitada a preparacion documental de decision de ruta y sin ejecucion adicional autorizada.
+
+Fase destino:
+
+Decision humana explicita sobre si se autoriza ejecutar DEV-RPN-010.
+
+Artefactos requeridos revisados:
+
+- `sdd_modes_architecture_route_decision.md`.
+- `reference_map.md`.
+- `movement_plan.md`.
+- `compatibility_plan.md`.
+- `rollback_plan.md`.
+- `validation_checklist.md`.
+- `sdd_modes_pilot_package.md`.
+- `project_brief.md`, `context_refs.md`, `sdd_readiness_assessment.md` y este Task Plan.
+
+Evidencias encontradas:
+
+- Reviewer T-033 emitio `Approved with minor changes` y las correcciones menores fueron aplicadas.
+- La decision propuesta es `Option A`: mover `specs/spec-001-sdd-modes.architecture.md` a `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` y dejar stub legacy.
+- Reference Map identifica referencias activas, historicas y tratamiento propuesto.
+- Movement, Compatibility y Rollback Plans definen DEV-RPN-010 sin ejecutarlo.
+- `specs/spec-001-sdd-modes.architecture.md` existe todavia en ruta legacy.
+- Estado en T-034: `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` no existia todavia. Estado superado por T-036.
+- No se han creado stubs, scripts, tools, workflows ni automatizaciones para DEV-RPN-010.
+
+Criterios cumplidos:
+
+- fase actual y fase destino estan identificadas;
+- artefactos obligatorios existen y son coherentes;
+- no hay implementacion prematura;
+- compatibilidad y rollback estan definidos;
+- la autorizacion humana explicita permanece como gate separado T-035.
+
+Criterios no cumplidos:
+
+- ninguno bloqueante.
+
+Condiciones menores:
+
+- T-035 debe registrar autorizacion humana explicita antes de mover, renombrar o crear stub.
+- Reference Map debe reejecutarse inmediatamente antes de cualquier ejecucion.
+- El worktree debe auditarse antes del movimiento para preservar cambios no relacionados.
+- El stub legacy solo puede crearse dentro de una ejecucion autorizada y debe ser no normativo.
+- Tras cualquier ejecucion autorizada, deben actualizarse referencias activas y registrarse Review/QA post-ejecucion.
+
+Bloqueos:
+
+- ninguno para pasar a decision humana.
+- DEV-RPN-010 permanecio `NOT AUTHORIZED` hasta T-035; T-035 lo autorizo y T-036 lo ejecuto.
+
+Siguiente paso valido:
+
+```text
+No active next step. DEV-RPN-010 closed by human decision.
+`
+---
+
+## 29. Human Authorization and Execution Result - T-035/T-036
+
+Decision humana: `Autorizo`.
+
+Fecha: 2026-08-02.
+
+Alcance ejecutado:
+
+- mover `specs/spec-001-sdd-modes.architecture.md` a `specs/capabilities/sdd-modes/arch-001-sdd-modes.md`;
+- crear stub legacy no normativo en `specs/spec-001-sdd-modes.architecture.md`;
+- actualizar referencias activas del expediente SDD Modes, indices y artefactos activos de RPN;
+- preservar referencias historicas de capacidades cerradas mediante compatibilidad legacy.
+
+Resultado:
+
+- ruta canonica creada: `specs/capabilities/sdd-modes/arch-001-sdd-modes.md`;
+- stub legacy creado: `specs/spec-001-sdd-modes.architecture.md`;
+- no se crearon scripts, tools, workflows ni automatizaciones;
+- no se elimina historia Git;
+- contenido normativo movido sin cambio funcional.
+
+Siguiente paso valido:
+
+```text
+No active next step. DEV-RPN-010 closed by human decision.
+`
+---
+
+## 30. DEV-RPN-010 Reviewer Decision - T-037
+
+Decision: `Approved with minor changes`.
+
+Fecha: 2026-08-02.
+
+Revisor: Reviewer Agent.
+
+Hallazgos criticos: ninguno.
+
+Hallazgos importantes: ninguno.
+
+Hallazgos menores:
+
+- El paquete mantiene referencias historicas a estados previos de DEV-RPN-010; son aceptables siempre que el estado vivo apunte a QA post-ejecucion.
+
+Evidencias revisadas:
+
+- `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` existe como ruta canonica.
+- `specs/spec-001-sdd-modes.architecture.md` existe como stub legacy no normativo.
+- Indices activos apuntan a `specs/capabilities/sdd-modes/arch-001-sdd-modes.md`.
+- El expediente activo de SDD Modes no conserva referencias a la ruta legacy como ruta canonica.
+- `movement_execution_report.md` registra DEV-RPN-010.
+- No se crearon scripts, tools, workflows ni automatizaciones.
+- `git diff --check` no reporta errores, solo avisos CRLF.
+
+Siguiente paso valido:
+
+```text
+No active next step. DEV-RPN-010 closed by human decision.
+`
+---
+
+## 31. DEV-RPN-010 QA Gate Decision - T-038
+
+Decision: `Pass with minor conditions`.
+
+Fecha: 2026-08-02.
+
+Evaluador: QA Gate Agent.
+
+Gate evaluado:
+
+DEV-RPN-010 post-execution validation.
+
+Evidencias encontradas:
+
+- `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` existe.
+- `specs/spec-001-sdd-modes.architecture.md` existe como stub legacy no normativo.
+- Las superficies activas revisadas no conservan `specs/spec-001-sdd-modes.architecture.md` como ruta canonica.
+- `movement_execution_report.md`, `canonical_route_registry.md`, `movement_plan.md`, `validation_checklist.md` y este Task Plan registran la ejecucion.
+- No hay archivos no Markdown nuevos en GEP.
+- `git diff --check` no reporta errores; solo avisos CRLF del entorno Windows/Git.
+
+Criterios cumplidos:
+
+- movimiento autorizado y ejecutado;
+- compatibilidad legacy preservada;
+- ruta canonica alineada con el modelo fisico aprobado;
+- trazabilidad documental actualizada;
+- rollback documentado;
+- no se detecta cambio funcional o normativo;
+- no se crearon scripts, tools, workflows ni automatizaciones.
+
+Condiciones menores:
+
+- Una decision humana debe determinar si DEV-RPN-010 se cierra o si se abre trabajo adicional de RPN.
+- Las referencias historicas en capacidades cerradas deben permanecer cubiertas por el stub legacy y no reescribirse sin reentrada explicita.
+- Cualquier nueva ola de normalizacion requiere nuevo scope/gate/autorizacion.
+
+Siguiente paso valido:
+
+```text
+No active next step. DEV-RPN-010 closed by human decision.
+`
+---
+
+## 32. DEV-RPN-010 Human Closure Decision - T-039
+
+Decision humana: `Autorizo el cierre`.
+
+Fecha: 2026-08-02.
+
+Nota: la autorizacion fue expresada dos veces de forma consecutiva y se registra como una unica decision humana de cierre.
+
+Alcance cerrado:
+
+- DEV-RPN-010 ejecutado;
+- ruta canonica `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` creada;
+- stub legacy no normativo `specs/spec-001-sdd-modes.architecture.md` creado;
+- referencias activas actualizadas;
+- Reviewer T-037 completado;
+- QA Gate T-038 completado con `Pass with minor conditions`.
+
+Condiciones residuales aceptadas:
+
+- referencias historicas de capacidades cerradas permanecen cubiertas por stub legacy;
+- cualquier nueva ola de normalizacion requiere nuevo alcance, gate y autorizacion humana;
+- no queda autorizacion abierta para movimientos adicionales.
+
+Estado final:
+
+```text
+Closed - DEV-RPN-010
+```
+
+Siguiente paso activo:
+
+```text
+None.
 ```

@@ -5,9 +5,9 @@
 | Campo | Valor |
 | --- | --- |
 | Fase | Development |
-| Estado | First controlled movement executed |
+| Estado | Closed - DEV-RPN-010 |
 | Development | AUTHORIZED for first SDD Modes wave |
-| Ejecucion | DEV-P1, DEV-P3, DEV-P4 and compatibility stubs executed; DEV-P5 kept/deferred |
+| Ejecucion | DEV-P1, DEV-P3, DEV-P4 and compatibility stubs executed; Closed - DEV-RPN-010 |
 
 ## Proposito
 
@@ -37,7 +37,7 @@ La ejecucion movio cinco artefactos, creo stubs de compatibilidad y mantuvo `spe
 | DEV-P4 | Move specification baseline | Mover `specs/spec-001-sdd-modes.md`. | Specification bajo `specs/capabilities/sdd-modes/`. | Executed |
 | DEV-P5 | Architecture route decision | Mantener ruta legacy, mover sin renombrar o mover/renombrar Architecture segun decision explicita. | Decision aplicada de forma trazable. | Keep/defer executed |
 | DEV-P6 | Compatibility update | Actualizar indices y referencias autorizadas; crear stubs si se autoriza. | Navegacion coherente y compatible. | Executed for stubs and active indexes |
-| DEV-P7 | Validation and handover | Ejecutar checklist documental/manual y registrar resultado. | Paquete listo para Reviewer/QA post-ejecucion. | In progress |
+| DEV-P7 | Validation and handover | Ejecutar checklist documental/manual y registrar resultado. | Primera ola validada; DEV-RPN-010 queda como ola futura propuesta. | Completed for first wave / DEV-RPN-010 proposed |
 
 ## Reglas por tipo de accion
 
@@ -55,11 +55,11 @@ La primera ola se detiene tras DEV-P7 para review y QA post-ejecucion. Cualquier
 
 ---
 
-## Proposed Future Wave DEV-RPN-010 - SDD Modes Architecture Route
+## Executed Wave DEV-RPN-010 - SDD Modes Architecture Route
 
 | Campo | Valor |
 | --- | --- |
-| Estado | Proposed / not executed |
+| Estado | QA passed with minor conditions - T-038 |
 | Decision recomendada | Option A |
 | Origen | `specs/spec-001-sdd-modes.architecture.md` |
 | Destino | `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` |

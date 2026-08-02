@@ -5,9 +5,9 @@
 | Campo | Valor |
 | --- | --- |
 | Fase | Governed Execution Preparation |
-| Estado | Draft for review |
-| Development | NOT AUTHORIZED |
-| Cambios de compatibilidad | NOT AUTHORIZED |
+| Estado | Closed - DEV-RPN-010 |
+| Development adicional | NOT AUTHORIZED without Reviewer, QA Gate and human decision |
+| Cambios de compatibilidad DEV-RPN-010 | NOT AUTHORIZED without Reviewer, QA Gate and human decision |
 
 ## Objetivo
 

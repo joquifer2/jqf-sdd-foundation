@@ -130,7 +130,7 @@ Si durante fases posteriores se usan proyectos derivados como casos de validacio
 | --- | --- | --- |
 | `docs/project_brief.md` | Completed | Contexto inicial canonico y declaracion del modo `SDD Full` usado para esta mejora. |
 | `specs/spec-001-sdd-modes.md` | Final | Fuente normativa principal de SDD Modes. |
-| `specs/spec-001-sdd-modes.architecture.md` | Final | Arquitectura conceptual y documental aprobada. |
+| `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` | Final | Arquitectura conceptual y documental aprobada. |
 | `.github/instructions/sdd.instructions.md` | Current | Reglas operativas vigentes del SDD Harness para modos. |
 | `.github/agents/*.agent.md` | Current | Definiciones canonicas de agentes metodologicos. |
 | `.codex/agents/` | Current | Adaptadores Codex; no son segunda fuente de verdad. |

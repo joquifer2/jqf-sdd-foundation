@@ -59,4 +59,36 @@ Rollback can be performed by restoring the moved files to their legacy paths and
 
 ## Next validation
 
-Reviewer Agent should review this execution package, followed by QA Gate Agent validation of physical normalization execution.
+Reviewer Agent should review this execution package, followed by QA Gate Agent validation of physical normalization execution.---
+
+## DEV-RPN-010 Execution Addendum
+
+Fecha: 2026-08-02.
+
+Autorizacion: decision humana `Autorizo` posterior a QA Gate T-034.
+
+Movimiento ejecutado:
+
+| ID | Accion | Origen legacy | Destino canonico | Estado |
+| --- | --- | --- | --- | --- |
+| DEV-RPN-010 | Move + rename + legacy stub | `specs/spec-001-sdd-modes.architecture.md` | `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` | QA passed with minor conditions - T-038 |
+
+Compatibilidad:
+
+- `specs/spec-001-sdd-modes.architecture.md` queda como stub legacy no normativo.
+- El contenido canonico vive en `specs/capabilities/sdd-modes/arch-001-sdd-modes.md`.
+- Referencias activas de SDD Modes, indices y RPN fueron actualizadas.
+- Referencias historicas de capacidades cerradas se preservan mediante stub.
+
+Rollback basis:
+
+- restaurar contenido canonico completo en `specs/spec-001-sdd-modes.architecture.md`;
+- retirar `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` si el rollback lo requiere;
+- restaurar referencias activas a la ruta legacy;
+- registrar rollback en Task Plan, checklist y este reporte.
+
+Siguiente validacion:
+
+```text
+Reviewer Agent review of DEV-RPN-010 execution.
+```

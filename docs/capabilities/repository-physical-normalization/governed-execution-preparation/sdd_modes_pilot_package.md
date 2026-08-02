@@ -6,7 +6,7 @@
 | --- | --- |
 | Caso piloto | SDD Modes |
 | Fase | Development |
-| Estado | First controlled movement executed / pending review |
+| Estado | Closed - DEV-RPN-010 |
 | Development | AUTHORIZED for first wave |
 | Normalizacion fisica | Executed for selected SDD Modes artifacts |
 
@@ -99,7 +99,7 @@ Decision propuesta para el artefacto Architecture de SDD Modes:
 
 Estado:
 
-`Proposed / not executed`.
+`QA passed with minor conditions - T-038`.
 
 Motivo:
 

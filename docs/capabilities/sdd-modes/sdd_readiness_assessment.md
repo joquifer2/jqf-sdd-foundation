@@ -61,7 +61,7 @@ Estado seleccionado: `Completed with conditions` para cierre metodologico, sin t
 | Project Brief | Yes | `docs/project_brief.md` | Completed | Define alcance, constraints, SDD Full para esta mejora y criterios de exito. |
 | context_refs.md | Yes | `docs/context_refs.md` | Current | Professional OS verificado como discovery-only; candidatos retrospectivos VAL-002/003/004 registrados; VAL-001 permanece como deuda empirica no bloqueante y el documento conceptual sigue `PENDING - discovery-only`. |
 | Specification | Yes | `specs/spec-001-sdd-modes.md` | Final | Incluye AC-025 a AC-027 y matiz de cierre metodologico con VAL-001 como deuda empirica no bloqueante. |
-| Architecture | Yes | `specs/spec-001-sdd-modes.architecture.md` | Final | Alineada tras T-027 y cierre metodologico; no autoriza Development. |
+| Architecture | Yes | `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` | Final | Alineada tras T-027 y cierre metodologico; no autoriza Development. |
 | docs/tasks.md | Yes | `docs/tasks.md` | Final | T-001 a T-027 y decision de cierre reflejan el bloque empirico; no autoriza Development. |
 | SDD Instructions | Yes | `.github/instructions/sdd.instructions.md` | Current | Incluye reglas operativas de SDD Modes y T-019D. |
 | Agent definitions | Yes | `.github/agents/*.agent.md` | Current | Consumir modo declarado sin crear agentes por modo. |
@@ -120,7 +120,7 @@ Estado seleccionado: `Completed with conditions` para cierre metodologico, sin t
 
 | Criterio | Estado | Evidencia | Observaciones |
 |---|---|---|---|
-| Los componentes principales están identificados | Pass | `specs/spec-001-sdd-modes.architecture.md` | Taxonomia, declaracion, seleccion, lifecycle, artefactos, agentes, checks/gates, evidencia y compatibilidad. |
+| Los componentes principales están identificados | Pass | `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` | Taxonomia, declaracion, seleccion, lifecycle, artefactos, agentes, checks/gates, evidencia y compatibilidad. |
 | Las dependencias principales están identificadas | Pass | `ARCH-001`; `docs/context_refs.md` | Fuentes externas y repos concretos pendientes. |
 | Los flujos principales están descritos | Pass | `ARCH-001`; `docs/tasks.md` | Flujo documental, contexto, agentes, gates y templates. |
 | Los riesgos arquitectónicos están identificados | Pass | `ARCH-001` | Incluye riesgos de policy, contexto y validacion. |
@@ -233,7 +233,7 @@ Punto de reentrada: si se resuelve `VAL-001`, Documentation Agent debe registrar
 - `docs/project_brief.md`
 - `docs/context_refs.md`
 - `specs/spec-001-sdd-modes.md`
-- `specs/spec-001-sdd-modes.architecture.md`
+- `specs/capabilities/sdd-modes/arch-001-sdd-modes.md`
 - `.github/instructions/sdd.instructions.md`
 - `.github/agents/*.agent.md`
 - `.codex/agents/README.md`
@@ -310,7 +310,7 @@ La consolidacion documental final de SDD Modes ya fue ejecutada. La unica reentr
 |---|---|---|
 | `docs/project_brief.md` | Completed | Contexto inicial canonico y declaracion del modo usado para la mejora. |
 | `specs/spec-001-sdd-modes.md` | Final | Fuente normativa principal de SDD Modes. |
-| `specs/spec-001-sdd-modes.architecture.md` | Final | Estructura conceptual y documental aprobada. |
+| `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` | Final | Estructura conceptual y documental aprobada. |
 | `.github/instructions/sdd.instructions.md` | Current | Aplicacion operativa de reglas de modo dentro del SDD Harness. |
 | `.github/agents/*.agent.md` y `.codex/agents/` | Current | Agentes y adaptadores que consumen el modo declarado. |
 | `docs/templates/` y `specs/templates/` | Current | Plantillas vigentes afectadas por SDD Modes. |

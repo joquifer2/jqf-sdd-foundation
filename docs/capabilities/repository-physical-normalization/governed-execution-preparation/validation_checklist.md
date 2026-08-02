@@ -5,7 +5,7 @@
 | Campo | Valor |
 | --- | --- |
 | Fase | Development |
-| Estado | Architecture route decision proposed / pending Reviewer |
+| Estado | Closed - DEV-RPN-010 |
 | Development | AUTHORIZED for first SDD Modes wave |
 | Ejecucion validada | Local validation completed; Reviewer T-027 approved with minor changes; QA Gate T-028 pass with minor conditions |
 
@@ -81,7 +81,7 @@ Este resultado no autoriza Development ni normalizacion fisica.
 
 ## Development Execution Result - T-024/T-026
 
-Estado: `First controlled movement validated / pending human closure decision`.
+Estado historico: `First controlled movement validated / pending human closure decision`; superado por DEV-RPN-010 y T-039.
 
 Reporte:
 
@@ -149,11 +149,142 @@ Siguiente paso:
 | VC-ARCH-003 | Movement Plan | DEV-RPN-010 definido sin ejecutar. | Pass for review |
 | VC-ARCH-004 | Compatibility Plan | Stub legacy definido sin crear. | Pass for review |
 | VC-ARCH-005 | Rollback Plan | Rollback por movimiento unico viable. | Pass for review |
-| VC-ARCH-006 | Reviewer | Revision del paquete de decision. | Pending |
-| VC-ARCH-007 | QA Gate | Gate de readiness para DEV-RPN-010. | Pending |
-| VC-ARCH-008 | Human authorization | Autorizacion explicita antes de movimiento/stub. | Pending |
-| VC-ARCH-009 | No execution | No se movio, renombro ni creo stub. | Pass |
+| VC-ARCH-006 | Reviewer | Revision del paquete de decision. | Pass with minor changes - T-033 |
+| VC-ARCH-007 | QA Gate | Gate de readiness para DEV-RPN-010. | Pass with minor conditions - T-034 |
+| VC-ARCH-008 | Human authorization | Autorizacion explicita antes de movimiento/stub. | Pass - T-035 |
+| VC-ARCH-009 | Authorized execution only | Movimiento y stub se ejecutan solo tras autorizacion humana. | Pass - T-036 |
 
 Siguiente paso:
 
-`Reviewer Agent review of SDD Modes Architecture route decision package`.
+`No active next step. DEV-RPN-010 closed by human decision`.
+---
+
+## Reviewer Result - T-033
+
+Decision: `Approved with minor changes`.
+
+Resultado:
+
+- no hay hallazgos criticos;
+- no hay hallazgos importantes;
+- la decision propuesta `Option A` esta justificada;
+- Reference Map, Movement Plan, Compatibility Plan y Rollback Plan son suficientes para QA Gate;
+- Estado en T-033: DEV-RPN-010 no habia sido ejecutado;
+- Estado en T-033/T-034: `specs/spec-001-sdd-modes.architecture.md` permanecia en ruta legacy;
+- Estado en T-033/T-034: `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` no existia todavia. Estado superado por T-036;
+- no se crearon stubs, scripts, tools, workflows ni automatizaciones.
+
+Correcciones menores aplicadas por Documentation Agent:
+
+- alinear encabezados de estado de los planes GEP con `Architecture route decision proposed / pending QA Gate`;
+- marcar VC-ARCH-006 como completado.
+
+Siguiente paso:
+
+No active next step. DEV-RPN-010 closed by human decision.
+---
+
+## QA Gate Result - T-034
+
+Decision: `Pass with minor conditions`.
+
+Resultado:
+
+- DEV-RPN-010 esta listo para decision humana explicita;
+- la recomendacion `Option A` es apta para autorizacion posterior;
+- Reference Map, Movement Plan, Compatibility Plan y Rollback Plan son suficientes para ejecutar de forma controlada si T-035 lo autoriza;
+- no se ejecuto movimiento, renombre ni stub;
+- Estado en T-033/T-034: `specs/spec-001-sdd-modes.architecture.md` permanecia en ruta legacy;
+- Estado en T-033/T-034: `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` no existia todavia. Estado superado por T-036;
+- no se crearon scripts, tools, workflows ni automatizaciones.
+
+Condiciones menores:
+
+- autorizacion humana explicita requerida antes de ejecutar DEV-RPN-010;
+- Reference Map final y auditoria de worktree requeridos inmediatamente antes de movimiento;
+- stub legacy debe ser no normativo y solo crearse dentro de ejecucion autorizada;
+- Review y QA post-ejecucion requeridos si se autoriza la ola.
+
+Siguiente paso:
+
+`No active next step. DEV-RPN-010 closed by human decision.
+---
+
+## DEV-RPN-010 Execution Result - T-035/T-036
+
+Estado: `Closed - DEV-RPN-010`.
+
+Resultado:
+
+- `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` creado por movimiento del contenido canonico;
+- `specs/spec-001-sdd-modes.architecture.md` convertido en stub legacy no normativo;
+- referencias activas actualizadas en SDD Modes, indices y RPN;
+- referencias historicas preservadas por compatibilidad;
+- scripts, tools, workflows y automatizaciones no creados.
+
+Siguiente paso:
+
+`No active next step. DEV-RPN-010 closed by human decision.
+---
+
+## Reviewer Result - T-037
+
+Decision: `Approved with minor changes`.
+
+Resultado:
+
+- movimiento DEV-RPN-010 validado;
+- stub legacy validado como no normativo;
+- referencias activas principales actualizadas;
+- referencias historicas preservadas por compatibilidad;
+- ausencia de scripts, tools, workflows y automatizaciones confirmada;
+- ausencia de cambio funcional o normativo detectada.
+
+Condicion menor:
+
+- QA Gate T-038 debe validar cierre post-ejecucion antes de considerar la ola cerrada.
+
+Siguiente paso:
+
+`No active next step. DEV-RPN-010 closed by human decision.
+---
+
+## QA Gate Result - T-038
+
+Decision: `Pass with minor conditions`.
+
+Resultado:
+
+- DEV-RPN-010 validado post-ejecucion;
+- ruta canonica existe;
+- stub legacy no normativo existe;
+- referencias activas principales actualizadas;
+- compatibilidad y rollback documentados;
+- no hay scripts, tools, workflows ni automatizaciones;
+- no hay errores en `git diff --check`, solo avisos CRLF.
+
+Condiciones menores:
+
+- cierre humano explicito requerido;
+- referencias historicas se preservan por stub legacy;
+- nuevas olas requieren nueva autorizacion.
+
+Siguiente paso:
+
+`No active next step. DEV-RPN-010 closed by human decision.
+---
+
+## Human Closure Result - T-039
+
+Decision humana: `Autorizo el cierre`.
+
+Resultado:
+
+- DEV-RPN-010 queda cerrado;
+- QA T-038 queda aceptado con condiciones menores;
+- no queda siguiente paso activo para DEV-RPN-010;
+- no se autoriza trabajo adicional ni nuevas olas de normalizacion.
+
+Estado final:
+
+`Closed - DEV-RPN-010`.

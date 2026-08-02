@@ -6,7 +6,7 @@
 | --- | --- |
 | Capacidad | Repository Physical Normalization |
 | Fase | Development |
-| Estado | First controlled movement executed / pending review |
+| Estado | Closed - DEV-RPN-010 |
 | Architecture | Completed |
 | QA Gate previo | PASS WITH MINOR CONDITIONS |
 | Development | AUTHORIZED for first SDD Modes wave |

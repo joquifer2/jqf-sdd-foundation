@@ -5,9 +5,9 @@
 | Campo | Valor |
 | --- | --- |
 | Fase | Development |
-| Estado | First controlled movement executed |
+| Estado | Closed - DEV-RPN-010 |
 | Development | AUTHORIZED for first SDD Modes wave |
-| Movimiento fisico | Executed for DEV-RPN-001..DEV-RPN-005 |
+| Movimiento fisico | Executed for DEV-RPN-001..DEV-RPN-005 and DEV-RPN-010 |
 
 ## Proposito
 
@@ -32,7 +32,7 @@ La ejecucion conserva stubs de compatibilidad en rutas legacy y no modifica cont
 | CRR-SM-003 | `docs/tasks.md` | `docs/capabilities/sdd-modes/tasks.md` | Expediente historico / decision log | Move + legacy stub | Development autorizado; Reference Map final ejecutado; compatibilidad por stub | Executed |
 | CRR-SM-004 | `docs/sdd_readiness_assessment.md` | `docs/capabilities/sdd-modes/sdd_readiness_assessment.md` | Evidencia de readiness y gates | Move + legacy stub | Development autorizado; Reference Map final ejecutado; compatibilidad por stub | Executed |
 | CRR-SM-005 | `specs/spec-001-sdd-modes.md` | `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` | Baseline canonico de Specification | Move + legacy stub | Development autorizado; Reference Map final ejecutado; compatibilidad por stub | Executed |
-| CRR-SM-006 | `specs/spec-001-sdd-modes.architecture.md` | `specs/spec-001-sdd-modes.architecture.md` | Baseline canonico de Architecture | Keep/defer | Decision conservadora: no mover ni renombrar en primera ola | Deferred |
+| CRR-SM-006 | `specs/spec-001-sdd-modes.architecture.md` | `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` | Baseline canonico de Architecture | Move + rename + legacy stub | DEV-RPN-010 autorizado por T-035 tras Reviewer T-033 y QA T-034 | Executed |
 | CRR-SM-007 | N/A | `docs/capabilities/sdd-modes/closure_handover.md` | Resumen derivado de cierre | Not executed | No requerido para primera ola | Deferred |
 | CRR-SM-008 | N/A | `docs/capabilities/sdd-modes/evidence_index.md` | Resumen derivado de evidencias | Not executed | No requerido para primera ola | Deferred |
 | CRR-SM-009 | N/A | `docs/capabilities/sdd-modes/residual_debt.md` | Resumen derivado de deuda residual | Not executed | No requerido para primera ola | Deferred |
@@ -56,15 +56,15 @@ Este registro queda listo para review post-Development cuando cada ruta afectada
 
 ---
 
-## Architecture Route Decision Candidate - CRR-SM-006
+## Architecture Route Decision Execution - CRR-SM-006
 
 | Campo | Valor |
 | --- | --- |
 | Artefacto | `specs/spec-001-sdd-modes.architecture.md` |
 | Decision propuesta | Option A |
-| Ruta objetivo futura | `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` |
-| Accion futura | Move + rename + legacy stub |
-| Estado | Proposed / not executed |
+| Ruta canonica vigente | `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` |
+| Accion ejecutada | Move + rename + legacy stub |
+| Estado | QA passed with minor conditions - T-038 |
 | Evidencia | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_architecture_route_decision.md` |
 
-La ruta canonica vigente sigue siendo `specs/spec-001-sdd-modes.architecture.md` hasta que exista Reviewer, QA Gate y autorizacion humana explicita para ejecutar DEV-RPN-010.
+La ruta canonica vigente es `specs/capabilities/sdd-modes/arch-001-sdd-modes.md`. La ruta legacy `specs/spec-001-sdd-modes.architecture.md` queda como stub no normativo de compatibilidad.

@@ -13,7 +13,7 @@ proyecto:
   nombre: JQF SDD Foundation - Repository Physical Normalization
   id_proyecto: repository-physical-normalization
   tipo_proyecto: foundation-repository-governance-specification
-  estado: Architecture route decision proposed / pending Reviewer
+  estado: Closed - DEV-RPN-010
   fecha_creacion: 2026-08-02
   responsable: Jordi Quiroga
 
@@ -246,14 +246,14 @@ Restricciones vigentes:
 | Referencia | Funcion | Estado |
 | --- | --- | --- |
 | `docs/capabilities/repository-physical-normalization/tasks.md#17-governed-execution-preparation-authorization---t-013` | Decision humana que autoriza preparacion documental de ejecucion gobernada. | Completed |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md` | Indice del paquete GEP. | Draft for review |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/canonical_route_registry.md` | Registro canonico de rutas objetivo futuras. | Draft for review |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md` | Mapa inicial de referencias y superficies de compatibilidad. | Draft for review |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md` | Plan de movimientos futuros por olas, no ejecutado. | Draft for review |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md` | Plan de continuidad de enlaces, referencias, handovers y derivados. | Draft for review |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md` | Plan de reversibilidad futura. | Draft for review |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md` | Checklist de readiness previo a Development y validacion futura. | Draft for review |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_pilot_package.md` | Aplicacion piloto sobre SDD Modes, no ejecutada. | Draft for review |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md` | Indice del paquete GEP. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/canonical_route_registry.md` | Registro canonico de rutas objetivo futuras. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md` | Mapa de referencias y superficies de compatibilidad. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md` | Plan de movimientos futuros por olas, no ejecutado. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md` | Plan de continuidad de enlaces, referencias, handovers y derivados. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md` | Plan de reversibilidad futura. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md` | Checklist de readiness y validacion. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_pilot_package.md` | Aplicacion piloto sobre SDD Modes. | Closed - DEV-RPN-010 |
 
 Siguiente contexto a cargar:
 
@@ -265,7 +265,7 @@ Siguiente contexto a cargar:
 - `docs/capabilities/repository-physical-normalization/tasks.md`
 - `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
 
-Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
+Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
 
 Restricciones vigentes:
 
@@ -295,7 +295,7 @@ Siguiente contexto a cargar:
 - `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
 - `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md`
 
-Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
+Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
 
 Restricciones vigentes:
 
@@ -324,7 +324,7 @@ Siguiente contexto a cargar:
 - `docs/capabilities/repository-physical-normalization/tasks.md`
 - `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
 
-Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
+Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
 
 Restricciones vigentes:
 
@@ -364,7 +364,7 @@ Ruta legacy canonica temporal retenida:
 
 - `specs/spec-001-sdd-modes.architecture.md`
 
-Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
+Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
 ---
 
 ## Development Reviewer References - T-027
@@ -375,7 +375,7 @@ Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture 
 | `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#development-reviewer-decision---t-027` | Readiness actualizado tras review T-027. | Ready for QA Gate |
 | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#reviewer-result---t-027` | Checklist actualizado con VC-DEV-009. | Pass with minor changes |
 
-Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
+Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
 
 Restricciones vigentes:
 
@@ -392,7 +392,7 @@ Restricciones vigentes:
 | `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#development-qa-gate-decision---t-028` | Readiness actualizado tras QA T-028. | Ready for human decision |
 | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#qa-gate-result---t-028` | Checklist actualizado con VC-DEV-010. | Pass with minor conditions |
 
-Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
+Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
 
 Restricciones vigentes:
 
@@ -407,12 +407,12 @@ Restricciones vigentes:
 | --- | --- | --- |
 | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_architecture_route_decision.md` | Decision arquitectonica propuesta sobre `specs/spec-001-sdd-modes.architecture.md`. | Proposed Option A / pending Reviewer |
 | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md#full-reference-map---sdd-modes-architecture-route` | Reference Map completo para la ruta Architecture. | Completed for review |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md#proposed-future-wave-dev-rpn-010---sdd-modes-architecture-route` | Movimiento futuro DEV-RPN-010. | Proposed / not executed |
-| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md#compatibility-addendum---sdd-modes-architecture-route` | Compatibilidad mediante stub legacy. | Proposed / not executed |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md#executed-wave-dev-rpn-010---sdd-modes-architecture-route` | Movimiento DEV-RPN-010 ejecutado. | Closed - DEV-RPN-010 |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md#compatibility-addendum---sdd-modes-architecture-route` | Compatibilidad mediante stub legacy. | Closed - DEV-RPN-010 |
 | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md#rollback-addendum---dev-rpn-010-sdd-modes-architecture-route` | Rollback futuro de DEV-RPN-010. | Viable / not executed |
 | `docs/capabilities/repository-physical-normalization/tasks.md#26-sdd-modes-architecture-route-decision-preparation---t-029t-032` | Tareas T-029/T-032. | Completed / pending Reviewer |
 
-Siguiente decision recomendada: Reviewer Agent review of SDD Modes Architecture route decision package.
+Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
 
 Restricciones vigentes:
 
@@ -420,3 +420,33 @@ Restricciones vigentes:
 - No se mueve ni renombra `specs/spec-001-sdd-modes.architecture.md` en esta preparacion.
 - No se crea stub legacy en esta preparacion.
 - No se modifica contenido normativo de SDD Modes Architecture.
+---
+
+## SDD Modes Architecture Route Reviewer References - T-033
+
+| Referencia | Funcion | Estado |
+| --- | --- | --- |
+| `docs/capabilities/repository-physical-normalization/tasks.md#27-sdd-modes-architecture-route-reviewer-decision---t-033` | Decision de Reviewer Agent sobre DEV-RPN-010. | Approved with minor changes |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#reviewer-result---t-033` | Checklist actualizado con VC-ARCH-006. | Pass with minor changes |
+
+Siguiente decision recomendada: No active next step. DEV-RPN-010 closed by human decision.
+
+Restricciones vigentes:
+
+- DEV-RPN-010 no esta autorizado para ejecucion.
+- No se mueve ni renombra `specs/spec-001-sdd-modes.architecture.md`.
+- No se crea stub legacy.
+- Estado superado por T-036: la ruta objetivo `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` existe y la ruta legacy es stub.`r`n---
+
+## SDD Modes Architecture Route QA Gate References - T-034
+
+| Artefacto | Relacion |
+| --- | --- |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_architecture_route_decision.md` | Decision `Option A` validada por QA Gate para pasar a decision humana. |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md` | Inventario de referencias activas e historicas usado por QA. |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md` | Define DEV-RPN-010 como futura ola no ejecutada. |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md` | Define stub legacy no normativo como compatibilidad futura. |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md` | Define rollback viable del movimiento unico. |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md` | Registra `Pass with minor conditions - T-034`. |
+
+Resultado: el siguiente paso indexado es decision humana explicita sobre DEV-RPN-010. No existe autorizacion automatica de ejecucion.

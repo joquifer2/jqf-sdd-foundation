@@ -665,7 +665,7 @@ La specification declara que la validacion empirica no puede considerarse comple
 - Documento conceptual consensuado sobre SDD Modes: `PENDING - discovery-only`.
 - Escenarios de validacion VAL-001 a VAL-004 seleccionados; candidatos retrospectivos verificados para VAL-002, VAL-003 y VAL-004 en `docs/context_refs.md`; VAL-001 permanece `PENDING` como deuda de validacion empirica futura no bloqueante para el cierre metodologico.
 - Revisiones Reviewer y QA Gate completadas con condiciones cerradas o aceptadas.
-- Architecture finalizada en `specs/spec-001-sdd-modes.architecture.md`.
+- Architecture finalizada en `specs/capabilities/sdd-modes/arch-001-sdd-modes.md`.
 
 ---
 

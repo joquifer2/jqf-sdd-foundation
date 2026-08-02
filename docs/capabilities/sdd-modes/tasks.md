@@ -9,7 +9,7 @@
 | Project Brief relacionado | `docs/project_brief.md` |
 | Context References relacionado | `docs/context_refs.md` |
 | Specification relacionada | `specs/spec-001-sdd-modes.md` |
-| Architecture relacionada | `specs/spec-001-sdd-modes.architecture.md` |
+| Architecture relacionada | `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` |
 | Estado | Final |
 | Fase SDD actual | Specification / Structure |
 | Owner | Jordi Quiroga |
@@ -33,7 +33,7 @@ Este plan es exclusivamente documental y de gobernanza. No autoriza Development,
 | `docs/project_brief.md` | Define proposito, alcance, restricciones, riesgos, criterios de exito y siguientes pasos esperados. |
 | `docs/context_refs.md` | Define fuentes obligatorias de contexto y referencias externas pendientes. |
 | `specs/spec-001-sdd-modes.md` | Define requisitos, reglas, criterios de aceptacion y preguntas abiertas. |
-| `specs/spec-001-sdd-modes.architecture.md` | Define componentes conceptuales/documentales, alternativas y areas de impacto. |
+| `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` | Define componentes conceptuales/documentales, alternativas y areas de impacto. |
 | Resultado Reviewer de `SPEC-001` | `PASS` tras incorporar condiciones. |
 | Resultado Reviewer de `ARCH-001` | `PASS`; siguiente paso: Tasks Planner Agent. |
 | `.github/instructions/sdd.instructions.md` | Define fase actual y gobierno del backlog. |
@@ -104,7 +104,7 @@ Paralelizacion segura:
 | ID | Tarea | Tipo | Agente responsable | Dependencias | Criterios de aceptacion | Estado |
 | --- | --- | --- | --- | --- | --- | --- |
 | T-011 | Actualizar `specs/spec-001-sdd-modes.md` con las decisiones aprobadas de T-002 a T-010. | Specification | Specification Agent | T-002 a T-010 | Las preguntas abiertas resueltas se cierran; la incertidumbre restante queda explicita; no se introduce arquitectura ni implementacion. | Completed |
-| T-012 | Actualizar `specs/spec-001-sdd-modes.architecture.md` para reflejar decisiones aprobadas sin anadir detalle de implementacion. | Architecture | Architect Agent | T-011 | La arquitectura queda alineada con la spec actualizada; las alternativas seleccionadas por decision humana quedan reflejadas sin aparecer como resueltas por inferencia. | Completed |
+| T-012 | Actualizar `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` para reflejar decisiones aprobadas sin anadir detalle de implementacion. | Architecture | Architect Agent | T-011 | La arquitectura queda alineada con la spec actualizada; las alternativas seleccionadas por decision humana quedan reflejadas sin aparecer como resueltas por inferencia. | Completed |
 | T-013 | Actualizar `.github/instructions/sdd.instructions.md` con reglas de modo aprobadas a nivel de instruccion operativa. | Documentation | Documentation Agent | T-011; T-012 | Las instrucciones definen como el modo afecta fase SDD, checks, gates y carga de contexto sin duplicar todo el texto normativo. | Completed |
 | T-014 | Actualizar solo las plantillas afectadas cuando sea necesario. Plantillas candidatas: Project Brief, Specification, Context References y cualquier plantilla de gate/readiness. | Documentation | Documentation Agent | T-011; T-012 | Las plantillas incorporan solo campos o guia necesarios; no se crean plantillas duplicadas salvo justificacion explicita. | Completed |
 | T-015 | Actualizar instrucciones o adaptadores de agentes metodologicos para consumir el modo declarado sin crear agentes por modo. | Documentation | Documentation Agent | T-011; T-012; T-013 | Las instrucciones de agentes identifican como usar el modo; el catalogo permanece unico y no operativo. | Completed |
@@ -201,7 +201,7 @@ Este plan esta listo para Reviewer Agent y QA Gate Agent cuando:
 - las tareas estan separadas en bloques de decision, actualizacion de artefactos, revision/validacion y preparacion de gate;
 - ninguna tarea autoriza Development ni implementacion;
 - el plan preserva el estado Specification / Structure;
-- el plan puede evaluarse contra `docs/project_brief.md`, `docs/context_refs.md`, `specs/spec-001-sdd-modes.md` y `specs/spec-001-sdd-modes.architecture.md`.
+- el plan puede evaluarse contra `docs/project_brief.md`, `docs/context_refs.md`, `specs/spec-001-sdd-modes.md` y `specs/capabilities/sdd-modes/arch-001-sdd-modes.md`.
 
 ---
 
@@ -247,7 +247,7 @@ Development sigue `NOT AUTHORIZED` sin aprobacion humana explicita. El punto de 
 | --- | --- | --- |
 | `docs/project_brief.md` | Completed | Declaracion inicial canonica de la iniciativa y del modo `SDD Full` usado para desarrollarla. |
 | `specs/spec-001-sdd-modes.md` | Final | Fuente normativa principal de SDD Modes. |
-| `specs/spec-001-sdd-modes.architecture.md` | Final | Arquitectura conceptual y documental aprobada. |
+| `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` | Final | Arquitectura conceptual y documental aprobada. |
 | `.github/instructions/sdd.instructions.md` | Current | Reglas operativas vigentes para aplicar SDD Modes dentro del SDD Harness. |
 | `.github/agents/*.agent.md` y `.codex/agents/` | Current | Agentes metodologicos y adaptadores que consumen el modo declarado sin duplicarse por modo. |
 | `docs/templates/` y `specs/templates/` | Current | Plantillas actualizadas para registrar o referenciar modo cuando aplica. |

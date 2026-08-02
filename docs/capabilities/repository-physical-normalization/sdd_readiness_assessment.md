@@ -67,7 +67,7 @@ Motivo:
 | sdd_readiness_assessment.md | Yes | `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md` | Specification | Este documento. |
 | tasks.md | Yes | `docs/capabilities/repository-physical-normalization/tasks.md` | Specification | Backlog de Repository Physical Normalization. |
 | Architecture | Yes | `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md` | Architecture reviewed | Creada tras autorizacion humana T-008; revisada por Reviewer Agent T-011. |
-| Governed Execution Preparation package | Yes | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md` | Draft for review | Paquete documental no ejecutable creado tras T-013. |
+| Governed Execution Preparation package | Yes | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md` | Closed - DEV-RPN-010 | Paquete documental extendido con decision DEV-RPN-010 tras T-033. |
 | Evidence index | No | N/A | Not applicable yet | No hay validacion ni cierre. |
 | Closure handover | No | N/A | Not applicable yet | No hay cierre. |
 | Residual debt | No | N/A | Not applicable yet | La deuda esta registrada como riesgos/open questions en Specification. |
@@ -703,7 +703,7 @@ Resultado:
 
 Decision vigente:
 
-`Ready for Reviewer Agent review of SDD Modes Architecture route decision package`.
+`Closed - DEV-RPN-010`.
 ---
 
 # Development Reviewer Decision - T-027
@@ -719,17 +719,17 @@ Resultado:
 - la ejecucion Development first wave coincide con la autorizacion humana T-023;
 - no hay hallazgos criticos ni importantes;
 - las rutas canonicas y stubs legacy existen;
-- SDD Modes Architecture permanece en ruta legacy;
+- SDD Modes Architecture canonica esta normalizada en `specs/capabilities/sdd-modes/arch-001-sdd-modes.md`; la ruta legacy permanece como stub;
 - no se detecta cambio normativo de baseline cerrado;
 - no se crearon scripts, tools, workflows ni automatizaciones.
 
 Correccion menor aplicada:
 
-- actualizar estado vigente y next step a `validated / pending human closure decision`.
+- actualizar estado vigente y next step a `validated / pending human closure decision` en el momento historico T-028; estado superado por T-039.
 
 Decision vigente:
 
-`Ready for Reviewer Agent review of SDD Modes Architecture route decision package`.
+`Closed - DEV-RPN-010`.
 ---
 
 # Development QA Gate Decision - T-028
@@ -754,7 +754,7 @@ Condicion menor aplicada:
 
 Decision vigente:
 
-`Ready for Reviewer Agent review of SDD Modes Architecture route decision package`.
+`Closed - DEV-RPN-010`.
 ---
 
 # SDD Modes Architecture Route Decision Readiness - T-029/T-032
@@ -783,4 +783,61 @@ Criterios cumplidos:
 
 Decision vigente:
 
-`Ready for Reviewer Agent review of SDD Modes Architecture route decision package`.
+`Closed - DEV-RPN-010`.
+---
+
+# SDD Modes Architecture Route Reviewer Decision - T-033
+
+Decision: `Approved with minor changes`.
+
+Fecha: 2026-08-02.
+
+Evaluador: Reviewer Agent.
+
+Resultado:
+
+- paquete DEV-RPN-010 listo para QA Gate;
+- no hay hallazgos criticos ni importantes;
+- decision `Option A` suficientemente justificada;
+- no hay movimiento fisico ni stub creado;
+- rollback y compatibilidad estan definidos.
+
+Decision vigente:
+
+`Closed - DEV-RPN-010.
+---
+
+# SDD Modes Architecture Route QA Gate Decision - T-034
+
+Decision: `Pass with minor conditions`.
+
+Gate evaluado: readiness del paquete DEV-RPN-010 para posible decision humana de ejecucion.
+
+Resultado de readiness:
+
+- `Ready for human authorization decision`.
+- No hay bloqueos documentales para que T-035 decida si autoriza la ejecucion.
+- La ejecucion continua no autorizada hasta decision humana explicita.
+
+Condiciones menores:
+
+- reejecutar Reference Map inmediatamente antes de cualquier movimiento;
+- auditar worktree antes de ejecutar;
+- crear stub legacy solo dentro de ejecucion autorizada;
+- mantener el stub como no normativo;
+- realizar Review y QA post-ejecucion si DEV-RPN-010 se autoriza.
+
+Siguiente paso recomendado:
+
+```text
+No active next step. DEV-RPN-010 closed by human decision.
+`
+---
+
+# DEV-RPN-010 Closure Decision - T-039
+
+Decision: `Closed - DEV-RPN-010`.
+
+Readiness final: cerrado por decision humana explicita posterior a QA Gate T-038.
+
+No queda siguiente paso activo para DEV-RPN-010.

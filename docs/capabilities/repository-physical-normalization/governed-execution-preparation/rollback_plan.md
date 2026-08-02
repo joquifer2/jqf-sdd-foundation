@@ -5,9 +5,9 @@
 | Campo | Valor |
 | --- | --- |
 | Fase | Governed Execution Preparation |
-| Estado | Draft for review |
-| Development | NOT AUTHORIZED |
-| Rollback ejecutable | No, solo definido documentalmente |
+| Estado | Closed - DEV-RPN-010 |
+| Development adicional | NOT AUTHORIZED without Reviewer, QA Gate and human decision |
+| Rollback ejecutable | No, DEV-RPN-010 solo definido documentalmente |
 
 ## Objetivo
 
