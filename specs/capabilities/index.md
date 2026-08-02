@@ -20,7 +20,7 @@ Es solo un catalogo. No redefine alcance, requisitos, arquitectura, readiness ni
 | Foundation Derivation and Project Initialization | `specs/capabilities/foundation-derivation-and-project-initialization/arch-001-foundation-derivation-and-project-initialization.md` | Architecture | Closed baseline | Define arquitectura documental conceptual, componentes, interfaces, alternativas y decisiones de derivacion. |
 | Consolidation Agent | `specs/capabilities/consolidation-agent/spec-001-consolidation-agent.md` | Specification | Specification | Define el comportamiento metodologico esperado del futuro Consolidation Agent sin implementarlo. |
 | Consolidation Agent | `specs/capabilities/consolidation-agent/arch-001-consolidation-agent.md` | Architecture | Architecture gate passed | Define arquitectura documental conceptual del futuro Consolidation Agent sin crearlo. |
-| Consolidation Agent | `.github/agents/consolidation.agent.md` | Agent definition | Closed with conditions | Definicion canonica documental del Consolidation Agent trazada a SPEC-001 y ARCH-001. |
+| Consolidation Agent | `.github/agents/consolidation.agent.md` | Agent definition | Closed with conditions | Definicion canonica documental del Consolidation Agent trazada a SPEC-001 y ARCH-001; validada para consolidaciones documentales `proposal-only` con QA `PASS WITH CONDITIONS`. |
 
 ---
 

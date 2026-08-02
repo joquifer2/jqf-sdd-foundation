@@ -2,9 +2,9 @@
 
 ## Proposito
 
-Este handover registra el cierre candidato del MVP Development de `Consolidation Agent`.
+Este handover registra el cierre formal actualizado del MVP Development de `Consolidation Agent`, reconciliado con la validacion retrospectiva cerrada sobre `SDD Modes`.
 
-Permite que futuros agentes comprendan el estado final propuesto sin cargar todo el expediente historico por defecto.
+Permite que futuros agentes comprendan el estado final vigente sin cargar todo el expediente historico por defecto.
 
 No autoriza Development adicional, runtime, scripts, workflows, tools, reorganizacion fisica, Repository Physical Normalization ni cambios sobre baselines cerrados.
 
@@ -18,8 +18,8 @@ No autoriza Development adicional, runtime, scripts, workflows, tools, reorganiz
 | SDD Mode | SDD Full |
 | Estado final | Closed with conditions |
 | Responsable | Jordi Quiroga |
-| Fecha de cierre candidato | 2026-08-02 |
-| Aprobado por | Reviewer Agent T-034 / QA Gate Agent T-035 |
+| Fecha de cierre formal | 2026-08-02 |
+| Aprobado por | Reviewer Agent T-034 / QA Gate Agent T-035 / QA Gate validacion retrospectiva SDD Modes |
 | Specification relacionada | `specs/capabilities/consolidation-agent/spec-001-consolidation-agent.md` |
 | Architecture relacionada | `specs/capabilities/consolidation-agent/arch-001-consolidation-agent.md` |
 | Definicion canonica | `.github/agents/consolidation.agent.md` |
@@ -31,12 +31,12 @@ No autoriza Development adicional, runtime, scripts, workflows, tools, reorganiz
 
 El MVP implementa documentalmente el `Consolidation Agent` como agente metodologico del SDD Harness.
 
-Quedan vigentes como cierre candidato:
+Quedan vigentes como cierre formal:
 
 - definicion canonica del agente;
 - adaptador Codex subordinado;
 - catalogos de routing actualizados;
-- evidencia de autorizacion, implementacion y validacion retrospectiva;
+- evidencia de autorizacion, implementacion, validacion retrospectiva cerrada y QA `PASS WITH CONDITIONS`;
 - deuda residual y puntos de reentrada.
 
 La capacidad no introduce runtime, scripts, tools, workflows ejecutables, automatizaciones, cambios normativos de SDD, reorganizacion fisica ni modificaciones sobre baselines cerrados.
@@ -62,8 +62,8 @@ La capacidad no introduce runtime, scripts, tools, workflows ejecutables, automa
 | --- | --- | --- | --- |
 | `docs/capabilities/consolidation-agent/project_brief.md` | Fuente inicial de alcance, restricciones y `SDD Full`. | Historical / approved input | Cargar para auditoria o reentrada. |
 | `docs/capabilities/consolidation-agent/context_refs.md` | Mapa de contexto local. | Historical / current context | Cargar antes de modificar esta capacidad. |
-| `docs/capabilities/consolidation-agent/tasks.md` | Backlog y decisiones T-001 a T-035. | Development MVP implemented | Cargar para trazabilidad. |
-| `docs/capabilities/consolidation-agent/sdd_readiness_assessment.md` | Readiness, gates y estado de Development. | Updated for closure candidate | Cargar para gates. |
+| `docs/capabilities/consolidation-agent/tasks.md` | Backlog y decisiones T-001 a T-035, reconciliado con validacion cerrada. | Closed with conditions | Cargar para trazabilidad. |
+| `docs/capabilities/consolidation-agent/sdd_readiness_assessment.md` | Readiness, gates y estado de Development. | Closed with conditions | Cargar para gates. |
 
 ---
 
@@ -95,7 +95,7 @@ La capacidad no introduce runtime, scripts, tools, workflows ejecutables, automa
 | QA Gate T-011 | `Pass with minor conditions` | 2026-08-01 | Cualquier fase posterior requeria decision humana explicita. |
 | Reviewer del plan | `Approved` | 2026-08-02 | Correcciones menores aplicadas sobre estado/fase y T-034. |
 | Autorizacion humana de Development | `AUTHORIZED` | 2026-08-02 | Solo MVP definido en SPEC/ARCH/Task Plan; sin cambios normativos, normalizacion fisica ni baselines cerrados. |
-| Validacion retrospectiva SDD Modes | `Eligible with conditions` | 2026-08-02 | No modificar SDD Modes ni producir cierre nuevo sin reentrada separada. |
+| Validacion retrospectiva SDD Modes | `Closed with conditions / PASS WITH CONDITIONS` | 2026-08-02 | Expediente local cerrado en `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/`; no modifica SDD Modes ni autoriza normalizacion fisica. |
 | Reviewer final | `Approved` | 2026-08-02 | Sin hallazgos bloqueantes. |
 | QA final / Closure readiness | `Pass with conditions` | 2026-08-02 | Cierre aceptado con deuda residual y reentradas visibles. |
 
@@ -110,7 +110,7 @@ La deuda residual se mantiene en `docs/capabilities/consolidation-agent/residual
 | CA-RD-001 | Template standalone de reporte pendiente. | Aceptada / Future | Futura fase Documentation si se autoriza. |
 | CA-RD-002 | Automatizaciones de checks no creadas. | Aceptada / Future | Nueva capacidad Development si se autoriza. |
 | CA-RD-003 | Repository Physical Normalization fuera de alcance. | Aceptada / Future | Nueva capacidad SDD separada. |
-| CA-RD-004 | Validacion retrospectiva SDD Modes no produjo cierre nuevo. | Aceptada / Condition | Reentrada si se desea consolidar SDD Modes. |
+| CA-RD-004 | Validacion retrospectiva cerrada; queda como deuda separada el expediente capability-local/normalizacion futura de SDD Modes. | Reformulada / Future | Reentrada si se desea crear expediente propio de SDD Modes o iniciar Repository Physical Normalization. |
 
 ---
 
@@ -122,7 +122,7 @@ La deuda residual se mantiene en `docs/capabilities/consolidation-agent/residual
 | Crear template standalone de reporte. | Documentation Agent | Este handover, ARCH §7, residual debt CA-RD-001. | Documentation. |
 | Automatizar checks de consolidacion. | Specification Agent / Implementation Agent | SPEC-001, ARCH-001, este handover, CA-RD-002. | Specification y Development autorizados. |
 | Normalizar fisicamente el repositorio. | Specification Agent / Architect Agent | Handovers cerrados, CA-RD-003, indices globales. | Nueva capacidad SDD separada. |
-| Consolidar retrospectivamente SDD Modes. | Consolidation Agent / QA Gate Agent | SDD Modes baseline, context refs, readiness, CA-RD-004. | Consolidation autorizada o reentrada especifica. |
+| Crear expediente capability-local de SDD Modes o normalizar rutas. | Documentation Agent / Architect Agent / QA Gate Agent | Paquete de validacion retrospectiva, SDD Modes baseline, CA-RD-004, handovers cerrados. | Nueva reentrada explicita; Repository Physical Normalization si hay movimientos. |
 
 ---
 
@@ -141,6 +141,6 @@ La deuda residual se mantiene en `docs/capabilities/consolidation-agent/residual
 
 ## Siguiente accion valida
 
-``text
-No hay siguiente paso activo; la capacidad queda Closed with conditions.
-``
+```text
+Siguiente paso: QA Gate Agent valida unicamente la coherencia del cierre global actualizado. Si emite `PASS WITH CONDITIONS`, la capacidad queda formalmente cerrada. Development adicional permanece `NOT AUTHORIZED`.
+```

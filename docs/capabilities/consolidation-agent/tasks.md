@@ -442,7 +442,7 @@ Fuera del alcance minimo:
 | T-027 | B-05 | Ejecutar revision estatica de ausencia de implementacion prematura. | Validation | Project Brief; SPEC §18; ARCH §9 | Reviewer Agent / QA Gate Agent | T-019 a T-026 | Validacion estatica confirma ausencia de scripts, workflows, tools, runtime, consolidaciones reales y movimientos fisicos. | Completed |
 | T-028 | B-05 | Ejecutar revision estatica de precedencia documental y limites entre agentes. | Review | SDD instructions §11.5; SPEC §13; ARCH §6.4 | Reviewer Agent | T-019 a T-026 | Validacion estatica confirma que el agente no sustituye otros agentes ni decision humana. | Completed |
 | T-029 | B-06 | Preparar validacion retrospectiva no destructiva sobre SDD Modes. | Planning / Validation prep | SPEC FR-011; baseline de cierre §13; SDD Modes baseline | Tasks Planner Agent / QA Gate Agent | T-019; T-024 a T-026 | Caso retrospectivo SDD Modes preparado sin modificar baseline cerrado. | Completed |
-| T-030 | B-06 | Ejecutar validacion retrospectiva documental sobre SDD Modes sin aplicar cambios. | Validation | SPEC FR-001 a FR-012; ARCH pipeline | QA Gate Agent / Reviewer Agent | T-029; autorizacion de validacion | Validacion retrospectiva ejecutada; resultado `Eligible with conditions`; no se modifico baseline. | Completed |
+| T-030 | B-06 | Ejecutar validacion retrospectiva documental sobre SDD Modes sin aplicar cambios. | Validation | SPEC FR-001 a FR-012; ARCH pipeline | QA Gate Agent / Reviewer Agent | T-029; autorizacion de validacion | Validacion retrospectiva ejecutada y posteriormente cerrada en expediente local con QA `PASS WITH CONDITIONS`; no se modifico baseline. | Completed |
 | T-031 | B-06 | Registrar hallazgos de validacion retrospectiva como evidencia o deuda futura. | Documentation | SPEC R-003; ARCH §5.6 | Documentation Agent | T-030 | Hallazgos registrados en `evidence_index.md` y deuda futura en `residual_debt.md`. | Completed |
 | T-032 | B-07 | Preparar handover de la implementacion autorizada del agente. | Documentation | ARCH §5.7; closure handover template | Documentation Agent | T-027 a T-031 | `closure_handover.md` preparado como cierre candidato pendiente de Reviewer y QA final. | Completed |
 | T-033 | B-07 | Preparar propuesta de Closure/Consolidation posterior si aplica. | Planning / Validation prep | Baseline de cierre; gates | Tasks Planner Agent / QA Gate Agent | T-032 | Propuesta de cierre formal preparada; cierre definitivo depende de Reviewer y QA Gate final. | Completed |
@@ -459,7 +459,7 @@ Fuera del alcance minimo:
 | Formato del `Consolidation Agent Report` | Resuelta para MVP / deuda futura | MVP usa handover/evidence/readiness; template standalone queda CA-RD-001. | T-024 a T-026 completadas |
 | Alcance de outputs aplicables frente a `proposal-only` | Resuelta | Catalogos autorizados; reorganizacion fisica y cambios de baseline siguen `proposal-only`. | T-021 y T-025 completadas |
 | Evidencia minima para reorganizacion fisica propuesta | Resuelta como fuera de alcance | Requiere capacidad separada; deuda CA-RD-003. | T-017 y T-030 completadas |
-| Validacion retrospectiva permitida sobre SDD Modes | Resuelta | Ejecutada como no destructiva con resultado `Eligible with conditions`; deuda CA-RD-004. | T-029 a T-031 completadas |
+| Validacion retrospectiva permitida sobre SDD Modes | Resuelta y cerrada | Ejecutada como no destructiva; expediente local cerrado con `Closed with conditions / PASS WITH CONDITIONS`. CA-RD-004 se reformula como deuda futura de expediente capability-local/normalizacion de SDD Modes. | T-029 a T-031; validacion local cerrada |
 
 ## Dependencias criticas
 
@@ -601,7 +601,7 @@ Resultado:
 
 ## 19. Retrospective Validation - SDD Modes
 
-Resultado: `Eligible with conditions`.
+Resultado preparatorio inicial: `Ready for QA evaluation with conditions`; resultado vigente tras QA local: `Closed with conditions / PASS WITH CONDITIONS`.
 
 Fecha: 2026-08-02.
 
@@ -628,7 +628,7 @@ Hallazgos:
 
 Decision de validacion retrospectiva:
 
-`Eligible with conditions` para preparacion de reporte/propuesta. No se ejecuta consolidacion real ni cambio sobre SDD Modes.
+`Closed with conditions / PASS WITH CONDITIONS` en el expediente `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/`. No se ejecuta consolidacion fisica ni cambio sobre SDD Modes.
 
 ---
 
@@ -684,7 +684,7 @@ Criterios cumplidos:
 - `SPEC-001` y `ARCH-001` gobiernan el alcance.
 - El agente canonico y el adaptador Codex existen.
 - El paquete fue revisado por Reviewer Agent con decision `Approved`.
-- La validacion retrospectiva sobre SDD Modes fue ejecutada y registrada como `Eligible with conditions`.
+- La validacion retrospectiva sobre SDD Modes fue ejecutada, revisada, evaluada por QA y cerrada como `Closed with conditions / PASS WITH CONDITIONS`.
 - No existen scripts, tools, workflows, runtime ni automatizaciones.
 - No se modificaron baselines cerrados.
 - No se ejecuto reorganizacion fisica.
@@ -706,3 +706,24 @@ Autorizacion posterior:
 Estado final:
 
 `Closed with conditions`.
+
+# 23. Global Closure Reconciliation - SDD Modes Retrospective Validation
+
+Decision documental: el expediente global de Consolidation Agent queda alineado con el cierre formal de la validacion retrospectiva SDD Modes.
+
+Resultado vigente de la validacion local: Closed with conditions / PASS WITH CONDITIONS.
+
+El Consolidation Agent queda validado para consolidaciones documentales en modo proposal-only, clasificacion de baseline, expediente historico, deuda, reentradas y propuestas no ejecutables.
+
+Limites vigentes:
+
+- no cerrar capacidades por si mismo;
+- no aprobar gates;
+- no modificar baselines cerrados;
+- no ejecutar Repository Physical Normalization;
+- no autorizar Development;
+- no crear automatizaciones.
+
+Development adicional: NOT AUTHORIZED.
+
+Siguiente paso: QA Gate Agent valida unicamente la coherencia del cierre global actualizado.

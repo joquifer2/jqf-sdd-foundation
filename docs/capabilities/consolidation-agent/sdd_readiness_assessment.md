@@ -392,7 +392,7 @@ Validacion estatica:
 
 Validacion retrospectiva sobre SDD Modes:
 
-Resultado: `Eligible with conditions`.
+Resultado vigente: `Closed with conditions / PASS WITH CONDITIONS`.
 
 Evidencia:
 
@@ -436,7 +436,7 @@ Resultado:
 - Definicion canonica y adaptador Codex creados.
 - Catalogos/routing sincronizados.
 - Evidencia, deuda residual y handover preparados.
-- Validacion retrospectiva sobre SDD Modes ejecutada como no destructiva con resultado `Eligible with conditions`.
+- Validacion retrospectiva sobre SDD Modes ejecutada como no destructiva y cerrada con `Closed with conditions / PASS WITH CONDITIONS`.
 - No se modificaron baselines cerrados.
 - No se crearon scripts, tools, workflows, runtime ni automatizaciones.
 - No se ejecuto reorganizacion fisica.
@@ -452,3 +452,24 @@ Condiciones activas:
 Estado final de readiness:
 
 `Closed with conditions`.
+
+# Global Closure Reconciliation - 2026-08-02
+
+Actualizacion documental: el expediente global de Consolidation Agent queda reconciliado con el cierre formal de la validacion retrospectiva SDD Modes.
+
+Resultado vigente de la validacion local: Closed with conditions / PASS WITH CONDITIONS.
+
+El agente queda validado para futuras consolidaciones documentales en modo proposal-only, incluyendo clasificacion de baseline, expediente historico, deuda, reentradas y propuestas no ejecutables.
+
+Limites activos:
+
+- no cerrar capacidades por si mismo;
+- no aprobar gates;
+- no modificar baselines cerrados;
+- no ejecutar Repository Physical Normalization;
+- no autorizar Development;
+- no crear automatizaciones.
+
+Development adicional: NOT AUTHORIZED.
+
+Siguiente paso: QA Gate Agent valida unicamente la coherencia del cierre global actualizado.
