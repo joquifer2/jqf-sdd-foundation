@@ -16,7 +16,7 @@ Repository Physical Normalization Documentary Architecture
 
 ### Estado
 
-Architecture gate passed with minor conditions
+Development first wave executed / pending review
 
 ### Responsable
 
@@ -225,11 +225,11 @@ Artefactos candidatos:
 
 | Current path | Target path | Action | Compatibility |
 | --- | --- | --- | --- |
-| `docs/project_brief.md` | `docs/capabilities/sdd-modes/project_brief.md` | move future | root stub required |
-| `docs/context_refs.md` | `docs/capabilities/sdd-modes/context_refs.md` | move future | root stub required |
-| `docs/tasks.md` | `docs/capabilities/sdd-modes/tasks.md` | move future | root stub required |
-| `docs/sdd_readiness_assessment.md` | `docs/capabilities/sdd-modes/sdd_readiness_assessment.md` | move future | root stub required |
-| `specs/spec-001-sdd-modes.md` | `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` | move future | root stub required |
+| `docs/capabilities/sdd-modes/project_brief.md` | `docs/capabilities/sdd-modes/project_brief.md` | move future | root stub required |
+| `docs/capabilities/sdd-modes/context_refs.md` | `docs/capabilities/sdd-modes/context_refs.md` | move future | root stub required |
+| `docs/capabilities/sdd-modes/tasks.md` | `docs/capabilities/sdd-modes/tasks.md` | move future | root stub required |
+| `docs/capabilities/sdd-modes/sdd_readiness_assessment.md` | `docs/capabilities/sdd-modes/sdd_readiness_assessment.md` | move future | root stub required |
+| `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` | `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` | move future | root stub required |
 | `specs/spec-001-sdd-modes.architecture.md` | Decision pending | defer | keep current path until naming decision |
 
 Derived artifacts possible, not executed:
@@ -415,7 +415,7 @@ The first future execution wave should be limited to `SDD Modes` root dossier no
 | P0 - Inventory | Build reference map and canonical route registry. | Future, not executed. |
 | P1 - Derived summaries | Create optional capability-local handover/evidence/debt files if approved. | Future, not executed. |
 | P2 - Move low-risk docs | Move root docs to `docs/capabilities/sdd-modes/` with stubs. | Future, not executed. |
-| P3 - Move spec | Move `specs/spec-001-sdd-modes.md` with stub. | Future, not executed. |
+| P3 - Move spec | Move `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` with stub. | Future, not executed. |
 | P4 - Decide architecture filename | Keep legacy architecture path or move to `arch-001-sdd-modes.md`. | Future decision. |
 | P5 - Validate | Check references, stubs, indices, agent loading and rollback. | Future, not executed. |
 
@@ -615,8 +615,10 @@ Decision: This Architecture prepares a design and future plans only. Any executi
 ## 18. Next Recommended Step
 
 ```text
-Human decision on whether to authorize a future governed execution-preparation phase.
+Reviewer Agent review of Repository Physical Normalization Development first wave.
 ```
+
+This supersedes the historical Architecture next step after T-013 and T-021.
 
 Development remains `NOT AUTHORIZED`.
 
@@ -636,3 +638,16 @@ This Architecture is ready for QA Gate review when:
 - SDD Modes pilot approach is defined without execution;
 - reference map, movement plan and rollback plan are defined as future documentary artifacts;
 - no file movement, copy, rename, deletion, script, workflow, tool or runtime is introduced.
+---
+
+## 20. Governed Execution Preparation Note
+
+Fecha: 2026-08-02.
+
+Tras QA Gate T-012, una decision humana autorizo la fase `Governed Execution Preparation` solo para crear el paquete documental definitivo previo a una posible decision futura de Development.
+
+Paquete documental preparado en:
+
+`docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
+
+Esta nota no modifica las decisiones arquitectonicas de `ARCH-001`, no autoriza Development, no ejecuta movimientos fisicos, no crea stubs y no modifica baselines cerrados.

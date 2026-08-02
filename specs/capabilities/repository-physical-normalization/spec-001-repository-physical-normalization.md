@@ -501,11 +501,11 @@ Todo movimiento futuro requiere validacion posterior de referencias, indices, ca
 
 | Artefacto actual | Clasificacion futura | Ruta objetivo conceptual |
 | --- | --- | --- |
-| `docs/project_brief.md` | Expediente de capacidad / fuente inicial de alcance | `docs/capabilities/sdd-modes/project_brief.md` |
-| `docs/context_refs.md` | Expediente de capacidad / indice de contexto | `docs/capabilities/sdd-modes/context_refs.md` |
-| `docs/tasks.md` | Expediente historico / decision log | `docs/capabilities/sdd-modes/tasks.md` |
-| `docs/sdd_readiness_assessment.md` | Evidencia de gate/readiness | `docs/capabilities/sdd-modes/sdd_readiness_assessment.md` |
-| `specs/spec-001-sdd-modes.md` | Baseline canonico de capacidad | `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` |
+| `docs/capabilities/sdd-modes/project_brief.md` | Expediente de capacidad / fuente inicial de alcance | `docs/capabilities/sdd-modes/project_brief.md` |
+| `docs/capabilities/sdd-modes/context_refs.md` | Expediente de capacidad / indice de contexto | `docs/capabilities/sdd-modes/context_refs.md` |
+| `docs/capabilities/sdd-modes/tasks.md` | Expediente historico / decision log | `docs/capabilities/sdd-modes/tasks.md` |
+| `docs/capabilities/sdd-modes/sdd_readiness_assessment.md` | Evidencia de gate/readiness | `docs/capabilities/sdd-modes/sdd_readiness_assessment.md` |
+| `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` | Baseline canonico de capacidad | `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` |
 | `specs/spec-001-sdd-modes.architecture.md` | Baseline canonico de capacidad | `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` o ruta legacy mantenida, segun Architecture |
 
 ### 16.2 Artefactos derivados posibles
@@ -762,11 +762,11 @@ La specification no modifica, mueve, copia, renombra, elimina ni sustituye artef
 - `docs/capabilities/project-consolidation-and-closure/closure_handover.md`
 - `specs/capabilities/project-consolidation-and-closure/spec-001-sdd-project-consolidation-and-closure.md`
 - `specs/capabilities/project-consolidation-and-closure/arch-001-sdd-project-consolidation-and-closure.md`
-- `docs/project_brief.md`
-- `docs/context_refs.md`
-- `docs/tasks.md`
-- `docs/sdd_readiness_assessment.md`
-- `specs/spec-001-sdd-modes.md`
+- `docs/capabilities/sdd-modes/project_brief.md`
+- `docs/capabilities/sdd-modes/context_refs.md`
+- `docs/capabilities/sdd-modes/tasks.md`
+- `docs/capabilities/sdd-modes/sdd_readiness_assessment.md`
+- `specs/capabilities/sdd-modes/spec-001-sdd-modes.md`
 - `specs/spec-001-sdd-modes.architecture.md`
 - `.github/instructions/sdd.instructions.md`
 - `AGENTS.md`

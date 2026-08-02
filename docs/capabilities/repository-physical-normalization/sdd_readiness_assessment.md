@@ -23,7 +23,7 @@ No autoriza movimientos fisicos, renombres, copias, sustituciones, eliminaciones
 | Repository Type | Foundation |
 | Last Updated | 2026-08-02 |
 | Assessor | Specification Agent |
-| Reviewer | Reviewer Agent - T-006; Reviewer Agent - T-011 |
+| Reviewer | Reviewer Agent - T-006; Reviewer Agent - T-011; Reviewer Agent - T-021 |
 | SDD Mode | SDD Full |
 | SDD Mode Source | `docs/capabilities/repository-physical-normalization/project_brief.md` |
 
@@ -33,7 +33,7 @@ No autoriza movimientos fisicos, renombres, copias, sustituciones, eliminaciones
 
 La capacidad cuenta con contexto suficiente para Specification inicial. El problema, objetivo, alcance, restricciones, fuentes relacionadas y primer caso de aplicacion (`SDD Modes`) estan identificados.
 
-Architecture documental fue autorizada por decision humana T-008 y creada como ARCH-001. Development permanece fuera de alcance y no se autoriza normalizacion fisica.
+Architecture documental fue autorizada por decision humana T-008 y creada como ARCH-001. Governed Execution Preparation fue autorizada por T-013 y el paquete documental fue preparado en T-014/T-020. Development permanece fuera de alcance y no se autoriza normalizacion fisica.
 
 ---
 
@@ -47,13 +47,13 @@ Architecture documental fue autorizada por decision humana T-008 y creada como A
 
 Estado seleccionado:
 
-`Architecture gate passed with minor conditions`.
+`Development first wave executed - pending Reviewer Agent review`.
 
 Motivo:
 
 - Los artefactos iniciales existen.
 - La capacidad esta acotada y mantiene `SDD Full`.
-- Architecture documental fue revisada en T-011 y paso QA Gate T-012 con condiciones menores; las decisiones que bloquean ejecucion quedan documentadas como futuras o condicionales.
+- Architecture documental fue revisada en T-011 y paso QA Gate T-012 con condiciones menores. El paquete de Governed Execution Preparation fue revisado en T-021 con decision `Approved with minor changes` y paso QA Gate T-022 con condiciones menores. Development fue autorizado por decision humana T-023 y la primera ola fue ejecutada en T-024/T-026; queda pendiente review post-Development.
 
 ---
 
@@ -65,8 +65,9 @@ Motivo:
 | context_refs.md | Yes | `docs/capabilities/repository-physical-normalization/context_refs.md` | Specification | Indexa fuentes y baseline relacionado. |
 | SPEC-001 | Yes | `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md` | Specification | Define proceso oficial sin ejecutar normalizacion. |
 | sdd_readiness_assessment.md | Yes | `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md` | Specification | Este documento. |
-| docs/tasks.md | Yes | `docs/capabilities/repository-physical-normalization/tasks.md` | Specification | Backlog inicial. |
+| tasks.md | Yes | `docs/capabilities/repository-physical-normalization/tasks.md` | Specification | Backlog de Repository Physical Normalization. |
 | Architecture | Yes | `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md` | Architecture reviewed | Creada tras autorizacion humana T-008; revisada por Reviewer Agent T-011. |
+| Governed Execution Preparation package | Yes | `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md` | Draft for review | Paquete documental no ejecutable creado tras T-013. |
 | Evidence index | No | N/A | Not applicable yet | No hay validacion ni cierre. |
 | Closure handover | No | N/A | Not applicable yet | No hay cierre. |
 | Residual debt | No | N/A | Not applicable yet | La deuda esta registrada como riesgos/open questions en Specification. |
@@ -78,9 +79,9 @@ Motivo:
 | Artefacto | Obligatorio | Motivo | Impacto |
 |---|---|---|---|
 | Architecture QA Gate | Yes | QA Gate T-012 completado. | No autoriza Development ni ejecucion fisica. |
-| Reference map | Conditional | Necesario antes de cualquier movimiento futuro. | Bloquea ejecucion fisica. |
-| Movement plan | Conditional | Necesario para Development/Documentation ejecutiva futura. | Bloquea movimiento controlado. |
-| Rollback plan | Conditional | Necesario para reversibilidad. | Bloquea ejecucion reversible. |
+| Reference map | Conditional | Creado como parte de GEP; requiere validacion final antes de Development. | Bloquea ejecucion fisica. |
+| Movement plan | Conditional | Creado como parte de GEP como plan futuro no ejecutado. | Bloquea movimiento controlado hasta autorizacion. |
+| Rollback plan | Conditional | Creado como parte de GEP como plan futuro no ejecutado. | Bloquea ejecucion reversible hasta autorizacion. |
 
 ---
 
@@ -181,11 +182,11 @@ Motivo:
 
 ---
 
-# Decision de Readiness
+# Historical Readiness Decision - Architecture
 
 ## Partially Ready
 
-La capacidad puede avanzar a QA Gate de Architecture con condiciones.
+La capacidad podia avanzar a QA Gate de Architecture con condiciones. Esta decision historica fue superada por T-012 y T-013.
 
 Condiciones:
 
@@ -194,9 +195,29 @@ Condiciones:
 - Architecture fue autorizada por decision humana T-008, creada como ARCH-001 y revisada en T-011.
 - Development y movimientos fisicos permanecen `NOT AUTHORIZED`.
 
-Decision:
+Decision historica:
 
 `Ready for Architecture QA Gate with conditions`.
+
+---
+
+# Current Readiness Decision - Governed Execution Preparation
+
+## Ready for QA Gate
+
+La capacidad puede avanzar a QA Gate del paquete `Governed Execution Preparation` con condiciones menores ya aplicadas documentalmente.
+
+Condiciones vigentes:
+
+- Reviewer Agent T-021 emitio `Approved with minor changes`.
+- Documentation Agent aplico correcciones menores de trazabilidad historica y estado vigente.
+- Development permanece `NOT AUTHORIZED`.
+- Normalizacion fisica permanece `NOT AUTHORIZED`.
+- QA Gate T-022 decidio `Pass with minor conditions`; procede decision humana posterior si se desea autorizar Development.
+
+Decision vigente:
+
+`Development first wave executed - pending Reviewer Agent review`.
 
 ---
 
@@ -210,6 +231,9 @@ Decision:
 | Revisar Architecture documental. | Review | High | Reviewer Agent - Completed T-011 |
 | Ejecutar QA Gate de Architecture. | Validation | High | QA Gate Agent - Completed T-012 |
 | Mantener sin cambios los baselines cerrados. | Governance | High | Todos |
+| Aplicar correcciones menores T-021. | Documentation | High | Documentation Agent - Completed |
+| Validar readiness del paquete GEP. | Validation | High | QA Gate Agent - Completed T-022 |
+| Decidir si se autoriza Development. | Governance | High | Jordi Quiroga - Pending / Development NOT AUTHORIZED |
 
 ---
 
@@ -217,11 +241,11 @@ Decision:
 
 Agente recomendado:
 
-`Jordi Quiroga / Human decision`
+`Reviewer Agent`
 
 Motivo:
 
-Architecture documental fue autorizada en T-008, creada en T-009/T-010, revisada en T-011 y validada en T-012. Corresponde decision humana antes de cualquier fase posterior.
+El paquete de Governed Execution Preparation fue autorizado por decision humana T-013, preparado documentalmente en T-014/T-020, revisado por Reviewer Agent en T-021 y validado por QA Gate Agent en T-022 con decision `Pass with minor conditions`. Corresponde review post-Development antes de QA final de la primera ola ejecutada.
 
 ---
 
@@ -412,9 +436,11 @@ Resultado:
 - no se ejecuta normalizacion fisica;
 - Development permanece `NOT AUTHORIZED`.
 
-Siguiente agente recomendado:
+Siguiente agente historico recomendado:
 
-`Jordi Quiroga / Human decision`.
+`Reviewer Agent`.
+
+Estado superado por T-011, T-012 y T-013.
 ---
 
 # Architecture Reviewer Decision - T-011
@@ -440,9 +466,11 @@ Cambios menores aplicados:
 - El bloque QA T-007 queda identificado como estado historico previo a T-008.
 - T-011 queda completada en `tasks.md`.
 
-Siguiente agente recomendado:
+Siguiente agente historico recomendado:
 
-`Jordi Quiroga / Human decision`.
+`QA Gate Agent`.
+
+Estado superado por T-012 y T-013.
 ---
 
 # Architecture QA Gate Decision - T-012
@@ -510,6 +538,169 @@ Decision:
 
 `Pass with minor conditions`.
 
-Siguiente paso recomendado:
+Siguiente paso historico recomendado:
 
-`Jordi Quiroga / Human decision`.
+`Jordi Quiroga / Human decision on Governed Execution Preparation`.
+
+Estado superado por T-013.
+---
+
+# Governed Execution Preparation Authorization - T-013
+
+Decision: `AUTHORIZED` solo para preparacion documental.
+
+Fecha: 2026-08-02.
+
+Fuente: decision humana posterior a Architecture QA Gate T-012.
+
+Alcance autorizado:
+
+- Canonical Route Registry;
+- Reference Map;
+- Movement Plan;
+- Compatibility Plan;
+- Rollback Plan;
+- Validation Checklist;
+- SDD Modes Pilot Package;
+- actualizacion documental del expediente de la capacidad.
+
+Fuera de autorizacion:
+
+- Development;
+- movimientos fisicos;
+- renombrado de archivos;
+- creacion de stubs;
+- modificacion de baselines cerrados;
+- ejecucion del Movement Plan;
+- scripts, herramientas, workflows o automatizaciones.
+
+---
+
+# Governed Execution Preparation Readiness - T-014/T-020
+
+Estado: `Prepared for Reviewer Agent`.
+
+Artefactos preparados:
+
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/canonical_route_registry.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_pilot_package.md`
+
+Resultado:
+
+- Canonical Route Registry preparado.
+- Reference Map inicial preparado con superficies detectadas y validacion final pendiente antes de Development.
+- Movement Plan preparado como secuencia futura no ejecutada.
+- Compatibility Plan preparado.
+- Rollback Plan preparado.
+- Validation Checklist preparado.
+- SDD Modes Pilot Package preparado como primer caso real read-only.
+
+Decision:
+
+`Reviewed by Reviewer Agent T-021 - Approved with minor changes`.
+
+Siguiente agente recomendado:
+
+`QA Gate Agent`.
+
+Development permanece `NOT AUTHORIZED`. No se autoriza normalizacion fisica.
+---
+
+# Governed Execution Preparation Reviewer Decision - T-021
+
+Decision: `Approved with minor changes`.
+
+Fecha: 2026-08-02.
+
+Evaluador: Reviewer Agent.
+
+Resultado:
+
+- No se detectaron hallazgos criticos.
+- No se detectaron hallazgos importantes.
+- El paquete GEP es coherente con `SDD Full` y T-013.
+- No hay Development autorizado.
+- No hay normalizacion fisica autorizada.
+- No se crean stubs, scripts, workflows ni automatizaciones.
+
+Cambios menores aplicados:
+
+- Estado vigente de `ARCH-001` actualizado a `Governed Execution Preparation`.
+- Next steps historicos del backlog preservados como historicos o superados.
+- Esta readiness separa la decision historica de Architecture de la decision vigente GEP.
+- Context refs, checklist e indices apuntan al QA Gate T-022 como siguiente agente.
+
+Decision vigente:
+
+`Development first wave executed - pending Reviewer Agent review`.
+---
+
+# Governed Execution Preparation QA Gate Decision - T-022
+
+Decision: `Pass with minor conditions`.
+
+Fecha: 2026-08-02.
+
+Evaluador: QA Gate Agent.
+
+Gate evaluado:
+
+Governed Execution Preparation readiness for possible future Development authorization.
+
+Resultado:
+
+- El paquete GEP existe y contiene los artefactos requeridos.
+- Reviewer T-021 fue completado y sus correcciones menores fueron aplicadas.
+- No existe implementacion prematura.
+- No existen rutas objetivo de SDD Modes creadas en esta fase.
+- No se crean stubs, scripts, tools, workflows ni automatizaciones.
+- No se modifican baselines cerrados.
+
+Condiciones menores:
+
+1. Development requiere decision humana explicita posterior.
+2. Antes de ejecutar movimientos debe existir Reference Map final actualizado inmediatamente antes de la ejecucion.
+3. La decision sobre la ruta/nombre futuro de `specs/spec-001-sdd-modes.architecture.md` debe cerrarse antes de mover o renombrar ese artefacto.
+4. `SDD Modes` permanece read-only hasta autorizacion futura de Development.
+5. Cualquier ejecucion futura debe conservar compatibilidad legacy, rollback y ausencia de cambio normativo.
+
+Decision vigente:
+
+`Development first wave executed - pending Reviewer Agent review`.
+
+Siguiente agente recomendado:
+
+`Reviewer Agent`.
+
+Development permanece `NOT AUTHORIZED`. No se autoriza normalizacion fisica.
+---
+
+# Development First Wave Readiness - T-024/T-026
+
+Estado: `Executed / pending Reviewer Agent`.
+
+Evidencias:
+
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_execution_report.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md`
+- `docs/capabilities/index.md`
+- `specs/capabilities/index.md`
+
+Resultado:
+
+- rutas canonicas creadas para el expediente documental y Specification de SDD Modes;
+- stubs legacy creados;
+- SDD Modes Architecture conservada en ruta legacy;
+- no se crean scripts, tools, workflows ni automatizaciones;
+- no se elimina historia Git;
+- queda pendiente Reviewer Agent y QA Gate post-Development.
+
+Decision vigente:
+
+`Ready for Reviewer Agent review of Repository Physical Normalization Development first wave`.

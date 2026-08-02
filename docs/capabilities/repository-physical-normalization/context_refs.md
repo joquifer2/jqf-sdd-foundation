@@ -13,7 +13,7 @@ proyecto:
   nombre: JQF SDD Foundation - Repository Physical Normalization
   id_proyecto: repository-physical-normalization
   tipo_proyecto: foundation-repository-governance-specification
-  estado: Architecture gate passed with minor conditions
+  estado: Development first wave executed / pending review
   fecha_creacion: 2026-08-02
   responsable: Jordi Quiroga
 
@@ -88,7 +88,7 @@ Esta iniciativa pertenece a la Foundation y no a un cliente derivado.
 
 | Proyecto | Relacion con este proyecto | Estado | Fuente |
 | --- | --- | --- | --- |
-| `SDD Modes` | Primer caso real futuro; baseline cerrado con expediente historico en raiz. | Closed with conditions / baseline aprobado | `docs/project_brief.md`; `docs/context_refs.md`; `docs/tasks.md`; `docs/sdd_readiness_assessment.md`; `specs/spec-001-sdd-modes.md`; `specs/spec-001-sdd-modes.architecture.md` |
+| `SDD Modes` | Primer caso real futuro; baseline cerrado con expediente historico en raiz. | Closed with conditions / baseline aprobado | `docs/capabilities/sdd-modes/project_brief.md`; `docs/capabilities/sdd-modes/context_refs.md`; `docs/capabilities/sdd-modes/tasks.md`; `docs/capabilities/sdd-modes/sdd_readiness_assessment.md`; `specs/capabilities/sdd-modes/spec-001-sdd-modes.md`; `specs/spec-001-sdd-modes.architecture.md` |
 | `SDD Project Consolidation and Closure` | Define categorias de consolidacion que la normalizacion fisica debe respetar. | Closed | `docs/capabilities/project-consolidation-and-closure/closure_handover.md` |
 | `Foundation Derivation and Project Initialization` | Define limites con proyectos derivados y baseline exportable. | Closed | `docs/capabilities/foundation-derivation-and-project-initialization/closure_handover.md` |
 | `Consolidation Agent` | Produce propuestas de clasificacion y movimiento, pero no ejecuta normalizacion fisica. | Closed with conditions | `docs/capabilities/consolidation-agent/closure_handover.md` |
@@ -135,7 +135,7 @@ Antes de modificar artefactos de esta capacidad:
 4. Leer el paquete retrospectivo `docs/capabilities/consolidation-agent/validations/sdd-modes-retrospective/`.
 5. Tratar `SDD Modes` como baseline cerrado y read-only.
 6. No mover, copiar, renombrar, eliminar ni sustituir archivos.
-7. No ampliar Architecture fuera de T-008 ni crear scripts, workflows, automatizaciones, Development o normalizacion fisica desde esta fase.
+7. No ampliar Governed Execution Preparation fuera de T-013 ni crear scripts, workflows, automatizaciones, Development, stubs o normalizacion fisica desde esta fase.
 
 ---
 
@@ -174,7 +174,7 @@ trazabilidad:
   actualizado_por: Specification Agent
   contexto_validado_por: QA Gate Agent T-007
   fecha_validacion: 2026-08-02
-  version_contexto: repository-physical-normalization-architecture-gate-passed
+  version_contexto: repository-physical-normalization-governed-execution-preparation
 ```
 
 ---
@@ -239,3 +239,129 @@ Restricciones vigentes:
 - Development permanece `NOT AUTHORIZED`.
 - No se autoriza normalizacion fisica, movimiento, copia, renombre, sustitucion ni eliminacion de archivos.
 - Baselines cerrados permanecen read-only.
+---
+
+## Governed Execution Preparation References - T-013/T-020
+
+| Referencia | Funcion | Estado |
+| --- | --- | --- |
+| `docs/capabilities/repository-physical-normalization/tasks.md#17-governed-execution-preparation-authorization---t-013` | Decision humana que autoriza preparacion documental de ejecucion gobernada. | Completed |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md` | Indice del paquete GEP. | Draft for review |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/canonical_route_registry.md` | Registro canonico de rutas objetivo futuras. | Draft for review |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/reference_map.md` | Mapa inicial de referencias y superficies de compatibilidad. | Draft for review |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_plan.md` | Plan de movimientos futuros por olas, no ejecutado. | Draft for review |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/compatibility_plan.md` | Plan de continuidad de enlaces, referencias, handovers y derivados. | Draft for review |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/rollback_plan.md` | Plan de reversibilidad futura. | Draft for review |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md` | Checklist de readiness previo a Development y validacion futura. | Draft for review |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/sdd_modes_pilot_package.md` | Aplicacion piloto sobre SDD Modes, no ejecutada. | Draft for review |
+
+Siguiente contexto a cargar:
+
+- `docs/capabilities/repository-physical-normalization/project_brief.md`
+- `docs/capabilities/repository-physical-normalization/context_refs.md`
+- `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md`
+- `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md`
+- `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md`
+- `docs/capabilities/repository-physical-normalization/tasks.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
+
+Siguiente decision recomendada: Reviewer Agent review of Repository Physical Normalization Development first wave.
+
+Restricciones vigentes:
+
+- Development permanece `NOT AUTHORIZED`.
+- No se autoriza normalizacion fisica, movimiento, copia, renombre, sustitucion ni eliminacion de archivos.
+- No se autoriza creacion de stubs.
+- No se autorizan scripts, tools, workflows ni automatizaciones.
+- Baselines cerrados permanecen read-only.
+---
+
+## Governed Execution Preparation Reviewer References - T-021
+
+| Referencia | Funcion | Estado |
+| --- | --- | --- |
+| `docs/capabilities/repository-physical-normalization/tasks.md#19-governed-execution-preparation-reviewer-decision---t-021` | Decision de Reviewer Agent sobre el paquete GEP. | Approved with minor changes |
+| `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#governed-execution-preparation-reviewer-decision---t-021` | Readiness actualizado tras review T-021. | Ready for QA Gate |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md` | Checklist actualizado con VC-PRE-012 tras review. | Draft for QA Gate |
+
+Siguiente contexto a cargar:
+
+- `docs/capabilities/repository-physical-normalization/project_brief.md`
+- `docs/capabilities/repository-physical-normalization/context_refs.md`
+- `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md`
+- `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md`
+- `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md`
+- `docs/capabilities/repository-physical-normalization/tasks.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md`
+
+Siguiente decision recomendada: Reviewer Agent review of Repository Physical Normalization Development first wave.
+
+Restricciones vigentes:
+
+- Development permanece `NOT AUTHORIZED`.
+- No se autoriza normalizacion fisica, movimiento, copia, renombre, sustitucion ni eliminacion de archivos.
+- No se autoriza creacion de stubs.
+- No se autorizan scripts, tools, workflows ni automatizaciones.
+- Baselines cerrados permanecen read-only.
+---
+
+## Governed Execution Preparation QA Gate References - T-022
+
+| Referencia | Funcion | Estado |
+| --- | --- | --- |
+| `docs/capabilities/repository-physical-normalization/tasks.md#20-governed-execution-preparation-qa-gate-decision---t-022` | Decision de QA Gate sobre readiness del paquete GEP. | Pass with minor conditions |
+| `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md#governed-execution-preparation-qa-gate-decision---t-022` | Readiness actualizado tras QA T-022. | Pending human Development decision |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#qa-gate-result---t-022` | Checklist actualizado con controles VC-PRE-009 a VC-PRE-013. | Pass with minor conditions |
+
+Siguiente contexto a cargar:
+
+- `docs/capabilities/repository-physical-normalization/project_brief.md`
+- `docs/capabilities/repository-physical-normalization/context_refs.md`
+- `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md`
+- `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md`
+- `docs/capabilities/repository-physical-normalization/sdd_readiness_assessment.md`
+- `docs/capabilities/repository-physical-normalization/tasks.md`
+- `docs/capabilities/repository-physical-normalization/governed-execution-preparation/README.md`
+
+Siguiente decision recomendada: Reviewer Agent review of Repository Physical Normalization Development first wave.
+
+Restricciones vigentes:
+
+- Development permanece `NOT AUTHORIZED` hasta decision humana explicita posterior.
+- No se autoriza normalizacion fisica, movimiento, copia, renombre, sustitucion ni eliminacion de archivos.
+- No se autoriza creacion de stubs.
+- No se autorizan scripts, tools, workflows ni automatizaciones.
+- Baselines cerrados permanecen read-only.
+---
+
+## Development Execution References - T-023/T-026
+
+| Referencia | Funcion | Estado |
+| --- | --- | --- |
+| `docs/capabilities/repository-physical-normalization/tasks.md#21-development-authorization---t-023` | Decision humana que autoriza Development. | Completed |
+| `docs/capabilities/repository-physical-normalization/tasks.md#22-development-first-wave-execution---t-024t-026` | Registro de ejecucion de primera ola. | Executed / pending review |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/movement_execution_report.md` | Reporte de movimientos, stubs y decision de Architecture legacy. | Executed / pending review |
+| `docs/capabilities/repository-physical-normalization/governed-execution-preparation/validation_checklist.md#development-execution-result---t-024t-026` | Checklist Development actualizado. | Pending Reviewer/QA |
+
+Rutas canonicas SDD Modes tras primera ola:
+
+- `docs/capabilities/sdd-modes/project_brief.md`
+- `docs/capabilities/sdd-modes/context_refs.md`
+- `docs/capabilities/sdd-modes/tasks.md`
+- `docs/capabilities/sdd-modes/sdd_readiness_assessment.md`
+- `specs/capabilities/sdd-modes/spec-001-sdd-modes.md`
+
+Rutas legacy preservadas como stubs:
+
+- `docs/project_brief.md`
+- `docs/context_refs.md`
+- `docs/tasks.md`
+- `docs/sdd_readiness_assessment.md`
+- `specs/spec-001-sdd-modes.md`
+
+Ruta legacy canonica temporal retenida:
+
+- `specs/spec-001-sdd-modes.architecture.md`
+
+Siguiente decision recomendada: Reviewer Agent review of Repository Physical Normalization Development first wave.

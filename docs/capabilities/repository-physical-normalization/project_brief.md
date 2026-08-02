@@ -12,7 +12,7 @@ Normalizacion fisica del repositorio
 
 ### Estado
 
-Architecture gate passed with minor conditions
+Development first wave executed / pending review
 
 ### Responsable
 
@@ -64,7 +64,7 @@ Disparadores de reevaluacion:
 
 Definir el proceso oficial de normalizacion fisica del repositorio para alinear la organizacion fisica con el modelo metodologico aprobado por la Foundation.
 
-Esta capacidad especifica que debe ocurrir y bajo que reglas, pero no ejecuta la reorganizacion.
+Esta capacidad especifica que debe ocurrir y bajo que reglas. En la fase `Governed Execution Preparation` prepara el paquete documental definitivo para evaluar una autorizacion futura de Development, pero no ejecuta la reorganizacion.
 
 ---
 
@@ -100,7 +100,7 @@ Sin un proceso oficial, cualquier movimiento podria romper enlaces, duplicar fue
 
 ## 5. Resultado esperado
 
-Una specification completa y una Architecture documental conceptual del proceso oficial de normalizacion fisica, suficientemente detalladas para que una revision posterior e iteraciones futuras puedan definir plan ejecutable, gates y validaciones antes de cualquier ejecucion.
+Una specification completa, una Architecture documental conceptual y un paquete de `Governed Execution Preparation` suficientemente detallados para que Reviewer y QA Gate puedan evaluar si procede solicitar autorizacion humana de Development en una fase posterior.
 
 `SDD Modes` queda definido como primer caso real de aplicacion futura, sin moverlo todavia.
 
@@ -121,6 +121,7 @@ Una specification completa y una Architecture documental conceptual del proceso 
 - Definir como aplicar el proceso sobre `SDD Modes` como primer caso real futuro.
 - Definir como reutilizar el proceso para capacidades futuras cerradas.
 - Definir la frontera con `Consolidation Agent`.
+- Preparar Canonical Route Registry, Reference Map, Movement Plan, Compatibility Plan, Rollback Plan, Validation Checklist y SDD Modes Pilot Package como artefactos documentales no ejecutables.
 
 ### Fuera de alcance
 
@@ -132,7 +133,7 @@ Una specification completa y una Architecture documental conceptual del proceso 
 - Modificar baselines aprobados.
 - Modificar capacidades cerradas.
 - Crear Architecture sin autorizacion humana explicita.
-- Crear scripts, tools, workflows o automatizaciones.
+- Crear stubs, scripts, tools, workflows o automatizaciones.
 - Autorizar Development.
 - Introducir cambios funcionales.
 
@@ -171,7 +172,7 @@ Una specification completa y una Architecture documental conceptual del proceso 
 
 ## 9. Restricciones
 
-- Mantener esta capacidad en `Architecture` tras autorizacion humana T-008, sin avanzar a Development.
+- Mantener esta capacidad en `Governed Execution Preparation` tras autorizacion humana T-013, sin avanzar a Development.
 - No crear Architecture fuera de la autorizacion documental T-008.
 - No autorizar Development.
 - No mover, renombrar, eliminar ni sustituir archivos.
@@ -240,7 +241,7 @@ Documento de referencias de contexto utilizado:
 ## 14. Siguiente paso recomendado
 
 ```text
-Human decision on whether to authorize a future governed execution-preparation phase.
+Reviewer Agent review of Repository Physical Normalization Development first wave.
 ```
 
 Development permanece `NOT AUTHORIZED`. No se autoriza normalizacion fisica.
@@ -281,3 +282,112 @@ Fuera de autorizacion:
 - scripts, tools, workflows, runtime o automatizaciones;
 - modificacion de baselines cerrados;
 - cierre de deuda residual.
+---
+
+## 16. Governed Execution Preparation Addendum
+
+Fecha: 2026-08-02.
+
+Decision humana: `Governed Execution Preparation` autorizada.
+
+Objetivo autorizado:
+
+Preparar el paquete documental definitivo que permitira a Reviewer Agent y QA Gate Agent decidir si procede recomendar una autorizacion humana posterior de Development para `Repository Physical Normalization`.
+
+Artefactos autorizados:
+
+- `Canonical Route Registry`;
+- `Reference Map`;
+- `Movement Plan`;
+- `Compatibility Plan`;
+- `Rollback Plan`;
+- `Validation Checklist`;
+- `SDD Modes Pilot Package`;
+- actualizacion documental del expediente de la capacidad.
+
+Fuera de autorizacion:
+
+- Development;
+- movimientos fisicos;
+- renombrado de archivos;
+- creacion de stubs;
+- modificacion de baselines cerrados;
+- ejecucion del Movement Plan;
+- scripts, herramientas, workflows o automatizaciones.
+
+Siguiente paso recomendado:
+
+```text
+Reviewer Agent review of Repository Physical Normalization Development first wave.
+```
+---
+
+## 17. Governed Execution Preparation Reviewer Addendum
+
+Fecha: 2026-08-02.
+
+Decision de Reviewer Agent: `Approved with minor changes`.
+
+Resultado:
+
+- paquete GEP coherente con T-013 y `SDD Full`;
+- sin hallazgos criticos ni importantes;
+- correcciones menores de trazabilidad historica aplicadas por Documentation Agent;
+- Development y normalizacion fisica permanecen `NOT AUTHORIZED`.
+
+Siguiente paso recomendado:
+
+```text
+Reviewer Agent review of Repository Physical Normalization Development first wave.
+```
+---
+
+## 18. Governed Execution Preparation QA Gate Addendum
+
+Fecha: 2026-08-02.
+
+Decision de QA Gate Agent: `Pass with minor conditions`.
+
+Resultado:
+
+- paquete GEP validado para sostener una decision humana posterior sobre Development;
+- no se detecta implementacion prematura;
+- no se crearon rutas objetivo de SDD Modes;
+- no se crearon stubs, scripts, workflows ni automatizaciones;
+- Development y normalizacion fisica permanecen `NOT AUTHORIZED`.
+
+Condiciones menores:
+
+- Development requiere decision humana explicita posterior;
+- Reference Map final debe actualizarse inmediatamente antes de cualquier ejecucion futura;
+- debe cerrarse la decision sobre la ruta/nombre futuro de `specs/spec-001-sdd-modes.architecture.md` antes de mover o renombrar ese artefacto;
+- `SDD Modes` permanece read-only hasta autorizacion futura de Development.
+
+Siguiente paso recomendado:
+
+```text
+Reviewer Agent review of Repository Physical Normalization Development first wave.
+```
+---
+
+## 19. Development Authorization and First Wave Addendum
+
+Fecha: 2026-08-02.
+
+Decision humana: `Autorizo el desarrollo`.
+
+Resultado ejecutado:
+
+- primera ola controlada sobre SDD Modes ejecutada;
+- cinco artefactos movidos a rutas canonicas bajo `docs/capabilities/sdd-modes/` y `specs/capabilities/sdd-modes/`;
+- cinco stubs legacy creados en las rutas raiz correspondientes;
+- `specs/spec-001-sdd-modes.architecture.md` se mantiene en ruta legacy y no se mueve ni renombra en esta ola;
+- no se crean scripts, tools, workflows ni automatizaciones;
+- no se elimina historia Git;
+- no se cierra deuda residual.
+
+Siguiente paso recomendado:
+
+```text
+Reviewer Agent review of Repository Physical Normalization Development first wave.
+```

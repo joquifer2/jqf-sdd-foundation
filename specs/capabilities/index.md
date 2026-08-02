@@ -12,7 +12,7 @@ Es solo un catalogo. No redefine alcance, requisitos, arquitectura, readiness ni
 
 | Capacidad | Artefacto | Tipo | Estado | Funcion |
 | --- | --- | --- | --- | --- |
-| SDD Modes | `specs/spec-001-sdd-modes.md` | Specification | Final | Contexto de baseline cerrado para SDD Modes. |
+| SDD Modes | `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` | Specification | Final / normalized first wave | Contexto de baseline cerrado para SDD Modes; ruta legacy preservada como stub. |
 | SDD Modes | `specs/spec-001-sdd-modes.architecture.md` | Architecture | Final | Contexto de arquitectura cerrada para SDD Modes. |
 | SDD Project Consolidation and Closure | `specs/capabilities/project-consolidation-and-closure/spec-001-sdd-project-consolidation-and-closure.md` | Specification | Closed baseline | Definicion normativa de la capacidad de consolidacion y cierre. |
 | SDD Project Consolidation and Closure | `specs/capabilities/project-consolidation-and-closure/arch-001-sdd-project-consolidation-and-closure.md` | Architecture | Closed baseline | Arquitectura documental para expedientes de capacidad, handover, evidencia, deuda, reentrada e interfaz futura de agente. |
@@ -22,7 +22,7 @@ Es solo un catalogo. No redefine alcance, requisitos, arquitectura, readiness ni
 | Consolidation Agent | `specs/capabilities/consolidation-agent/arch-001-consolidation-agent.md` | Architecture | Architecture gate passed | Define arquitectura documental conceptual del futuro Consolidation Agent sin crearlo. |
 | Consolidation Agent | `.github/agents/consolidation.agent.md` | Agent definition | Closed with conditions | Definicion canonica documental del Consolidation Agent trazada a SPEC-001 y ARCH-001; validada para consolidaciones documentales `proposal-only`; cierre global coherente con QA `PASS WITH CONDITIONS`. |
 | Repository Physical Normalization | `specs/capabilities/repository-physical-normalization/spec-001-repository-physical-normalization.md` | Specification | Specification gate passed / Architecture authorized | Define el proceso oficial de normalizacion fisica futura del repositorio sin ejecutar movimientos, modificar rutas ni alterar baselines cerrados. |
-| Repository Physical Normalization | `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md` | Architecture | Architecture gate passed with minor conditions | Define arquitectura documental conceptual, componentes, interfaces, reference map, movement plan y rollback plan futuros sin ejecutar normalizacion fisica. |
+| Repository Physical Normalization | `specs/capabilities/repository-physical-normalization/arch-001-repository-physical-normalization.md` | Architecture | Development first wave executed / pending review | Define arquitectura documental conceptual y habilita paquete GEP documental posterior sin ejecutar normalizacion fisica. |
 
 ---
 
