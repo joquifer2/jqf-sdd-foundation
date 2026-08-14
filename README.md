@@ -336,25 +336,21 @@ Cada repositorio derivado define posteriormente:
 
 ---
 
-## Alcance actual
+## Estado actual
 
-El estado vigente del repositorio está en fase **Specification / Structure**. No estamos en Development.
+La Foundation dispone de una primera baseline estable publicada como **`v1.0.0`**.
 
-**En scope ahora:**
+Esta versión consolida el núcleo metodológico y físico inicial del producto y sirve como referencia estable para crear y gobernar proyectos derivados.
 
-* Specification de metodología SDD
-* Structure de artefactos y gobierno
-* Governance documental y procedural
-* Documentación y plantillas reutilizables
-* Agentes metodológicos (governance, no ejecución)
-* Skills de descubrimiento y soporte documental
+A partir de esta baseline, la Foundation entra en una etapa de **evolución controlada**: las nuevas mejoras deben incorporarse únicamente cuando sean metodológicas, reutilizables y suficientemente validadas para beneficiar al conjunto de proyectos que dependen de ella.
 
-**Fuera de scope (Roadmap futuro):**
+El desarrollo y la ejecución operativa de cada producto siguen perteneciendo a sus repositorios derivados. La Foundation mantiene la metodología, el gobierno, los agentes metodológicos, las plantillas y las reglas comunes.
 
-* Ejecución operativa de agentes (pertenece a proyectos derivados)
-* Operational Harness (implementación en proyectos derivados)
-* Gates totalmente automatizados (están como estructura documental)
-* Workflows ejecutables en producción
+La release estable vigente es:
+
+- **`v1.0.0`** — primera baseline oficial de JQF SDD Foundation.
+
+El detalle de cada evolución posterior debe quedar gobernado y versionado en este repositorio antes de formar parte de una nueva baseline estable.
 
 ---
 
