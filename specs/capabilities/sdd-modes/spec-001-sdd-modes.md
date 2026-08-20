@@ -185,7 +185,7 @@ Cualquier omision, reduccion o sustitucion de controles Full debe quedar registr
 
 #### Artifact Applicability Matrix
 
-La aplicabilidad define si una familia metodologica debe formar parte del harness derivado para un `SDD Mode`. Controla presencia, no necesariamente profundidad, granularidad ni tratamiento de derivacion.
+La aplicabilidad define si una familia metodologica debe estar presente como capacidad esperada para un `SDD Mode`. Controla presencia esperada, no materializacion local, no discovery/consumption y no tratamiento de derivacion.
 
 La profundidad del artefacto se ajusta por modo, riesgo, fase e incremento gobernado. El tratamiento de derivacion se resuelve en la politica de derivacion de Foundation una vez determinada la aplicabilidad.
 
@@ -205,11 +205,11 @@ La profundidad del artefacto se ajusta por modo, riesgo, fase e incremento gober
 
 Semantica de aplicabilidad:
 
-- `Required`: debe materializarse.
-- `Conditional`: se materializa unicamente cuando una condicion metodologica explicita aplicable este satisfecha.
-- `Recommended`: se materializa por defecto; puede omitirse mediante decision explicita y trazable.
-- `Optional`: no se materializa por defecto; puede incluirse mediante decision explicita.
-- `Not habitual`: no se materializa normalmente; se resuelve como `Exclude` o `Reference` segun corresponda.
+- `Required`: debe estar presente en la derivacion como capacidad esperada; su materializacion local y cualquier discovery/consumption posterior se rigen por la politica de derivacion y por una decision explicita separada.
+- `Conditional`: la familia solo queda presente como capacidad esperada cuando se satisfaga la condicion metodologica explicita aplicable; si no se satisface, la derivacion local no la materializa como parte de esa derivacion y cualquier consumo posterior solo puede producirse mediante una decision distinta y una superficie soportada.
+- `Recommended`: queda presente por defecto; su omision requiere decision explicita y trazable.
+- `Optional`: puede quedar presente mediante decision explicita.
+- `Not habitual`: normalmente no queda presente; se resuelve como `Exclude` o `Reference` segun corresponda.
 
 ##### Conditional Applicability Criteria by Family
 
@@ -217,11 +217,11 @@ La resolucion de una familia `Conditional` debe basarse en el horizonte inicial 
 
 | Familia metodologica | `true` | `false` | `unresolved` |
 | --- | --- | --- | --- |
-| Catalogo de agentes metodologicos | El horizonte inicial del proyecto requiere al menos una responsabilidad metodologica especializada del catalogo y se ha decidido ejecutar esa responsabilidad mediante agente, por ejemplo migracion legacy, architecture, review formal, consolidation, QA/gate u otra responsabilidad metodologica aplicable. | Las responsabilidades metodologicas previstas pueden ejecutarse suficientemente mediante juicio humano, instrucciones, artefactos y checks del modo sin materializar el catalogo de agentes. | Las necesidades metodologicas o el modelo de ejecucion todavia no estan suficientemente definidos para decidirlo. |
+| Catalogo de agentes metodologicos | El horizonte inicial del proyecto requiere al menos una responsabilidad metodologica especializada del catalogo y se ha decidido que esa responsabilidad se resuelva mediante una superficie soportada de consumo metodologico. `methodologicalAgents=true` para esa derivacion. | Las responsabilidades metodologicas previstas pueden ejecutarse suficientemente mediante juicio humano, instrucciones, artefactos y checks del modo sin materializar localmente el catalogo como parte de esa derivacion. `methodologicalAgents=false` para esa derivacion; esto no prohíbe un consumo canónico posterior ni una materializacion posterior por decision distinta. | Las necesidades metodologicas o el modelo de ejecucion todavia no estan suficientemente definidos para decidirlo. |
 | Skills metodologicas reutilizables | Existe al menos una capacidad metodologica reutilizable identificada como necesaria para el horizonte inicial y su empaquetado como skill aporta reutilizacion real frente a resolverla solo mediante instrucciones o templates. | Las necesidades conocidas se resuelven suficientemente mediante instrucciones, templates y juicio humano o agente sin skills metodologicas empaquetadas. | Las capacidades metodologicas necesarias todavia no estan suficientemente determinadas. |
 | Gates metodologicos reutilizables | El horizonte inicial conocido contiene una transicion de fase, preparacion para Development, cierre, cambio de alcance relevante, riesgo critico u otro hito que requiere una decision formal de avance, bloqueo o readiness. | El horizonte inicial solo requiere checks ligeros consolidados y no existe ningun disparador conocido que requiera gate formal. | Fase, siguiente hito, riesgo relevante o necesidad de autorizacion formal todavia no estan suficientemente definidos. |
 
-Mayor riesgo no implica automaticamente materializar agentes metodologicos; puede implicar mas control, review humana, checks o gates segun corresponda. Las reglas vigentes sobre checks ligeros y gates formales permanecen aplicables.
+Mayor riesgo no implica automaticamente materializar agentes metodologicos; puede implicar mas control, review humana, checks o gates segun corresponda. La decision sobre materializacion local es distinta de la decision sobre discovery/consumption y ambas son distintas de la aplicabilidad. Las reglas vigentes sobre checks ligeros y gates formales permanecen aplicables.
 
 `reusableSkills = true` no selecciona todavia que skills concretas se materializan. La seleccion de miembros dentro de cada familia metodologica es una decision posterior distinta de la aplicabilidad de la familia.
 
@@ -469,7 +469,7 @@ Los escenarios iniciales de validacion deben ser VAL-001 bajo riesgo/interno, VA
 
 ### FR-036
 
-La metodologia debe definir una `Artifact Applicability Matrix` normativa que determine la presencia esperada de familias metodologicas por `SDD Mode` antes de resolver cualquier tratamiento de derivacion.
+La metodologia debe definir una `Artifact Applicability Matrix` normativa que determine la presencia esperada de familias metodologicas por `SDD Mode` antes de resolver cualquier tratamiento de derivacion. Esa matriz no debe confundirse con materializacion local ni con discovery/consumption.
 
 ### FR-037
 
@@ -708,11 +708,11 @@ La specification declara que la validacion empirica no puede considerarse comple
 
 ### AC-028
 
-La specification contiene la `Artifact Applicability Matrix` normativa aprobada y permite resolver `artifact family x SDD Mode -> applicability` sin introducir scoring, runtime, motor de reglas ni harnesses separados.
+La specification contiene la `Artifact Applicability Matrix` normativa aprobada y permite resolver `artifact family x SDD Mode -> applicability` sin introducir scoring, runtime, motor de reglas ni harnesses separados. Esa resolucion no equivale por si misma a materializacion local ni a discovery/consumption.
 
 ### AC-029
 
-La specification declara que la aplicabilidad controla presencia, no profundidad ni tratamiento de derivacion, y que `Undeclared` continua resolviendose conservadoramente como `SDD Full`.
+La specification declara que la aplicabilidad controla presencia esperada, no profundidad, no materializacion local y no discovery/consumption; el tratamiento de derivacion permanece separado, y `Undeclared` continua resolviendose conservadoramente como `SDD Full`.
 
 ---
 

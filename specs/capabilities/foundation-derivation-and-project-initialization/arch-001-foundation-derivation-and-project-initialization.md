@@ -78,7 +78,7 @@ Definir una estructura conceptual que permita:
 | Derived Project Initial Dossier | Definir el expediente inicial limpio del derivado. | Propuesto documentalmente. |
 | Foundation Origin Record | Registrar origen, fecha, version, commit o decision base. | Propuesto documentalmente. |
 | Initial SDD Mode Declaration Interface | Asegurar declaracion de modo y justificacion en el Project Brief del derivado. | Propuesto documentalmente. |
-| Mode-Specific Initialization Profile | Definir diferencias documentales para Minimal, Lite y Full. | Propuesto documentalmente. |
+| Mode-Specific Initialization Profile | Definir diferencias documentales para Minimal, Lite y Full, separando aplicabilidad, materializacion local y discovery/consumption. | Propuesto documentalmente. |
 | Foundation Upgrade Intake Interface | Gobernar adopcion futura de mejoras de Foundation. | Propuesto documentalmente. |
 | Residual Debt Boundary | Impedir herencia automatica de deuda de Foundation. | Propuesto documentalmente. |
 | Future Automation Boundary | Delimitar que podran hacer futuros asistentes sin sustituir decision humana. | Future, non-implemented. |
@@ -142,7 +142,7 @@ artifact/category x SDD Mode
   -> derivation treatment
 ```
 
-La `Document Inheritance Matrix` no decide por si sola si una familia debe estar presente en Minimal, Lite o Full. Su responsabilidad es definir como se deriva un artefacto cuando la aplicabilidad normativa exige, recomienda, condiciona o permite su presencia.
+La `Document Inheritance Matrix` no decide por si sola si una familia debe estar presente en Minimal, Lite o Full. Su responsabilidad es definir como se deriva un artefacto cuando la aplicabilidad normativa exige, recomienda, condiciona o permite su presencia. La presencia esperada, la materializacion local y el discovery/consumption siguen siendo decisiones distintas.
 
 ### 5.4 Derived Project Initial Dossier
 
@@ -210,7 +210,7 @@ Ejemplos conceptuales:
 | Identidad y expediente inicial | `Required` en todos los modos | `Reset` o `Regenerate` para brief, context refs, tasks y readiness propios. |
 | Declaracion de SDD Mode + origen Foundation | `Required` en todos los modos | `Regenerate` dentro del Project Brief/context refs del derivado. |
 | Instrucciones SDD / reglas fundamentales | `Required` en todos los modos | `Copy`, `Adapt` o `Reference` segun la forma de adopcion aprobada. |
-| Catalogo de agentes metodologicos | `Conditional` en Minimal/Lite; `Required` en Full | `Copy`, `Adapt` o `Reference` cuando aplique; `Exclude` si la condicion no esta satisfecha. |
+| Catalogo de agentes metodologicos | `Conditional` en Minimal/Lite; `Required` en Full | `Copy`, `Adapt` o `Reference` cuando aplique; `Exclude` si la condicion no esta satisfecha. `Exclude` significa no materializacion local como parte de esa derivacion; no implica prohibicion de consumo canónico posterior ni de materializacion posterior por decision distinta. |
 | Skills metodologicas reutilizables | `Optional` en Minimal; `Conditional` en Lite; `Required` en Full | `Copy`, `Adapt`, `Reference` o `Exclude` segun aplicabilidad resuelta. |
 | Expedientes internos/historicos de Foundation | `Not habitual` en todos los modos | `Exclude` o `Reference`; nunca backlog, readiness o deuda propia del derivado. |
 | Tests, tools, workflows y runtime propios de Foundation | `Not habitual` en todos los modos | `Exclude` o `Reference` salvo decision futura explicita de baseline exportable. |
@@ -228,6 +228,8 @@ Foundation baseline change
   -> Local documentation update if authorized
   -> Readiness or gate if risk requires
 ```
+
+Toda superficie usada para discovery/consumption externo debe estar soportada por el harness destino y alineada con un baseline Foundation compatible/pinneado. Esta arquitectura no introduce ni estandariza esa superficie; solo preserva el limite de dependencia.
 
 No existe actualizacion automatica.
 

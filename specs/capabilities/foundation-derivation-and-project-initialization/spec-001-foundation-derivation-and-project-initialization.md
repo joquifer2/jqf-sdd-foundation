@@ -348,16 +348,22 @@ La deuda residual de Foundation debe clasificarse en:
 
 `Retener solo en Foundation` puede usarse como explicacion documental de un `Exclude` cuando el artefacto permanece en Foundation como evidencia o expediente historico, pero no es un tratamiento adicional de derivacion.
 
-### Contrato entre aplicabilidad y tratamiento
+### Contrato entre aplicabilidad, materializacion y consumo
 
-La derivacion debe separar dos preguntas:
+La derivacion debe separar tres preguntas:
 
 ```text
 Applicability
 = debe formar parte del harness derivado para este SDD Mode?
 
+Local materialization
+= se materializa localmente como parte de esta derivacion?
+
+Discovery / consumption
+= existe una superficie soportada para consumirlo externamente y una referencia compatible/pinneada al baseline Foundation?
+
 Treatment
-= si forma parte, como se deriva?
+= si se materializa, como se deriva?
 ```
 
 El contrato logico minimo es:
@@ -365,16 +371,17 @@ El contrato logico minimo es:
 ```text
 artifact/category x SDD Mode
   -> applicability
-  -> resolution
+  -> local materialization decision
+  -> optional external discovery/consumption path
   -> derivation treatment
 ```
 
-La `Artifact Applicability Matrix` de `SDD Modes` resuelve presencia esperada por familia metodologica. La `Document Inheritance Matrix` resuelve el tratamiento documental cuando la aplicabilidad requiere o permite materializacion.
+La `Artifact Applicability Matrix` de `SDD Modes` resuelve presencia esperada por familia metodologica. La `Document Inheritance Matrix` resuelve el tratamiento documental cuando la aplicabilidad y la decision de materializacion local lo permiten.
 
 Reglas de resolucion:
 
-- `Required`: debe materializarse y debe recibir tratamiento `Copy`, `Adapt`, `Reset`, `Regenerate` o `Reference` segun su naturaleza documental.
-- `Conditional`: solo se materializa cuando exista condicion metodologica explicita satisfecha; si no se satisface, se resuelve como `Exclude` o `Reference`.
+- `Required`: debe materializarse localmente si la derivacion adopta esa familia como parte del baseline local; la derivacion documental puede ser `Copy`, `Adapt`, `Reset`, `Regenerate` o `Reference` segun su naturaleza.
+- `Conditional`: solo se materializa localmente cuando exista condicion metodologica explicita satisfecha; si no se satisface, la derivacion local la trata como `Exclude` o `Reference`. Esa resolucion no prohíbe un consumo canónico posterior mediante una superficie soportada y una decision distinta.
 - `Recommended`: se materializa por defecto; su omision requiere decision explicita y trazable.
 - `Optional`: no se materializa por defecto; solo se incluye mediante decision explicita.
 - `Not habitual`: no se materializa normalmente; se resuelve como `Exclude` o `Reference` segun corresponda.
@@ -383,7 +390,7 @@ Presencia y profundidad permanecen separadas. Un artefacto `Required` para `SDD 
 
 `Undeclared` se resuelve conservadoramente como `SDD Full` antes de aplicar tratamientos.
 
-Para familias `Conditional`, Foundation define el criterio normativo por familia, el pre-derivation context o project context aporta los hechos, y el humano o agente de bootstrap aplica juicio para resolver `true`, `false` o `unresolved`. Project Initializer solo transporta y ejecuta la resolucion; no calcula ni inventa semantica metodologica.
+Para familias `Conditional`, Foundation define el criterio normativo por familia, el pre-derivation context o project context aporta los hechos, y el humano o agente de bootstrap aplica juicio para resolver `true`, `false` o `unresolved`. Project Initializer solo transporta y ejecuta la resolucion; no calcula ni inventa semantica metodologica. Si la resolucion es `false`, el resultado aplica solo a la materializacion local de esa derivacion; no bloquea consumo canónico posterior en una superficie soportada ni una materializacion posterior autorizada por una decision distinta.
 
 La decision condicional debe conservar trazabilidad minima proporcional. Debe poder registrar:
 
@@ -544,7 +551,7 @@ Inicializacion documental minima:
 
 ### Perfil de aplicabilidad por modo
 
-La inicializacion por modo debe aplicar primero la `Artifact Applicability Matrix` de `SDD Modes` y despues la matriz de herencia documental de esta capacidad.
+La inicializacion por modo debe aplicar primero la `Artifact Applicability Matrix` de `SDD Modes` y despues la matriz de herencia documental de esta capacidad. El resultado de aplicabilidad no equivale automaticamente a materializacion local ni a discovery/consumption.
 
 El perfil resultante debe permitir:
 
@@ -555,9 +562,9 @@ artifact/category x SDD Mode
 -> derivation treatment
 ```
 
-La inicializacion no debe inventar semantica metodologica por ruta o tipo de archivo. Las rutas y tipos ayudan a aplicar el tratamiento, pero la presencia esperada deriva de la aplicabilidad normativa por modo.
+La inicializacion no debe inventar semantica metodologica por ruta o tipo de archivo. Las rutas y tipos ayudan a aplicar el tratamiento, pero la presencia esperada deriva de la aplicabilidad normativa por modo. El consumo externo solo es conforme cuando el harness dispone de una superficie soportada y existe una referencia compatible/pinneada al baseline Foundation.
 
-Cuando el Project Brief del derivado aun no existe, la inicializacion puede usar el pre-derivation context para resolver la aplicabilidad condicional. Esa resolucion debe persistirse posteriormente en el artefacto canonico correspondiente del proyecto derivado.
+Cuando el Project Brief del derivado aun no existe, la inicializacion puede usar el pre-derivation context para resolver la aplicabilidad condicional. Esa resolucion debe persistirse posteriormente en el artefacto canonico correspondiente del proyecto derivado. Si se menciona `chat.agentFilesLocations`, debe tratarse solo como evidencia de una superficie soportada actualmente disponible en VS Code/Copilot, nunca como requisito metodologico universal.
 
 ---
 

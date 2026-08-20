@@ -88,7 +88,7 @@ Esta arquitectura refleja decisiones humanas cerradas en `SPEC-001` y `docs/task
 | Mode Declaration | Registra modo, justificacion, owner, fecha, condiciones de riesgo y disparadores de reevaluacion. | Fuente inicial: `Project Brief`. |
 | Mode Selection Criteria | Organiza dimensiones de seleccion para juicio humano documentado. | Definido sin scoring automatico. |
 | Mode Lifecycle Rules | Define declaracion inicial, reevaluacion, escalado, reduccion y `Undeclared`. | Parcialmente definido; aprobadores/cadencia siguen abiertos. |
-| Artifact Applicability Matrix | Clasifica familias metodologicas por modo como `Required`, `Conditional`, `Recommended`, `Optional` o `Not habitual`, determinando presencia esperada antes de profundidad o tratamiento de derivacion. | Definido por `SPEC-001`. |
+| Artifact Applicability Matrix | Clasifica familias metodologicas por modo como `Required`, `Conditional`, `Recommended`, `Optional` o `Not habitual`, determinando presencia esperada antes de profundidad o tratamiento de derivacion, pero no materializacion local ni discovery/consumption. | Definido por `SPEC-001`. |
 | Agent Intervention Matrix | Define como agentes existentes adaptan intensidad por modo sin duplicarse. | Requiere desarrollo documental posterior. |
 | Checks and Gates Policy | Separa checks ligeros de gates formales y define condiciones de elevacion. | Definido conceptualmente por `SPEC-001`. |
 | Evidence Policy | Define consolidacion de evidencia por modo e incremento gobernado. | Definido conceptualmente por `SPEC-001`. |
@@ -172,7 +172,7 @@ Artifact Applicability Matrix clasifica familias metodologicas por modo como `Re
 
 Responsabilidad:
 
-- resolver si una familia metodologica debe estar presente en el harness derivado para el `SDD Mode`;
+- resolver si una familia metodologica debe estar presente como capacidad esperada para el `SDD Mode`;
 - mantener `Undeclared` como fallback conservador equivalente a `SDD Full`;
 - separar presencia de profundidad documental;
 - dejar el tratamiento de derivacion a la politica de `Foundation Derivation and Project Initialization`;
@@ -187,11 +187,11 @@ artifact family x SDD Mode
   -> derivation policy resolution
 ```
 
-La matriz no es un motor de reglas, scoring, runtime, registry tecnico ni implementacion de inicializador. La matriz debe respetar que `Project Brief` contiene la declaracion inicial y que `docs/context_refs.md` funciona como indice de fuentes.
+La matriz no es un motor de reglas, scoring, runtime, registry tecnico ni implementacion de inicializador. La matriz debe respetar que `Project Brief` contiene la declaracion inicial y que `docs/context_refs.md` funciona como indice de fuentes. Su salida no implica materializacion local ni discovery/consumption por si sola.
 
 ### 5.6 Agent Intervention Matrix
 
-Agent Intervention Matrix mantiene un unico catalogo de agentes metodologicos.
+Agent Intervention Matrix mantiene un unico catalogo de agentes metodologicos y consume la resolucion de aplicabilidad, sin redefinir materializacion local ni discovery/consumption.
 
 Debe definir como adaptan su intervencion:
 
