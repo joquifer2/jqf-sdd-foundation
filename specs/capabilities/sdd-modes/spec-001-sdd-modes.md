@@ -20,7 +20,7 @@ Jordi Quiroga
 
 ### Last Updated
 
-2026-08-01
+2026-08-20
 
 ---
 
@@ -182,6 +182,38 @@ La reduccion documental solo es valida si elimina baja senal o duplicacion. No p
 - precedencia documental y aprobacion humana.
 
 Cualquier omision, reduccion o sustitucion de controles Full debe quedar registrada como hallazgo bloqueante o decision humana explicita antes de poder considerar valida la capacidad.
+
+#### Artifact Applicability Matrix
+
+La aplicabilidad define si una familia metodologica debe formar parte del harness derivado para un `SDD Mode`. Controla presencia, no necesariamente profundidad, granularidad ni tratamiento de derivacion.
+
+La profundidad del artefacto se ajusta por modo, riesgo, fase e incremento gobernado. El tratamiento de derivacion se resuelve en la politica de derivacion de Foundation una vez determinada la aplicabilidad.
+
+| Familia metodologica | SDD Minimal | SDD Lite | SDD Full |
+| --- | --- | --- | --- |
+| Identidad y expediente inicial: Brief, Context refs, Tasks, Readiness | Required | Required | Required |
+| Declaracion de SDD Mode + origen Foundation | Required | Required | Required |
+| Instrucciones SDD / reglas fundamentales | Required | Required | Required |
+| Referencias normativas a Foundation | Required | Required | Required |
+| Catalogo de agentes metodologicos | Conditional | Conditional | Required |
+| Skills metodologicas reutilizables | Optional | Conditional | Required |
+| Templates documentales / Specification | Optional | Recommended | Required |
+| Gates metodologicos reutilizables | Conditional | Conditional | Required |
+| Glosario / material metodologico auxiliar | Optional | Recommended | Required |
+| Expedientes internos/historicos de Foundation | Not habitual | Not habitual | Not habitual |
+| Tests, tools, workflows y runtime propios de Foundation | Not habitual | Not habitual | Not habitual |
+
+Semantica de aplicabilidad:
+
+- `Required`: debe materializarse.
+- `Conditional`: se materializa unicamente cuando una condicion metodologica explicita aplicable este satisfecha.
+- `Recommended`: se materializa por defecto; puede omitirse mediante decision explicita y trazable.
+- `Optional`: no se materializa por defecto; puede incluirse mediante decision explicita.
+- `Not habitual`: no se materializa normalmente; se resuelve como `Exclude` o `Reference` segun corresponda.
+
+`Undeclared` conserva fallback conservador equivalente a `SDD Full` y no constituye un cuarto modo.
+
+Debe mantenerse un unico catalogo metodologico. La matriz no autoriza harnesses separados por modo, variantes duplicadas de agentes, runtime, scoring, reglas ejecutables ni implementacion de inicializadores.
 
 ---
 
@@ -420,6 +452,18 @@ La unidad normativa general debe ser `incremento gobernado`; `Implementation Wav
 ### FR-035
 
 Los escenarios iniciales de validacion deben ser VAL-001 bajo riesgo/interno, VAL-002 MVP/exposicion limitada, VAL-003 produccion/cumplimiento/integraciones criticas y VAL-004 repositorio existente sin modo declarado.
+
+### FR-036
+
+La metodologia debe definir una `Artifact Applicability Matrix` normativa que determine la presencia esperada de familias metodologicas por `SDD Mode` antes de resolver cualquier tratamiento de derivacion.
+
+### FR-037
+
+La aplicabilidad debe mantenerse separada de profundidad documental y de tratamiento de derivacion.
+
+### FR-038
+
+Las categorias `Required`, `Conditional`, `Recommended`, `Optional` y `Not habitual` deben tener semantica explicita y verificable.
 ---
 
 ## 9. Business Rules
@@ -648,6 +692,14 @@ La specification define la evidencia minima necesaria para demostrar que `SDD Fu
 
 La specification declara que la validacion empirica no puede considerarse completa para un escenario sin repositorio concreto verificable. T-025 valida retrospectivamente VAL-002, VAL-003 y VAL-004 con repositorios formalmente `Undeclared`, pero VAL-001 permanece pendiente y bloquea cerrar la validacion empirica completa de SDD Minimal. Por decision humana confirmada tras T-027, esta deuda empirica no bloquea el cierre metodologico de la capacidad SDD Modes, siempre que se conserve como pendiente futuro y no se debiliten los requisitos normativos, controles criticos ni evidencia minima de SDD Minimal.
 
+### AC-028
+
+La specification contiene la `Artifact Applicability Matrix` normativa aprobada y permite resolver `artifact family x SDD Mode -> applicability` sin introducir scoring, runtime, motor de reglas ni harnesses separados.
+
+### AC-029
+
+La specification declara que la aplicabilidad controla presencia, no profundidad ni tratamiento de derivacion, y que `Undeclared` continua resolviendose conservadoramente como `SDD Full`.
+
 ---
 
 ## 14. Dependencies
@@ -718,7 +770,7 @@ La specification declara que la validacion empirica no puede considerarse comple
 | Project Brief | Consistente | La specification deriva del alcance y restricciones ya definidos. |
 | README | Current | Explicacion de alto nivel vigente; no es fuente normativa completa. |
 | Context References | Consistente | Professional OS esta verificado como discovery-only; el documento conceptual permanece PENDING y VAL-001 queda como deuda empirica futura no bloqueante. |
-| Specifications relacionadas | No aplica | No existen otras specifications activas en `specs/`. |
+| Specifications relacionadas | Consistente | `Foundation Derivation and Project Initialization` debe consumir esta matriz para resolver aplicabilidad antes de tratamiento de derivacion. |
 | Contracts | No aplica | No se requiere contract transversal para el cierre metodologico de esta capacidad. |
 | Gates | Cerrado con condiciones | Los criterios de checks/gates quedan definidos normativamente; no se crean gates adicionales en esta fase. |
 | Templates | Current | Las plantillas vigentes forman parte del baseline final y no requieren cambios adicionales para este cierre. |

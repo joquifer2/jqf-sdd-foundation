@@ -24,7 +24,7 @@ Jordi Quiroga
 
 ### Last Updated
 
-2026-08-01
+2026-08-20
 
 ### Template
 
@@ -88,7 +88,7 @@ Esta arquitectura refleja decisiones humanas cerradas en `SPEC-001` y `docs/task
 | Mode Declaration | Registra modo, justificacion, owner, fecha, condiciones de riesgo y disparadores de reevaluacion. | Fuente inicial: `Project Brief`. |
 | Mode Selection Criteria | Organiza dimensiones de seleccion para juicio humano documentado. | Definido sin scoring automatico. |
 | Mode Lifecycle Rules | Define declaracion inicial, reevaluacion, escalado, reduccion y `Undeclared`. | Parcialmente definido; aprobadores/cadencia siguen abiertos. |
-| Artifact Applicability Matrix | Clasifica artefactos por modo como obligatorios, condicionales, recomendados, opcionales o no habituales. | Requiere desarrollo documental posterior. |
+| Artifact Applicability Matrix | Clasifica familias metodologicas por modo como `Required`, `Conditional`, `Recommended`, `Optional` o `Not habitual`, determinando presencia esperada antes de profundidad o tratamiento de derivacion. | Definido por `SPEC-001`. |
 | Agent Intervention Matrix | Define como agentes existentes adaptan intensidad por modo sin duplicarse. | Requiere desarrollo documental posterior. |
 | Checks and Gates Policy | Separa checks ligeros de gates formales y define condiciones de elevacion. | Definido conceptualmente por `SPEC-001`. |
 | Evidence Policy | Define consolidacion de evidencia por modo e incremento gobernado. | Definido conceptualmente por `SPEC-001`. |
@@ -168,15 +168,26 @@ Quedan abiertos para Specification/Documentation posterior:
 
 ### 5.5 Artifact Applicability Matrix
 
-Artifact Applicability Matrix debe clasificar artefactos por modo como:
+Artifact Applicability Matrix clasifica familias metodologicas por modo como `Required`, `Conditional`, `Recommended`, `Optional` o `Not habitual`.
 
-- obligatorio;
-- condicional;
-- recomendado;
-- opcional;
-- no habitual.
+Responsabilidad:
 
-Debe evitar plantillas duplicadas por modo salvo decision posterior explicita. La matriz debe respetar que `Project Brief` contiene la declaracion inicial y que `docs/context_refs.md` funciona como indice de fuentes.
+- resolver si una familia metodologica debe estar presente en el harness derivado para el `SDD Mode`;
+- mantener `Undeclared` como fallback conservador equivalente a `SDD Full`;
+- separar presencia de profundidad documental;
+- dejar el tratamiento de derivacion a la politica de `Foundation Derivation and Project Initialization`;
+- evitar plantillas duplicadas, catalogos duplicados o harnesses separados por modo salvo decision futura explicita.
+
+Flujo conceptual:
+
+```text
+artifact family x SDD Mode
+  -> applicability
+  -> depth adjustment, if applicable
+  -> derivation policy resolution
+```
+
+La matriz no es un motor de reglas, scoring, runtime, registry tecnico ni implementacion de inicializador. La matriz debe respetar que `Project Brief` contiene la declaracion inicial y que `docs/context_refs.md` funciona como indice de fuentes.
 
 ### 5.6 Agent Intervention Matrix
 
@@ -250,13 +261,13 @@ Tras T-024 y T-025, VAL-002, VAL-003 y VAL-004 cuentan con candidatos retrospect
 ### 6.1 Documentary Flow
 
 ```text
-docs/project_brief.md
+docs/capabilities/sdd-modes/project_brief.md
         ↓
-specs/spec-001-sdd-modes.md
+specs/capabilities/sdd-modes/spec-001-sdd-modes.md
         ↓
 specs/capabilities/sdd-modes/arch-001-sdd-modes.md
         ↓
-docs/tasks.md
+docs/capabilities/sdd-modes/tasks.md
         ↓
 future documentation updates / reviews / gates, when authorized
 ```
@@ -293,10 +304,10 @@ No se introducen plantillas nuevas por defecto.
 
 ## 7. Dependencies
 
-- `docs/project_brief.md`
-- `docs/context_refs.md`
-- `docs/tasks.md`
-- `specs/spec-001-sdd-modes.md`
+- `docs/capabilities/sdd-modes/project_brief.md`
+- `docs/capabilities/sdd-modes/context_refs.md`
+- `docs/capabilities/sdd-modes/tasks.md`
+- `specs/capabilities/sdd-modes/spec-001-sdd-modes.md`
 - `.github/instructions/sdd.instructions.md`
 - `AGENTS.md`
 - `README.md`

@@ -109,7 +109,7 @@ Permanecen como expediente historico los artefactos de brief, contexto, readines
 | Debt ID | Resumen | Estado | Punto de reentrada |
 | --- | --- | --- | --- |
 | FDR-RES-001 | Versionado formal del baseline exportable pendiente. | Accepted / Future | Fase futura autorizada de versionado o Documentation posterior. |
-| FDR-RES-002 | Matriz completa por ruta del paquete derivable pendiente. | Accepted / Future | Documentation posterior o Repository Physical Normalization. |
+| FDR-RES-002 | Matriz completa por ruta del paquete derivable pendiente; contrato transversal de aplicabilidad por modo y tratamiento ya incorporado. | Partially resolved / Future | Documentation posterior o Repository Physical Normalization para matriz por ruta. |
 | FDR-RES-003 | `foundation_origin.yml` frente a seccion en `context_refs.md` pendiente. | Accepted / Future | Futura decision documental/arquitectonica antes de implementar derivacion real. |
 | FDR-RES-004 | `Derivation Readiness Gate` real pendiente. | Accepted / Future | Futura capacidad/gate antes de aplicar derivacion sobre repositorio real. |
 | FDR-RES-005 | Validacion con primer proyecto derivado real pendiente. | Accepted / Future | Primer caso empirico de derivacion, con QA Gate aplicable. |
@@ -141,6 +141,31 @@ Permanecen como expediente historico los artefactos de brief, contexto, readines
 - Modificacion de baselines cerrados: no autorizada.
 - `Consolidation Agent`: futuro, no implementado.
 - `Repository Physical Normalization`: futura, no iniciada.
+
+---
+
+## Registro de reentrada correctiva - 2026-08-20
+
+Disparador: derivacion real mediante JQF Project Initializer expuso un gap transversal entre `SDD Mode`, politica de derivacion Foundation y salida esperada del inicializador.
+
+Alcance aplicado:
+
+- completar normativamente la `Artifact Applicability Matrix` en `SDD Modes`;
+- conectar `Artifact Applicability Matrix`, `Document Inheritance Matrix` y `Mode-Specific Initialization Profile`;
+- actualizar `FDR-RES-002` como parcialmente resuelta.
+
+Fuera de alcance confirmado:
+
+- no se modifica `sdd-project-initializer`;
+- no se introduce logica especifica de FARO;
+- no se crean scripts, workflows, runtime, tests, tools, agentes, skills, templates ni estructura fisica;
+- `FDR-RES-005` permanece abierto para validacion posterior con consumidor real.
+
+Revision y gate documental:
+
+- Specification Agent: reentrada iniciada desde el gap aprobado; cambios limitados a matriz normativa, contrato conceptual y deuda residual.
+- Reviewer Agent: sin hallazgos criticos; presencia, profundidad y tratamiento quedan separados; no hay logica de consumidor ni implementacion prematura.
+- QA Gate Agent: `Pass with conditions` para cierre de reentrada; condiciones: no continuar con Project Initializer, mantener `FDR-RES-005` abierto y reservar matriz por ruta para Documentation posterior o `Repository Physical Normalization`.
 
 ---
 

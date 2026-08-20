@@ -22,11 +22,11 @@ cliente:
   nombre_cliente: N/A
   estado_relacion: N/A
 
-sdd_mode:
+  sdd_mode:
   modo_declarado: SDD Full
   fuente_canonica: docs/capabilities/foundation-derivation-and-project-initialization/project_brief.md
   estado: Verificado
-  ultima_revision: 2026-08-01
+  ultima_revision: 2026-08-20
 ```
 
 ---
@@ -38,7 +38,7 @@ sdd_mode:
 | Modo indexado | `SDD Full` |
 | Fuente canonica | `docs/capabilities/foundation-derivation-and-project-initialization/project_brief.md` |
 | Estado de verificacion | Verificado |
-| Ultima revision | 2026-08-01 |
+| Ultima revision | 2026-08-20 |
 | Notas | La capacidad afecta el modelo de derivacion de repositorios y requiere gobierno completo. |
 
 ---
@@ -68,7 +68,7 @@ Esta iniciativa pertenece a la Foundation y no a un cliente derivado.
 
 | Fecha | Decision | Impacto en este proyecto | Fuente |
 | --- | --- | --- | --- |
-| 2026-08-01 | `SDD Modes` se considera capacidad cerrada y baseline metodologico vigente | Define los modos iniciales que debe soportar un proyecto derivado | `specs/spec-001-sdd-modes.md` |
+| 2026-08-01 | `SDD Modes` se considera capacidad cerrada y baseline metodologico vigente | Define los modos iniciales que debe soportar un proyecto derivado | `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` |
 | 2026-08-01 | `SDD Project Consolidation and Closure` se considera capacidad cerrada | Define separacion entre baseline, expediente historico, evidencia y deuda residual | `specs/capabilities/project-consolidation-and-closure/spec-001-sdd-project-consolidation-and-closure.md` |
 | 2026-08-01 | `Consolidation Agent` permanece futuro pendiente | La derivacion puede preparar su marco, pero no implementarlo | `docs/capabilities/project-consolidation-and-closure/residual_debt.md` |
 | 2026-08-01 | QA Gate T-007: Specification readiness `Pass with minor conditions` | Habilita decision humana sobre Architecture; no autoriza Development | Solicitud humana y evaluacion QA Gate Agent |
@@ -78,6 +78,7 @@ Esta iniciativa pertenece a la Foundation y no a un cliente derivado.
 | 2026-08-01 | QA Gate T-011 emite `Pass with minor conditions` | Habilita preparacion documental de cierre; no autoriza Development | Evaluacion QA Gate Agent |
 | 2026-08-01 | Documentation Agent prepara expediente para Closure Gate | Crea handover, deuda residual y actualiza indices; no modifica baselines cerrados | Solicitud humana y Documentation Agent |
 | 2026-08-01 | QA Gate T-013 emite `Pass with minor conditions` | Cierra documentalmente la capacidad; no autoriza Development | Evaluacion QA Gate Agent |
+| 2026-08-20 | Reentrada correctiva acotada autorizada para resolver gap de proporcionalidad | Completa la `Artifact Applicability Matrix`, conecta aplicabilidad con tratamiento de derivacion y actualiza `FDR-RES-002` como parcialmente resuelta | Solicitud humana; `specs/capabilities/sdd-modes/spec-001-sdd-modes.md`; `specs/capabilities/foundation-derivation-and-project-initialization/spec-001-foundation-derivation-and-project-initialization.md` |
 
 ## Decisiones pendientes de validar
 
@@ -93,7 +94,7 @@ Esta iniciativa pertenece a la Foundation y no a un cliente derivado.
 
 | Proyecto | Relacion con este proyecto | Estado | Fuente |
 | --- | --- | --- | --- |
-| `SDD Modes` | Baseline de modos que todo derivado debe poder declarar | Cerrado / baseline vigente | `specs/spec-001-sdd-modes.md`; `docs/project_brief.md` |
+| `SDD Modes` | Baseline de modos que todo derivado debe poder declarar | Cerrado / baseline vigente | `specs/capabilities/sdd-modes/spec-001-sdd-modes.md`; `docs/capabilities/sdd-modes/project_brief.md` |
 | `SDD Project Consolidation and Closure` | Baseline para clasificar producto reutilizable frente a expediente interno | Closed | `docs/capabilities/project-consolidation-and-closure/closure_handover.md`; `specs/capabilities/project-consolidation-and-closure/spec-001-sdd-project-consolidation-and-closure.md` |
 
 ---
@@ -117,8 +118,8 @@ Esta iniciativa pertenece a la Foundation y no a un cliente derivado.
 
 | Artefacto | Estado | Funcion |
 | --- | --- | --- |
-| `specs/spec-001-sdd-modes.md` | Final | Fuente normativa principal de SDD Modes. |
-| `specs/spec-001-sdd-modes.architecture.md` | Final | Arquitectura conceptual aprobada de SDD Modes. |
+| `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` | Final | Fuente normativa principal de SDD Modes. |
+| `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` | Final | Arquitectura conceptual aprobada de SDD Modes. |
 | `specs/capabilities/project-consolidation-and-closure/spec-001-sdd-project-consolidation-and-closure.md` | Closed baseline | Fuente normativa de consolidacion y cierre. |
 | `specs/capabilities/project-consolidation-and-closure/arch-001-sdd-project-consolidation-and-closure.md` | Closed baseline | Arquitectura documental para expedientes, handover y gates conceptuales. |
 | `specs/capabilities/foundation-derivation-and-project-initialization/spec-001-foundation-derivation-and-project-initialization.md` | Specification | Specification de la capacidad actual. |
@@ -195,9 +196,9 @@ Esta jerarquia local debe interpretarse dentro de la precedencia documental ofic
 trazabilidad:
   creado_por: Specification Agent
   fecha_creacion: 2026-08-01
-  ultima_actualizacion: 2026-08-01
+  ultima_actualizacion: 2026-08-20
   actualizado_por: Documentation Agent
-  contexto_validado_por: Reviewer Agent - Approved; QA Gate Agent - Pass with minor conditions; Documentation Agent - closure preparation
-  fecha_validacion: 2026-08-01
-  version_contexto: foundation-derivation-closed-2026-08-01
+  contexto_validado_por: Reviewer Agent - no critical findings; QA Gate Agent - Pass with conditions for corrective reentry
+  fecha_validacion: 2026-08-20
+  version_contexto: foundation-derivation-corrective-reentry-2026-08-20
 ```

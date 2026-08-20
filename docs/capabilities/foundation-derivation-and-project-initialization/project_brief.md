@@ -185,7 +185,7 @@ La iteracion no debe implementar el proceso. El expediente queda preparado para 
 | `docs/capabilities/foundation-derivation-and-project-initialization/project_brief.md` | Fuente inicial de alcance y modo de esta capacidad. |
 | `docs/capabilities/foundation-derivation-and-project-initialization/context_refs.md` | Indice de fuentes consultadas. |
 | `specs/capabilities/foundation-derivation-and-project-initialization/spec-001-foundation-derivation-and-project-initialization.md` | Specification principal de la capacidad. |
-| `specs/spec-001-sdd-modes.md` | Baseline metodologico vigente de SDD Modes. |
+| `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` | Baseline metodologico vigente de SDD Modes. |
 | `specs/capabilities/project-consolidation-and-closure/spec-001-sdd-project-consolidation-and-closure.md` | Baseline vigente para clasificacion de capacidades y expedientes. |
 
 ### Referencias de contexto

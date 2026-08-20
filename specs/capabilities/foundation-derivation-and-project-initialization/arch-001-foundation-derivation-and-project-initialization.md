@@ -24,7 +24,7 @@ Jordi Quiroga
 
 ### Ultima actualizacion
 
-2026-08-01
+2026-08-20
 
 ### Template
 
@@ -124,10 +124,25 @@ Estados soportados:
 - `Reset`;
 - `Regenerate`;
 - `Exclude`;
-- `Retain in Foundation only`;
 - `Reference`.
 
 Una fase futura autorizada o Documentation autorizada podra convertir esta matriz conceptual en una matriz por ruta completa. Esta arquitectura no crea esa matriz fisica.
+
+`Retain in Foundation only` puede usarse solo como explicacion de por que un artefacto excluido permanece en Foundation; no es un tratamiento de derivacion adicional.
+
+La matriz se aplica despues de resolver la aplicabilidad por `SDD Mode` desde `SDD Modes`.
+
+Contrato:
+
+```text
+artifact/category x SDD Mode
+  -> Artifact Applicability Matrix
+  -> applicability resolution
+  -> Document Inheritance Matrix
+  -> derivation treatment
+```
+
+La `Document Inheritance Matrix` no decide por si sola si una familia debe estar presente en Minimal, Lite o Full. Su responsabilidad es definir como se deriva un artefacto cuando la aplicabilidad normativa exige, recomienda, condiciona o permite su presencia.
 
 ### 5.4 Derived Project Initial Dossier
 
@@ -182,6 +197,24 @@ Define perfiles documentales por modo:
 
 El perfil no puede debilitar controles criticos ni sustituir decision humana.
 
+El perfil combina tres capas documentales:
+
+1. `Artifact Applicability Matrix`: decide presencia esperada por familia metodologica y modo.
+2. `Document Inheritance Matrix`: decide `Copy`, `Adapt`, `Reset`, `Regenerate`, `Exclude` o `Reference`.
+3. `Mode-Specific Initialization Profile`: ajusta profundidad, granularidad inicial y evidencia minima segun modo, riesgo y fase.
+
+Ejemplos conceptuales:
+
+| Familia | Aplicabilidad | Tratamiento esperado |
+| --- | --- | --- |
+| Identidad y expediente inicial | `Required` en todos los modos | `Reset` o `Regenerate` para brief, context refs, tasks y readiness propios. |
+| Declaracion de SDD Mode + origen Foundation | `Required` en todos los modos | `Regenerate` dentro del Project Brief/context refs del derivado. |
+| Instrucciones SDD / reglas fundamentales | `Required` en todos los modos | `Copy`, `Adapt` o `Reference` segun la forma de adopcion aprobada. |
+| Catalogo de agentes metodologicos | `Conditional` en Minimal/Lite; `Required` en Full | `Copy`, `Adapt` o `Reference` cuando aplique; `Exclude` si la condicion no esta satisfecha. |
+| Skills metodologicas reutilizables | `Optional` en Minimal; `Conditional` en Lite; `Required` en Full | `Copy`, `Adapt`, `Reference` o `Exclude` segun aplicabilidad resuelta. |
+| Expedientes internos/historicos de Foundation | `Not habitual` en todos los modos | `Exclude` o `Reference`; nunca backlog, readiness o deuda propia del derivado. |
+| Tests, tools, workflows y runtime propios de Foundation | `Not habitual` en todos los modos | `Exclude` o `Reference` salvo decision futura explicita de baseline exportable. |
+
 ### 5.8 Foundation Upgrade Intake Interface
 
 Gobierna mejoras futuras desde Foundation hacia derivados.
@@ -228,6 +261,8 @@ Un futuro asistente o `Consolidation Agent` podra preparar propuestas, matrices 
 ```text
 Foundation baseline
   -> Exportable Baseline Registry
+  -> SDD Mode declaration / Undeclared fallback
+  -> Artifact Applicability Matrix
   -> Document Inheritance Matrix
   -> Derived Project Initial Dossier
   -> Foundation Origin Record
@@ -326,8 +361,8 @@ docs/capabilities/*/closure_handover.md
 - `specs/capabilities/foundation-derivation-and-project-initialization/spec-001-foundation-derivation-and-project-initialization.md`
 - `docs/capabilities/foundation-derivation-and-project-initialization/tasks.md`
 - `docs/capabilities/foundation-derivation-and-project-initialization/sdd_readiness_assessment.md`
-- `specs/spec-001-sdd-modes.md`
-- `specs/spec-001-sdd-modes.architecture.md`
+- `specs/capabilities/sdd-modes/spec-001-sdd-modes.md`
+- `specs/capabilities/sdd-modes/arch-001-sdd-modes.md`
 - `specs/capabilities/project-consolidation-and-closure/spec-001-sdd-project-consolidation-and-closure.md`
 - `specs/capabilities/project-consolidation-and-closure/arch-001-sdd-project-consolidation-and-closure.md`
 - `.github/instructions/sdd.instructions.md`

@@ -24,7 +24,7 @@ Jordi Quiroga
 
 ### Ultima actualizacion
 
-2026-08-01
+2026-08-20
 
 ---
 
@@ -298,33 +298,71 @@ La deuda residual de Foundation debe clasificarse en:
 
 | Artefacto | Tratamiento en derivado | Regla |
 | --- | --- | --- |
-| `README.md` | Regenerar | Debe describir el proyecto derivado, no la Foundation, conservando referencia metodologica. |
-| `AGENTS.md` | Copiar/adaptar | Debe conservar agentes metodologicos vigentes y eliminar contexto interno no aplicable si existe. |
-| `.github/agents/` | Copiar/adaptar | Solo definiciones canonicas vigentes; no agentes futuros no implementados. |
-| `.codex/agents/` | Regenerar/adaptar | Adaptadores segun agentes vigentes y entorno del derivado. |
-| `.github/instructions/` | Copiar/adaptar | Mantener instrucciones SDD vigentes y ajustar identidad del repo. |
-| `docs/templates/` | Copiar | Templates reutilizables sin instancias historicas. |
-| `specs/templates/` | Copiar | Templates reutilizables sin instancias historicas. |
-| `gates/` | Copiar | Gates conceptuales vigentes, no ejecuciones historicas. |
+| `README.md` | Regenerate | Debe describir el proyecto derivado, no la Foundation, conservando referencia metodologica. |
+| `AGENTS.md` | Copy / Adapt | Debe conservar agentes metodologicos vigentes y eliminar contexto interno no aplicable si existe. |
+| `.github/agents/` | Copy / Adapt | Solo definiciones canonicas vigentes; no agentes futuros no implementados. |
+| `.codex/agents/` | Regenerate / Adapt | Adaptadores segun agentes vigentes y entorno del derivado. |
+| `.github/instructions/` | Copy / Adapt | Mantener instrucciones SDD vigentes y ajustar identidad del repo. |
+| `docs/templates/` | Copy | Templates reutilizables sin instancias historicas. |
+| `specs/templates/` | Copy | Templates reutilizables sin instancias historicas. |
+| `gates/` | Copy | Gates conceptuales vigentes, no ejecuciones historicas. |
 | `tools/`, `workflows/`, `tests/`, `memory/` | Pendiente de fase futura autorizada | Solo si se clasifican como harness reutilizable y no contienen estado interno. |
-| `docs/project_brief.md` raiz de Foundation | Reiniciar | El derivado debe crear su propio Project Brief. |
-| `docs/context_refs.md` raiz de Foundation | Reiniciar | El derivado debe declarar fuentes propias y origen Foundation. |
-| `docs/tasks.md` raiz de Foundation | Reiniciar | El backlog debe empezar limpio. |
-| `docs/sdd_readiness_assessment.md` raiz de Foundation | Regenerar | Debe evaluar readiness inicial del derivado. |
-| `docs/capabilities/*` | Excluir por defecto | Expedientes internos de Foundation no se heredan. |
-| `specs/capabilities/*` | Referenciar o excluir | Specs de baseline pueden referenciarse; expedientes no se copian como trabajo activo. |
-| `specs/spec-001-sdd-modes.md` | Referenciar / copiar segun decision futura autorizada | Fuente normativa del modo; no se modifica. |
-| `specs/spec-001-sdd-modes.architecture.md` | Referenciar / copiar segun decision futura autorizada | Arquitectura del baseline SDD Modes; no se modifica. |
+| `docs/project_brief.md` raiz de Foundation | Reset | El derivado debe crear su propio Project Brief. |
+| `docs/context_refs.md` raiz de Foundation | Reset | El derivado debe declarar fuentes propias y origen Foundation. |
+| `docs/tasks.md` raiz de Foundation | Reset | El backlog debe empezar limpio. |
+| `docs/sdd_readiness_assessment.md` raiz de Foundation | Regenerate | Debe evaluar readiness inicial del derivado. |
+| `docs/capabilities/*` | Exclude por defecto | Expedientes internos de Foundation no se heredan. |
+| `specs/capabilities/*` | Reference o Exclude | Specs de baseline pueden referenciarse; expedientes no se copian como trabajo activo. |
+| `specs/capabilities/sdd-modes/spec-001-sdd-modes.md` | Reference / Copy segun decision futura autorizada | Fuente normativa del modo; no se modifica. |
+| `specs/capabilities/sdd-modes/arch-001-sdd-modes.md` | Reference / Copy segun decision futura autorizada | Arquitectura del baseline SDD Modes; no se modifica. |
 
 ### Estados de tratamiento
 
-- `Copiar`: trasladar como artefacto reutilizable sin cambiar semantica.
-- `Adaptar`: conservar estructura y ajustar identidad, rutas o contexto del derivado.
-- `Reiniciar`: crear una instancia limpia propia del derivado.
-- `Regenerar`: producir una nueva version basada en reglas y contexto inicial.
-- `Excluir`: no trasladar al derivado.
-- `Retener solo en Foundation`: conservar en Foundation como evidencia o expediente historico.
-- `Referenciar`: registrar como fuente de origen sin copiar contenido completo.
+- `Copy`: trasladar como artefacto reutilizable sin cambiar semantica.
+- `Adapt`: conservar estructura y ajustar identidad, rutas o contexto del derivado.
+- `Reset`: crear una instancia limpia propia del derivado.
+- `Regenerate`: producir una nueva version basada en reglas y contexto inicial.
+- `Exclude`: no trasladar al derivado.
+- `Reference`: registrar como fuente de origen sin copiar contenido completo.
+
+`Retener solo en Foundation` puede usarse como explicacion documental de un `Exclude` cuando el artefacto permanece en Foundation como evidencia o expediente historico, pero no es un tratamiento adicional de derivacion.
+
+### Contrato entre aplicabilidad y tratamiento
+
+La derivacion debe separar dos preguntas:
+
+```text
+Applicability
+= debe formar parte del harness derivado para este SDD Mode?
+
+Treatment
+= si forma parte, como se deriva?
+```
+
+El contrato logico minimo es:
+
+```text
+artifact/category x SDD Mode
+  -> applicability
+  -> resolution
+  -> derivation treatment
+```
+
+La `Artifact Applicability Matrix` de `SDD Modes` resuelve presencia esperada por familia metodologica. La `Document Inheritance Matrix` resuelve el tratamiento documental cuando la aplicabilidad requiere o permite materializacion.
+
+Reglas de resolucion:
+
+- `Required`: debe materializarse y debe recibir tratamiento `Copy`, `Adapt`, `Reset`, `Regenerate` o `Reference` segun su naturaleza documental.
+- `Conditional`: solo se materializa cuando exista condicion metodologica explicita satisfecha; si no se satisface, se resuelve como `Exclude` o `Reference`.
+- `Recommended`: se materializa por defecto; su omision requiere decision explicita y trazable.
+- `Optional`: no se materializa por defecto; solo se incluye mediante decision explicita.
+- `Not habitual`: no se materializa normalmente; se resuelve como `Exclude` o `Reference` segun corresponda.
+
+Presencia y profundidad permanecen separadas. Un artefacto `Required` para `SDD Minimal` puede tener profundidad reducida si conserva identidad, trazabilidad, decisiones minimas, riesgos criticos, checks aplicables y validacion humana.
+
+`Undeclared` se resuelve conservadoramente como `SDD Full` antes de aplicar tratamientos.
+
+Este contrato es documental y conceptual. No autoriza motor de reglas, scoring, runtime, registry tecnico, implementacion especifica para Project Initializer ni logica de un consumidor concreto.
 
 ---
 
@@ -466,6 +504,20 @@ Inicializacion documental minima:
 - evidencia de decision humana de modo;
 - referencia formal al baseline de origen;
 - riesgos, dependencias y decisiones abiertas.
+
+### Perfil de aplicabilidad por modo
+
+La inicializacion por modo debe aplicar primero la `Artifact Applicability Matrix` de `SDD Modes` y despues la matriz de herencia documental de esta capacidad.
+
+El perfil resultante debe permitir:
+
+```text
+artifact/category x SDD Mode
+-> applicability
+-> derivation treatment
+```
+
+La inicializacion no debe inventar semantica metodologica por ruta o tipo de archivo. Las rutas y tipos ayudan a aplicar el tratamiento, pero la presencia esperada deriva de la aplicabilidad normativa por modo.
 
 ---
 
@@ -610,6 +662,14 @@ El proceso debe definir limites de responsabilidad entre Foundation y proyecto d
 
 El proceso debe preparar futuras capacidades como `Consolidation Agent` y `Repository Physical Normalization` sin implementarlas.
 
+### FR-014
+
+El proceso debe conectar explicitamente `Artifact Applicability Matrix`, `Document Inheritance Matrix` y `Mode-Specific Initialization Profile`.
+
+### FR-015
+
+El proceso debe permitir resolver conceptualmente `artifact/category x SDD Mode -> applicability -> derivation treatment` sin implementar un motor de reglas ni trasladar esa semantica al Project Initializer.
+
 ---
 
 ## 19. Business Rules
@@ -742,8 +802,8 @@ La specification registra restricciones que impiden Development, Architecture ad
 
 - `docs/capabilities/foundation-derivation-and-project-initialization/project_brief.md`
 - `docs/capabilities/foundation-derivation-and-project-initialization/context_refs.md`
-- `specs/spec-001-sdd-modes.md`
-- `specs/spec-001-sdd-modes.architecture.md`
+- `specs/capabilities/sdd-modes/spec-001-sdd-modes.md`
+- `specs/capabilities/sdd-modes/arch-001-sdd-modes.md`
 - `specs/capabilities/project-consolidation-and-closure/spec-001-sdd-project-consolidation-and-closure.md`
 - `specs/capabilities/project-consolidation-and-closure/arch-001-sdd-project-consolidation-and-closure.md`
 - `docs/capabilities/project-consolidation-and-closure/closure_handover.md`

@@ -17,7 +17,7 @@ Development permanece `NOT AUTHORIZED`.
 | Capacidad | Foundation Derivation and Project Initialization |
 | SDD Mode | SDD Full |
 | Responsable | Jordi Quiroga |
-| Ultima actualizacion | 2026-08-01 |
+| Ultima actualizacion | 2026-08-20 |
 | Handover relacionado | `docs/capabilities/foundation-derivation-and-project-initialization/closure_handover.md` |
 
 ---
@@ -27,7 +27,7 @@ Development permanece `NOT AUTHORIZED`.
 | Debt ID | Descripcion | Tipo | Estado | Impacto | Bloquea cierre | Responsable | Punto de reentrada | Evidencia requerida para cerrar |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | FDR-RES-001 | Versionado formal del baseline exportable no definido. | Gobernanza | Aceptada | Medio | No | Jordi Quiroga | Fase futura autorizada de versionado/documentacion | Decision sobre tag, commit, release note, handover o artefacto dedicado. |
-| FDR-RES-002 | Matriz completa por ruta del paquete derivable no definida. | Documental | Aceptada | Alto para implementacion futura | No | Jordi Quiroga | Documentation posterior o Repository Physical Normalization | Matriz por ruta revisada y validada. |
+| FDR-RES-002 | Matriz completa por ruta del paquete derivable no definida; contrato normativo entre aplicabilidad por modo y tratamiento de derivacion ya incorporado. | Documental | Parcialmente resuelta / aceptada | Medio para implementacion futura | No | Jordi Quiroga | Documentation posterior o Repository Physical Normalization | Matriz por ruta revisada y validada; no reabrir la semantica de aplicabilidad salvo nueva decision humana. |
 | FDR-RES-003 | Representacion final del origen Foundation (`foundation_origin.yml` vs seccion en `context_refs.md`) pendiente. | Gobernanza | Aceptada | Medio | No | Jordi Quiroga | Fase futura autorizada previa a derivacion real | Decision documentada y trazada. |
 | FDR-RES-004 | `Derivation Readiness Gate` real no definido. | Validacion | Aceptada | Alto para aplicacion real | No | Jordi Quiroga | Futura capacidad/gate de derivacion | Gate documentado y revisado antes de usarlo en repositorio real. |
 | FDR-RES-005 | Falta validacion empirica con primer repositorio derivado real. | Empirica | Aceptada | Medio | No | Jordi Quiroga | Primer caso real de derivacion | Evidencia de aplicacion y QA Gate correspondiente. |
@@ -55,3 +55,16 @@ Development permanece `NOT AUTHORIZED`.
 - Ninguna deuda residual autoriza Development.
 - Ninguna deuda residual autoriza scripts, workflows, asistentes reales ni reorganizacion fisica.
 - Las capacidades futuras deben abrirse como capacidades SDD separadas o fases futuras explicitamente autorizadas.
+
+---
+
+## Reentrada correctiva 2026-08-20
+
+La reentrada correctiva acotada resolvio la parte transversal de `FDR-RES-002` que impedia conectar proporcionalidad por `SDD Mode` con tratamiento de derivacion.
+
+Resultado:
+
+- `SDD Modes` incorpora la `Artifact Applicability Matrix` normativa.
+- `Foundation Derivation and Project Initialization` conecta aplicabilidad, matriz de herencia y perfil de inicializacion por modo.
+- La matriz completa por ruta sigue pendiente para Documentation posterior o `Repository Physical Normalization`.
+- `FDR-RES-005` permanece abierto hasta validacion empirica con un consumidor real.
