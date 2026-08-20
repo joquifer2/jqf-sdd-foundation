@@ -189,6 +189,7 @@ La specification define reglas y criterios. No ejecuta derivacion, no crea tools
 | Decision humana de derivacion | Autorizacion para crear un repositorio derivado. |
 | Nombre e identidad del proyecto derivado | Nombre, owner, repositorio destino y proposito inicial. |
 | SDD Mode inicial propuesto | `SDD Minimal`, `SDD Lite` o `SDD Full`, con justificacion. |
+| Pre-derivation context | Contexto disponible antes de materializar el repositorio derivado, usado para resolver aplicabilidad condicional cuando el Project Brief del derivado todavia no existe. |
 | Contexto inicial del proyecto | Fuentes de negocio, cliente, tecnicas o metodologicas necesarias. |
 | Version/base de Foundation | Referencia minima al estado de Foundation usado como origen. |
 | Restricciones iniciales | Limites de alcance, tecnologia, cumplimiento, seguridad, integraciones o gobierno. |
@@ -218,6 +219,26 @@ Repositorio metodologico que define baseline, templates, gates, agentes metodolo
 ### Proyecto derivado
 
 Repositorio nuevo o existente que adopta la metodologia Foundation como punto de partida, pero mantiene contexto, decisiones, backlog, readiness y evolucion propios.
+
+### Pre-derivation context
+
+Contexto minimo disponible antes de crear o materializar el repositorio derivado. Durante un flujo de inicializacion sobre workspace vacio, por ejemplo `jqf init --plan`, el Project Brief del derivado todavia no existe; por tanto, la resolucion de familias `Conditional` no puede depender exclusivamente de ese artefacto futuro.
+
+El pre-derivation context no es un nuevo artefacto obligatorio ni un framework adicional. Puede proceder de un handoff, bootstrap review, decision humana o contexto equivalente ya existente, y puede incluir, cuando exista:
+
+- SDD Mode aprobado;
+- justificacion del modo;
+- objetivo y alcance;
+- naturaleza greenfield, legacy o `Undeclared`;
+- fase actual y siguiente hito;
+- restricciones;
+- riesgos relevantes;
+- produccion, compliance, security o privacy;
+- integraciones y criticidad;
+- impacto operacional y reversibilidad;
+- necesidades metodologicas previstas.
+
+El proyecto derivado debe persistir posteriormente la decision y el contexto relevante en el artefacto canonico correspondiente, normalmente su Project Brief, Context References, Derivation Plan o handoff inicial segun defina la fase autorizada.
 
 ### Baseline exportable
 
@@ -361,6 +382,22 @@ Reglas de resolucion:
 Presencia y profundidad permanecen separadas. Un artefacto `Required` para `SDD Minimal` puede tener profundidad reducida si conserva identidad, trazabilidad, decisiones minimas, riesgos criticos, checks aplicables y validacion humana.
 
 `Undeclared` se resuelve conservadoramente como `SDD Full` antes de aplicar tratamientos.
+
+Para familias `Conditional`, Foundation define el criterio normativo por familia, el pre-derivation context o project context aporta los hechos, y el humano o agente de bootstrap aplica juicio para resolver `true`, `false` o `unresolved`. Project Initializer solo transporta y ejecuta la resolucion; no calcula ni inventa semantica metodologica.
+
+La decision condicional debe conservar trazabilidad minima proporcional. Debe poder registrar:
+
+```text
+family
+resolution: true | false | unresolved
+condition_evidence
+source
+decided_by
+date/reference
+impact
+```
+
+No se requiere un archivo independiente cuando esta informacion pueda persistirse en el plan, handoff o artefacto canonico ya existente.
 
 Este contrato es documental y conceptual. No autoriza motor de reglas, scoring, runtime, registry tecnico, implementacion especifica para Project Initializer ni logica de un consumidor concreto.
 
@@ -514,10 +551,13 @@ El perfil resultante debe permitir:
 ```text
 artifact/category x SDD Mode
 -> applicability
+-> resolution
 -> derivation treatment
 ```
 
 La inicializacion no debe inventar semantica metodologica por ruta o tipo de archivo. Las rutas y tipos ayudan a aplicar el tratamiento, pero la presencia esperada deriva de la aplicabilidad normativa por modo.
+
+Cuando el Project Brief del derivado aun no existe, la inicializacion puede usar el pre-derivation context para resolver la aplicabilidad condicional. Esa resolucion debe persistirse posteriormente en el artefacto canonico correspondiente del proyecto derivado.
 
 ---
 

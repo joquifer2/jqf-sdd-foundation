@@ -68,3 +68,11 @@ Resultado:
 - `Foundation Derivation and Project Initialization` conecta aplicabilidad, matriz de herencia y perfil de inicializacion por modo.
 - La matriz completa por ruta sigue pendiente para Documentation posterior o `Repository Physical Normalization`.
 - `FDR-RES-005` permanece abierto hasta validacion empirica con un consumidor real.
+
+### Precision normativa derivada de FDR-RES-005
+
+La validacion empirica durante `FDR-RES-005` revelo una precision normativa faltante: las familias `Conditional` `methodologicalAgents`, `reusableSkills` y `methodologicalGates` necesitaban criterios familiares concretos para resolverse como `true`, `false` o `unresolved` antes de aplicar tratamiento de derivacion.
+
+Esta precision no reabre la matriz completa por ruta de `FDR-RES-002`. La semantica general `applicability -> resolution -> treatment` permanece valida y la separacion entre presencia esperada y tratamiento documental se conserva.
+
+Queda pendiente verificar empiricamente que Project Initializer y el caso consumidor real consumen estas decisiones familiares sin introducir logica especifica del consumidor, scoring, motor de reglas, registry, runtime ni seleccion individual por archivo.

@@ -211,6 +211,20 @@ Semantica de aplicabilidad:
 - `Optional`: no se materializa por defecto; puede incluirse mediante decision explicita.
 - `Not habitual`: no se materializa normalmente; se resuelve como `Exclude` o `Reference` segun corresponda.
 
+##### Conditional Applicability Criteria by Family
+
+La resolucion de una familia `Conditional` debe basarse en el horizonte inicial conocido del proyecto, no en preferencias genericas ni en una decision por archivo individual. La ausencia concreta de evidencia suficiente conserva `unresolved` como estado legitimo.
+
+| Familia metodologica | `true` | `false` | `unresolved` |
+| --- | --- | --- | --- |
+| Catalogo de agentes metodologicos | El horizonte inicial del proyecto requiere al menos una responsabilidad metodologica especializada del catalogo y se ha decidido ejecutar esa responsabilidad mediante agente, por ejemplo migracion legacy, architecture, review formal, consolidation, QA/gate u otra responsabilidad metodologica aplicable. | Las responsabilidades metodologicas previstas pueden ejecutarse suficientemente mediante juicio humano, instrucciones, artefactos y checks del modo sin materializar el catalogo de agentes. | Las necesidades metodologicas o el modelo de ejecucion todavia no estan suficientemente definidos para decidirlo. |
+| Skills metodologicas reutilizables | Existe al menos una capacidad metodologica reutilizable identificada como necesaria para el horizonte inicial y su empaquetado como skill aporta reutilizacion real frente a resolverla solo mediante instrucciones o templates. | Las necesidades conocidas se resuelven suficientemente mediante instrucciones, templates y juicio humano o agente sin skills metodologicas empaquetadas. | Las capacidades metodologicas necesarias todavia no estan suficientemente determinadas. |
+| Gates metodologicos reutilizables | El horizonte inicial conocido contiene una transicion de fase, preparacion para Development, cierre, cambio de alcance relevante, riesgo critico u otro hito que requiere una decision formal de avance, bloqueo o readiness. | El horizonte inicial solo requiere checks ligeros consolidados y no existe ningun disparador conocido que requiera gate formal. | Fase, siguiente hito, riesgo relevante o necesidad de autorizacion formal todavia no estan suficientemente definidos. |
+
+Mayor riesgo no implica automaticamente materializar agentes metodologicos; puede implicar mas control, review humana, checks o gates segun corresponda. Las reglas vigentes sobre checks ligeros y gates formales permanecen aplicables.
+
+`reusableSkills = true` no selecciona todavia que skills concretas se materializan. La seleccion de miembros dentro de cada familia metodologica es una decision posterior distinta de la aplicabilidad de la familia.
+
 `Undeclared` conserva fallback conservador equivalente a `SDD Full` y no constituye un cuarto modo.
 
 Debe mantenerse un unico catalogo metodologico. La matriz no autoriza harnesses separados por modo, variantes duplicadas de agentes, runtime, scoring, reglas ejecutables ni implementacion de inicializadores.
