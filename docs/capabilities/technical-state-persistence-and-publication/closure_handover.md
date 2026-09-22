@@ -6,7 +6,7 @@
 | --- | --- |
 | Capacidad | SDD Technical State Persistence & Publication |
 | SDD Mode | Undeclared — baseline conservador equivalente a SDD Full |
-| Estado propuesto | Consolidation — ready for Closure Gate |
+| Estado final | Closed |
 | Responsable | Jordi Quiroga |
 | Fecha | 2026-09-22 |
 | Specification | SPEC-001 — Approved |
@@ -53,7 +53,8 @@ La Foundation incorpora una policy transversal minima para decidir cuando persis
 | Human Development authorization T-010 | AUTHORIZED | 2026-09-22 |
 | Validation T-012 | PASS | 2026-09-22 |
 | Consolidation Readiness T-014 | PASS | 2026-09-22 |
-| Closure Gate | PASS — pending human closure approval | 2026-09-22 |
+| Closure Gate | PASS | 2026-09-22 |
+| Human closure approval | APPROVED — Jordi Quiroga | 2026-09-22 |
 
 ## Deuda residual
 
@@ -74,7 +75,7 @@ TSPP-DEBT-001 — adaptacion/compatibilidad de JQF Project Initializer. No bloqu
 
 ## Closure Gate
 
-**Decision: PASS — pending human closure approval.**
+**Decision: PASS.**
 
 Comprobaciones:
 
@@ -87,7 +88,7 @@ Comprobaciones:
 - evidencia preservada: PASS;
 - ausencia de Development/runtime/tools/workflows/agentes no autorizados: PASS.
 
-Estado final permitido por el gate: `Closed`, condicionado únicamente a aprobación humana explícita.
+Estado final: `Closed`. Aprobación humana explícita otorgada por Jordi Quiroga el 2026-09-22.
 
 Baseline cerrado propuesto: `.github/instructions/sdd.instructions.md`, `docs/glosario_terminos.md`, `.github/agents/implementation.agent.md`.
 
@@ -97,4 +98,4 @@ Restricciones activas: autorización Git independiente; sin GitHub Workflow Agen
 
 ## Siguiente accion valida
 
-Obtener aprobación humana explícita para marcar la capability como `Closed`. La adaptación del Initializer se gestiona separadamente.
+Capability cerrada. Reentrada únicamente ante la unidad downstream de JQF Project Initializer o nueva evidencia que justifique revisar la policy.
