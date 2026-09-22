@@ -75,7 +75,7 @@ El plan no autoriza Development. Su objetivo es concretar qué superficies neces
 | T-005 | Definir deltas de Reviewer, QA Gate y Consolidation únicamente para las superficies clasificadas `required` por T-001. | Development prep | Tasks Planner / Documentation | T-001; T-002 | Cada delta tiene una necesidad verificable; superficies innecesarias quedan explícitamente `no-change`. | Completed |
 | T-006 | Preparar casos de validación documentales de la policy. | Validation prep | QA Gate Agent | T-002 a T-005 | Casos cubren al menos: working state no listo; validated increment candidato a commit; commit local suficiente; necesidad de push por handoff remoto; prohibición de publicación prematura; checkpoint ya suficiente sin commit redundante. | Completed |
 | T-007 | Verificar trazabilidad SPEC → ARCH → delta propuesto → casos de validación. | Review | Reviewer Agent | T-002 a T-006 | Todos los FR/BR/AC materiales tienen cobertura y no aparece alcance nuevo. | Completed |
-| T-008 | Preparar el paquete de Development Readiness con el conjunto exacto de archivos a modificar, validaciones y exclusiones. | Governance | Documentation Agent | T-007 | El paquete permite decidir Development sin diseñar arquitectura adicional y declara explícitamente `NOT AUTHORIZED` hasta gate/decisión. | Planned |
+| T-008 | Preparar el paquete de Development Readiness con el conjunto exacto de archivos a modificar, validaciones y exclusiones. | Governance | Documentation Agent | T-007 | El paquete permite decidir Development sin diseñar arquitectura adicional y declara explícitamente `NOT AUTHORIZED` hasta gate/decisión. | Completed |
 | T-009 | Evaluar Development Readiness. | Validation | QA Gate Agent | T-008 | Resultado `Pass`, `Pass with minor conditions`, `Fail — changes required` o `Blocked`; no equivale por sí solo a ejecución. | Planned |
 | T-010 | Decidir autorización humana de Development si T-009 lo permite. | Governance | Jordi Quiroga | T-009 | Existe decisión explícita de autorizar o no Development y queda acotado el incremento autorizado. | Planned |
 | T-011 | Implementar el incremento Foundation autorizado. | Development | Implementation Agent | T-010 | Solo se modifican superficies autorizadas; no se materializa GitHub Workflow Agent ni automatización; autorización de commit/push permanece separada. | Not authorized |
@@ -200,7 +200,7 @@ T-002 y T-003 dejan cerrado el núcleo normativo previsto sin crear una nueva so
 
 ---
 
-## 8. T-004 / T-005 — Deltas de agentes cerrados
+## 9. T-004 / T-005 — Deltas de agentes cerrados
 
 Estos resultados permanecen **proposal-only** y no modifican todavía agentes ni adaptadores.
 
@@ -251,7 +251,7 @@ No se prevé modificación de ningún otro agente o adaptador en este incremento
 
 ---
 
-## 8. Casos mínimos de validación previstos
+## 10. Casos mínimos de validación previstos
 
 | Caso | Estado esperado |
 | --- | --- |
@@ -265,7 +265,7 @@ No se prevé modificación de ningún otro agente o adaptador en este incremento
 
 ---
 
-## 9. T-006 — Casos de validación preparados
+## 11. T-006 — Casos de validación preparados
 
 Los siguientes escenarios son documentales y reutilizables en Validation posterior. No ejecutan operaciones Git.
 
@@ -296,7 +296,7 @@ La futura implementación pasa esta validación si:
 
 ---
 
-## 10. T-007 — Traceability Review
+## 12. T-007 — Traceability Review
 
 **Decision: PASS.**
 
@@ -335,7 +335,7 @@ El propio task plan conserva numeración repetida de secciones (`## 8` y `## 9`)
 
 ---
 
-## 9. Riesgos de planificación
+## 13. Riesgos de planificación
 
 - Convertir candidatos condicionales en cambios obligatorios.
 - Duplicar la policy entre instrucciones y agentes.
@@ -348,6 +348,6 @@ Mitigación transversal: T-001 debe reducir el scope antes de Development Readin
 
 ---
 
-## 11. Siguiente paso
+## 14. Siguiente paso
 
-Preparar T-008 — paquete de Development Readiness. Development permanece `NOT AUTHORIZED`.
+Ejecutar T-009 — Development Readiness QA Gate sobre `development_readiness.md`. Development permanece `NOT AUTHORIZED`.
