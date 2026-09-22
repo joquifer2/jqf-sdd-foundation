@@ -183,7 +183,42 @@ La unidad normativa general para alcance, tareas, checks, evidencia y gates es `
 
 `Implementation Wave` queda reservado como etiqueta opcional para incrementos de ejecucion dentro de Development; no es el concepto normativo principal de SDD Modes.
 
-## 9. Backlog Governance
+## 9. Technical State Persistence & Publication
+
+La persistencia del estado tecnico se gobierna sobre la unidad normativa `incremento gobernado`.
+
+Principio: **persistir por significado y publicar por necesidad de recuperabilidad o sincronizacion; nunca por frecuencia temporal ni por numero de cambios**.
+
+Estados de persistencia:
+
+- `Working State`: trabajo en curso que puede permanecer local;
+- `Validated Increment`: incremento coherente y suficientemente validado para su fase, riesgo y `SDD Mode`;
+- `Committed Checkpoint`: `Validated Increment` persistido en Git porque aporta valor de recuperabilidad o trazabilidad;
+- `Remotely Recoverable State`: `Committed Checkpoint` publicado y razonablemente recuperable por otra superficie o participante autorizado.
+
+Evaluar si procede un `Committed Checkpoint` cuando:
+
+- se complete una unidad coherente y suficientemente validada;
+- vaya a iniciarse una unidad materialmente distinta;
+- un gate, handoff o transicion haga relevante la recuperabilidad del estado.
+
+Un gate es un punto de evaluacion, no un trigger automatico de commit. No crear checkpoints redundantes cuando el estado relevante ya este suficientemente persistido.
+
+Evaluar push o sincronizacion de forma independiente al commit. Considerarlo cuando otra superficie o participante necesite recuperar el checkpoint remoto para supervision, handoff, colaboracion o continuacion del trabajo.
+
+En routing hibrido, si ChatGPT u otra superficie depende del repositorio remoto, la vigencia del estado remoto forma parte explicita de la decision de publicacion.
+
+La necesidad de observabilidad remota no justifica persistir ni publicar trabajo incoherente o insuficientemente validado.
+
+`commit ≠ push ≠ PR ≠ release`.
+
+`SDD Minimal`, `SDD Lite` y `SDD Full` comparten esta misma politica. El modo solo ajusta proporcionalmente intensidad de validacion, checks y evidencia; no cambia la semantica de persistencia o publicacion.
+
+La conclusion metodologica de que procede persistir o publicar no equivale a autorizacion para ejecutar commit o push. Deben respetarse siempre las autorizaciones vigentes de la superficie, agente o decision humana aplicable.
+
+Esta politica no introduce branching strategy, PR workflow, releases, CI/CD, convenciones de mensajes de commit ni automatizacion.
+
+## 10. Backlog Governance
 
 `docs/tasks.md` es un artefacto auxiliar de gobernanza.
 
@@ -213,7 +248,7 @@ Antes de marcar una tarea como completada, verificar que el criterio de cierre s
 
 Si una tarea pierde relevancia o deja de aplicar, debe marcarse como descartada en lugar de eliminarse silenciosamente.
 
-## 10. Context Governance
+## 11. Context Governance
 
 `docs/context_refs.md` actúa como el mapa oficial de referencias de contexto del proyecto.
 
@@ -239,9 +274,9 @@ Si una tarea pierde relevancia o deja de aplicar, debe marcarse como descartada 
 
 - Regla explícita: Antes de generar cualquier Project Brief, Specification, Architecture o Tasks, comprobar la existencia de `docs/context_refs.md` y actuar conforme a su contenido.
 
-## 11. SDD Harness
+## 12. SDD Harness
 
-### 11.1 Rol del SDD Harness
+### 12.1 Rol del SDD Harness
 
 El SDD Harness es el sistema de gobierno que define cómo se diseñan, documentan, revisan, validan y evolucionan las capacidades en repositorios basados en jqf-sdd-foundation.
 
@@ -262,7 +297,7 @@ Principios fundamentales:
 
 ---
 
-### 11.2 Agentes metodológicos
+### 12.2 Agentes metodológicos
 
 El SDD Harness utiliza agentes metodológicos especializados para gobernar la evolución del repositorio.
 
@@ -290,7 +325,7 @@ La definición completa de cada agente se encuentra en:
 
 ---
 
-### 11.3 Artefactos por fase
+### 12.3 Artefactos por fase
 
 #### Specification
 
@@ -352,7 +387,7 @@ Estado de una capacidad cerrada tras consolidacion y aprobacion. El contexto fut
 
 ---
 
-### 11.4 Gates
+### 12.4 Gates
 
 Los gates son puntos de control utilizados para determinar si una capacidad puede avanzar a la siguiente fase.
 
@@ -384,7 +419,7 @@ Ambos gates son conceptuales/documentales salvo que una fase futura autorice aut
 
 ---
 
-### 11.5 Precedencia documental
+### 12.5 Precedencia documental
 
 Cuando existan conflictos entre documentos, prevalece el artefacto de mayor nivel.
 
@@ -412,7 +447,7 @@ Si se detecta una contradicción, debe resolverse actualizando el artefacto de m
 
 ---
 
-### 11.6 Definition of Done del SDD Harness
+### 12.6 Definition of Done del SDD Harness
 
 Una capacidad puede considerarse suficientemente madura dentro del SDD Harness cuando:
 
@@ -429,7 +464,7 @@ Hasta que estos criterios se cumplan, la capacidad no debe considerarse lista pa
 
 ---
 
-### 11.7 Relación con Harness Engineering
+### 12.7 Relación con Harness Engineering
 
 El ecosistema "Harness" describe un conjunto de capacidades y responsabilidades relacionadas con la gobernanza, la ingeniería de procesos y la operación de políticas.
 
