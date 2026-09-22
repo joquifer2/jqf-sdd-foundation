@@ -16,7 +16,7 @@ SDD Technical State Persistence & Publication — Conceptual Architecture
 
 ### Status
 
-Draft
+Approved
 
 ### Owner
 
