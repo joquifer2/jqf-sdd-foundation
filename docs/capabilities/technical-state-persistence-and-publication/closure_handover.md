@@ -14,7 +14,7 @@
 
 ## Resumen final
 
-La Foundation incorpora una policy transversal minima para decidir cuando persistir un incremento validado como checkpoint Git y cuando publicarlo remotamente. La implementacion y VAL-001..VAL-010 han pasado. La adaptacion del JQF Project Initializer queda separada como deuda downstream no bloqueante.
+La Foundation incorpora una policy transversal minima para decidir cuando persistir un incremento validado como checkpoint Git y cuando publicarlo remotamente. La implementacion y VAL-001..VAL-010 han pasado. La compatibilidad downstream del JQF Project Initializer fue validada posteriormente sin requerir cambios de logica productiva.
 
 ## Baseline canonico
 
@@ -41,7 +41,7 @@ La Foundation incorpora una policy transversal minima para decidir cuando persis
 - Commit, push, PR y release permanecen independientes.
 - La procedencia metodologica no concede autorizacion de ejecucion.
 - No se materializa GitHub Workflow Agent ni automatizacion.
-- Initializer requiere adaptacion separada; proyectos existentes no migran automaticamente.
+- La compatibilidad del Initializer queda validada mediante prueba de derivacion; proyectos existentes no migran automaticamente.
 
 ## Gates y aprobaciones
 
@@ -58,13 +58,12 @@ La Foundation incorpora una policy transversal minima para decidir cuando persis
 
 ## Deuda residual
 
-TSPP-DEBT-001 — adaptacion/compatibilidad de JQF Project Initializer. No bloquea el cierre Foundation porque pertenece a una unidad downstream separada y tiene punto de reentrada definido.
+TSPP-DEBT-001 — **Resuelta**. Compatibilidad del JQF Project Initializer validada en `5bcacccf9b2adafa08d668c0276c80ba24d8375e`; suite `npm test`: **76 pass / 0 fail / 0 skipped / 0 cancelled**. No fueron necesarios cambios de logica productiva.
 
 ## Puntos de reentrada
 
 | Disparador | Agente recomendado | Contexto | Fase |
 | --- | --- | --- | --- |
-| Autorizar actualizacion del Initializer a la nueva baseline | Reviewer / Architect segun delta y despues Implementation | T-013 + baseline Foundation vigente | Unidad downstream separada |
 | Evidencia futura de insuficiencia de la policy | Specification Agent | SPEC/ARCH cerradas + evidencia empirica nueva | Specification / nueva capability |
 
 ## Restricciones activas
@@ -92,10 +91,10 @@ Estado final: `Closed`. Aprobación humana explícita otorgada por Jordi Quiroga
 
 Baseline cerrado propuesto: `.github/instructions/sdd.instructions.md`, `docs/glosario_terminos.md`, `.github/agents/implementation.agent.md`.
 
-Deuda residual: `TSPP-DEBT-001`, no bloqueante, owner Jordi Quiroga, reentrada en unidad downstream de JQF Project Initializer.
+Deuda residual: ninguna abierta para esta capability. `TSPP-DEBT-001` fue resuelta mediante validacion downstream del JQF Project Initializer.
 
 Restricciones activas: autorización Git independiente; sin GitHub Workflow Agent/automatización/estrategia Git general; sin migración automática de proyectos existentes.
 
 ## Siguiente accion valida
 
-Capability cerrada. Reentrada únicamente ante la unidad downstream de JQF Project Initializer o nueva evidencia que justifique revisar la policy.
+Capability cerrada y deuda downstream resuelta. Reentrada únicamente ante nueva evidencia que justifique revisar la policy o ante una futura necesidad explicita de migrar proyectos derivados existentes.
