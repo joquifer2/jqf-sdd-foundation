@@ -80,8 +80,8 @@ El plan no autoriza Development. Su objetivo es concretar qué superficies neces
 | T-010 | Decidir autorización humana de Development si T-009 lo permite. | Governance | Jordi Quiroga | T-009 | Existe decisión explícita de autorizar o no Development y queda acotado el incremento autorizado. | Completed — AUTHORIZED |
 | T-011 | Implementar el incremento Foundation autorizado. | Development | Implementation Agent | T-010 | Solo se modifican superficies autorizadas; no se materializa GitHub Workflow Agent ni automatización; autorización de commit/push permanece separada. | Completed |
 | T-012 | Validar el incremento implementado contra los casos de T-006 y SPEC/ARCH. | Validation | QA Gate Agent | T-011 | Casos aplicables pasan y no se detecta regresión metodológica ni sobreingeniería. | Completed — PASS |
-| T-013 | Evaluar impacto downstream sobre proyectos derivados y JQF Project Initializer. | Validation / Governance | Reviewer + QA | T-012 | Impacto clasificado como `sin impacto`, `requiere validación de compatibilidad` o `requiere adaptación`; no se modifica Initializer sin nueva autorización. | Ready for evaluation |
-| T-014 | Preparar Review/Consolidation y cierre de la capability. | Review / Governance | Reviewer + Consolidation | T-012; T-013 | Baseline, evidencia, deuda residual y reentrada quedan identificados; cualquier trabajo downstream se separa de esta capability cuando corresponda. | Not authorized |
+| T-013 | Evaluar impacto downstream sobre proyectos derivados y JQF Project Initializer. | Validation / Governance | Reviewer + QA | T-012 | Impacto clasificado como `sin impacto`, `requiere validación de compatibilidad` o `requiere adaptación`; no se modifica Initializer sin nueva autorización. | Completed — requiere adaptación |
+| T-014 | Preparar Review/Consolidation y cierre de la capability. | Review / Governance | Reviewer + Consolidation | T-012; T-013 | Baseline, evidencia, deuda residual y reentrada quedan identificados; cualquier trabajo downstream se separa de esta capability cuando corresponda. | Ready for review |
 
 ---
 
@@ -406,6 +406,40 @@ Checks transversales:
 No se identifican condiciones menores ni bloqueos para iniciar T-013.
 
 
+### T-013 — Downstream Impact Assessment
+
+**Decision: `requiere adaptación` para JQF Project Initializer.**
+
+Evidencia revisada en `joquifer2/sdd-project-initializer`:
+
+- el Initializer consume una baseline local de `jqf-sdd-foundation`;
+- `.github/instructions/sdd.instructions.md` pertenece a la familia `sddInstructions` y es requerida en todos los SDD Modes;
+- `src/derivation-executor/content.cjs` adapta/materializa explícitamente las SDD instructions de Foundation en los proyectos derivados;
+- `.github/agents/implementation.agent.md` se materializa cuando la familia `methodologicalAgents` aplica;
+- `docs/glosario_terminos.md` pertenece a `glossaryAndAuxiliary`, cuya materialización depende del SDD Mode;
+- la copia vigente del Initializer todavía no contiene la nueva policy, las cinco nuevas definiciones ni el delta del Implementation Agent.
+
+Clasificación:
+
+| Downstream | Impact | Rationale |
+| --- | --- | --- |
+| JQF Project Initializer | **requiere adaptación** | Su función es derivar artefactos desde Foundation; para nuevas derivaciones debe poder consumir/materializar el nuevo baseline sin perder la policy. |
+| Proyectos derivados futuros creados tras adaptar/actualizar baseline | **requiere validación de compatibilidad** | Deben heredar la policy según familias/materialización y SDD Mode. |
+| Proyectos derivados ya existentes | **sin migración automática** | No se justifica modificar retrospectivamente repositorios existentes dentro de esta capability; cualquier adopción debe tratarse como incremento separado. |
+
+Adaptación mínima esperada del Initializer en una unidad downstream separada:
+
+1. actualizar/consumir el baseline Foundation que contiene la nueva policy;
+2. comprobar que `buildSddInstructions` preserva íntegramente la sección `Technical State Persistence & Publication` en derivaciones;
+3. comprobar que, cuando `methodologicalAgents` se materializa, el Implementation Agent derivado conserva la nueva responsabilidad;
+4. comprobar que, cuando `glossaryAndAuxiliary` aplica, se materializan las cinco definiciones;
+5. añadir/ajustar únicamente tests de derivación necesarios para demostrar compatibilidad.
+
+No se identifica necesidad de cambiar el modelo de familias, añadir una nueva familia, introducir runtime o crear un mecanismo especial de sincronización.
+
+**No se modifica JQF Project Initializer en T-013.** La adaptación requiere su propia autorización/unidad de trabajo downstream.
+
+
 ## 14. Siguiente paso
 
-T-013 — evaluar impacto downstream sobre proyectos derivados y JQF Project Initializer. No se autoriza todavía ninguna adaptación downstream.
+T-014 — preparar Review/Consolidation y cierre de esta capability Foundation. Registrar la adaptación del JQF Project Initializer como trabajo downstream separado; no ejecutarla dentro de esta capability.
