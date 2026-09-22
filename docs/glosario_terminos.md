@@ -122,6 +122,47 @@ Es la unidad normativa general para SDD Modes. `Implementation Wave` queda reser
 
 ---
 
+
+### Working State
+
+Estado tecnico en curso de un incremento gobernado.
+
+Puede permanecer local y no constituye por si mismo un checkpoint recuperable.
+
+---
+
+### Validated Increment
+
+Incremento gobernado suficientemente coherente y validado para su fase, riesgo y `SDD Mode` como para evaluar su persistencia.
+
+No implica automaticamente commit.
+
+---
+
+### Committed Checkpoint
+
+Estado tecnico de un `Validated Increment` persistido mediante Git porque aporta valor de recuperabilidad o trazabilidad.
+
+No implica automaticamente push, PR ni release.
+
+---
+
+### Remotely Recoverable State
+
+`Committed Checkpoint` publicado en el repositorio remoto y razonablemente recuperable por otra superficie o participante autorizado.
+
+No sustituye ni presume el `Working State` local posterior.
+
+---
+
+### Technical State Persistence & Publication
+
+Politica SDD transversal que gobierna cuando evaluar la persistencia de un incremento validado y cuando evaluar su publicacion remota.
+
+Se rige por significado, recuperabilidad y sincronizacion, no por cadencia temporal. Mantiene separadas la procedencia metodologica y la autorizacion de ejecucion.
+
+---
+
 ### Baseline canonico
 
 Conjunto minimo de artefactos vigentes que representan el estado aprobado de la Foundation o de una capacidad despues de una consolidacion.
