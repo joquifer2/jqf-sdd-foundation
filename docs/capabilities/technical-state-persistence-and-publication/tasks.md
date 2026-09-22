@@ -71,8 +71,8 @@ El plan no autoriza Development. Su objetivo es concretar qué superficies neces
 | T-001 | Realizar impact check final de las superficies candidatas de ARCH-001 y clasificar cada una como `required`, `conditional` o `no-change`. | Planning / Review | Tasks Planner + Reviewer | SPEC-001; ARCH-001 | Existe una lista mínima justificada; ningún archivo se incluye por defecto. | Completed |
 | T-002 | Definir el delta exacto de la sección normativa que deberá incorporarse a `.github/instructions/sdd.instructions.md`. | Documentation prep | Documentation Agent | T-001 | El delta cubre State Model, Persistence Decision Point, Publication Decision Point, routing híbrido, PCD y Authorization Boundary sin duplicar SPEC/ARCH. | Completed |
 | T-003 | Definir el delta terminológico de `docs/glosario_terminos.md`. | Documentation prep | Documentation Agent | T-001 | Solo se incorporan conceptos estabilizados necesarios para comprensión transversal. | Completed |
-| T-004 | Definir el delta mínimo del Implementation Agent y su adaptador Codex, solo si T-001 confirma necesidad. | Development prep | Tasks Planner / Documentation | T-001; T-002 | Queda especificado cómo aplicar `should persist/publish` frente a `may execute`, preservando autorización explícita y sin duplicar policy. | Planned |
-| T-005 | Definir deltas de Reviewer, QA Gate y Consolidation únicamente para las superficies clasificadas `required` por T-001. | Development prep | Tasks Planner / Documentation | T-001; T-002 | Cada delta tiene una necesidad verificable; superficies innecesarias quedan explícitamente `no-change`. | Planned |
+| T-004 | Definir el delta mínimo del Implementation Agent y su adaptador Codex, solo si T-001 confirma necesidad. | Development prep | Tasks Planner / Documentation | T-001; T-002 | Queda especificado cómo aplicar `should persist/publish` frente a `may execute`, preservando autorización explícita y sin duplicar policy. | Completed |
+| T-005 | Definir deltas de Reviewer, QA Gate y Consolidation únicamente para las superficies clasificadas `required` por T-001. | Development prep | Tasks Planner / Documentation | T-001; T-002 | Cada delta tiene una necesidad verificable; superficies innecesarias quedan explícitamente `no-change`. | Completed |
 | T-006 | Preparar casos de validación documentales de la policy. | Validation prep | QA Gate Agent | T-002 a T-005 | Casos cubren al menos: working state no listo; validated increment candidato a commit; commit local suficiente; necesidad de push por handoff remoto; prohibición de publicación prematura; checkpoint ya suficiente sin commit redundante. | Planned |
 | T-007 | Verificar trazabilidad SPEC → ARCH → delta propuesto → casos de validación. | Review | Reviewer Agent | T-002 a T-006 | Todos los FR/BR/AC materiales tienen cobertura y no aparece alcance nuevo. | Planned |
 | T-008 | Preparar el paquete de Development Readiness con el conjunto exacto de archivos a modificar, validaciones y exclusiones. | Governance | Documentation Agent | T-007 | El paquete permite decidir Development sin diseñar arquitectura adicional y declara explícitamente `NOT AUTHORIZED` hasta gate/decisión. | Planned |
@@ -197,6 +197,57 @@ No añadir entradas separadas para `commit`, `push`, `PR` o `release`: son conce
 ### Resultado
 
 T-002 y T-003 dejan cerrado el núcleo normativo previsto sin crear una nueva source of truth. La futura implementación deberá mantener `sdd.instructions.md` como fuente operativa transversal y el glosario como definición terminológica, evitando duplicación.
+
+---
+
+## 8. T-004 / T-005 — Deltas de agentes cerrados
+
+Estos resultados permanecen **proposal-only** y no modifican todavía agentes ni adaptadores.
+
+### T-004 — Implementation Agent
+
+`.github/agents/implementation.agent.md` requiere un único delta mínimo: incorporar, dentro de sus reglas de ejecución, la responsabilidad de consultar y aplicar la sección canónica `Technical State Persistence & Publication` de `.github/instructions/sdd.instructions.md`.
+
+La semántica necesaria es:
+
+- al completar un incremento gobernado suficientemente validado, evaluar si procede un `Committed Checkpoint`;
+- antes de un handoff, transición material o dependencia remota, evaluar de forma separada si procede `Push / Synchronization`;
+- evitar commit o push redundante cuando el estado ya sea suficiente;
+- no convertir observabilidad remota en motivo para persistir/publicar trabajo no validado;
+- distinguir siempre:
+  - `should persist / should publish` — conclusión metodológica;
+  - `may commit / may push` — autorización de ejecución;
+- si la acción procede metodológicamente pero no está autorizada, detener la ejecución Git y reportar la necesidad de autorización.
+
+El agente **no debe duplicar** State Model, reglas completas ni criterios de SPEC-001. Debe remitir a la policy transversal.
+
+### T-004 — Codex adapter
+
+`.codex/agents/implementation.toml` queda confirmado como **`no-change`**.
+
+Motivo: ya establece la restricción crítica de no hacer commit, push o publicación sin autorización explícita. Añadir aquí la nueva policy duplicaría la fuente normativa y aumentaría riesgo de divergencia. El adaptador debe seguir delegando el comportamiento metodológico en las instrucciones/agente canónicos.
+
+### T-005 — Agentes condicionales
+
+Tras contrastar responsabilidades vigentes con la policy propuesta:
+
+| Surface | Final decision | Rationale |
+| --- | --- | --- |
+| `.github/agents/reviewer.agent.md` | `no-change` | Ya revisa coherencia, trazabilidad, contradicciones y riesgos. Puede evaluar cumplimiento de una instrucción transversal sin regla Git propia. |
+| `.github/agents/qa-gate.agent.md` | `no-change` | Ya evalúa evidencia, trazabilidad, readiness y suficiencia para transición. La recuperabilidad solo es relevante cuando el contexto/gate la exige. |
+| `.github/agents/consolidation.agent.md` | `no-change` | Ya clasifica baseline, evidencia, deuda y reentrada. Puede consumir checkpoints/estado remoto como evidencia conforme a instructions. |
+| `.github/agents/tasks-planner.agent.md` | `no-change` | La policy transversal es suficiente para planificar handoffs/checkpoints cuando tengan valor. |
+| `.github/agents/documentation.agent.md` | `no-change` | Sus responsabilidades actuales cubren mantenimiento de instructions/glosario sin semántica Git específica. |
+
+### Development scope estabilizado
+
+Si Development Readiness posterior es favorable y existe autorización humana, el incremento previsto queda limitado a:
+
+1. `.github/instructions/sdd.instructions.md`;
+2. `docs/glosario_terminos.md`;
+3. `.github/agents/implementation.agent.md`.
+
+No se prevé modificación de ningún otro agente o adaptador en este incremento.
 
 ---
 
