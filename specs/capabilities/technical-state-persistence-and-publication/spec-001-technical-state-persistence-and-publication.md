@@ -24,6 +24,18 @@ Jordi Quiroga
 
 ---
 
+### SDD Mode Reference
+
+Modo declarado para el proyecto o capacidad: `Undeclared`.
+
+Justificación o referencia canónica:
+
+- No existe actualmente una declaración canónica específica de SDD Mode para esta capability.
+- Conforme a `.github/instructions/sdd.instructions.md`, `Undeclared` no es un cuarto modo y aplica temporalmente un baseline conservador equivalente a `SDD Full` para decisiones de fase, cambios de alcance, riesgos críticos, gates y readiness.
+- Esta referencia no sustituye una futura declaración canónica aprobada.
+
+---
+
 ## 1. Purpose
 
 Definir cuándo el estado técnico de un proyecto gobernado por SDD debe persistirse como checkpoint Git y cuándo debe publicarse en el repositorio remoto para convertirse en un estado recuperable y sincronizable.
@@ -91,7 +103,43 @@ Principio rector:
 
 ---
 
-## 5. Core Concepts
+## 5. Actors
+
+| Actor | Description |
+| --- | --- |
+| Human Owner | Valida decisiones relevantes, gates y autorizaciones de ejecución. |
+| SDD methodological agents | Aplican la política dentro de sus responsabilidades y límites vigentes. |
+| Technical execution surface | VS Code/Codex u otra superficie autorizada que pueda producir estado técnico local. |
+| Remote-dependent consumer | ChatGPT u otra superficie/participante que necesite recuperar o evaluar estado técnico publicado. |
+| Git remote repository | Fuente remota desde la que puede recuperarse el estado técnico publicado. |
+
+---
+
+## 6. Inputs
+
+| Input | Description |
+| --- | --- |
+| Working technical state | Cambios locales pertenecientes al incremento gobernado en curso. |
+| Validation evidence | Checks, revisiones, gates u otra evidencia exigible según fase, riesgo y SDD Mode. |
+| Governed increment context | Alcance, artefactos, tareas, decisiones y estado metodológico del incremento. |
+| Synchronization need | Necesidad material de recuperabilidad, colaboración, supervisión, handoff o transición. |
+| Execution authorization | Autorización humana o explícita aplicable para ejecutar commit o push. |
+
+---
+
+## 7. Outputs
+
+| Output | Description |
+| --- | --- |
+| Persistence decision | Determinación de si el incremento es candidato a commit/checkpoint. |
+| Publication decision | Determinación independiente de si el checkpoint debe sincronizarse remotamente. |
+| Committed Checkpoint | Estado técnico coherente persistido en Git cuando corresponda y esté autorizado. |
+| Remotely Recoverable State | Checkpoint publicado y recuperable remotamente cuando corresponda y esté autorizado. |
+| Traceability evidence | Relación suficiente entre checkpoint y el incremento, artefacto, tarea, gate o decisión relevante. |
+
+---
+
+## 8. Core Concepts
 
 ### Working State
 
@@ -115,7 +163,7 @@ Estado técnico publicado que otra superficie o participante puede recuperar raz
 
 ---
 
-## 6. Functional Requirements
+## 9. Functional Requirements
 
 ### FR-001 — Estados diferenciados
 
@@ -171,7 +219,7 @@ Todo cambio transversal derivado de esta capability debe evaluar su impacto sobr
 
 ---
 
-## 7. Business Rules
+## 10. Business Rules
 
 ### BR-001 — Simplicidad y proporcionalidad
 
@@ -199,7 +247,7 @@ La capacidad no debe introducir una estrategia Git general ni ampliar su alcance
 
 ---
 
-## 8. Constraints
+## 11. Constraints
 
 - La capability define semántica y criterios, no arquitectura de implementación.
 - No se materializa el GitHub Workflow Agent en esta fase.
@@ -211,7 +259,16 @@ La capacidad no debe introducir una estrategia Git general ni ampliar su alcance
 
 ---
 
-## 9. Risks
+## 12. Assumptions
+
+- Git continúa siendo el mecanismo de persistencia técnica versionada de los repositorios derivados de Foundation.
+- El repositorio remoto puede ser utilizado por superficies autorizadas para recuperar evidencia técnica publicada.
+- La validación suficiente depende de la fase, el riesgo y el SDD Mode aplicable; esta capability no redefine esos checks.
+- Las reglas de autorización existentes prevalecen sobre la mera procedencia metodológica de commit o push.
+
+---
+
+## 13. Risks
 
 | Risk | Impact | Mitigation |
 | --- | --- | --- |
@@ -226,7 +283,7 @@ La capacidad no debe introducir una estrategia Git general ni ampliar su alcance
 
 ---
 
-## 10. Acceptance Criteria
+## 14. Acceptance Criteria
 
 ### AC-001
 
@@ -274,7 +331,7 @@ La solución resultante no introduce artefactos, gates ni pasos adicionales que 
 
 ---
 
-## 11. Dependencies
+## 15. Dependencies
 
 - `.github/instructions/sdd.instructions.md`
 - Capability `SDD Modes`.
@@ -284,7 +341,7 @@ La solución resultante no introduce artefactos, gates ni pasos adicionales que 
 
 ---
 
-## 12. Open Questions
+## 16. Open Questions
 
 No existen preguntas abiertas bloqueantes para iniciar Architecture.
 
@@ -292,11 +349,47 @@ La decisión sobre qué artefacto, instrucción, agente, skill o combinación m�
 
 ---
 
-## 13. Future Considerations
+## 17. Future Considerations
 
 - Evaluar el papel del GitHub Workflow Agent una vez exista Architecture aprobada.
 - Evaluar si algún mecanismo de automatización aporta valor después de validar primero la política manual.
 - Evaluar cambios en JQF Project Initializer únicamente si el análisis downstream demuestra una adaptación necesaria.
+
+---
+
+## 18. Related Artifacts
+
+| Artifact | Relationship |
+| --- | --- |
+| `.github/instructions/sdd.instructions.md` | Define fases, restricciones, SDD Modes e `incremento gobernado`. |
+| `specs/templates/spec.template.md` | Estructura canónica de Specification To-Be. |
+| `docs/glosario_terminos.md` | Define términos SDD existentes; requerirá valorar incorporación de la nueva taxonomía cuando esta capability alcance baseline aprobado. |
+| `.github/agents/specification.agent.md` | Define requisitos de Specification y Cross-Artifact Impact Analysis. |
+| `.github/agents/reviewer.agent.md` | Define revisión y consistencia transversal. |
+| `.github/agents/implementation.agent.md` | Mantiene límites de ejecución y autorización durante Development. |
+| `.codex/agents/implementation.toml` | Explicita que commit, push o publicación requieren autorización explícita. |
+| `.github/agents/README.md` | Declara GitHub Workflow Agent como planeado, sin definición canónica materializada. |
+| JQF Project Initializer | Consumidor downstream potencial; su impacto debe evaluarse antes del cierre. |
+
+---
+
+## 19. Cross-Artifact Impact Analysis
+
+| Artifact group | Status | Assessment / required action |
+| --- | --- | --- |
+| Project Brief | Requiere actualización futura / deuda preexistente | El root Project Brief representa actualmente Project Initializer y no declara SDD Mode para esta capability. No se mezcla esta deuda con el alcance actual; por ello se referencia `Undeclared`. |
+| README | Consistente | No se ha identificado contradicción que bloquee Specification. Valorar actualización solo cuando la capability forme parte del baseline vigente. |
+| Context References | Requiere actualización futura / deuda preexistente | `docs/context_refs.md` es un routing stub de SDD Modes, no un índice global de esta capability. No se corrige dentro de este incremento. |
+| Related Specifications | Consistente | `SDD Modes` aporta proporcionalidad e `incremento gobernado`; esta SPEC no crea modos ni políticas Git separadas. |
+| Contracts | No aplica | No se identifica contrato transversal necesario en Specification. |
+| Gates | Consistente | La capability utiliza gates como puntos de evaluación, sin sustituirlos ni crear gates adicionales por defecto. |
+| Templates | Consistente tras esta corrección | La SPEC queda normalizada contra `specs/templates/spec.template.md`. |
+| Methodological Agents | Consistente | Specification, Reviewer e Implementation conservan responsabilidades. GitHub Workflow Agent permanece planeado. |
+| Skills | No aplica en esta fase | No se requiere crear o modificar skills durante Specification. Architecture deberá justificar cualquier mecanismo posterior. |
+| Glossary | Requiere actualización posterior | La nueva taxonomía (`Working State`, `Validated Increment`, `Committed Checkpoint`, `Remotely Recoverable State`) debe evaluarse para incorporación cuando quede arquitectónicamente estabilizada; no es necesario modificar el glosario antes de Architecture. |
+| JQF Project Initializer | Requiere evaluación downstream posterior | No se modifica ahora. Antes del cierre deberá clasificarse el impacto como `sin impacto`, `requiere validación de compatibilidad` o `requiere adaptación`. |
+
+No se han identificado contradicciones críticas que exijan modificar otros artefactos antes de repetir la Specification Review. Las actualizaciones posteriores señaladas no alteran la semántica aprobada ni autorizan Development.
 
 ---
 
@@ -311,6 +404,7 @@ La Specification está completa cuando:
 - los límites evitan convertir la capability en una estrategia Git general;
 - existen criterios de aceptación verificables;
 - el impacto downstream queda exigido antes del cierre;
+- se ha completado el Cross-Artifact Impact Analysis;
 - existe aprobación humana de la Specification.
 
 ## Human Validation
