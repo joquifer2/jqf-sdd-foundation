@@ -77,8 +77,8 @@ El plan no autoriza Development. Su objetivo es concretar qué superficies neces
 | T-007 | Verificar trazabilidad SPEC → ARCH → delta propuesto → casos de validación. | Review | Reviewer Agent | T-002 a T-006 | Todos los FR/BR/AC materiales tienen cobertura y no aparece alcance nuevo. | Completed |
 | T-008 | Preparar el paquete de Development Readiness con el conjunto exacto de archivos a modificar, validaciones y exclusiones. | Governance | Documentation Agent | T-007 | El paquete permite decidir Development sin diseñar arquitectura adicional y declara explícitamente `NOT AUTHORIZED` hasta gate/decisión. | Completed |
 | T-009 | Evaluar Development Readiness. | Validation | QA Gate Agent | T-008 | Resultado `Pass`, `Pass with minor conditions`, `Fail — changes required` o `Blocked`; no equivale por sí solo a ejecución. | Completed — PASS |
-| T-010 | Decidir autorización humana de Development si T-009 lo permite. | Governance | Jordi Quiroga | T-009 | Existe decisión explícita de autorizar o no Development y queda acotado el incremento autorizado. | Planned |
-| T-011 | Implementar el incremento Foundation autorizado. | Development | Implementation Agent | T-010 | Solo se modifican superficies autorizadas; no se materializa GitHub Workflow Agent ni automatización; autorización de commit/push permanece separada. | Not authorized |
+| T-010 | Decidir autorización humana de Development si T-009 lo permite. | Governance | Jordi Quiroga | T-009 | Existe decisión explícita de autorizar o no Development y queda acotado el incremento autorizado. | Completed — AUTHORIZED |
+| T-011 | Implementar el incremento Foundation autorizado. | Development | Implementation Agent | T-010 | Solo se modifican superficies autorizadas; no se materializa GitHub Workflow Agent ni automatización; autorización de commit/push permanece separada. | Authorized |
 | T-012 | Validar el incremento implementado contra los casos de T-006 y SPEC/ARCH. | Validation | QA Gate Agent | T-011 | Casos aplicables pasan y no se detecta regresión metodológica ni sobreingeniería. | Not authorized |
 | T-013 | Evaluar impacto downstream sobre proyectos derivados y JQF Project Initializer. | Validation / Governance | Reviewer + QA | T-012 | Impacto clasificado como `sin impacto`, `requiere validación de compatibilidad` o `requiere adaptación`; no se modifica Initializer sin nueva autorización. | Not authorized |
 | T-014 | Preparar Review/Consolidation y cierre de la capability. | Review / Governance | Reviewer + Consolidation | T-012; T-013 | Baseline, evidencia, deuda residual y reentrada quedan identificados; cualquier trabajo downstream se separa de esta capability cuando corresponda. | Not authorized |
@@ -348,6 +348,11 @@ Mitigación transversal: T-001 debe reducir el scope antes de Development Readin
 
 ---
 
+
+### T-010 — Autorización humana
+
+Development autorizado explícitamente por Jordi Quiroga el 2026-09-22. La autorización queda limitada al incremento definido en `development_readiness.md`: tres superficies Foundation, deltas aprobados y VAL-001..VAL-010. No autoriza ampliar alcance, materializar GitHub Workflow Agent, introducir automatización ni modificar JQF Project Initializer.
+
 ## 14. Siguiente paso
 
-T-010 — decisión humana de autorización de Development. Development permanece `NOT AUTHORIZED` hasta autorización explícita.
+T-011 — implementar el incremento Foundation autorizado, limitado a `.github/instructions/sdd.instructions.md`, `docs/glosario_terminos.md` y `.github/agents/implementation.agent.md`.
