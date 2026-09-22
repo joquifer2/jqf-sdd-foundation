@@ -73,7 +73,7 @@ El plan no autoriza Development. Su objetivo es concretar qué superficies neces
 | T-003 | Definir el delta terminológico de `docs/glosario_terminos.md`. | Documentation prep | Documentation Agent | T-001 | Solo se incorporan conceptos estabilizados necesarios para comprensión transversal. | Completed |
 | T-004 | Definir el delta mínimo del Implementation Agent y su adaptador Codex, solo si T-001 confirma necesidad. | Development prep | Tasks Planner / Documentation | T-001; T-002 | Queda especificado cómo aplicar `should persist/publish` frente a `may execute`, preservando autorización explícita y sin duplicar policy. | Completed |
 | T-005 | Definir deltas de Reviewer, QA Gate y Consolidation únicamente para las superficies clasificadas `required` por T-001. | Development prep | Tasks Planner / Documentation | T-001; T-002 | Cada delta tiene una necesidad verificable; superficies innecesarias quedan explícitamente `no-change`. | Completed |
-| T-006 | Preparar casos de validación documentales de la policy. | Validation prep | QA Gate Agent | T-002 a T-005 | Casos cubren al menos: working state no listo; validated increment candidato a commit; commit local suficiente; necesidad de push por handoff remoto; prohibición de publicación prematura; checkpoint ya suficiente sin commit redundante. | Planned |
+| T-006 | Preparar casos de validación documentales de la policy. | Validation prep | QA Gate Agent | T-002 a T-005 | Casos cubren al menos: working state no listo; validated increment candidato a commit; commit local suficiente; necesidad de push por handoff remoto; prohibición de publicación prematura; checkpoint ya suficiente sin commit redundante. | Completed |
 | T-007 | Verificar trazabilidad SPEC → ARCH → delta propuesto → casos de validación. | Review | Reviewer Agent | T-002 a T-006 | Todos los FR/BR/AC materiales tienen cobertura y no aparece alcance nuevo. | Planned |
 | T-008 | Preparar el paquete de Development Readiness con el conjunto exacto de archivos a modificar, validaciones y exclusiones. | Governance | Documentation Agent | T-007 | El paquete permite decidir Development sin diseñar arquitectura adicional y declara explícitamente `NOT AUTHORIZED` hasta gate/decisión. | Planned |
 | T-009 | Evaluar Development Readiness. | Validation | QA Gate Agent | T-008 | Resultado `Pass`, `Pass with minor conditions`, `Fail — changes required` o `Blocked`; no equivale por sí solo a ejecución. | Planned |
@@ -262,6 +262,37 @@ No se prevé modificación de ningún otro agente o adaptador en este incremento
 | Handoff remoto con trabajo aún no validado | No crear/publicar checkpoint prematuro. |
 | Gate con checkpoint ya suficiente y sincronizado | `already-persisted` / `already-synchronized`; no commit/push redundante. |
 | Commit/push metodológicamente procedente pero no autorizado | No ejecutar; reportar necesidad de autorización. |
+
+---
+
+## 9. T-006 — Casos de validación preparados
+
+Los siguientes escenarios son documentales y reutilizables en Validation posterior. No ejecutan operaciones Git.
+
+| ID | Scenario | Preconditions | Expected methodological decision | Authorization expectation |
+| --- | --- | --- | --- | --- |
+| VAL-001 | Working State no validado | Trabajo parcial, checks pendientes o unidad todavía incoherente. | Mantener `Working State`; no crear checkpoint ni publicar. | No aplica. |
+| VAL-002 | Validated Increment con valor de recuperabilidad | Unidad coherente, checks suficientes y cambio significativo completado. | `checkpoint-candidate`. | Commit solo si la superficie está autorizada. |
+| VAL-003 | Checkpoint local suficiente | Existe Committed Checkpoint; no hay handoff, consumidor remoto ni necesidad material de sincronización. | `local-checkpoint-sufficient`; no push por defecto. | No solicitar push innecesario. |
+| VAL-004 | Handoff a consumidor remoto | Existe checkpoint válido y ChatGPT/u otra superficie necesita recuperar el estado desde GitHub. | `remote-sync-candidate`. | Push solo si está autorizado; en caso contrario reportar necesidad. |
+| VAL-005 | Observabilidad remota con trabajo prematuro | Otra superficie necesita visibilidad, pero el trabajo sigue incoherente/no suficientemente validado. | No crear/publicar checkpoint prematuro. | La necesidad de observabilidad no eleva autorización ni readiness. |
+| VAL-006 | Estado ya persistido y sincronizado | El checkpoint relevante ya representa el incremento y está publicado. | `already-persisted` / `already-synchronized`; no commit/push redundante. | No aplica nueva autorización. |
+| VAL-007 | Procedencia sin autorización | La policy determina que commit y/o push aportaría valor, pero el agente/superficie carece de autorización explícita. | Reportar `checkpoint-candidate` o `remote-sync-candidate` sin ejecutar. | Debe solicitar/esperar autorización. |
+| VAL-008 | Gate sin necesidad de nueva persistencia | Gate relevante alcanzado, pero no existe nuevo estado material desde el último checkpoint suficiente. | El gate actúa como punto de evaluación, no como trigger automático de commit/push. | No aplica. |
+| VAL-009 | SDD Mode proporcional | Mismo patrón de estado bajo Minimal, Lite y Full, con distinta intensidad de checks/evidencia. | Misma semántica de persistencia/publicación; cambia solo proporcionalidad de validación/evidencia. | Mantener controles y autorización aplicables. |
+| VAL-010 | Commit no implica PR/release | Incremento válido requiere checkpoint y quizá push, pero no existe decisión de PR o release. | Persistencia/publicación puede completarse sin inferir PR/release. | PR/release requieren su gobierno propio. |
+
+### Pass criteria
+
+La futura implementación pasa esta validación si:
+
+- los diez escenarios producen el resultado esperado sin reglas ad hoc;
+- ningún escenario convierte commit en push automático;
+- ningún gate obliga por sí mismo a crear commit;
+- ningún consumidor remoto fuerza publicación de trabajo no validado;
+- la ausencia de autorización bloquea ejecución Git sin perder la recomendación metodológica;
+- los tres SDD Modes comparten la misma policy;
+- no se introduce dependencia de GitHub Workflow Agent, contract adicional o automatización.
 
 ---
 
