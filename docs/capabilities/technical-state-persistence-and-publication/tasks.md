@@ -68,7 +68,7 @@ El plan no autoriza Development. Su objetivo es concretar qué superficies neces
 
 | ID | Tarea | Tipo | Responsable | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | --- | --- | --- | --- | --- |
-| T-001 | Realizar impact check final de las superficies candidatas de ARCH-001 y clasificar cada una como `required`, `conditional` o `no-change`. | Planning / Review | Tasks Planner + Reviewer | SPEC-001; ARCH-001 | Existe una lista mínima justificada; ningún archivo se incluye por defecto. | Planned |
+| T-001 | Realizar impact check final de las superficies candidatas de ARCH-001 y clasificar cada una como `required`, `conditional` o `no-change`. | Planning / Review | Tasks Planner + Reviewer | SPEC-001; ARCH-001 | Existe una lista mínima justificada; ningún archivo se incluye por defecto. | Completed |
 | T-002 | Definir el delta exacto de la sección normativa que deberá incorporarse a `.github/instructions/sdd.instructions.md`. | Documentation prep | Documentation Agent | T-001 | El delta cubre State Model, Persistence Decision Point, Publication Decision Point, routing híbrido, PCD y Authorization Boundary sin duplicar SPEC/ARCH. | Planned |
 | T-003 | Definir el delta terminológico de `docs/glosario_terminos.md`. | Documentation prep | Documentation Agent | T-001 | Solo se incorporan conceptos estabilizados necesarios para comprensión transversal. | Planned |
 | T-004 | Definir el delta mínimo del Implementation Agent y su adaptador Codex, solo si T-001 confirma necesidad. | Development prep | Tasks Planner / Documentation | T-001; T-002 | Queda especificado cómo aplicar `should persist/publish` frente a `may execute`, preservando autorización explícita y sin duplicar policy. | Planned |
@@ -111,23 +111,35 @@ T-002 y T-003 pueden prepararse en paralelo después de T-001. T-004 y T-005 sol
 
 ---
 
-## 7. Development candidate surfaces
+## 7. T-001 — Impact check final
 
-Esta tabla no autoriza cambios; es el punto de partida para T-001.
+T-001 queda completada mediante revisión directa de las superficies candidatas contra SPEC-001, ARCH-001 y sus responsabilidades vigentes.
 
-| Surface | Initial classification | Reason |
+| Surface | Classification | Finding |
 | --- | --- | --- |
-| `.github/instructions/sdd.instructions.md` | Required candidate | Fuente normativa transversal seleccionada por ARCH-001. |
-| `docs/glosario_terminos.md` | Required candidate | Taxonomía transversal estabilizada. |
-| `.github/agents/implementation.agent.md` | Required candidate | Principal superficie de ejecución del decision model. |
-| `.codex/agents/implementation.toml` | Conditional | Ya prohíbe commit/push/publicación sin autorización; puede bastar con la definición canónica. |
-| `.github/agents/reviewer.agent.md` | Conditional | Solo si los checks actuales no cubren coherencia/recuperabilidad. |
-| `.github/agents/qa-gate.agent.md` | Conditional | Solo si los criterios actuales no permiten evaluar recuperabilidad cuando sea material. |
-| `.github/agents/consolidation.agent.md` | Conditional | Solo si baseline/reentry no puede identificar adecuadamente estado publicado con reglas existentes. |
-| Tasks Planner Agent | No-change candidate | No necesita aplicar operaciones Git; puede planificar con la policy transversal. |
-| Documentation Agent | No-change candidate | Puede mantener documentación usando instrucciones existentes. |
-| GitHub Workflow Agent | No change | Permanece planeado. |
-| JQF Project Initializer | Downstream-only | Evaluar después de Foundation; no adaptar preventivamente. |
+| `.github/instructions/sdd.instructions.md` | `required` | Es la fuente normativa transversal seleccionada por ARCH-001 y actualmente no contiene criterios de commit/checkpoint, push/synchronization ni estado remoto recuperable. |
+| `docs/glosario_terminos.md` | `required` | Define `incremento gobernado` y evidencia Git, pero no los cuatro estados de persistencia ni la separación commit/push. |
+| `.github/agents/implementation.agent.md` | `required` | Ejecuta cambios concretos pero no contiene el decision model de persistencia/publicación; necesita una responsabilidad mínima que remita a la policy canónica. |
+| `.codex/agents/implementation.toml` | `no-change` | Ya preserva la frontera crítica: no hacer commit, push o publicación sin autorización explícita. La semántica nueva puede cargarse desde instructions/Implementation Agent sin duplicarla aquí. |
+| `.github/agents/reviewer.agent.md` | `no-change` | Su responsabilidad transversal de coherencia, trazabilidad, contradicciones y deuda documental es suficiente; puede revisar la policy canónica sin regla Git específica. |
+| `.github/agents/qa-gate.agent.md` | `no-change` | Sus criterios generales ya permiten exigir evidencia suficiente, trazabilidad y coherencia cuando la recuperabilidad sea material. Añadir reglas específicas duplicaría la policy. |
+| `.github/agents/consolidation.agent.md` | `no-change` | Ya gobierna baseline, evidencia, deuda residual y reentrada. El estado remoto puede consumirse como evidencia conforme a la policy sin ampliar responsabilidades. |
+| `.github/agents/tasks-planner.agent.md` | `no-change` | Puede planificar checkpoints/handoffs desde instrucciones transversales; no ejecuta Git. |
+| `.github/agents/documentation.agent.md` | `no-change` | Ya mantiene glosarios, instrucciones y coherencia documental; no necesita responsabilidad Git propia. |
+| GitHub Workflow Agent | `no-change` | Permanece planeado; no existe evidencia que justifique materialización. |
+| JQF Project Initializer | `downstream-only` | Debe evaluarse después de estabilizar Foundation; no se adapta preventivamente. |
+
+### Resultado de alcance mínimo
+
+El Development candidate scope queda reducido a **tres superficies Foundation**:
+
+1. `.github/instructions/sdd.instructions.md`;
+2. `docs/glosario_terminos.md`;
+3. `.github/agents/implementation.agent.md`.
+
+No se identifica necesidad actual de modificar adaptador Codex, Reviewer, QA Gate, Consolidation, Tasks Planner, Documentation Agent ni de materializar GitHub Workflow Agent.
+
+Este resultado no autoriza Development. T-002 a T-005 deben definir los deltas documentales exactos y T-009/T-010 siguen siendo necesarios antes de cualquier implementación.
 
 ---
 
