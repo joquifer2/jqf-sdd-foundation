@@ -74,7 +74,7 @@ El plan no autoriza Development. Su objetivo es concretar qué superficies neces
 | T-004 | Definir el delta mínimo del Implementation Agent y su adaptador Codex, solo si T-001 confirma necesidad. | Development prep | Tasks Planner / Documentation | T-001; T-002 | Queda especificado cómo aplicar `should persist/publish` frente a `may execute`, preservando autorización explícita y sin duplicar policy. | Completed |
 | T-005 | Definir deltas de Reviewer, QA Gate y Consolidation únicamente para las superficies clasificadas `required` por T-001. | Development prep | Tasks Planner / Documentation | T-001; T-002 | Cada delta tiene una necesidad verificable; superficies innecesarias quedan explícitamente `no-change`. | Completed |
 | T-006 | Preparar casos de validación documentales de la policy. | Validation prep | QA Gate Agent | T-002 a T-005 | Casos cubren al menos: working state no listo; validated increment candidato a commit; commit local suficiente; necesidad de push por handoff remoto; prohibición de publicación prematura; checkpoint ya suficiente sin commit redundante. | Completed |
-| T-007 | Verificar trazabilidad SPEC → ARCH → delta propuesto → casos de validación. | Review | Reviewer Agent | T-002 a T-006 | Todos los FR/BR/AC materiales tienen cobertura y no aparece alcance nuevo. | Planned |
+| T-007 | Verificar trazabilidad SPEC → ARCH → delta propuesto → casos de validación. | Review | Reviewer Agent | T-002 a T-006 | Todos los FR/BR/AC materiales tienen cobertura y no aparece alcance nuevo. | Completed |
 | T-008 | Preparar el paquete de Development Readiness con el conjunto exacto de archivos a modificar, validaciones y exclusiones. | Governance | Documentation Agent | T-007 | El paquete permite decidir Development sin diseñar arquitectura adicional y declara explícitamente `NOT AUTHORIZED` hasta gate/decisión. | Planned |
 | T-009 | Evaluar Development Readiness. | Validation | QA Gate Agent | T-008 | Resultado `Pass`, `Pass with minor conditions`, `Fail — changes required` o `Blocked`; no equivale por sí solo a ejecución. | Planned |
 | T-010 | Decidir autorización humana de Development si T-009 lo permite. | Governance | Jordi Quiroga | T-009 | Existe decisión explícita de autorizar o no Development y queda acotado el incremento autorizado. | Planned |
@@ -296,6 +296,45 @@ La futura implementación pasa esta validación si:
 
 ---
 
+## 10. T-007 — Traceability Review
+
+**Decision: PASS.**
+
+La revisión `SPEC → ARCH → deltas → validation scenarios` no identifica requisitos materiales sin cobertura ni ampliación de alcance.
+
+| Requirement group | Architecture / delta coverage | Validation coverage | Result |
+| --- | --- | --- | --- |
+| FR-001 / AC-001 / AC-009 — estados diferenciados | State Model + delta instructions/glossary | VAL-001, VAL-002, VAL-003, VAL-004, VAL-006 | PASS |
+| FR-002 / BR-003 / AC-002 — commit semántico | Persistence Decision Point + instructions | VAL-001, VAL-002, VAL-008 | PASS |
+| FR-003 — separación de unidades | Instructions: evaluar antes de unidad materialmente distinta | VAL-002, VAL-008 | PASS |
+| FR-004 / BR-002 / BR-004 / AC-003 — commit/push independientes | Publication Decision Point | VAL-003, VAL-004, VAL-010 | PASS |
+| FR-005 / FR-006 / AC-004 — sincronización y routing híbrido | Hybrid Routing Interface + instructions | VAL-004 | PASS |
+| FR-007 / AC-005 — no publicación prematura | Policy + Implementation delta | VAL-005 | PASS |
+| FR-008 / AC-007 — gates como evaluación, no trigger | Instructions | VAL-006, VAL-008 | PASS |
+| FR-009 / AC-006 — proporcionalidad SDD Modes | SDD Mode Interface | VAL-009 | PASS |
+| FR-010 / AC-008 — autorización separada | Authorization Boundary + Implementation delta | VAL-007 | PASS |
+| FR-011 — trazabilidad de checkpoint | Governed Increment Interface + instructions | VAL-002, VAL-006 | PASS |
+| FR-012 — recuperabilidad remota | Publication Decision Point + Hybrid Routing | VAL-004, VAL-006 | PASS |
+| FR-013 / AC-010 — downstream impact | Downstream Compatibility Check + T-013 | Post-Development validation prevista | PASS — deferred by design |
+| BR-001 / AC-011 — simplicidad/PCD | Alternative A + T-001 scope reduction | VAL-003, VAL-006, VAL-008 | PASS |
+| BR-005 — working state local | State Model | VAL-001, VAL-005 | PASS |
+| BR-006 — no estrategia Git general | Architecture exclusions + deltas | VAL-010 + pass criteria | PASS |
+
+### Review findings
+
+- No existe gap funcional o metodológico bloqueante.
+- No aparece branching, PR workflow, release, CI/CD, automatización o GitHub Workflow Agent.
+- El scope sigue limitado a tres superficies.
+- FR-013 se valida necesariamente después de estabilizar Foundation; su diferimiento a T-013 es coherente y no bloquea Development Readiness.
+- La autorización de ejecución permanece independiente.
+- Los casos VAL-001..VAL-010 son suficientes para validar el incremento previsto.
+
+### Minor documentary finding
+
+El propio task plan conserva numeración repetida de secciones (`## 8` y `## 9`) derivada de las ampliaciones incrementales y el apartado final `Siguiente paso` todavía referencia T-001. Es una inconsistencia editorial sin impacto normativo. Debe normalizarse al preparar T-008 para que el paquete de readiness sea limpio, sin crear una tarea adicional.
+
+---
+
 ## 9. Riesgos de planificación
 
 - Convertir candidatos condicionales en cambios obligatorios.
@@ -309,6 +348,6 @@ Mitigación transversal: T-001 debe reducir el scope antes de Development Readin
 
 ---
 
-## 10. Siguiente paso
+## 11. Siguiente paso
 
-Ejecutar T-001 como impact check documental. Development permanece `NOT AUTHORIZED`.
+Preparar T-008 — paquete de Development Readiness. Development permanece `NOT AUTHORIZED`.
