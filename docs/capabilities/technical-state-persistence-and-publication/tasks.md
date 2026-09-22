@@ -8,8 +8,8 @@
 | Capacidad | SDD Technical State Persistence & Publication |
 | Specification relacionada | `specs/capabilities/technical-state-persistence-and-publication/spec-001-technical-state-persistence-and-publication.md` |
 | Architecture relacionada | `specs/capabilities/technical-state-persistence-and-publication/arch-001-technical-state-persistence-and-publication.md` |
-| Estado | Draft |
-| Fase SDD actual | Tasks Planning |
+| Estado | Consolidation |
+| Fase SDD actual | Consolidation |
 | SDD Mode | `Undeclared` — baseline conservador equivalente a `SDD Full` |
 | Owner | Jordi Quiroga |
 | Creado por | Tasks Planner Agent |
@@ -81,7 +81,7 @@ El plan no autoriza Development. Su objetivo es concretar qué superficies neces
 | T-011 | Implementar el incremento Foundation autorizado. | Development | Implementation Agent | T-010 | Solo se modifican superficies autorizadas; no se materializa GitHub Workflow Agent ni automatización; autorización de commit/push permanece separada. | Completed |
 | T-012 | Validar el incremento implementado contra los casos de T-006 y SPEC/ARCH. | Validation | QA Gate Agent | T-011 | Casos aplicables pasan y no se detecta regresión metodológica ni sobreingeniería. | Completed — PASS |
 | T-013 | Evaluar impacto downstream sobre proyectos derivados y JQF Project Initializer. | Validation / Governance | Reviewer + QA | T-012 | Impacto clasificado como `sin impacto`, `requiere validación de compatibilidad` o `requiere adaptación`; no se modifica Initializer sin nueva autorización. | Completed — requiere adaptación |
-| T-014 | Preparar Review/Consolidation y cierre de la capability. | Review / Governance | Reviewer + Consolidation | T-012; T-013 | Baseline, evidencia, deuda residual y reentrada quedan identificados; cualquier trabajo downstream se separa de esta capability cuando corresponda. | Ready for review |
+| T-014 | Preparar Review/Consolidation y cierre de la capability. | Review / Governance | Reviewer + Consolidation | T-012; T-013 | Baseline, evidencia, deuda residual y reentrada quedan identificados; cualquier trabajo downstream se separa de esta capability cuando corresponda. | Completed — Consolidation Readiness PASS |
 
 ---
 
@@ -440,6 +440,40 @@ No se identifica necesidad de cambiar el modelo de familias, añadir una nueva f
 **No se modifica JQF Project Initializer en T-013.** La adaptación requiere su propia autorización/unidad de trabajo downstream.
 
 
+### T-014 — Review / Consolidation
+
+**Reviewer decision: PASS.**
+
+No se detectan contradicciones funcionales entre SPEC-001, ARCH-001, Development y Validation. La inconsistencia documental de ARCH-001 en estado `Draft` fue normalizada a `Approved` antes de consolidar.
+
+**Consolidation Readiness Gate: PASS.**
+
+- fase actual identificada: PASS;
+- trazabilidad: PASS;
+- artefactos obligatorios: PASS;
+- review/validation: PASS;
+- expediente historico preservado: PASS;
+- deuda residual visible: PASS;
+- punto de reentrada downstream definido: PASS;
+- no existe Development/runtime/tool/workflow/agente fuera de autorizacion: PASS.
+
+Se materializan únicamente los artefactos de cierre necesarios:
+
+- `evidence_index.md`;
+- `residual_debt.md`;
+- `closure_handover.md`.
+
+Baseline canonico propuesto:
+
+1. `.github/instructions/sdd.instructions.md`;
+2. `docs/glosario_terminos.md`;
+3. `.github/agents/implementation.agent.md`.
+
+Deuda residual: `TSPP-DEBT-001` — adaptación de JQF Project Initializer, no bloqueante y con reentrada separada.
+
+La capability queda en **Consolidation** y preparada para `Closure Gate`. El cierre final requiere aprobación humana explícita.
+
+
 ## 14. Siguiente paso
 
-T-014 — preparar Review/Consolidation y cierre de esta capability Foundation. Registrar la adaptación del JQF Project Initializer como trabajo downstream separado; no ejecutarla dentro de esta capability.
+Closure Gate — evaluar el handover, baseline, evidencia y deuda residual. Si el gate pasa, solicitar aprobación humana explícita para marcar la capability como `Closed`.
