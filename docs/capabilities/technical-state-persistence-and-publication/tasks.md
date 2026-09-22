@@ -79,8 +79,8 @@ El plan no autoriza Development. Su objetivo es concretar qué superficies neces
 | T-009 | Evaluar Development Readiness. | Validation | QA Gate Agent | T-008 | Resultado `Pass`, `Pass with minor conditions`, `Fail — changes required` o `Blocked`; no equivale por sí solo a ejecución. | Completed — PASS |
 | T-010 | Decidir autorización humana de Development si T-009 lo permite. | Governance | Jordi Quiroga | T-009 | Existe decisión explícita de autorizar o no Development y queda acotado el incremento autorizado. | Completed — AUTHORIZED |
 | T-011 | Implementar el incremento Foundation autorizado. | Development | Implementation Agent | T-010 | Solo se modifican superficies autorizadas; no se materializa GitHub Workflow Agent ni automatización; autorización de commit/push permanece separada. | Completed |
-| T-012 | Validar el incremento implementado contra los casos de T-006 y SPEC/ARCH. | Validation | QA Gate Agent | T-011 | Casos aplicables pasan y no se detecta regresión metodológica ni sobreingeniería. | Ready for validation |
-| T-013 | Evaluar impacto downstream sobre proyectos derivados y JQF Project Initializer. | Validation / Governance | Reviewer + QA | T-012 | Impacto clasificado como `sin impacto`, `requiere validación de compatibilidad` o `requiere adaptación`; no se modifica Initializer sin nueva autorización. | Not authorized |
+| T-012 | Validar el incremento implementado contra los casos de T-006 y SPEC/ARCH. | Validation | QA Gate Agent | T-011 | Casos aplicables pasan y no se detecta regresión metodológica ni sobreingeniería. | Completed — PASS |
+| T-013 | Evaluar impacto downstream sobre proyectos derivados y JQF Project Initializer. | Validation / Governance | Reviewer + QA | T-012 | Impacto clasificado como `sin impacto`, `requiere validación de compatibilidad` o `requiere adaptación`; no se modifica Initializer sin nueva autorización. | Ready for evaluation |
 | T-014 | Preparar Review/Consolidation y cierre de la capability. | Review / Governance | Reviewer + Consolidation | T-012; T-013 | Baseline, evidencia, deuda residual y reentrada quedan identificados; cualquier trabajo downstream se separa de esta capability cuando corresponda. | Not authorized |
 
 ---
@@ -375,6 +375,37 @@ Commits de Development:
 - `7474d622a5c23853de90f1f650a8c84e4cccdf0d` — Implementation Agent.
 
 
+### T-012 — Validation
+
+**Decision: PASS.**
+
+Validación documental de la implementación real contra VAL-001..VAL-010, SPEC-001 y ARCH-001:
+
+| Caso | Evidencia implementada | Resultado |
+| --- | --- | --- |
+| VAL-001 | Instructions define `Working State` y exige coherencia/validación antes de checkpoint. | PASS |
+| VAL-002 | Instructions define `Validated Increment` y evaluación semántica de `Committed Checkpoint`. | PASS |
+| VAL-003 | Push se evalúa independientemente y solo ante necesidad material remota. | PASS |
+| VAL-004 | Routing híbrido incorpora explícitamente la vigencia del estado remoto. | PASS |
+| VAL-005 | Observabilidad remota no justifica publicar trabajo incoherente/no validado. | PASS |
+| VAL-006 | Instructions prohíbe checkpoints redundantes cuando el estado ya está suficientemente persistido. | PASS |
+| VAL-007 | Instructions + Implementation Agent separan procedencia metodológica de autorización; adapter Codex conserva prohibición explícita sin autorización. | PASS |
+| VAL-008 | Gate definido como punto de evaluación, no trigger automático de commit. | PASS |
+| VAL-009 | Minimal/Lite/Full comparten policy; solo cambia proporcionalidad de checks/evidencia. | PASS |
+| VAL-010 | Instructions establece `commit ≠ push ≠ PR ≠ release` y excluye branching/PR/releases/CI-CD/automatización. | PASS |
+
+Checks transversales:
+
+- State Model consistente entre instructions y glosario: PASS.
+- Fuente normativa única en instructions; Implementation Agent referencia/aplica sin duplicar la policy completa: PASS.
+- Scope de Development limitado a las tres superficies autorizadas: PASS.
+- Adapter Codex preservado como `no-change`: PASS.
+- Sin nuevo contract, skill, runtime, automatización o GitHub Workflow Agent: PASS.
+- Sin regresión metodológica detectada respecto a SDD Modes, gates o autorización humana: PASS.
+
+No se identifican condiciones menores ni bloqueos para iniciar T-013.
+
+
 ## 14. Siguiente paso
 
-T-012 — validar el incremento implementado contra VAL-001..VAL-010 y SPEC/ARCH.
+T-013 — evaluar impacto downstream sobre proyectos derivados y JQF Project Initializer. No se autoriza todavía ninguna adaptación downstream.
