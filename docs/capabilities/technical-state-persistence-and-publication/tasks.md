@@ -69,8 +69,8 @@ El plan no autoriza Development. Su objetivo es concretar qué superficies neces
 | ID | Tarea | Tipo | Responsable | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | --- | --- | --- | --- | --- |
 | T-001 | Realizar impact check final de las superficies candidatas de ARCH-001 y clasificar cada una como `required`, `conditional` o `no-change`. | Planning / Review | Tasks Planner + Reviewer | SPEC-001; ARCH-001 | Existe una lista mínima justificada; ningún archivo se incluye por defecto. | Completed |
-| T-002 | Definir el delta exacto de la sección normativa que deberá incorporarse a `.github/instructions/sdd.instructions.md`. | Documentation prep | Documentation Agent | T-001 | El delta cubre State Model, Persistence Decision Point, Publication Decision Point, routing híbrido, PCD y Authorization Boundary sin duplicar SPEC/ARCH. | Planned |
-| T-003 | Definir el delta terminológico de `docs/glosario_terminos.md`. | Documentation prep | Documentation Agent | T-001 | Solo se incorporan conceptos estabilizados necesarios para comprensión transversal. | Planned |
+| T-002 | Definir el delta exacto de la sección normativa que deberá incorporarse a `.github/instructions/sdd.instructions.md`. | Documentation prep | Documentation Agent | T-001 | El delta cubre State Model, Persistence Decision Point, Publication Decision Point, routing híbrido, PCD y Authorization Boundary sin duplicar SPEC/ARCH. | Completed |
+| T-003 | Definir el delta terminológico de `docs/glosario_terminos.md`. | Documentation prep | Documentation Agent | T-001 | Solo se incorporan conceptos estabilizados necesarios para comprensión transversal. | Completed |
 | T-004 | Definir el delta mínimo del Implementation Agent y su adaptador Codex, solo si T-001 confirma necesidad. | Development prep | Tasks Planner / Documentation | T-001; T-002 | Queda especificado cómo aplicar `should persist/publish` frente a `may execute`, preservando autorización explícita y sin duplicar policy. | Planned |
 | T-005 | Definir deltas de Reviewer, QA Gate y Consolidation únicamente para las superficies clasificadas `required` por T-001. | Development prep | Tasks Planner / Documentation | T-001; T-002 | Cada delta tiene una necesidad verificable; superficies innecesarias quedan explícitamente `no-change`. | Planned |
 | T-006 | Preparar casos de validación documentales de la policy. | Validation prep | QA Gate Agent | T-002 a T-005 | Casos cubren al menos: working state no listo; validated increment candidato a commit; commit local suficiente; necesidad de push por handoff remoto; prohibición de publicación prematura; checkpoint ya suficiente sin commit redundante. | Planned |
@@ -140,6 +140,63 @@ El Development candidate scope queda reducido a **tres superficies Foundation**:
 No se identifica necesidad actual de modificar adaptador Codex, Reviewer, QA Gate, Consolidation, Tasks Planner, Documentation Agent ni de materializar GitHub Workflow Agent.
 
 Este resultado no autoriza Development. T-002 a T-005 deben definir los deltas documentales exactos y T-009/T-010 siguen siendo necesarios antes de cualquier implementación.
+
+---
+
+## 8. T-002 / T-003 — Deltas normativos preparados
+
+Estos deltas son **proposal-only**. Definen el contenido mínimo del futuro Development y no modifican todavía las superficies objetivo.
+
+### T-002 — Delta de `.github/instructions/sdd.instructions.md`
+
+Añadir una única sección transversal, preferentemente después de `SDD Modes` y antes de `Backlog Governance`, con esta semántica mínima:
+
+#### Technical State Persistence & Publication
+
+- Principio: **persistir por significado y publicar por necesidad de recuperabilidad/sincronización; nunca por frecuencia temporal ni por número de cambios**.
+- Aplicar la policy sobre la unidad normativa `incremento gobernado`.
+- Distinguir:
+  - `Working State`: trabajo en curso que puede permanecer local;
+  - `Validated Increment`: incremento coherente y suficientemente validado para fase, riesgo y SDD Mode;
+  - `Committed Checkpoint`: Validated Increment persistido en Git;
+  - `Remotely Recoverable State`: checkpoint publicado y recuperable por consumidores remotos autorizados.
+- Evaluar persistencia cuando se complete una unidad coherente, antes de iniciar una unidad materialmente distinta o en un gate/handoff/transición donde la recuperabilidad sea relevante.
+- No crear commits redundantes cuando el estado ya esté suficientemente persistido.
+- Evaluar push de forma independiente al commit.
+- Considerar push cuando otra superficie o participante necesite recuperar el estado remoto para supervisión, handoff, colaboración o continuación del trabajo.
+- En routing híbrido, si ChatGPT u otra superficie depende del repositorio remoto, la vigencia del estado remoto forma parte explícita de la decisión de publicación.
+- No publicar trabajo incoherente o insuficientemente validado solo para hacerlo observable.
+- `commit ≠ push ≠ PR ≠ release`.
+- SDD Minimal/Lite/Full comparten la misma policy; el modo solo ajusta proporcionalmente intensidad y evidencia.
+- La conclusión metodológica `procede commit/push` **no equivale** a autorización para ejecutarlo. Deben respetarse las autorizaciones vigentes de la superficie/agente.
+- No introducir branching strategy, PR workflow, releases, CI/CD, convenciones de mensajes ni automatización.
+
+No copiar FR/BR/AC completos de SPEC-001 ni las alternativas de ARCH-001.
+
+### T-003 — Delta de `docs/glosario_terminos.md`
+
+Añadir únicamente cinco entradas conceptuales:
+
+**Working State**  
+Estado técnico en curso de un incremento gobernado. Puede permanecer local y no constituye por sí mismo un checkpoint recuperable.
+
+**Validated Increment**  
+Incremento gobernado suficientemente coherente y validado para su fase, riesgo y SDD Mode como para evaluar su persistencia. No implica automáticamente commit.
+
+**Committed Checkpoint**  
+Estado técnico de un Validated Increment persistido mediante Git porque aporta valor de recuperabilidad o trazabilidad. No implica automáticamente push, PR ni release.
+
+**Remotely Recoverable State**  
+Committed Checkpoint publicado en el repositorio remoto y razonablemente recuperable por otra superficie o participante autorizado. No sustituye ni presume el Working State local posterior.
+
+**Technical State Persistence & Publication**  
+Política SDD transversal que gobierna cuándo evaluar la persistencia de un incremento validado y cuándo evaluar su publicación remota. Se rige por significado, recuperabilidad y sincronización, no por cadencia temporal. Mantiene separadas la procedencia metodológica y la autorización de ejecución.
+
+No añadir entradas separadas para `commit`, `push`, `PR` o `release`: son conceptos Git generales y hacerlo ampliaría innecesariamente el glosario.
+
+### Resultado
+
+T-002 y T-003 dejan cerrado el núcleo normativo previsto sin crear una nueva source of truth. La futura implementación deberá mantener `sdd.instructions.md` como fuente operativa transversal y el glosario como definición terminológica, evitando duplicación.
 
 ---
 
