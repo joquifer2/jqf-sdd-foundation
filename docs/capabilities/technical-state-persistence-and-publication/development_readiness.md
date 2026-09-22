@@ -10,7 +10,7 @@
 | Repository Type | Foundation |
 | Last Updated | 2026-09-22 |
 | Assessor | Documentation Agent |
-| Reviewer | QA Gate Agent — pendiente T-009 |
+| Reviewer | QA Gate Agent — T-009 completed |
 | SDD Mode | `Undeclared` |
 | SDD Mode Source | SPEC-001 / ARCH-001; baseline conservador equivalente a `SDD Full` |
 
@@ -165,15 +165,51 @@ Si T-009 resulta favorable, cualquier autorización humana de T-010 debe limitar
 
 Cualquier necesidad de cuarto archivo, nuevo agente, contract, skill, automatización o cambio de arquitectura obliga a detener el incremento y reevaluar alcance.
 
+## T-009 — Development Readiness QA Gate
+
+| Campo | Resultado |
+| --- | --- |
+| Gate | Tasks Planning / Readiness → Development authorization decision |
+| Current phase | Tasks Planning / Development Readiness |
+| Target | Human Development authorization (T-010) |
+| SDD Mode | `Undeclared` — baseline conservador equivalente a `SDD Full` |
+| Decision | **PASS** |
+
+### Evidencia y criterios
+
+- SPEC-001 existe, está aprobada y superó Specification Review/Gate.
+- ARCH-001 define solución mínima y superó Architecture Review/Gate.
+- T-001..T-007 están completadas con alcance, deltas, casos de validación y trazabilidad.
+- El incremento candidato está limitado a tres superficies y no requiere rediseño.
+- VAL-001..VAL-010 proporcionan criterios verificables para la validación posterior.
+- No existen contradicciones documentales críticas ni implementación prematura.
+- Los riesgos relevantes tienen mitigación explícita.
+- La frontera entre procedencia metodológica y autorización de commit/push permanece protegida.
+- FR-013/AC-010 está diferido de forma intencional a T-013 y no bloquea este gate.
+
+### Criterios no cumplidos
+
+Ninguno que bloquee la decisión de autorización humana.
+
+### Bloqueos
+
+Ninguno.
+
+### Condiciones de alcance para T-010
+
+Una eventual autorización humana debe limitar Development a los tres archivos y deltas ya definidos. Cualquier ampliación exige reevaluación.
+
 ## Decisión de este paquete
 
-**Prepared for T-009 — Development Readiness QA Gate.**
+**Development Readiness QA Gate: PASS.**
 
-Development permanece **NOT AUTHORIZED**.
+El gate autoriza pasar a **T-010 — decisión humana de autorización de Development**. No autoriza por sí mismo la ejecución.
+
+Development permanece **NOT AUTHORIZED** hasta decisión humana explícita.
 
 ## Siguiente agente recomendado
 
-**QA Gate Agent** para T-009.
+**Human Owner — Jordi Quiroga** para T-010.
 
 ## Definition of Done
 
