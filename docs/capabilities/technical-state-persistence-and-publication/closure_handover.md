@@ -53,6 +53,7 @@ La Foundation incorpora una policy transversal minima para decidir cuando persis
 | Human Development authorization T-010 | AUTHORIZED | 2026-09-22 |
 | Validation T-012 | PASS | 2026-09-22 |
 | Consolidation Readiness T-014 | PASS | 2026-09-22 |
+| Closure Gate | PASS — pending human closure approval | 2026-09-22 |
 
 ## Deuda residual
 
@@ -71,6 +72,29 @@ TSPP-DEBT-001 — adaptacion/compatibilidad de JQF Project Initializer. No bloqu
 - No introducir GitHub Workflow Agent, automatizacion o estrategia Git general sin nueva unidad gobernada.
 - No migrar proyectos derivados existentes automaticamente.
 
+## Closure Gate
+
+**Decision: PASS — pending human closure approval.**
+
+Comprobaciones:
+
+- handover completo: PASS;
+- baseline identificado: PASS;
+- expediente historico discoverable: PASS;
+- artefactos sustituidos: N/A — no se identifican artefactos sustituidos en esta capability;
+- deuda residual visible y con reentrada: PASS;
+- guia de carga futura: PASS;
+- evidencia preservada: PASS;
+- ausencia de Development/runtime/tools/workflows/agentes no autorizados: PASS.
+
+Estado final permitido por el gate: `Closed`, condicionado únicamente a aprobación humana explícita.
+
+Baseline cerrado propuesto: `.github/instructions/sdd.instructions.md`, `docs/glosario_terminos.md`, `.github/agents/implementation.agent.md`.
+
+Deuda residual: `TSPP-DEBT-001`, no bloqueante, owner Jordi Quiroga, reentrada en unidad downstream de JQF Project Initializer.
+
+Restricciones activas: autorización Git independiente; sin GitHub Workflow Agent/automatización/estrategia Git general; sin migración automática de proyectos existentes.
+
 ## Siguiente accion valida
 
-Ejecutar Closure Gate y obtener aprobacion humana explicita de cierre. La adaptacion del Initializer se gestiona separadamente.
+Obtener aprobación humana explícita para marcar la capability como `Closed`. La adaptación del Initializer se gestiona separadamente.
