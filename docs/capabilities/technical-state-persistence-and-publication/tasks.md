@@ -8,8 +8,8 @@
 | Capacidad | SDD Technical State Persistence & Publication |
 | Specification relacionada | `specs/capabilities/technical-state-persistence-and-publication/spec-001-technical-state-persistence-and-publication.md` |
 | Architecture relacionada | `specs/capabilities/technical-state-persistence-and-publication/arch-001-technical-state-persistence-and-publication.md` |
-| Estado | Consolidation |
-| Fase SDD actual | Consolidation |
+| Estado | Closed |
+| Fase SDD actual | Closed |
 | SDD Mode | `Undeclared` — baseline conservador equivalente a `SDD Full` |
 | Owner | Jordi Quiroga |
 | Creado por | Tasks Planner Agent |
@@ -476,4 +476,4 @@ La capability queda en **Consolidation** y preparada para `Closure Gate`. El cie
 
 ## 14. Siguiente paso
 
-Closure Gate — evaluar el handover, baseline, evidencia y deuda residual. Si el gate pasa, solicitar aprobación humana explícita para marcar la capability como `Closed`.
+Capability `Closed` tras Closure Gate PASS y aprobación humana explícita de Jordi Quiroga el 2026-09-22. Reentrada: unidad downstream de JQF Project Initializer (`TSPP-DEBT-001`) o nueva evidencia que justifique revisar la policy.
