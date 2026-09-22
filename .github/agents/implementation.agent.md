@@ -34,6 +34,12 @@ Garantizar que la implementación sea fiel a las specifications, arquitectura, t
 - Documentar brevemente lo implementado cuando corresponda.
 - Señalar bloqueos si la tarea no está suficientemente definida.
 - Evitar introducir comportamiento no solicitado.
+- Aplicar la politica canonica `Technical State Persistence & Publication` definida en `.github/instructions/sdd.instructions.md`.
+- Al completar un incremento gobernado suficientemente validado, evaluar si procede un `Committed Checkpoint`.
+- Antes de un handoff, transicion material o dependencia remota, evaluar por separado si procede push o sincronizacion.
+- Evitar commit o push redundante y no publicar trabajo insuficientemente validado solo para hacerlo observable.
+- Distinguir la conclusion metodologica `should persist / should publish` de la autorizacion de ejecucion `may commit / may push`.
+- Si commit o push procede metodologicamente pero no esta autorizado, detener esa operacion Git y reportar la necesidad de autorizacion.
 
 ## Límites
 
