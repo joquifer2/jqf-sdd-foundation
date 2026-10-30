@@ -26,7 +26,7 @@ Jordi Quiroga
 
 ## 1. Purpose
 
-Definir la capacidad metodologica SDD Modes para que `jqf-sdd-foundation` pueda aplicar el SDD Harness con intensidad proporcional al riesgo, complejidad, criticidad y contexto de cada repositorio derivado.
+Definir la capacidad metodologica SDD Modes para que `jqf-sdd-foundation` aplique el SDD Harness con intensidad proporcional al riesgo material y a los controles necesarios en cada repositorio derivado, sin confundir complejidad con riesgo.
 
 Esta specification establece que la Foundation debe reconocer tres modos oficiales de gobierno:
 
@@ -106,9 +106,9 @@ El termino normativo es `SDD Mode`. La capacidad se denomina `SDD Modes`. Los mo
 
 `SDD Minimal` aplica a exploracion, pruebas internas o cambios documentales/acotados de bajo riesgo. No puede usarse en contextos con datos sensibles, exposicion a produccion, obligaciones de cumplimiento, integraciones criticas, impacto operacional alto, riesgos relevantes de seguridad o privacidad, multiples stakeholders criticos o baja reversibilidad.
 
-`SDD Lite` aplica a MVPs, herramientas internas o primeras versiones de riesgo controlado. Reduce artefactos, revisiones y gates por microtarea, pero conserva justificacion humana, trazabilidad suficiente, checks ligeros, hitos de revision y escalado por riesgo.
+`SDD Lite` es el modo ordinario para desarrollar y evolucionar capacidades, productos e integraciones con riesgos conocidos y suficientemente controlados, con independencia de su complejidad o madurez. Reduce artefactos, revisiones y gates por microtarea, pero conserva justificacion humana, trazabilidad suficiente, checks ligeros, hitos de revision y escalado por riesgo.
 
-`SDD Full` equivale al baseline vigente de gobierno de `jqf-sdd-foundation`. Mantiene profundidad documental, revisiones y gates formales para proyectos criticos, productivos, sensibles, regulados, multiintegracion o de alto impacto. Cualquier cambio al baseline Full requiere decision explicita y trazable.
+`SDD Full` equivale al baseline completo de gobierno de `jqf-sdd-foundation` y se reserva para riesgos materiales elevados que requieran controles reforzados. La complejidad tecnica, la produccion, la sensibilidad de datos o la multiplicidad de integraciones no determinan Full por si solas: se evalua el riesgo residual y las obligaciones aplicables. Cuando el riesgo se concentra en operaciones concretas, se refuerzan sus controles sin elevar automaticamente todo el proyecto. Cualquier cambio al baseline Full requiere decision explicita y trazable.
 
 #### Declaracion del modo
 
@@ -124,13 +124,13 @@ La seleccion del `SDD Mode` debe evaluarse mediante juicio humano documentado. N
 
 Las dimensiones minimas de seleccion son sensibilidad de datos, exposicion a produccion, obligaciones de cumplimiento, criticidad de integraciones, impacto operacional, complejidad tecnica/conceptual, numero y criticidad de stakeholders, reversibilidad del cambio, vida esperada del proyecto, auditabilidad requerida y madurez del contexto disponible.
 
-Cualquier dimension critica o no mitigada obliga a valorar `SDD Full`. Riesgo controlado con alcance real de producto suele orientar a `SDD Lite`. Solo bajo riesgo, baja exposicion, alta reversibilidad y ausencia de controles criticos permite `SDD Minimal`.
+La seleccion pondera impacto potencial, probabilidad, reversibilidad, exposicion, obligaciones y eficacia de las mitigaciones, sin scoring automatico. Un riesgo material elevado o no mitigado obliga a valorar `SDD Full`; las obligaciones y controles criticos se mantienen en cualquier modo. La complejidad no equivale por si sola a riesgo. Riesgo suficientemente controlado orienta ordinariamente a `SDD Lite`. Solo bajo riesgo, baja exposicion, alta reversibilidad y ausencia de controles criticos permite `SDD Minimal`.
 
 #### Proyectos sin modo declarado
 
 Los proyectos sin `SDD Mode` declarado quedan temporalmente en estado `Undeclared`. `Undeclared` no es un cuarto modo y no autoriza reducir gobierno.
 
-Hasta que exista declaracion aprobada, se aplica un baseline conservador equivalente a `SDD Full` para decisiones de fase, cambios de alcance, riesgos criticos, gates y readiness. Los repositorios existentes no requieren migracion inmediata, pero cualquier cambio significativo debe incluir declaracion de modo o decision explicita de mantener temporalmente `Undeclared` con justificacion.
+`Undeclared` es transitorio. Antes de iniciar un incremento material debe declararse el modo mediante juicio humano proporcional. Mientras tanto se conservan los controles criticos exigibles por el riesgo conocido y las autorizaciones aplicables, sin imponer automaticamente toda la carga de `SDD Full`. Los repositorios existentes no requieren migracion inmediata.
 
 #### Checks, gates y evidencia
 
@@ -152,7 +152,7 @@ Los escenarios iniciales de validacion son:
 
 - VAL-001: experimento o utilidad interna de bajo riesgo, candidato a `SDD Minimal`.
 - VAL-002: MVP o primera version con exposicion limitada, candidato a `SDD Lite`.
-- VAL-003: proyecto productivo, sensible, regulado o con integraciones criticas, candidato a `SDD Full`.
+- VAL-003: incremento con riesgo material elevado o no mitigado que requiere gobierno reforzado, candidato a `SDD Full`.
 - VAL-004: repositorio derivado existente sin `SDD Mode` declarado, para validar `Undeclared` y compatibilidad hacia atras.
 
 Los repositorios concretos se tratan como casos empiricos cuando existan fuentes verificables desde el repositorio o una fuente externa registrada. Los repositorios anteriores a SDD Modes que no declaran `SDD Mode` mantienen estado formal `Undeclared`; pueden usarse como candidatos retrospectivos para contrastar criterios de Lite, Full o compatibilidad, pero no se consideran declarados en esos modos. VAL-001 permanece `PENDING` hasta identificar un repositorio verificable de bajo riesgo para SDD Minimal. Por decision humana confirmada despues de T-027, esta deuda no bloquea el cierre metodologico de SDD Modes y no autoriza debilitar requisitos normativos, controles criticos ni evidencia minima de SDD Minimal.
@@ -225,7 +225,7 @@ Mayor riesgo no implica automaticamente materializar agentes metodologicos; pued
 
 `reusableSkills = true` no selecciona todavia que skills concretas se materializan. La seleccion de miembros dentro de cada familia metodologica es una decision posterior distinta de la aplicabilidad de la familia.
 
-`Undeclared` conserva fallback conservador equivalente a `SDD Full` y no constituye un cuarto modo.
+`Undeclared` no constituye un cuarto modo: conserva controles criticos segun riesgo conocido hasta clasificacion proporcional previa al siguiente incremento material.
 
 Debe mantenerse un unico catalogo metodologico. La matriz no autoriza harnesses separados por modo, variantes duplicadas de agentes, runtime, scoring, reglas ejecutables ni implementacion de inicializadores.
 

@@ -147,7 +147,7 @@ La declaracion debe incluir, como minimo:
 
 Los proyectos sin `SDD Mode` declarado quedan temporalmente en estado `Undeclared`.
 
-`Undeclared` no es un cuarto modo y no autoriza reducir gobierno. Hasta declaracion aprobada, aplica un baseline conservador equivalente a `SDD Full` para decisiones de fase, cambios de alcance, riesgos criticos, gates y readiness.
+`Undeclared` no es un cuarto modo. Antes de iniciar un incremento material debe declararse el modo con juicio humano proporcional. Hasta entonces se conservan los controles criticos exigibles por el riesgo conocido, sin imponer automaticamente toda la carga de `SDD Full`.
 
 El modo declarado afecta a:
 
@@ -169,15 +169,17 @@ El modo declarado no puede:
 
 `SDD Minimal` solo puede usarse para exploracion, pruebas internas o cambios documentales/acotados de bajo riesgo. No puede usarse cuando existan datos sensibles, exposicion a produccion, obligaciones de cumplimiento, integraciones criticas, impacto operacional alto, riesgos relevantes de seguridad o privacidad, multiples stakeholders criticos o baja reversibilidad.
 
-`SDD Lite` puede reducir artefactos, revisiones y gates por microtarea, pero debe mantener trazabilidad suficiente, checks ligeros, hitos de revision, gates cuando existan transiciones o riesgos relevantes, y validacion humana.
+`SDD Lite` es el modo ordinario para capacidades, productos e integraciones de riesgo suficientemente controlado, aunque exista complejidad tecnica o uso en produccion. Reduce artefactos, revisiones y gates por microtarea, manteniendo trazabilidad suficiente, checks proporcionales, gates aplicables y validacion humana relevante.
 
-`SDD Full` equivale al baseline vigente completo de `jqf-sdd-foundation` y conserva profundidad documental, revisiones y gates formales.
+`SDD Full` equivale al baseline completo de `jqf-sdd-foundation` y se reserva para riesgo material elevado que requiera gobierno reforzado. Produccion, sensibilidad, complejidad o numero de integraciones no activan Full automaticamente. Se consideran impacto, probabilidad, reversibilidad, exposicion, obligaciones y mitigaciones; los controles criticos se mantienen en cualquier modo. Cuando el riesgo se concentra en una operacion, se refuerza esa operacion sin elevar necesariamente todo el proyecto.
 
 La reduccion documental solo es valida si elimina baja senal o duplicacion. No puede eliminar decisiones canonicas, justificacion humana del modo, riesgos criticos, gates requeridos, criterios de aceptacion, evidencia de checks ni trazabilidad minima.
 
 La validacion de `SDD Full` debe demostrar que no se debilita el baseline vigente de gobierno: artefactos requeridos por fase, revisiones formales, gates aplicables, evidencia de decisiones/riesgos/criterios/validacion, precedencia documental y aprobacion humana.
 
 La seleccion del modo debe basarse en juicio humano documentado, no en scoring automatico.
+
+Dentro del mandato autorizado, el agente puede planificar, ejecutar, verificar, corregir incidencias ordinarias y reintentar el objetivo sin autorizaciones intermedias por microtarea. Escala decisiones de negocio, cambios materiales de alcance, riesgos no cubiertos y operaciones que requieran autorizacion especifica. La supervision se centra en resultados y excepciones, sin repetir QA suficiente.
 
 La unidad normativa general para alcance, tareas, checks, evidencia y gates es `incremento gobernado`.
 
