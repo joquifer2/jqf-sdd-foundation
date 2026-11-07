@@ -73,12 +73,9 @@ Antes de crear o modificar artefactos documentales, comprobar si existen templat
 
 ```text
 docs/templates/
-sdd_docs/templates/
-
-Los templates constituyen la estructura oficial de referencia para los artefactos documentales del framework.
-```
 ```
 
+Las plantillas constituyen estructuras de referencia; verifica las rutas y reglas vigentes en las instrucciones SDD antes de usarlas.
 
 Si existe un template compatible:
 
