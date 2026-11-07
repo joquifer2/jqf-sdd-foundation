@@ -1,5 +1,21 @@
 # JQF SDD Foundation
 
+> **Guía de entrada.** Esta Foundation es la metodología compartida del ecosistema JQF. Se basa en *Spec-Driven Development (SDD)*: definir qué se quiere conseguir y cómo se validará antes de implementar. Ajusta el nivel de documentación y control al riesgo de cada proyecto; no ejecuta procesos productivos ni contiene lógica de negocio.
+
+## Empieza aquí
+
+- **Para entender el producto:** la Foundation define la forma de trabajo; [JQF Project Initializer](https://github.com/joquifer2/sdd-project-initializer) crea proyectos independientes a partir de ella.
+- **Para iniciar un proyecto:** prepara un Project Brief, elige el modo SDD aplicable y sigue las instrucciones vigentes; no asumas que todas las fases requieren idéntica documentación.
+- **Para consultar las reglas canónicas:** [instrucciones SDD](.github/instructions/sdd.instructions.md) y [glosario](docs/glosario_terminos.md).
+- **Para encontrar especificaciones y expedientes:** [índice de capacidades](docs/capabilities/index.md) e [índice de especificaciones](specs/capabilities/index.md).
+- **Para trabajar con agentes:** [AGENTS.md](AGENTS.md), [definiciones de agentes](.github/agents/) y [adaptadores de Codex](.codex/agents/).
+- **Para consultar el histórico técnico:** utiliza los expedientes de capacidad, sus evidencias y cierres; este README es una orientación, no una segunda fuente de reglas.
+
+La documentación detallada y el catálogo de capacidades se mantienen a continuación.
+
+---
+
+
 ## ¿Qué es JQF SDD Foundation?
 
 JQF SDD Foundation es una base reutilizable para diseñar, documentar, gobernar y evolucionar proyectos mediante Specification Driven Development (SDD).
