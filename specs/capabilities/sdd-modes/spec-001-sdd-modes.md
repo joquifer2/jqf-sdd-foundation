@@ -712,7 +712,7 @@ La specification contiene la `Artifact Applicability Matrix` normativa aprobada 
 
 ### AC-029
 
-La specification declara que la aplicabilidad controla presencia esperada, no profundidad, no materializacion local y no discovery/consumption; el tratamiento de derivacion permanece separado, y `Undeclared` continua resolviendose conservadoramente como `SDD Full`.
+La specification declara que la aplicabilidad controla presencia esperada, no profundidad, no materializacion local y no discovery/consumption; el tratamiento de derivacion permanece separado, y `Undeclared` conserva los controles criticos exigibles por el riesgo conocido hasta declarar el modo con juicio humano proporcional antes de un incremento material, sin imponer automaticamente toda la carga de `SDD Full`.
 
 ---
 

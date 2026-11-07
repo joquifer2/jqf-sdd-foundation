@@ -287,4 +287,4 @@ Este documento evalúa preparación, no implementación.
 
 La decisión final debe ser revisada por una persona responsable o por el QA Gate Agent.
 
-La evaluacion de readiness no autoriza Development ni reduce controles criticos por si misma. Si el `SDD Mode` esta `Undeclared`, aplicar baseline conservador equivalente a `SDD Full` hasta declaracion aprobada.
+La evaluacion de readiness no autoriza Development ni reduce controles criticos por si misma. Para `Undeclared`, aplicar [SDD Instructions, §8](../../.github/instructions/sdd.instructions.md#8-sdd-modes): declarar el modo con juicio humano proporcional antes de un incremento material y conservar mientras tanto los controles criticos exigibles por el riesgo conocido, sin imponer automaticamente toda la carga de `SDD Full`.

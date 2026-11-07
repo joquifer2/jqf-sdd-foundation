@@ -138,7 +138,7 @@ Regla de carga:
 3. Revisar el `Project Brief` o la decision/gate aprobado que declare el modo.
 4. Si no existe modo declarado, tratar el trabajo como `Undeclared`.
 
-`Undeclared` no es un cuarto modo y no autoriza reducir gobierno. Hasta declaracion aprobada, aplica baseline conservador equivalente a `SDD Full` para decisiones de fase, cambios de alcance, riesgos criticos, gates y readiness.
+`Undeclared` se rige por [SDD Instructions, §8](../instructions/sdd.instructions.md#8-sdd-modes): no es un cuarto modo; debe declararse el modo con juicio humano proporcional antes de un incremento material y conservar mientras tanto los controles criticos exigibles por el riesgo conocido, sin imponer automaticamente toda la carga de `SDD Full`.
 
 El modo declarado ajusta intensidad documental, checks, gates, evidencia y carga de contexto, pero no puede:
 
