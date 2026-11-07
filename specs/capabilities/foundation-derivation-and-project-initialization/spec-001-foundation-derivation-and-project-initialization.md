@@ -388,7 +388,7 @@ Reglas de resolucion:
 
 Presencia y profundidad permanecen separadas. Un artefacto `Required` para `SDD Minimal` puede tener profundidad reducida si conserva identidad, trazabilidad, decisiones minimas, riesgos criticos, checks aplicables y validacion humana.
 
-`Undeclared` se resuelve conservadoramente como `SDD Full` antes de aplicar tratamientos.
+`Undeclared` se rige por [SDD Instructions, §8](../../../.github/instructions/sdd.instructions.md#8-sdd-modes): `Undeclared` no es un cuarto modo. Antes de iniciar un incremento material debe declararse el modo con juicio humano proporcional. Hasta entonces se conservan los controles criticos exigibles por el riesgo conocido, sin imponer automaticamente toda la carga de `SDD Full`.
 
 Para familias `Conditional`, Foundation define el criterio normativo por familia, el pre-derivation context o project context aporta los hechos, y el humano o agente de bootstrap aplica juicio para resolver `true`, `false` o `unresolved`. Project Initializer solo transporta y ejecuta la resolucion; no calcula ni inventa semantica metodologica. Si la resolucion es `false`, el resultado aplica solo a la materializacion local de esa derivacion; no bloquea consumo canónico posterior en una superficie soportada ni una materializacion posterior autorizada por una decision distinta.
 
@@ -482,7 +482,7 @@ Debe evaluar si el derivado esta listo para avanzar a su siguiente fase SDD. No 
 | `derived_project_name` | Obligatorio. |
 | `derived_repository` | Obligatorio si ya existe repositorio destino. |
 | `owner` | Obligatorio. |
-| `sdd_mode` | Obligatorio o `Undeclared` con baseline conservador equivalente a `SDD Full`. |
+| `sdd_mode` | Obligatorio o estado temporal `Undeclared`, con controles criticos segun riesgo conocido y declaracion humana proporcional antes de un incremento material, sin equivalencia automatica a `SDD Full`. |
 | `initial_phase` | Debe declararse explicitamente. |
 
 ---
@@ -687,7 +687,7 @@ El proceso debe exigir Readiness Assessment inicial propio.
 
 ### FR-008
 
-El proceso debe exigir declaracion del SDD Mode inicial o `Undeclared` con baseline conservador equivalente a `SDD Full`.
+El proceso debe exigir declaracion del SDD Mode inicial o registrar el estado temporal `Undeclared`, conservando los controles criticos exigibles por el riesgo conocido y requiriendo declaracion humana proporcional antes de un incremento material, sin imponer automaticamente toda la carga de `SDD Full`.
 
 ### FR-009
 
@@ -743,7 +743,7 @@ El Project Brief del derivado es la fuente canonica inicial para su SDD Mode.
 
 ### BR-006
 
-Si el SDD Mode inicial esta `Undeclared`, aplica gobierno conservador equivalente a `SDD Full` hasta declaracion aprobada.
+Si el SDD Mode inicial esta `Undeclared`, se conservan los controles criticos exigibles por el riesgo conocido y debe declararse el modo con juicio humano proporcional antes de un incremento material, sin imponer automaticamente toda la carga de `SDD Full`.
 
 ### BR-007
 

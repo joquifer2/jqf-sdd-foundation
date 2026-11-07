@@ -31,7 +31,6 @@ Modo declarado para el proyecto:
 - `SDD Minimal`
 - `SDD Lite`
 - `SDD Full`
-- `Undeclared`
 
 Justificacion humana del modo seleccionado:
 
@@ -61,7 +60,7 @@ Disparadores de reevaluacion:
 Notas:
 
 - El Project Brief es la fuente canonica inicial de declaracion del `SDD Mode`.
-- `Undeclared` no es un cuarto modo y no autoriza reducir gobierno; hasta declaracion aprobada aplica baseline conservador equivalente a `SDD Full`.
+- Si no hay modo declarado, el estado temporal es `Undeclared`. `Undeclared` no es un cuarto modo. Antes de iniciar un incremento material debe declararse el modo con juicio humano proporcional. Hasta entonces se conservan los controles criticos exigibles por el riesgo conocido, sin imponer automaticamente toda la carga de `SDD Full`. Vease [SDD Instructions, §8](../../.github/instructions/sdd.instructions.md#8-sdd-modes).
 
 ---
 

@@ -157,7 +157,7 @@ Reglas:
 
 Mode Lifecycle Rules gobierna declaracion, reevaluacion, escalado y reduccion.
 
-Incluye `Undeclared` como estado temporal para proyectos sin modo declarado. `Undeclared` no es un cuarto modo y no permite downgrade. Hasta declaracion aprobada, aplica baseline conservador equivalente a `SDD Full` para decisiones de fase, cambios de alcance, riesgos criticos, gates y readiness.
+Incluye `Undeclared` como estado temporal para proyectos sin modo declarado. Se aplica [SDD Instructions, §8](../../../.github/instructions/sdd.instructions.md#8-sdd-modes): `Undeclared` no es un cuarto modo. Antes de iniciar un incremento material debe declararse el modo con juicio humano proporcional. Hasta entonces se conservan los controles criticos exigibles por el riesgo conocido, sin imponer automaticamente toda la carga de `SDD Full`.
 
 Quedan abiertos para Specification/Documentation posterior:
 
@@ -173,7 +173,7 @@ Artifact Applicability Matrix clasifica familias metodologicas por modo como `Re
 Responsabilidad:
 
 - resolver si una familia metodologica debe estar presente como capacidad esperada para el `SDD Mode`;
-- mantener `Undeclared` como fallback conservador equivalente a `SDD Full`;
+- para `Undeclared`, conservar controles criticos segun riesgo conocido y declarar el modo mediante juicio humano proporcional antes de un incremento material, sin fallback automatico a `SDD Full`;
 - separar presencia de profundidad documental;
 - dejar el tratamiento de derivacion a la politica de `Foundation Derivation and Project Initialization`;
 - evitar plantillas duplicadas, catalogos duplicados o harnesses separados por modo salvo decision futura explicita.
@@ -240,7 +240,7 @@ Reglas:
 - repositorios sin modo declarado quedan `Undeclared`;
 - `Undeclared` no es un cuarto modo;
 - no hay migracion automatica obligatoria;
-- cambios significativos requieren declaracion de modo o decision explicita de mantener `Undeclared` con justificacion;
+- antes de iniciar un incremento material debe declararse el modo con juicio humano proporcional;
 - ausencia de modo no reduce gobierno silenciosamente.
 
 ### 5.10 Validation Scenarios
@@ -425,7 +425,7 @@ Rationale: The concept works before Development and avoids implementation-premat
 | Project Brief becomes too operational | Medium | Initial declaration lives there; later changes move to approved decision/gate artifacts. |
 | `docs/context_refs.md` becomes policy | Medium | Keep it as index and context route only. |
 | Lite weakens critical controls | High | Critical controls remain mode-independent and can trigger gates. |
-| Existing projects are silently downgraded | High | `Undeclared` applies conservative Full-equivalent baseline until declaration. |
+| Existing projects are silently downgraded | High | `Undeclared` preserves critical controls required by known risk; declare the mode through proportional human judgment before a material increment, without automatically imposing the full `SDD Full` burden. |
 | New templates proliferate | Medium | Prefer adapting existing templates unless a distinct purpose is proven. |
 | VAL-001 lacks a real Minimal repository | Medium | Keep VAL-001 as future empirical validation debt; do not weaken Minimal requirements or critical controls. |
 

@@ -183,7 +183,7 @@ Interfaz documental que exige que el Project Brief del derivado declare:
 - riesgos relevantes;
 - disparadores de reevaluacion.
 
-Si el modo queda `Undeclared`, se aplica baseline conservador equivalente a `SDD Full`.
+Si el modo queda `Undeclared`, se aplica [SDD Instructions, §8](../../../.github/instructions/sdd.instructions.md#8-sdd-modes): `Undeclared` no es un cuarto modo. Antes de iniciar un incremento material debe declararse el modo con juicio humano proporcional. Hasta entonces se conservan los controles criticos exigibles por el riesgo conocido, sin imponer automaticamente toda la carga de `SDD Full`.
 
 ### 5.7 Mode-Specific Initialization Profile
 

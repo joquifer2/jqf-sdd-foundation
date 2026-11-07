@@ -46,4 +46,4 @@ Los adaptadores TOML no declaran modos ni crean variantes por modo.
 
 Cada adaptador debe cargar `.github/instructions/sdd.instructions.md`, `docs/context_refs.md` y la definicion canonica del agente correspondiente para aplicar el `SDD Mode` vigente.
 
-Si el modo no esta declarado, el agente debe tratar el trabajo como `Undeclared` y aplicar baseline conservador equivalente a `SDD Full` hasta que exista declaracion aprobada.
+Si el modo no esta declarado, el agente debe tratar el trabajo como `Undeclared` y aplicar [SDD Instructions, §8](../../.github/instructions/sdd.instructions.md#8-sdd-modes): declaracion humana proporcional antes de un incremento material y conservacion de los controles criticos exigibles por el riesgo conocido, sin imponer automaticamente toda la carga de `SDD Full`.

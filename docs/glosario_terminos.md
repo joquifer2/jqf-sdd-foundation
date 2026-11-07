@@ -109,7 +109,7 @@ Mantiene profundidad documental, revisiones y gates formales para proyectos crit
 
 Estado temporal de un proyecto o capacidad sin `SDD Mode` declarado.
 
-No es un cuarto modo y no autoriza reducir gobierno. Hasta declaracion aprobada, aplica baseline conservador equivalente a `SDD Full` para decisiones de fase, cambios de alcance, riesgos criticos, gates y readiness.
+`Undeclared` no es un cuarto modo. Antes de iniciar un incremento material debe declararse el modo con juicio humano proporcional. Hasta entonces se conservan los controles criticos exigibles por el riesgo conocido, sin imponer automaticamente toda la carga de `SDD Full`. Vease [SDD Instructions, §8](../.github/instructions/sdd.instructions.md#8-sdd-modes).
 
 ---
 
