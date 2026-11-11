@@ -27,6 +27,10 @@ El handover debe permitir que futuros agentes entiendan el estado final sin carg
 
 Describir brevemente que queda vigente, que queda historico y que restricciones siguen activas.
 
+Cuando haya integracion Git, referenciar la PR/handoff existente con la evidencia del [cierre tecnico](../../.github/instructions/sdd.instructions.md#135-cierre-y-evidencia-minima): base y HEAD verificados, autorizacion, checks, main anterior/posterior, commit integrado y verificacion del resultado. No duplicar esa evidencia ni inferir cierre SDD del merge.
+
+Indicar en deuda residual o siguiente accion los recursos retenidos y la limpieza pendiente, con responsable y autorizacion necesaria. La limpieza no es condicion automatica del cierre tecnico ni permiso para eliminar evidencia.
+
 ---
 
 ## Baseline canonico

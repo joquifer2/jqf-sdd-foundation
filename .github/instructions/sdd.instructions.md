@@ -218,7 +218,7 @@ La necesidad de observabilidad remota no justifica persistir ni publicar trabajo
 
 La conclusion metodologica de que procede persistir o publicar no equivale a autorizacion para ejecutar commit o push. Deben respetarse siempre las autorizaciones vigentes de la superficie, agente o decision humana aplicable.
 
-Esta politica no introduce branching strategy, PR workflow, releases, CI/CD, convenciones de mensajes de commit ni automatizacion.
+Esta politica de persistencia no define por si misma branching, PR, releases, CI/CD, convenciones de mensajes de commit ni automatizacion. El protocolo complementario de integracion y cierre tecnico se define en la seccion 13.
 
 ## 10. Backlog Governance
 
@@ -475,3 +475,74 @@ El ecosistema "Harness" describe un conjunto de capacidades y responsabilidades 
 - Operational Harness: se ocupa de la ejecución y operación (runtimes, integraciones y fluxos operativos) y queda fuera del alcance de esta foundation.
 
 Este repositorio gobierna diseño, documentación y validación; no contiene runtime, herramientas operativas ni implementaciones técnicas. Las decisiones y artefactos de operación deben residir en el Operational Harness o en proyectos derivados.
+
+## 13. Protocolo de integracion y cierre de desarrollos
+
+### 13.1 Aplicacion y autonomia
+
+Este protocolo transversal gobierna la integracion y el cierre tecnico de un `incremento gobernado`, incluidos los cambios documentales. No autoriza Development ni operaciones Git por si mismo. Complementa las secciones 8 y 9 y utiliza los agentes, artefactos y gates ya aplicables.
+
+La PR es el mecanismo ordinario de integracion. El acceso directo a `main` requiere una excepcion expresamente autorizada para el incremento y compatible con las protecciones existentes; una peticion generica de guardar o publicar no concede esa excepcion.
+
+El mandato puede delegar conjuntamente rama, worktree, commit, push, PR, actualizacion respecto a main, merge y limpieza, indicando las operaciones cubiertas, alcance, condiciones y limites. Cada permiso conserva su significado: publicar una PR no autoriza merge, y merge no autoriza limpieza. Dentro de esa delegacion, ejecutar y verificar sin confirmaciones por microtarea; elevar decisiones materiales, conflictos funcionales y operaciones no cubiertas.
+
+`SDD Minimal`, `SDD Lite` y `SDD Full` comparten las reglas. Lite puede reunir evidencia en la PR o handoff existente; Full mantiene revisiones y gates exigibles por riesgo y fase mediante referencias a esa misma evidencia. No se crean gates universales, agentes o expedientes adicionales por rama.
+
+### 13.2 Inicio y concurrencia
+
+Antes de iniciar un incremento:
+
+- Identificar mandato, fase, modo y autorizaciones; comprobar repositorio y remoto canonicos, rama, HEAD, indice, cambios locales y operaciones Git pendientes.
+- Consultar el SHA vigente de `main` remoto y distinguirlo de `main` local y de referencias remotas locales que puedan estar desactualizadas. Consultar PRs abiertas relevantes, sus heads, dependencias y solapamientos de archivos o contratos.
+- Usar una rama por unidad coherente de cambio. Cuando haya ejecuciones concurrentes sobre un mismo repositorio local, aislarlas con `git worktree` o un checkout independiente, con destino y rama identificados. No compartir el mismo arbol de trabajo entre desarrollos simultaneos.
+- Preservar trabajo ajeno, incluidos archivos sin seguimiento e ignorados. No cambiar de rama, resetear, guardar en stash ni trasladar cambios ajenos automaticamente para obtener un estado limpio. Acordar secuencia o reparto ante archivos compartidos; el aislamiento fisico no elimina conflictos funcionales.
+
+Si el remoto no es consultable, usar otra superficie autorizada de lectura. Si no puede verificarse una base material para la operacion, reportarla como no verificada y detener solo esa operacion.
+
+### 13.3 Preparacion de integracion
+
+La entrada a integracion requiere alcance exacto y sin cambios ajenos o informacion privada, dependencias satisfechas o secuencia aprobada, checks suficientes para el HEAD candidato, revisiones y gates aplicables y autorizacion de integracion verificable. Distinguir autocontrol, revision independiente, aceptacion humana y CI; ausencia de checks publicados no equivale a CI aprobada.
+
+Contrastar el candidato con `main` remoto vigente: registrar ambos SHA y evaluar el impacto de cambios posteriores en archivos, contratos y dependencias. No exigir merge/rebase ni repetir pruebas validas cuando el contraste demuestra que siguen siendo suficientes y las reglas del repositorio no exigen actualizacion. Si hay impacto material, actualizar y revalidar lo afectado dentro del mandato. Un nuevo HEAD exige comprobar que revision, checks y autorizacion siguen cubriendo la delta; no heredar aprobaciones por inferencia.
+
+- Conflicto mecanico: resolucion inequivoca que conserva comportamiento, contratos, decisiones y reservas. Puede corregirse y revalidarse autonomamente si el mandato lo cubre; su simplicidad textual no basta para clasificarlo.
+- Conflicto funcional: requiere elegir comportamiento, contrato, alcance, riesgo o decision. Detener la integracion afectada y solicitar decision con evidencia. Ante duda material, tratarlo como funcional.
+
+### 13.4 Integracion secuenciada
+
+Integrar segun dependencias, una PR cada vez. Inmediatamente antes de cada merge, reconsultar `main`, HEAD y estado de la PR, comprobar que no hay conflictos sin resolver ni condiciones bloqueantes pendientes y que las validaciones y la autorizacion siguen siendo aplicables. Conservar las condiciones residuales aceptadas y su seguimiento. Si otra integracion cambia la base, reevaluar el impacto antes de continuar.
+
+Usar un metodo habilitado por el repositorio y respetar protecciones, reviews y checks obligatorios, sin bypass ni cambios de configuracion. Vincular la ejecucion al HEAD revisado mediante el SHA esperado cuando la superficie lo permita. Un rechazo por cambio de HEAD requiere inspeccionar el nuevo estado antes de reintentar. Si la base cambia entre comprobacion y merge, contrastar el resultado contra la base efectivamente integrada y verificar lo afectado.
+
+Solo ejecutar merge con autorizacion humana explicita o delegacion previa que cubra esa PR/incremento y sus condiciones. No interpretar fusionabilidad tecnica, acceso de escritura, un gate favorable o autorizaciones de otra unidad como permiso de merge.
+
+### 13.5 Cierre y evidencia minima
+
+El cierre tecnico requiere confirmar en GitHub el estado final de la PR y el commit resultante, comprobar que este pertenece a `main` y verificar el contenido integrado y los checks afectados. Con squash o rebase, comprobar la correspondencia con el cambio aprobado; no exigir que el SHA original de la rama sea ancestro. Un SHA de merge provisional en una PR abierta no acredita integracion.
+
+Conservar en la PR, handoff o evidencia existente, sin duplicarlos: rama/PR, SHA candidato y base verificada, dependencias, fuente y alcance de autorizacion, checks y sus limites, main anterior/posterior, commit integrado, verificacion posterior, excepciones y proxima accion con responsable. Distinguir comprobaciones actuales de antecedentes. Si no se autoriza merge, entregar la PR y declarar integracion y cierre tecnico pendientes.
+
+Foundation define estos requisitos operativos, pero el formato canonico de `Hybrid Handoff V1` pertenece a Professional OS. Transportar los hechos mediante sus campos vigentes y referencias; no crear aqui una variante ni modificar la SOP propietaria. El handoff no exige commits o publicaciones prematuros.
+
+Distinguir:
+
+- Cierre tecnico: integracion y resultado verificados para la unidad.
+- Cierre SDD: decision de lifecycle con Consolidation, gates y aprobacion humana aplicables; no se obtiene automaticamente al fusionar una PR.
+- Limpieza del entorno: operacion separada. Antes de eliminar ramas o worktrees, comprobar autorizacion, integracion o sustitucion, commits exclusivos, dependencias, procesos activos, cambios locales, archivos ignorados/sin seguimiento y evidencia unica. No forzar eliminaciones ni asumir que una PR cerrada preserva su contenido en main. Retener recursos y declarar seguimiento cuando falte alguna condicion; no bloquear automaticamente un cierre tecnico ya verificado.
+
+Actualizar solo la documentacion necesaria para mantener el estado reconstruible; conservar reservas, evidencia y puntos de reentrada. No crear un documento de cierre por PR cuando el registro existente sea suficiente.
+
+### 13.6 Excepciones y bloqueos proporcionales
+
+| Situacion | Tratamiento |
+| --- | --- |
+| PR desactualizada o sin actividad | En la reentrada y antes del cierre del incremento, revisar vigencia del objetivo, base y delta pendiente; proponer actualizar, retener o cerrar con responsable y motivo. La antiguedad por si sola no autoriza cierre ni borrado. |
+| Desarrollo sustituido | Identificar sucesor y diferencias residuales, verificar preservacion y proponer cierre autorizado de la PR anterior; no fusionar trabajo obsoleto para resolver su acumulacion. |
+| Trabajo local pendiente o archivos concurrentes | Aislar y preservar; integrar exclusivamente el candidato revisado. Los cambios locales no incluidos no deben incorporarse como consecuencia del merge. |
+| Integracion fallida o respuesta incierta | Consultar PR y main antes de reintentar para evitar duplicidad. Mantener resultado no confirmado hasta obtener evidencia. |
+| Fallo posterior al merge | Registrar incidente, detener integraciones dependientes afectadas y proponer correccion o reversion con autorizacion aplicable; no reescribir historico ni declarar cierre satisfactorio con un fallo material abierto. |
+| Incidencia general del entorno | Determinar su relacion con el contenido publicado, integridad de evidencia necesaria, requisitos vigentes y operacion prevista. Clasificar como `BLOCKING`, `NON_BLOCKING_WITH_FOLLOW_UP` o `RESOLVED`, con fundamento y seguimiento. |
+
+Una ACL amplia o un worktree inconsistente no son bloqueos automaticos de una PR independiente. Comprobar alcance efectivo, dependencia y requisito aplicable: si comprometen materialmente el candidato o su evidencia exigible, detener lo afectado; si no, mantener el hallazgo y seguimiento sin convertir la integracion en reparacion general del entorno. Estar ignorado por Git no acredita privacidad y un hash coincidente no certifica custodia autorizada.
+
+Las comprobaciones factuales pueden ejecutarse con herramientas ya autorizadas; el protocolo no instala automatizaciones, altera protecciones ni concede nuevas autorizaciones.
