@@ -40,6 +40,7 @@ Garantizar que la implementación sea fiel a las specifications, arquitectura, t
 - Evitar commit o push redundante y no publicar trabajo insuficientemente validado solo para hacerlo observable.
 - Distinguir la conclusion metodologica `should persist / should publish` de la autorizacion de ejecucion `may commit / may push`.
 - Si commit o push procede metodologicamente pero no esta autorizado, detener esa operacion Git y reportar la necesidad de autorizacion.
+- Aplicar el [protocolo de integracion y cierre](../instructions/sdd.instructions.md#13-protocolo-de-integracion-y-cierre-de-desarrollos): aislar concurrencia, contrastar la base vigente, respetar la autorizacion por operacion y verificar el resultado integrado antes del cierre tecnico; detener solo lo materialmente afectado.
 
 ## Límites
 

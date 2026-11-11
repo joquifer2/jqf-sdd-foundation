@@ -26,7 +26,7 @@ Cada skill debe incluir:
 | `data-platform-discovery` | Discovery | Identifica plataformas de datos, fuentes, transformaciones, lineage, consumidores y riesgos asociados. |
 | `cloud-runtime-discovery` | Discovery | Identifica runtimes cloud, triggers, entradas, salidas, dependencias operativas y riesgos. |
 | `integration-discovery` | Discovery | Identifica integraciones externas, APIs, webhooks, ETL/ELT, contratos y riesgos. |
-| `git-sync-main` | Operativa | Ejecuta commit y push directo a `main` con revisión previa de cambios y confirmación humana. |
+| `git-sync-main` | Operativa | Excepción de commit y push directo a `main`, con autorización explícita aplicable y verificaciones del protocolo de integración. |
 
 ## Complementos
 
