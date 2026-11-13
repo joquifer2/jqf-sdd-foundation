@@ -93,6 +93,14 @@ Reglas de simplificacion documental:
 - antes de crear un nuevo tipo de artefacto, comprobar si puede resolverse como seccion de una spec existente;
 - no crear contracts separados salvo que sean transversales a varias capacidades o a todo el repositorio.
 
+### Organización de artefactos desde el origen
+
+En todas las fases SDD, antes de crear o modificar artefactos, el agente debe identificar y reutilizar las estructuras, ubicaciones canónicas y convenciones de nomenclatura vigentes del repositorio y de la metodología aplicable.
+
+Los archivos nuevos deben ubicarse directamente en sus destinos previstos. Evitar duplicidades, documentación dispersa, archivos temporales persistentes y elementos innecesarios en los directorios raíz. La organización documental forma parte de la calidad y verificación del incremento; las desviaciones ordinarias deben corregirse autónomamente dentro del mandato autorizado, sin diferir su limpieza a una consolidación posterior.
+
+Esta regla no altera precedencia documental, gates ni restricciones de fase. Los cambios materiales de arquitectura documental, movimientos destructivos y operaciones fuera del mandato requieren la autorización correspondiente. Las estructuras y verificaciones concretas pertenecen a cada repositorio o capacidad propietaria; no se impone una estructura universal.
+
 ## 5. Restricciones actuales obligatorias
 
 No hacer todavia:
