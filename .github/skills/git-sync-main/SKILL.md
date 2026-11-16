@@ -12,7 +12,7 @@ disable-model-invocation: false
 
 Ejecutar una sincronización directa de los cambios locales con GitHub haciendo commit y push a la rama `main`.
 
-Esta skill ejecuta la via directa prevista en el [protocolo canonico de integracion y cierre](../../instructions/sdd.instructions.md#13-protocolo-de-integracion-y-cierre-de-desarrollos). No selecciona por si sola la via de integracion ni concede permisos: antes de invocarla, el agente debe comprobar que el incremento es acotado, reversible, validado y elegible para publicacion directa, que no requiere revision independiente o PR y que el mandato autoriza commit y push a `main`. Ante riesgo material, concurrencia incompatible, dependencias, gates o protecciones que exijan PR, usar el flujo de rama con PR.
+Esta skill ejecuta la via directa prevista en el [protocolo canonico de integracion y cierre](https://github.com/joquifer2/jqf-sdd-foundation/blob/main/.github/instructions/sdd.instructions.md#13-protocolo-de-integracion-y-cierre-de-desarrollos). No selecciona por si sola la via de integracion ni concede permisos: antes de invocarla, el agente debe comprobar que el incremento es acotado, reversible, validado y elegible para publicacion directa, que no requiere revision independiente o PR y que el mandato autoriza commit y push a `main`. Ante riesgo material, concurrencia incompatible, dependencias, gates o protecciones que exijan PR, usar el flujo de rama con PR.
 
 ## Cuándo usar esta skill
 
@@ -97,7 +97,7 @@ Verificar la autorizacion vigente sin solicitar de nuevo permisos ya concedidos.
    git push origin main
    ```
 
-9. Verificar que main remoto contiene el commit publicado y los cambios esperados; aplicar la evidencia minima del protocolo, declarando PR no aplicable por excepcion autorizada. Verificar estado local:
+9. Verificar que main remoto contiene el commit publicado y los cambios esperados; aplicar la evidencia minima del protocolo, declarando PR no aplicable por via directa autorizada. Verificar estado local:
 
    ```bash
    git status --short
