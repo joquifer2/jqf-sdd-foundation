@@ -1,6 +1,6 @@
 ---
 name: git-sync-main
-description: Sincronización excepcional directa a main, solo con autorización explícita aplicable y verificaciones de integración.
+description: Commit y push directo a main para incrementos elegibles, autorizados y verificados según la integración proporcional SDD.
 id: SDD-SKILL-005
 user-invocable: true
 disable-model-invocation: false
@@ -12,11 +12,11 @@ disable-model-invocation: false
 
 Ejecutar una sincronización directa de los cambios locales con GitHub haciendo commit y push a la rama `main`.
 
-Esta skill es una excepcion al [protocolo canonico de integracion y cierre](../../instructions/sdd.instructions.md#13-protocolo-de-integracion-y-cierre-de-desarrollos). Solo se usa con autorizacion explicita de commit y push directo a main para el incremento. La PR sigue siendo el mecanismo ordinario; una solicitud generica de guardar, sincronizar o publicar no autoriza esta excepcion.
+Esta skill ejecuta la via directa prevista en el [protocolo canonico de integracion y cierre](../../instructions/sdd.instructions.md#13-protocolo-de-integracion-y-cierre-de-desarrollos). No selecciona por si sola la via de integracion ni concede permisos: antes de invocarla, el agente debe comprobar que el incremento es acotado, reversible, validado y elegible para publicacion directa, que no requiere revision independiente o PR y que el mandato autoriza commit y push a `main`. Ante riesgo material, concurrencia incompatible, dependencias, gates o protecciones que exijan PR, usar el flujo de rama con PR.
 
 ## Cuándo usar esta skill
 
-Usar esta skill cuando el mandato cubra expresamente el destino directo a main, por ejemplo:
+Usar esta skill cuando la via directa sea elegible y el mandato cubra expresamente commit y push a `main`, por ejemplo:
 
 - "Publica los cambios en main"
 - "Haz commit y push a main"
@@ -25,7 +25,7 @@ Verificar la autorizacion vigente sin solicitar de nuevo permisos ya concedidos.
 
 ## Reglas
 
-- El unico destino de esta excepcion es `main` y debe estar expresamente autorizado.
+- El unico destino de esta skill es `main` y debe estar expresamente autorizado.
 - No crear ramas.
 - No abrir PR.
 - No hacer rebase.
@@ -86,10 +86,10 @@ Verificar la autorizacion vigente sin solicitar de nuevo permisos ya concedidos.
    Mensaje por defecto:
 
    ```text
-   chore(sync): update repository
+   docs(sdd): describe validated change
    ```
 
-   Si el usuario proporciona un mensaje, usar el mensaje del usuario.
+   Sustituir el ejemplo por un mensaje concreto que describa el cambio validado; si el usuario proporciona un mensaje adecuado, utilizarlo. No usar mensajes genericos por defecto.
 
 8. Reconsultar main remoto y confirmar que sigue siendo la base comprobada. Si ha cambiado, detener el push y evaluar impacto. Subir sin forzar:
 
@@ -111,7 +111,7 @@ git status --short
 git add -- <rutas-autorizadas>
 git diff --cached
 git diff --cached --check
-git commit -m "chore(sync): update repository"
+git commit -m "<tipo>(<alcance>): <cambio-validado>"
 git push origin main
 git status --short
 ```
@@ -137,7 +137,7 @@ La sincronización se considera completa cuando:
 - los cambios locales fueron añadidos;
 - se creó un commit;
 - el commit fue enviado a `origin/main`;
-- main remoto y contenido integrado se verificaron, con evidencia y excepcion de PR registradas;
+- main remoto y contenido integrado se verificaron, con evidencia proporcional y PR marcada como no aplicable;
 - `git status --short` queda limpio o explicado.
 
 Este resultado solo acredita cierre tecnico del incremento; no concede cierre SDD, release ni limpieza de ramas, worktrees o evidencia.
