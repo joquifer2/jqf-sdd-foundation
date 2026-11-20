@@ -48,7 +48,7 @@ Debes seguir el plan aprobado del proyecto, que establece:
 
 Regla explicita:
 
-Antes de crear un nuevo tipo de artefacto documental, comprobar si la necesidad puede resolverse dentro de una spec existente.
+Antes de crear un nuevo artefacto documental, comprobar si existe un artefacto responsable o una seccion semanticamente compatible, sin convertir la spec en registro de planificacion, ejecucion o seguimiento (SDD Instructions, §4 y §14).
 
 ## Resultado esperado de una sesion tipo
 

@@ -62,6 +62,8 @@ No crear estructuras alternativas cuando exista un template oficial.
 
 - Detectar contradicciones entre artefactos.
 
+- Detectar desviaciones semánticas de responsabilidad documental (contenido en un artefacto que no es su responsable, duplicidades canónicas, pérdida de evidencia) y evaluar sus consecuencias (SDD Instructions, §14.3).
+
 - Detectar ambigüedades o requisitos insuficientemente definidos.
 
 - Detectar implementación prematura.

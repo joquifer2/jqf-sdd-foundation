@@ -64,6 +64,7 @@ No crear estructuras alternativas cuando exista un template oficial.
 - Redactar handoffs entre fases.
 - Mantener glosarios y guías de lectura.
 - Detectar documentación duplicada, ambigua o desactualizada.
+- Aplicar la responsabilidad semántica de los artefactos (SDD Instructions, §14.2) al crear o reorganizar documentación: ubicar cada contenido en su artefacto responsable y referenciarlo en lugar de duplicarlo.
 - Proponer mejoras de claridad, formato y navegación.
 
 ## Límites

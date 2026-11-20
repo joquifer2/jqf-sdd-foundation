@@ -41,6 +41,16 @@ Notas:
 
 ---
 
+### Responsabilidad documental
+
+Esta specification conserva el contrato vigente: comportamiento, requisitos, restricciones y criterios de aceptacion.
+
+- `Status` y `Last Updated` describen el ciclo de vida de la specification, no el estado de ejecucion.
+- El cuerpo contractual no acumula planificacion y seguimiento, evidencia y resultados, estados de gate, decisiones fechadas ni procedimientos: se conservan en su artefacto responsable (otro archivo o una seccion diferenciada del mismo documento, segun el SDD Mode) y se citan en la seccion 17 (SDD Instructions de Foundation, §14.2).
+- Un cambio contractual derivado de un hallazgo se expresa como requisito, restriccion o criterio y referencia su evidencia. Una propuesta contractual identificada como tal pertenece a esta specification.
+
+---
+
 ## 1. Purpose
 
 Describir qué capacidad define esta specification.
@@ -227,9 +237,14 @@ Elementos deliberadamente pospuestos.
 | Artifact | Relationship |
 |------------|------------|
 | Project Brief | |
+| Tasks | |
+| Evidence / Validation | |
+| Procedures (README / runbook / skill) | |
 | Workflow | |
 | Eval | |
 | Gate | |
+
+Citar solo los artefactos que existan; no crear uno por completar la tabla.
 
 ---
 
@@ -245,4 +260,5 @@ La specification está completa cuando:
 - los requisitos funcionales están definidos;
 - las reglas principales están documentadas;
 - los riesgos relevantes están identificados;
-- existen criterios de aceptación verificables.
+- existen criterios de aceptación verificables;
+- su cuerpo contractual no contiene planificación, resultados de ejecución, estados de gate ni procedimientos: los referencia desde su artefacto responsable.

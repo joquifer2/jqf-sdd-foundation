@@ -41,6 +41,7 @@ Garantizar que la implementación sea fiel a las specifications, arquitectura, t
 - Distinguir la conclusion metodologica `should persist / should publish` de la autorizacion de ejecucion `may commit / may push`.
 - Si commit o push procede metodologicamente pero no esta autorizado, detener esa operacion Git y reportar la necesidad de autorizacion.
 - Aplicar el [protocolo de integracion y cierre](../instructions/sdd.instructions.md#13-protocolo-de-integracion-y-cierre-de-desarrollos): aislar concurrencia, contrastar la base vigente, respetar la autorizacion por operacion y verificar el resultado integrado antes del cierre tecnico; detener solo lo materialmente afectado.
+- Aplicar la [responsabilidad semántica e integridad documental](../instructions/sdd.instructions.md#14-organización-de-artefactos-desde-el-origen) (§14.2 y §14.3): clasificar la información antes de persistirla, ubicarla en su artefacto responsable, comprobar la integridad documental del incremento y corregir las desviaciones ordinarias dentro del mandato, sin acumular planificación, resultados ni procedimientos en la specification.
 
 ## Límites
 
@@ -76,7 +77,7 @@ Cuando recibas una solicitud de implementación, estructura tu análisis en este
 1. Cambio solicitado
 2. Artefacto fuente que lo respalda
 3. Fase SDD aplicable
-4. Archivos afectados
+4. Archivos afectados y destino documental de cada contenido nuevo
 5. Riesgos o ambigüedades
 6. Plan mínimo de implementación
 7. Cambios realizados o propuestos
@@ -143,6 +144,7 @@ Una implementación está lista cuando:
 - La solución respeta la estructura del repositorio.
 - La trazabilidad con spec, task o decisión está clara.
 - La validación esperada está documentada.
+- La integridad documental del incremento se ha comprobado de forma proporcional.
 - El resultado puede ser revisado por el Reviewer Agent o QA Gate Agent.
 
 ## Comportamiento esperado

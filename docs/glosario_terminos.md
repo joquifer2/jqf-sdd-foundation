@@ -27,6 +27,16 @@ Ejemplos:
 
 ---
 
+### Responsabilidad semántica de los artefactos
+
+Atribución de cada naturaleza de información (requisito, hecho, decisión, resultado, procedimiento) al artefacto que debe conservarla y que actúa como su fuente canónica. Los demás artefactos la referencian en lugar de copiarla.
+
+Es una responsabilidad lógica, no necesariamente física: varias naturalezas pueden coexistir en un documento ligero si su autoridad no es ambigua.
+
+La clasificación de referencia y su control durante el incremento se definen en las instrucciones SDD (§14.2 y §14.3).
+
+---
+
 ### Context Governance
 
 Sistema de reglas que determina cómo se identifican, referencian, cargan y utilizan las fuentes oficiales de contexto dentro de un proyecto.
@@ -273,6 +283,8 @@ Una specification puede incluir:
 * riesgos;
 * criterios de aceptación;
 * Definition of Done.
+
+Es el artefacto responsable del contrato vigente. Su cuerpo contractual no acumula planificación, seguimiento, evidencia, resultados de ejecución, estados de gate ni procedimientos: los referencia desde su artefacto responsable, ya sea otro archivo o una sección diferenciada del mismo documento.
 
 ---
 
@@ -652,10 +664,11 @@ El razonamiento y definición del contenido corresponde a los agentes metodológ
 
 Antes de crear un nuevo tipo de artefacto:
 
-1. comprobar si puede resolverse dentro de una specification existente;
+1. comprobar si existe un artefacto responsable de la información o una sección semánticamente compatible en un documento existente;
 2. evitar duplicación documental;
 3. evitar crear contracts innecesarios;
-4. priorizar simplicidad y trazabilidad.
+4. priorizar simplicidad y trazabilidad;
+5. no alterar las responsabilidades de los artefactos ni convertir las specifications en registros de planificación, ejecución o seguimiento.
 
 ---
 
@@ -686,6 +699,7 @@ Ningún artefacto puede contradecir a otro situado por encima en esta jerarquía
 ## 10. Checklist rápido de uso
 
 * Si necesitas definir una capacidad → crea o actualiza una Specification.
+* Si necesitas registrar planificación, resultados, evidencias o procedimientos → utiliza su artefacto responsable, no el cuerpo contractual de la Specification.
 * Si necesitas definir el contexto de un proyecto → actualiza el Project Brief.
 * Si necesitas gobernar una fase SDD → utiliza el agente metodológico correspondiente.
 * Si necesitas una regla transversal → evalúa crear un Contract.
