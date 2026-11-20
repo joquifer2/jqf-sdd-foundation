@@ -186,7 +186,7 @@ Registrar aquí únicamente las rutas y convenciones propias del proyecto. La re
 | Procedimientos (README, runbook, skills) | {{PROCEDURES_PATH}} |
 | Fuentes externas responsables | {{EXTERNAL_SOURCES}} |
 
-Cada ruta debe nombrar la naturaleza de la información que aloja. Omitir las filas que no apliquen y no crear carpetas solo para completar la tabla.
+El mapa debe identificar inequívocamente la función y la responsabilidad de cada destino; el nombre de la ruta no tiene que describirlas y no se exige renombrar rutas existentes. Omitir las filas que no apliquen y no crear carpetas solo para completar la tabla.
 
 ---
 

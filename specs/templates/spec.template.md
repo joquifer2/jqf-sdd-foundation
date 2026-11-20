@@ -46,7 +46,7 @@ Notas:
 Esta specification conserva el contrato vigente: comportamiento, requisitos, restricciones y criterios de aceptacion.
 
 - `Status` y `Last Updated` describen el ciclo de vida de la specification, no el estado de ejecucion.
-- Planificacion y seguimiento, evidencia y resultados, estados de gate, decisiones fechadas y procedimientos se conservan en su artefacto responsable y se citan en la seccion 17 (SDD Instructions de Foundation, §14.2).
+- El cuerpo contractual no acumula planificacion y seguimiento, evidencia y resultados, estados de gate, decisiones fechadas ni procedimientos: se conservan en su artefacto responsable (otro archivo o una seccion diferenciada del mismo documento, segun el SDD Mode) y se citan en la seccion 17 (SDD Instructions de Foundation, §14.2).
 - Un cambio contractual derivado de un hallazgo se expresa como requisito, restriccion o criterio y referencia su evidencia. Una propuesta contractual identificada como tal pertenece a esta specification.
 
 ---
@@ -261,4 +261,4 @@ La specification está completa cuando:
 - las reglas principales están documentadas;
 - los riesgos relevantes están identificados;
 - existen criterios de aceptación verificables;
-- no contiene planificación, resultados de ejecución, estados de gate ni procedimientos: los referencia desde su artefacto responsable.
+- su cuerpo contractual no contiene planificación, resultados de ejecución, estados de gate ni procedimientos: los referencia desde su artefacto responsable.

@@ -284,7 +284,7 @@ Una specification puede incluir:
 * criterios de aceptación;
 * Definition of Done.
 
-Es el artefacto responsable del contrato vigente. No acumula planificación, seguimiento, evidencia, resultados de ejecución, estados de gate ni procedimientos: los referencia desde su artefacto responsable.
+Es el artefacto responsable del contrato vigente. Su cuerpo contractual no acumula planificación, seguimiento, evidencia, resultados de ejecución, estados de gate ni procedimientos: los referencia desde su artefacto responsable, ya sea otro archivo o una sección diferenciada del mismo documento.
 
 ---
 
@@ -699,7 +699,7 @@ Ningún artefacto puede contradecir a otro situado por encima en esta jerarquía
 ## 10. Checklist rápido de uso
 
 * Si necesitas definir una capacidad → crea o actualiza una Specification.
-* Si necesitas registrar planificación, resultados, evidencias o procedimientos → utiliza su artefacto responsable, no la Specification.
+* Si necesitas registrar planificación, resultados, evidencias o procedimientos → utiliza su artefacto responsable, no el cuerpo contractual de la Specification.
 * Si necesitas definir el contexto de un proyecto → actualiza el Project Brief.
 * Si necesitas gobernar una fase SDD → utiliza el agente metodológico correspondiente.
 * Si necesitas una regla transversal → evalúa crear un Contract.
