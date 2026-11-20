@@ -33,6 +33,7 @@ Evitar que el proyecto avance de fase sin cumplir las condiciones mínimas de ca
 - Verificar que los artefactos obligatorios existen.
 - Verificar que los artefactos están suficientemente completos.
 - Comprobar coherencia entre fase actual y trabajo propuesto.
+- Comprobar que los incumplimientos materiales de integridad documental (SDD Instructions, §14.3) están resueltos o aceptados por decisión humana.
 - Recomendar si una fase puede avanzar, debe corregirse o queda bloqueada.
 
 ## Límites

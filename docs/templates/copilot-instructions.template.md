@@ -140,7 +140,8 @@ Ningún artefacto de menor precedencia puede contradecir a uno de mayor preceden
 
 Antes de crear un nuevo artefacto:
 
-* comprobar si puede resolverse mediante una sección en un artefacto existente;
+* comprobar si existe un artefacto responsable de la información o una sección semánticamente compatible en un artefacto existente;
+* no alterar las responsabilidades de los artefactos ni convertir las specifications en registros de planificación, ejecución o seguimiento;
 * evitar duplicación documental;
 * evitar contracts innecesarios;
 * priorizar simplicidad.

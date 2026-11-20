@@ -90,7 +90,9 @@ Estado final de una capacidad cerrada. Debe conservar baseline vigente, expedien
 
 Reglas de simplificacion documental:
 
-- antes de crear un nuevo tipo de artefacto, comprobar si puede resolverse como seccion de una spec existente;
+- antes de crear un nuevo artefacto o tipo de artefacto, comprobar si existe un artefacto responsable de esa informacion o una seccion semanticamente compatible en un documento existente (§14.2);
+- simplificar no altera las responsabilidades de los artefactos: no crear fuentes de verdad competidoras ni convertir las specifications en registros de planificacion, ejecucion o seguimiento;
+- determinar la separacion fisica de forma proporcional al `SDD Mode`, riesgo, volumen, ciclo de vida y necesidades de consumo;
 - no crear contracts separados salvo que sean transversales a varias capacidades o a todo el repositorio.
 
 ## 5. Restricciones actuales obligatorias
@@ -173,7 +175,7 @@ El modo declarado no puede:
 
 `SDD Full` equivale al baseline completo de `jqf-sdd-foundation` y se reserva para riesgo material elevado que requiera gobierno reforzado. Produccion, sensibilidad, complejidad o numero de integraciones no activan Full automaticamente. Se consideran impacto, probabilidad, reversibilidad, exposicion, obligaciones y mitigaciones; los controles criticos se mantienen en cualquier modo. Cuando el riesgo se concentra en una operacion, se refuerza esa operacion sin elevar necesariamente todo el proyecto.
 
-La reduccion documental solo es valida si elimina baja senal o duplicacion. No puede eliminar decisiones canonicas, justificacion humana del modo, riesgos criticos, gates requeridos, criterios de aceptacion, evidencia de checks ni trazabilidad minima.
+La reduccion documental solo es valida si elimina baja senal o duplicacion. No puede eliminar decisiones canonicas, justificacion humana del modo, riesgos criticos, gates requeridos, criterios de aceptacion, evidencia de checks ni trazabilidad minima, ni alterar la responsabilidad semantica de los artefactos (§14.2).
 
 La validacion de `SDD Full` debe demostrar que no se debilita el baseline vigente de gobierno: artefactos requeridos por fase, revisiones formales, gates aplicables, evidencia de decisiones/riesgos/criterios/validacion, precedencia documental y aprobacion humana.
 
@@ -501,7 +503,7 @@ Si el remoto no es consultable, usar otra superficie autorizada de lectura. Si n
 
 ### 13.3 Preparacion de integracion
 
-La entrada a integracion requiere alcance exacto y sin cambios ajenos o informacion privada, dependencias satisfechas o secuencia aprobada, checks suficientes para el HEAD candidato, revisiones y gates aplicables y autorizacion de integracion verificable. Distinguir autocontrol, revision independiente, aceptacion humana y CI; ausencia de checks publicados no equivale a CI aprobada.
+La entrada a integracion requiere alcance exacto y sin cambios ajenos o informacion privada, dependencias satisfechas o secuencia aprobada, checks suficientes para el HEAD candidato, revisiones y gates aplicables y autorizacion de integracion verificable. Cuando el incremento tenga impacto documental, los checks suficientes incluyen la comprobacion proporcional de integridad documental de §14.3 (responsabilidad semantica, ubicacion, duplicidades, referencias, preservacion de evidencia y coherencia entre artefactos): las desviaciones ordinarias se corrigen antes de integrar y las materiales se elevan. Distinguir autocontrol, revision independiente, aceptacion humana y CI; ausencia de checks publicados no equivale a CI aprobada.
 
 Contrastar el candidato con `main` remoto vigente: registrar ambos SHA y evaluar el impacto de cambios posteriores en archivos, contratos y dependencias. No exigir merge/rebase ni repetir pruebas validas cuando el contraste demuestra que siguen siendo suficientes y las reglas del repositorio no exigen actualizacion. Si hay impacto material, actualizar y revalidar lo afectado dentro del mandato. Un nuevo HEAD exige comprobar que revision, checks y autorizacion siguen cubriendo la delta; no heredar aprobaciones por inferencia.
 
@@ -520,7 +522,7 @@ Solo ejecutar merge con autorizacion humana explicita o delegacion previa que cu
 
 El cierre tecnico requiere confirmar en GitHub el commit resultante en `main` y verificar el contenido integrado y los checks afectados. Si hubo PR, confirmar tambien su estado final; si hubo publicacion directa, no exigir PR ni evidencia propia de PR. Con squash o rebase, comprobar la correspondencia con el cambio aprobado; no exigir que el SHA original de la rama sea ancestro. Un SHA de merge provisional en una PR abierta no acredita integracion.
 
-Conservar en la PR, handoff o evidencia existente, sin duplicarlos: via elegida y motivo proporcional, rama/PR solo si existen, SHA candidato y base verificada, dependencias, fuente y alcance de autorizacion, checks y sus limites, main anterior/posterior, commit integrado, verificacion posterior y excepciones. Registrar proxima accion con responsable solo cuando quede trabajo pendiente. Distinguir comprobaciones actuales de antecedentes. Si no se autoriza merge, entregar la PR y declarar integracion y cierre tecnico pendientes.
+Conservar en la PR, handoff o evidencia existente, sin duplicarlos: via elegida y motivo proporcional, rama/PR solo si existen, SHA candidato y base verificada, dependencias, fuente y alcance de autorizacion, checks y sus limites (incluida la integridad documental de §14.3 cuando hubo impacto documental), main anterior/posterior, commit integrado, verificacion posterior y excepciones. Registrar proxima accion con responsable solo cuando quede trabajo pendiente. Distinguir comprobaciones actuales de antecedentes. Si no se autoriza merge, entregar la PR y declarar integracion y cierre tecnico pendientes.
 
 Foundation define estos requisitos operativos, pero el formato canonico de `Hybrid Handoff V1` pertenece a Professional OS. Transportar los hechos mediante sus campos vigentes y referencias; no crear aqui una variante ni modificar la SOP propietaria. El handoff no exige commits o publicaciones prematuros.
 
@@ -549,8 +551,66 @@ Las comprobaciones factuales pueden ejecutarse con herramientas ya autorizadas; 
 
 ## 14. Organización de artefactos desde el origen
 
+### 14.1 Ubicación y reutilización
+
 En todas las fases SDD, antes de crear o modificar artefactos, el agente debe identificar y reutilizar las estructuras, ubicaciones canónicas y convenciones de nomenclatura vigentes del repositorio y de la metodología aplicable.
 
 Los archivos nuevos deben ubicarse directamente en sus destinos previstos. Evitar duplicidades, documentación dispersa, archivos temporales persistentes y elementos innecesarios en los directorios raíz. La organización documental forma parte de la calidad y verificación del incremento; las desviaciones ordinarias deben corregirse autónomamente dentro del mandato autorizado, sin diferir su limpieza a una consolidación posterior.
 
 Esta regla no altera precedencia documental, gates ni restricciones de fase. Los cambios materiales de arquitectura documental, movimientos destructivos y operaciones fuera del mandato requieren la autorización correspondiente. Las estructuras y verificaciones concretas pertenecen a cada repositorio o capacidad propietaria; no se impone una estructura universal.
+
+### 14.2 Responsabilidad semántica de los artefactos
+
+Principio: **una información, una fuente responsable**. Cada requisito, hecho, decisión, resultado o procedimiento se conserva en el artefacto responsable de su naturaleza; los demás artefactos lo referencian cuando necesiten consumirlo, sin copiarlo. La responsabilidad es común a todos los `SDD Mode`.
+
+| Naturaleza de la información | Artefacto responsable |
+| --- | --- |
+| Propósito, contexto, alcance general, riesgos y `SDD Mode` | Project Brief |
+| Contrato vigente: comportamiento, requisitos, restricciones y criterios de aceptación | Specification |
+| Diseño, componentes, relaciones y decisiones arquitectónicas | Architecture |
+| Planificación, dependencias, unidades de trabajo y seguimiento técnico | Tasks |
+| Hechos observados, pruebas, resultados y limitaciones | Evidencia o validación existente (p. ej. evidence index, informe de validación o sección de evidencia) |
+| Condiciones y decisiones formales de avance | Gate |
+| Procedimientos de uso, ejecución, despliegue y recuperación | README, runbook o skill, según su finalidad |
+| Localización, autoridad y versión de las fuentes | Context References |
+| Resultado del incremento, excepciones y continuidad | Handoff |
+| Deuda aceptada, impacto, responsable y condiciones de reentrada | Residual Debt |
+| Referencias metodológicas, instrucciones operativas y convenciones locales del proyecto | `AGENTS.md` |
+
+Las decisiones y autorizaciones se conservan en el artefacto de su naturaleza: de alcance o modo en el Project Brief, arquitectónicas en Architecture, de avance en el gate y las fechadas o de ejecución en el handoff o la evidencia existente. La specification las referencia cuando condicionan el contrato.
+
+- **Separación semántica sin proliferación documental.** La responsabilidad no exige separación física. Pueden coexistir naturalezas distintas en un documento ligero distinto de la specification cuando cada parte esté claramente identificada, su autoridad no sea ambigua y el `SDD Mode` lo permita. No crear archivos solo para satisfacer la clasificación.
+- **La specification evoluciona por cambios del contrato.** Resultados de pruebas, observaciones, ejecuciones, estados de gates, decisiones fechadas y procedimientos no se incorporan al cuerpo de la specification: se registran en su artefacto responsable y la specification los cita. Cuando un hallazgo justifique modificar el contrato, actualizar la specification conforme a las autorizaciones aplicables, expresando el cambio como requisito, restricción o criterio y referenciando la evidencia. Una propuesta contractual identificada como tal es contrato, no registro histórico.
+- **Responsabilidad desde el origen.** Quien genera o modifica información la clasifica y ubica correctamente; la consolidación posterior no sustituye esa responsabilidad. Antes de persistir contenido documental, identificar su naturaleza, el artefacto responsable, la fuente canónica y la ubicación aplicable. Reutilizar el artefacto responsable cuando exista y crear otro solo si ninguno ni ninguna sección compatible resulta suficiente.
+- **Fuentes externas y convenciones locales.** Cuando una fuente externa sea responsable de una naturaleza de información (p. ej. un sistema de gestión ejecutiva o de trabajo), el repositorio la referencia sin duplicarla; Foundation no impone ninguna como dependencia. Foundation define responsabilidades y criterios comunes; cada repositorio o capacidad concreta rutas y nombres, por referencia a esta sección y sin redefinir responsabilidades. Las rutas locales deben identificar la naturaleza de la información que alojan, no describirse de forma genérica (p. ej. «artefactos por unidad»).
+
+### 14.3 Integridad documental continua
+
+La integridad documental se comprueba dentro de las validaciones existentes del incremento gobernado. No crea gates, agentes, workflows ni registros obligatorios.
+
+| Momento | Comprobación |
+| --- | --- |
+| Inicio del incremento | Identificar artefactos afectados y destinos documentales previstos. |
+| Generación de contenido | Clasificar la información antes de persistirla (§14.2). |
+| Validación del incremento | Revisar la integridad documental de los cambios realizados. |
+| Revisión independiente, cuando proceda | Detectar desviaciones semánticas y evaluar sus consecuencias. |
+| Gate aplicable | Comprobar la resolución de incumplimientos materiales. |
+| Consolidation | Clasificar baseline, histórico, evidencias y deuda residual (§3.4), sin sustituir la clasificación de origen. |
+
+El control mínimo, proporcional al impacto documental, verifica que:
+
+1. el contenido pertenece semánticamente al artefacto modificado;
+2. se reutiliza el artefacto responsable cuando ya existe;
+3. los archivos nuevos se crean en ubicaciones adecuadas;
+4. la specification conserva su función contractual;
+5. las referencias son vigentes y las decisiones, evidencias, resultados y autorizaciones mantienen trazabilidad y coherencia entre artefactos;
+6. no existen duplicidades canónicas ni pérdida de evidencia;
+7. las desviaciones ordinarias se corrigen dentro del mandato autorizado.
+
+El resultado se registra, cuando proceda, en el handoff, la PR o la evidencia existente. No es un formulario, un checklist persistente ni un gate independiente.
+
+La intensidad se gradúa por `SDD Mode`; la responsabilidad semántica no:
+
+- `SDD Minimal`: separación lógica suficiente, autocontrol breve y reutilización de documentos existentes, sin carga documental adicional injustificada.
+- `SDD Lite`: identificación de los artefactos afectados, separación física cuando esté justificada, control consolidado por incremento gobernado y revisión independiente cuando proceda por mandato o riesgo.
+- `SDD Full`: separación explícita conforme a la aplicabilidad vigente, verificación de responsabilidades dentro de las revisiones formales y trazabilidad reforzada de evidencias y decisiones, conservando los gates y controles existentes.

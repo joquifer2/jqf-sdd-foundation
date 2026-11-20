@@ -174,6 +174,22 @@ No debe reinterpretar reglas de negocio.
 
 ---
 
+## Convenciones documentales del proyecto
+
+Registrar aquí únicamente las rutas y convenciones propias del proyecto. La responsabilidad semántica de cada artefacto se aplica por referencia a las instrucciones SDD de la Foundation (§14); no copiarla ni redefinirla.
+
+| Naturaleza de la información | Ruta o fuente en este proyecto |
+|---|---|
+| Contrato (specifications) | {{SPECS_PATH}} |
+| Planificación y seguimiento técnico | {{TASKS_PATH}} |
+| Evidencia y validación | {{EVIDENCE_PATH}} |
+| Procedimientos (README, runbook, skills) | {{PROCEDURES_PATH}} |
+| Fuentes externas responsables | {{EXTERNAL_SOURCES}} |
+
+Cada ruta debe nombrar la naturaleza de la información que aloja. Omitir las filas que no apliquen y no crear carpetas solo para completar la tabla.
+
+---
+
 ## Principios de gobierno
 
 Todo agente debe:

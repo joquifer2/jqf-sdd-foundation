@@ -33,6 +33,8 @@ Los agentes metodológicos no sustituyen la validación humana.
 
 Todas las decisiones relevantes permanecen bajo responsabilidad humana.
 
+La norma metodológica canónica es `.github/instructions/sdd.instructions.md`. Los agentes y sus adaptadores la consumen por referencia y no la reproducen.
+
 ---
 
 ## Adaptadores para Codex

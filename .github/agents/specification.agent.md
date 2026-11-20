@@ -65,6 +65,8 @@ No crear estructuras alternativas cuando exista un template oficial.
 
 - Mantener coherencia con la metodología SDD del repositorio.
 
+- Mantener la specification como contrato vigente: referenciar, sin incorporarlos, la planificación, la evidencia, los resultados de ejecución, los estados de gate y los procedimientos (SDD Instructions, §14.2).
+
 ## Modo Retrospective Specification
 
 Cuando el proyecto ya exista y se esté incorporando al flujo SDD desde Legacy to SDD, puedes crear o revisar una retrospective specification.
